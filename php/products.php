@@ -156,7 +156,7 @@
                 </div>
 
                 <img class="rounded w-100" src="../img/libros-portadas/sun-book.jpg" alt="The Sun Portada">
-                <h2 class="__titulo-producto pt-2">The Sun, The Monn, The Stars</h2>
+                <h2 class="__titulo-producto pt-2"><a class="text-reset" href="singleProduct.php">The Sun, The Monn, The Stars</a></h2>
                 <p>by <span>Junot Diaz</span></p>
                 <p class="__precio-producto">$19.99</p>
                 <p class="px-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae cupiditate nisi fuga nam iusto commodi!</p>
@@ -178,7 +178,7 @@
                 </div>
 
                 <img class="rounded w-100" src="../img/libros-portadas/killer-book.jpg" alt="The Killer Poison Portada">
-                <h2 class="__titulo-producto pt-2">The Poison Killer</h2>
+                <h2 class="__titulo-producto pt-2"><a class="text-reset" href="singleProduct.php">The Killer Poison</a></h2>
                 <p>by <span>Julie Martinez</span></p>
                 <p class="__precio-producto">$179.99</p>
                 <p class="px-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae cupiditate nisi fuga nam iusto commodi!</p>
@@ -200,7 +200,7 @@
                 </div>
 
                 <img class="rounded w-100" src="../img/libros-portadas/busi-book.jpg" alt="Bussines Portada">
-                <h2 class="__titulo-producto pt-2">Creative Business Startup</h2>
+                <h2 class="__titulo-producto pt-2"><a class="text-reset" href="singleProduct.php">Creative Businnes</a></h2>
                 <p>by <span>Jen Brazel</span></p>
                 <p class="__precio-producto">$600.00</p>
                 <p class="px-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae cupiditate nisi fuga nam iusto commodi!</p>
@@ -222,7 +222,7 @@
                 </div>
 
                 <img class="rounded w-100" src="../img/libros-portadas/smile-book.jpg" alt="Smile Portada">
-                <h2 class="__titulo-producto pt-2">The Last Smile in Sunder City</h2>
+                <h2 class="__titulo-producto pt-2"><a class="text-reset" href="singleProduct.php">The last smile in Sunder City</a></h2>
                 <p>by <span>Luke Arnold</span></p>
                 <p class="__precio-producto">$600.00</p>
                 <p class="px-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae cupiditate nisi fuga nam iusto commodi!</p>
@@ -244,7 +244,7 @@
                 </div>
 
                 <img class="rounded w-100" src="../img/libros-portadas/olio-book.jpg" alt="Olio Portada">
-                <h2 class="__titulo-producto pt-2">OLIO</h2>
+                <h2 class="__titulo-producto pt-2"><a class="text-reset" href="singleProduct.php">OLIO</a></h2>
                 <p>by <span>Madhu Sashon</span></p>
                 <p class="__precio-producto">$600.00</p>
                 <p class="px-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae cupiditate nisi fuga nam iusto commodi!</p>
@@ -266,7 +266,7 @@
                 </div>
 
                 <img class="rounded w-100" src="../img/libros-portadas/teaching-book.jpg" alt="Teaching Portada">
-                <h2 class="__titulo-producto pt-2">OLIO</h2>
+                <h2 class="__titulo-producto pt-2"><a class="text-reset" href="singleProduct.php">Teching Book</a></h2>
                 <p>by <span>Weston D. and Clay B.</span></p>
                 <p class="__precio-producto">$179.40</p>
                 <p class="px-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae cupiditate nisi fuga nam iusto commodi!</p>
