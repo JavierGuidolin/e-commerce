@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="../css/style.css">
 
   <link rel="shortcut icon" type="image/png" href="../img/bs-favicon.png" />
-  <title> BookStore | Login or Register</title>
+  <title> BookStore | Contacto</title>
 
 </head>
 
@@ -57,6 +57,52 @@
         </nav>
       </div>
     </section>
+
+    <div class="container contact">
+    	<div class="row">
+    		<div class="col-md-3 __side ">
+    			<div class="contact-info">
+    				<img src="https://image.ibb.co/kUASdV/contact-image.png" alt="image"/>
+    				<h2><br>Contactanos<br></h2>
+
+          	<h4><br>Apreciamos tu opinion! <br></h4>
+    			</div>
+    		</div>
+    		<div class="col-md-9">
+    			<div class="contact-form">
+    				<div class="form-group">
+    				  <label class="control-label col-sm-2" for="fname">Nombre:</label>
+    				  <div class="col-sm-10">
+    					<input type="text" class="form-control" id="fname" placeholder="Ingresa tu nombre" name="fname">
+    				  </div>
+    				</div>
+    				<div class="form-group">
+    				  <label class="control-label col-sm-2" for="lname">Apellido:</label>
+    				  <div class="col-sm-10">
+    					<input type="text" class="form-control" id="lname" placeholder="Ingresa tu apellido" name="lname">
+    				  </div>
+    				</div>
+    				<div class="form-group">
+    				  <label class="control-label col-sm-2" for="email">Email:</label>
+    				  <div class="col-sm-10">
+    					<input type="email" class="form-control" id="email" placeholder="Ingresa tu Email" name="email">
+    				  </div>
+    				</div>
+    				<div class="form-group">
+    				  <label class="control-label col-sm-2" for="comment">Mensaje:</label>
+    				  <div class="col-sm-10">
+    					<textarea class="form-control" rows="5" id="comment"></textarea>
+    				  </div>
+    				</div>
+    				<div class="form-group">
+    				  <div class="col-sm-offset-2 col-sm-10">
+    					<button type="submit" class="btn btn-default">Enviar</button>
+    				  </div>
+    				</div>
+    			</div>
+    		</div>
+    	</div>
+    </div>
 
   </main>
   <!-- EndMain -->
