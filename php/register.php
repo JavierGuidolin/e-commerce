@@ -62,6 +62,31 @@
 
     </section>
 
+    <div class="container-login">
+      <div class="login-container">
+        <div class="register">
+          <h2>Registrarse</h2>
+          <form action="">
+            <input type="text" placeholder="Nombre" class="nombre">
+            <input type="text" placeholder="Correo" class="correo">
+            <input type="password" placeholder="Contraseña" class="pass">
+            <input type="password" placeholder="Confirma contraseña" class="repass">
+            <input type="submit" class="submit" value="REGISTRARSE">
+          </form>
+        </div>
+        <div class="login">
+          <h2>Iniciar Sesión</h2>
+          <div class="login-items">
+            <input type="text" placeholder="Nombre de usuario" class="nombre">
+            <input type="password" placeholder="Contraseña" class="pass">
+            <button class="correo  text-white"><i class="fas fa-envelope"><a class="text-white" href="https://gmail.com"></i> Acceder con Correo</button>
+            <button class="fb text-white"><i class="fab fa-facebook-f"><a class=" text-white" href="https://facebook.com"></i> Acceder con Facebook</button>
+            <button class="tw  text-white"><i class="fab fa-twitter"><a class="text-white" href="https://twitter.com"></i> Acceder con Twitter</button>
+          </div>
+        </div>
+      </div>
+</div>
+
   </main>
   <!-- EndMain -->
 
