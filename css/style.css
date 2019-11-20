@@ -539,6 +539,9 @@ header.__background-contacto {
   background-position: center center;
 }
 
+.__side {
+  background-color: #F39200;
+}
 /************************************ Pagina Perfil ***********************************/
 header.__background-perfil {
   background: url("../img/bs-book-right.jpg");
