@@ -1,0 +1,9 @@
+{
+  "users": [{
+    "id": 1,
+    "nombre": "administrador",
+    "correo": "admin@admin.com",
+    "contrasenia": "$2y$10$yl.lsJ9\/Sga7NkVucrzCJuwVA4QPbWIuoRn1WOoSGmnZKhi8d3JL.",
+    "fotoPerfil": "..\/img\/fotos-usuarios\/1.png"
+  }]
+}

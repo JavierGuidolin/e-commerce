@@ -396,7 +396,6 @@ header.__background-cart {
 }
 
 .container-login {
-  background-image: url(fondoaa.jpg);
   background-size: cover;
   width: 100%;
   padding: 10px;
@@ -427,7 +426,11 @@ header.__background-cart {
   margin-bottom: 30px;
 }
 
-.register input, .login input {
+.register input[type="text"],
+.register input[type="password"],
+.register input[type="email"],
+.register input[type="file"],
+.login input {
   width: 100%;
   padding: 5px;
   font-size: 16px;
@@ -439,8 +442,21 @@ header.__background-cart {
   color: #333;
 }
 
-.register input:active,
-.register input:focus {
+.register .__perfil-pic{
+  font-size: 1.3em;
+}
+.register .__perfil-pic::after{
+  content: "Buscar";
+  background-color: #F39200;
+  color: white;
+}
+
+.register .form-check-label{
+  font-size: 1.25em;
+}
+
+.register input[type="text"]:active,
+.register input[type="password"]:focus {
   outline: none;
 }
 
@@ -452,6 +468,7 @@ header.__background-cart {
   font-size: 12px;
   box-shadow: 0 0 3px 0 rgba(0, 0, 0, .2);
   cursor: pointer;
+  border:none;
 }
 
 .register::after {
