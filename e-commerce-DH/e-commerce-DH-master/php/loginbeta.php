@@ -11,11 +11,14 @@ session_start();
       $passw=$_POST["contrasenia"];
       if (ValidarLogin($mails,$passw)==true) {
       header("Location:../index.php");
+
         $_SESSION['user']= $_POST['correo'];
         var_dump($_SESSION);
       }else {
         $error="Usuario o contraseña invalido";
             }
+
+
       }
     ?>
 <!DOCTYPE html>

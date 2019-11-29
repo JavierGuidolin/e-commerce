@@ -81,7 +81,7 @@
           <a href="loginbeta.php" class="dropdown-item pl-2"><i class="dropdown-icon fas fa-sign-in-alt pr-2"></i> Iniciar sesion</a>
           <a href="userAccount.php" class="dropdown-item pl-2"><i class="dropdown-icon fas fa-sign-in-alt pr-2"></i> Mi cuenta</a>
           <div class="dropdown-divider"></div>
-          <a href="#"  class="dropdown-item pl-2"><i class="fas fa-door-open pr-2"></i>Salir</a>
+          <a href="logout.php"  class="dropdown-item pl-2"><i class="fas fa-door-open pr-2"></i>Salir</a>
         </div>
 
       </li>
