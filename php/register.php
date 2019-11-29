@@ -1,106 +1,27 @@
 <?php
 
-    $errores = [
-      "id" => "",
-      "nombre" => "",
-      "correo" => "",
-      "contrasenia" => "",
-      "confirmaContra" => "" ,
-      "fotoPerfil" => "" ,
-    ];
+      require_once ("../modulos/validarRegistro.php");
+      $resultadoValidacion = sinErrores();
 
-    $datosCorrectos = [
-      "id" => "",
-      "nombre" => "",
-      "correo" => "",
-      "contrasenia" => "",
-      "fotoPerfil" => "" ,
-    ];
+      $cargaArchivo = $insercionDato = "";
 
+        if ($_POST && $_FILES) {
 
-    $hayErrores = false;
-    $cargaArchivo = false;
-    $insercionDato = 0;
+          $resultadoValidacion = validarRegistro($_POST);
 
-        /*------Validaciones-------*/
-        if (!empty($_POST) && !empty($_FILES)) {
-
-            //Nombre
-            if (strlen($_POST["nombre"]) < 4) {
-              $errores["nombre"] = "El nombre debe contener 4 o mas caracteres.";
-              $hayErrores = true;
-            }else {
-              $datosCorrectos["nombre"] = $_POST["nombre"];
-            }
-
-            $patron = "/^[a-z ,.'-]+$/i";
-            if (preg_match($patron, $_POST["nombre"]) == 0) {
-              $errores["nombre"] .= "<br> El nombre debe contener solo letras.";
-              $hayErrores = true;
-            }else{
-              $datosCorrectos["nombre"] = $_POST["nombre"];
-            }
-
-            //Email
-            if (!filter_var($_POST["correo"], FILTER_VALIDATE_EMAIL)) {
-              $errores["correo"] = "<br> Formato incorrecto de email.";
-              $hayErrores = true;
-            }else{
-              $datosCorrectos["correo"] = $_POST["correo"];
-            }
-
-            //contraseña
-            if (strlen($_POST["contrasenia"]) < 8) {
-              $errores["contrasenia"] = "<br> La contrasenia debe tener al menos 8 caracteres.";
-              $hayErrores = true;
-            }else{
-              $datosCorrectos["contrasenia"] = password_hash($_POST["contrasenia"], PASSWORD_DEFAULT);
-            }
-
-            if (!ctype_alnum($_POST["contrasenia"])) {
-              $errores["contrasenia"] .= "<br> La contraseña debe ser alfanumerica.";
-              $hayErrores = true;
-            }else{
-              $datosCorrectos["contrasenia"] = password_hash($_POST["contrasenia"], PASSWORD_DEFAULT);
-            }
-
-            if (!($_POST["contrasenia"] == $_POST["confirmaContra"])) {
-              $errores["confirmaContra"] .= "<br> Las contraseñas no coinciden.";
-              $hayErrores = true;
-            }
-
-            //fotoPerfil
-            if ($_FILES["fotoPerfil"]["error"] != 0) {
-              $errores["fotoPerfil"] = "<br> Hubo un problema al cargar la foto.";
-              $hayErrores = true;
-            }
-
-            $extension = pathinfo($_FILES["fotoPerfil"]["name"], PATHINFO_EXTENSION);
-
-            if (($extension != "jpg") && ($extension != "jpeg") && ($extension != "png")) {
-              $errores["fotoPerfil"] = "<br> La foto debe ser png, jpg o jpeg.";
-              $hayErrores = true;
-            }
-
-            if ($_FILES["fotoPerfil"]["size"] > 4000000) {
-              $errores["fotoPerfil"] .= "<br> La foto no debe superar los 4MB";
-              $hayErrores = true;
-            }
-
-
-            /*------Insercion-------*/
-            if ($hayErrores == false) {
+          if (empty($resultadoValidacion)) {
 
               $arrayUsuarios = json_decode(file_get_contents("../database/users.json"), true);
               $idNuevo = count($arrayUsuarios["users"]) + 1;
 
+              $extension = pathinfo($_FILES["fotoPerfil"]["name"], PATHINFO_EXTENSION);
               $cargaArchivo = move_uploaded_file($_FILES["fotoPerfil"]["tmp_name"], "../img/fotos-usuarios/". $idNuevo . "." . $extension);
 
               $usuarioNuevo = [
                 "id" => $idNuevo,
-                "nombre" => $datosCorrectos["nombre"],
-                "correo" => $datosCorrectos["correo"],
-                "contrasenia" => $datosCorrectos["contrasenia"],
+                "nombre" => $_POST["nombre"],
+                "correo" => $_POST["correo"],
+                "contrasenia" => password_hash($_POST["contrasenia"], PASSWORD_DEFAULT),
                 "fotoPerfil" => "../img/fotos-usuarios/" . $idNuevo. "." . $extension ,
               ];
 
@@ -111,9 +32,8 @@
               $insercionDato = file_put_contents("../database/users.json", $usuarioFinal);
 
             }
-            /*------EndInsercion-------*/
 
-        }
+          }
 
  ?>
 
@@ -181,9 +101,8 @@
 
       <?php if ($cargaArchivo && $insercionDato != 0 ): ?>
         <div class="alert alert-success" role="alert">
-
           Usuario registrado satisfactoriamente. <a class="alert-link">Ya puedes loguearte</a>
-
+        <?php $_POST = ""; ?>
         </div>
       <?php endif; ?>
 
@@ -196,17 +115,17 @@
           <h2>Registrarse</h2>
           <form action="register.php" method="post" enctype="multipart/form-data">
 
-            <input type="text" class="mb-1" name="nombre" placeholder="Nombre" class="nombre" value="<?=$datosCorrectos["nombre"]; ?>">
-            <small id="nameHelp" class="mb-3 form-text text-danger"><?=$errores["nombre"];?></small>
+            <input type="text" class="mb-1" name="nombre" placeholder="Nombre" class="nombre" value="<?=persistir($resultadoValidacion, 'nombre'); ?>">
+            <small id="nameHelp" class="mb-3 form-text text-danger"><?= isset($resultadoValidacion['nombre']) ? $resultadoValidacion['nombre'] : "" ?></small>
 
-            <input type="email" class="mb-1" name="correo" placeholder="Correo" class="correo" value="<?=$datosCorrectos["correo"]; ?>" >
-            <small id="nameHelp" class="mb-3 form-text text-danger"><?=$errores["correo"];?></small>
+            <input type="email" class="mb-1" name="correo" placeholder="Correo" class="correo" value="<?=persistir($resultadoValidacion, 'correo'); ?>" >
+            <small id="nameHelp" class="mb-3 form-text text-danger"><?= isset($resultadoValidacion['correo']) ? $resultadoValidacion['correo'] : "" ?></small>
 
             <input type="password" class="mb-1" name="contrasenia" placeholder="Contraseña" class="pass">
-            <small id="nameHelp" class="mb-3 form-text text-danger"><?=$errores["contrasenia"];?></small>
+            <small id="nameHelp" class="mb-3 form-text text-danger"><?= isset($resultadoValidacion['contrasenia']) ? $resultadoValidacion['contrasenia'] : "" ?></small>
 
             <input type="password" class="mb-1" name="confirmaContra" placeholder="Confirma contraseña" class="repass">
-            <small id="nameHelp" class="mb-3 form-text text-danger"><?=$errores["confirmaContra"];?></small>
+            <small id="nameHelp" class="mb-3 form-text text-danger"><?= isset($resultadoValidacion['contrasenia']) ? $resultadoValidacion['contrasenia'] : "" ?></small>
 
             <div class="input-group mb-2">
                 <div class="custom-file">
@@ -214,7 +133,7 @@
                   <label class="custom-file-label __perfil-pic">Foto de perfil</label>
                 </div>
             </div>
-            <small id="nameHelp" class="mb-3 form-text text-danger"><?=$errores["fotoPerfil"];?></small>
+            <small id="nameHelp" class="mb-3 form-text text-danger"><?= isset($resultadoValidacion['fotoPerfil']) ? $resultadoValidacion['fotoPerfil'] : "" ?></small>
 
             <div class="form-check">
               <div class="form-group">
