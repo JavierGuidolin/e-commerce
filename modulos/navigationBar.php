@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!-- Navegacion -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark  fixed-top">
 
@@ -70,14 +71,17 @@
       <li class="nav-item dropdown">
 
         <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
-          <i class="__icono-usuario fas fa-user-circle pr-1 pl-2"></i> Perfil</a>
+          <i class="__icono-usuario fas fa-user-circle pr-1 pl-2"></i><?php if ($_SESSION) {
+           echo $_SESSION["user"];}else {
+             echo "Perfil";
+           }?></a>
 
         <div class="dropdown-menu dropdown-menu-right">
           <a href="register.php" class="dropdown-item pl-2 "><i class="dropdown-icon fas fa-user-edit pr-2"></i> Registrarse</a>
-          <a href="register.php" class="dropdown-item pl-2"><i class="dropdown-icon fas fa-sign-in-alt pr-2"></i> Iniciar sesion</a>
+          <a href="loginbeta.php" class="dropdown-item pl-2"><i class="dropdown-icon fas fa-sign-in-alt pr-2"></i> Iniciar sesion</a>
           <a href="userAccount.php" class="dropdown-item pl-2"><i class="dropdown-icon fas fa-sign-in-alt pr-2"></i> Mi cuenta</a>
           <div class="dropdown-divider"></div>
-          <a href="#" class="dropdown-item pl-2"><i class="fas fa-door-open pr-2"></i>Salir</a>
+          <a href="logout.php"  class="dropdown-item pl-2"><i class="fas fa-door-open pr-2"></i>Salir</a>
         </div>
 
       </li>

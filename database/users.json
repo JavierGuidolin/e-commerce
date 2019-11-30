@@ -1,9 +1,5 @@
-{
-  "users": [{
-    "id": 1,
-    "nombre": "joseluis",
-    "correo": "admin@admin.com",
-    "contrasenia": "$2y$10$3XoGdc.NRmLySmRWDHq0Su2S.nEXCU0v5Xv7mlkHPpFWWuS39EAaG",
-    "fotoPerfil": "..\/img\/fotos-usuarios\/1.png"
-  }]
-}
+{"users":[
+
+  {"id":1,"nombre":"joseluis","correo":"admin@admin.com","contrasenia":"123456789","fotoPerfil":"..\/img\/fotos-usuarios\/1.png"},
+  {"id":2,"nombre":"pepes","correo":"pepe@admin.com","contrasenia":"$2y$10$bHPXPEBJayi8iLS\/gp4B4uS.LXO5WjeoVjV.FaNSCM1HcxzVIfX4i","fotoPerfil":"..\/img\/fotos-usuarios\/2.jpg"},
+  {"id":3,"nombre":"martin","correo":"martin@martin.com","contrasenia":"$2y$10$E.D28MmABbb7B7vXTf9kMeI.Q5qP9OvMpVCj1lgWuTMflskxUio9e","fotoPerfil":"..\/img\/fotos-usuarios\/3.jpg"}]}

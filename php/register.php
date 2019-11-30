@@ -1,5 +1,6 @@
 <?php
 
+session_start();
       require_once ("../modulos/validarRegistro.php");
       $resultadoValidacion = sinErrores();
 
@@ -7,17 +8,17 @@
 
         if ($_POST && $_FILES) {
 
-          $resultadoValidacion = validarRegistro($_POST);
+          $resultadoValidacion = validarRegistro($_POST); //Esta funcion devuelve los errores de la validacion
 
-          if (empty($resultadoValidacion)) {
+          if (empty($resultadoValidacion)) { //Si el resultado de la funcion varlidar Registro es vacio, procede a la carga de datos
 
-              $arrayUsuarios = json_decode(file_get_contents("../database/users.json"), true);
-              $idNuevo = count($arrayUsuarios["users"]) + 1;
+              $arrayUsuarios = json_decode(file_get_contents("../database/users.json"), true); //Trae el archivo con formato json y lo convierte en array
+              $idNuevo = count($arrayUsuarios["users"]) + 1; //Cuenta la cantidad de usuarios y le suma 1 para el nuevo usuario
 
-              $extension = pathinfo($_FILES["fotoPerfil"]["name"], PATHINFO_EXTENSION);
+              $extension = pathinfo($_FILES["fotoPerfil"]["name"], PATHINFO_EXTENSION); //Obtiene la extension de la imagen a cargar y la guarda en la variable $extension
               $cargaArchivo = move_uploaded_file($_FILES["fotoPerfil"]["tmp_name"], "../img/fotos-usuarios/". $idNuevo . "." . $extension);
 
-              $usuarioNuevo = [
+              $usuarioNuevo = [  //Carga los datos a registrar en el array $usuarioNuevo
                 "id" => $idNuevo,
                 "nombre" => $_POST["nombre"],
                 "correo" => $_POST["correo"],
@@ -51,7 +52,7 @@
   <link rel="stylesheet" href="../css/style.css">
 
   <link rel="shortcut icon" type="image/png" href="../img/bs-favicon.png" />
-  <title> BookStore | Login or Register</title>
+  <title> BookStore |  Register</title>
 
 </head>
 
@@ -68,7 +69,7 @@
         <div class="row">
           <article class="col-12">
             <div class="pl-4">
-              <h1 class="text-uppercase text-center">REGISTRO / LOGIN</h1>
+              <h1 class="text-uppercase text-center">REGISTRO</h1>
               <blockquote class="blockquote text-center">
                 <p class="mb-0 text-white-50">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
                 <footer class="text-white-50 blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
@@ -147,17 +148,7 @@
             <input type="submit" class="mt-3 submit" value="REGISTRARSE">
           </form>
         </div>
-        <div class="login">
-          <h2>Iniciar Sesión</h2>
-          <div class="login-items">
-            <input type="text" placeholder="Nombre de usuario" class="nombre">
-            <input type="password" placeholder="Contraseña" class="pass">
 
-            <button class="correo  text-white"><i class="fas fa-envelope"><a class="text-white" href="https://gmail.com"></i> Acceder con Correo</button>
-            <button class="fb text-white"><i class="fab fa-facebook-f"><a class=" text-white" href="https://facebook.com"></i> Acceder con Facebook</button>
-            <button class="tw  text-white"><i class="fab fa-twitter"><a class="text-white" href="https://twitter.com"></i> Acceder con Twitter</button>
-          </div>
-        </div>
       </div>
 </div>
 

@@ -87,7 +87,7 @@
     ];
 
   }
-  
+
 
   function emailRegistrado($mailComprobar){
 
@@ -105,7 +105,18 @@
 
     return $registrado;
 }
-
-
+//Agregado el 29/11
+function ValidarLogin($mails,$passw){ //Valida el usuario y la contraseña, comparando con el mail registrado en el archivo json, recibe por parametro los datos ingresados en el login
+  $valido = false;
+    $users =  json_decode(file_get_contents("../database/users.json"), true);
+      foreach ($users as $usuarios) {
+        foreach ($usuarios as $usuario) {
+          if (($usuario["correo"] == $_POST["correo"]) && (password_verify($_POST['contrasenia'], $usuario['contrasenia']))) {
+          $valido = true;
+         }
+      }
+      return $valido;
+      }
+}
 
  ?>
