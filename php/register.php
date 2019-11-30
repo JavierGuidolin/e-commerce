@@ -1,40 +1,47 @@
 <?php
 
-session_start();
-      require_once ("../modulos/validarRegistro.php");
-      $resultadoValidacion = sinErrores();
+      session_start();
 
-      $cargaArchivo = $insercionDato = "";
+      if (isset($_SESSION["user"])) { // Si existe el usuario en session no dejo cargar el REGISTRO
+        header("Location: ../index.php");
+      }else {
 
-        if ($_POST && $_FILES) {
+        require_once ("../modulos/validarRegistro.php");
+        $resultadoValidacion = sinErrores();
 
-          $resultadoValidacion = validarRegistro($_POST); //Esta funcion devuelve los errores de la validacion
+        $cargaArchivo = $insercionDato = "";
 
-          if (empty($resultadoValidacion)) { //Si el resultado de la funcion varlidar Registro es vacio, procede a la carga de datos
+          if ($_POST && $_FILES) {
 
-              $arrayUsuarios = json_decode(file_get_contents("../database/users.json"), true); //Trae el archivo con formato json y lo convierte en array
-              $idNuevo = count($arrayUsuarios["users"]) + 1; //Cuenta la cantidad de usuarios y le suma 1 para el nuevo usuario
+            $resultadoValidacion = validarRegistro($_POST); //Esta funcion devuelve los errores de la validacion
 
-              $extension = pathinfo($_FILES["fotoPerfil"]["name"], PATHINFO_EXTENSION); //Obtiene la extension de la imagen a cargar y la guarda en la variable $extension
-              $cargaArchivo = move_uploaded_file($_FILES["fotoPerfil"]["tmp_name"], "../img/fotos-usuarios/". $idNuevo . "." . $extension);
+            if (empty($resultadoValidacion)) { //Si el resultado de la funcion varlidar Registro es vacio, procede a la carga de datos
 
-              $usuarioNuevo = [  //Carga los datos a registrar en el array $usuarioNuevo
-                "id" => $idNuevo,
-                "nombre" => $_POST["nombre"],
-                "correo" => $_POST["correo"],
-                "contrasenia" => password_hash($_POST["contrasenia"], PASSWORD_DEFAULT),
-                "fotoPerfil" => "../img/fotos-usuarios/" . $idNuevo. "." . $extension ,
-              ];
+                $arrayUsuarios = json_decode(file_get_contents("../database/users.json"), true); //Trae el archivo con formato json y lo convierte en array
+                $idNuevo = count($arrayUsuarios) + 1; //Cuenta la cantidad de usuarios y le suma 1 para el nuevo usuario
+
+                $extension = pathinfo($_FILES["fotoPerfil"]["name"], PATHINFO_EXTENSION); //Obtiene la extension de la imagen a cargar y la guarda en la variable $extension
+                $cargaArchivo = move_uploaded_file($_FILES["fotoPerfil"]["tmp_name"], "../img/fotos-usuarios/". $idNuevo . "." . $extension);
+
+                $usuarioNuevo = [  //Carga los datos a registrar en el array $usuarioNuevo
+                  "id" => $idNuevo,
+                  "nombre" => $_POST["nombre"],
+                  "correo" => $_POST["correo"],
+                  "contrasenia" => password_hash($_POST["contrasenia"], PASSWORD_DEFAULT),
+                  "fotoPerfil" => "../img/fotos-usuarios/" . $idNuevo. "." . $extension ,
+                ];
 
 
-              $arrayUsuarios["users"][] = $usuarioNuevo;
+                $arrayUsuarios[] = $usuarioNuevo;
 
-              $usuarioFinal = json_encode($arrayUsuarios);
-              $insercionDato = file_put_contents("../database/users.json", $usuarioFinal);
+                $usuarioFinal = json_encode($arrayUsuarios);
+                $insercionDato = file_put_contents("../database/users.json", $usuarioFinal);
+
+              }
 
             }
 
-          }
+      }
 
  ?>
 
@@ -102,7 +109,7 @@ session_start();
 
       <?php if ($cargaArchivo && $insercionDato != 0 ): ?>
         <div class="alert alert-success" role="alert">
-          Usuario registrado satisfactoriamente. <a class="alert-link">Ya puedes loguearte</a>
+          Usuario registrado satisfactoriamente. <a href="loginbeta.php" class="alert-link">Ya puedes loguearte</a>
         <?php $_POST = ""; ?>
         </div>
       <?php endif; ?>

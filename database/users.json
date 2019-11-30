@@ -1,5 +1,1 @@
-{"users":[
-
-  {"id":1,"nombre":"joseluis","correo":"admin@admin.com","contrasenia":"123456789","fotoPerfil":"..\/img\/fotos-usuarios\/1.png"},
-  {"id":2,"nombre":"pepes","correo":"pepe@admin.com","contrasenia":"$2y$10$bHPXPEBJayi8iLS\/gp4B4uS.LXO5WjeoVjV.FaNSCM1HcxzVIfX4i","fotoPerfil":"..\/img\/fotos-usuarios\/2.jpg"},
-  {"id":3,"nombre":"martin","correo":"martin@martin.com","contrasenia":"$2y$10$E.D28MmABbb7B7vXTf9kMeI.Q5qP9OvMpVCj1lgWuTMflskxUio9e","fotoPerfil":"..\/img\/fotos-usuarios\/3.jpg"}]}
+[{"id":1,"nombre":"guachin","correo":"javierguidolin.o@gmail.com","contrasenia":"$2y$10$vvxV0wvLTnwAjPZ0SYyr0egqSSl7kW1WgPcodppdL8ky70i1GFlwi","fotoPerfil":"..\/img\/fotos-usuarios\/2.png"},{"id":2,"nombre":"administrador","correo":"administrador@administrador.com","contrasenia":"$2y$10$W\/at5X0t0JjMI5LL3vJ.GeHevpV6j5lTrPpstbHlXL0eppUnLHknS","fotoPerfil":"..\/img\/fotos-usuarios\/2.png"},{"id":3,"nombre":"guachin","correo":"guachin@guachin.com","contrasenia":"$2y$10$oDgPkNdwTy4I4urLxN2UuO257mHxagwMfX11FD0.hbmoqAM4aXU26","fotoPerfil":"..\/img\/fotos-usuarios\/3.png"}]

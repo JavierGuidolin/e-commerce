@@ -100,13 +100,16 @@
                }?></a>
 
 
-            <div class="dropdown-menu dropdown-menu-right">
-              <a href="php/register.php" class="dropdown-item pl-2 "><i class="dropdown-icon fas fa-user-edit pr-2"></i> Registrarse</a>
-              <a href="php/loginbeta.php" class="dropdown-item pl-2"><i class="dropdown-icon fas fa-sign-in-alt pr-2"></i> Iniciar sesion</a>
-              <a href="php/userAccount.php" class="dropdown-item pl-2"><i class="dropdown-icon fas fa-sign-in-alt pr-2"></i> Mi cuenta</a>
-              <div class="dropdown-divider"></div>
-              <a href="php/logout.php" class="dropdown-item pl-2"><i class="fas fa-door-open pr-2"></i>Salir</a>
-            </div>
+               <div class="dropdown-menu dropdown-menu-right">
+                 <?php if ($_SESSION): ?>
+                   <a href="php/userAccount.php" class="dropdown-item pl-2"><i class="dropdown-icon fas fa-sign-in-alt pr-2"></i> Mi cuenta</a>
+                   <div class="dropdown-divider"></div>
+                   <a href="php/logout.php"  class="dropdown-item pl-2"><i class="fas fa-door-open pr-2"></i>Salir</a>
+                 <?php else: ?>
+                   <a href="php/register.php" class="dropdown-item pl-2 "><i class="dropdown-icon fas fa-user-edit pr-2"></i> Registrarse</a>
+                   <a href="php/loginbeta.php" class="dropdown-item pl-2"><i class="dropdown-icon fas fa-sign-in-alt pr-2"></i> Iniciar sesion</a>
+                 <?php endif; ?>
+               </div>
 
           </li>
         </ul>

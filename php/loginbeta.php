@@ -1,25 +1,37 @@
 <?php
-require_once ("../modulos/validarRegistro.php");
-$mails="";
-$passw="";
-$error="";
-session_start();
+  session_start();
 
 
-    if ($_POST) {
-      $mails=$_POST["correo"];
-      $passw=$_POST["contrasenia"];
-      if (ValidarLogin($mails,$passw)==true) {
-      header("Location:../index.php");
 
-        $_SESSION['user']= $_POST['correo'];
-        var_dump($_SESSION);
-      }else {
-        $error="Usuario o contraseña invalido";
-            }
+  if (isset($_SESSION["user"])) { // Si existe el usuario en session no dejo cargar el login
+    header("Location: ../index.php");
+  }else {
+
+    require_once ("../modulos/validarRegistro.php");
+    require_once("../modulos/recuperarPassword.php");
+    $mails="";
+    $passw="";
+    $error="";
+
+        if ($_POST && isset($_POST["correo"]) && isset($_POST["contrasenia"])) {
+          $mails=$_POST["correo"];
+          $passw=$_POST["contrasenia"];
+          if (ValidarLogin($mails,$passw)==true) {
+          header("Location:../index.php");
+
+            $_SESSION['user']= $_POST['correo'];
+            //var_dump($_SESSION);
+          }else {
+            $error="Usuario o contraseña invalido";
+                }
+          }
 
 
-      }
+          if ($_POST && isset($_POST["recuperaContra"]) ) {
+              $contraseñaRecuperada = recuperarPassword($_POST["recuperaContra"]);
+          }
+
+  }
     ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -83,6 +95,12 @@ session_start();
       </div>
       <!-- EndPath -->
 
+      <?php if (isset($contraseñaRecuperada)): ?>
+        <div class="alert alert-success" role="alert">
+            <?= $contraseñaRecuperada; ?>
+        </div>
+      <?php endif; ?>
+
     </section>
 
     <div class="container-login">
@@ -91,10 +109,10 @@ session_start();
           <h2>Iniciar sesión</h2>
           <form action="loginbeta.php" method="post" enctype="multipart/form-data">
 
-  <input type="email" class="mb-1" name="correo" placeholder="Correo" class="correo"  >
+            <input type="email" class="mb-1" name="correo" placeholder="Correo" class="correo">
             <small id="nameHelp" class="mb-3 form-text text-danger"></small>
 
-        <input type="password" class="mb-1" name="contrasenia" placeholder="Contraseña" class="pass">
+            <input type="password" class="mb-1" name="contrasenia" placeholder="Contraseña" class="pass">
             <small id="nameHelp" class="mb-3 form-text text-danger"></small>
 
             <div class="form-check">
@@ -105,21 +123,48 @@ session_start();
                 </label>
               </div>
             </div>
-            <?php if ($error==!0): ?>
+            <?php if (isset($error) && $error==!0): ?>
               <div class="alert alert-danger" role="alert">
                 <?=$error?>
 
               </div>
             <?php endif; ?>
-            <input type="submit" class="mt-3 submit" value="INGRESAR">
 
+            <a class="d-block text-muted" href="" data-toggle="modal" data-target="#resetPass">Olvide mi contraseña</a>
+
+            <input type="submit" class="mt-3 submit" value="INGRESAR">
 
           </form>
         </div>
         </div>
 
       </div>
-</div>
+
+      <div class="modal fade" id="resetPass" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Recordar contraseña</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form action="loginbeta.php" method="POST">
+                <div class="form-group">
+                  <label for="email" class="col-form-label">Email:</label>
+                  <input type="email" class="form-control __resetPass" id="email" name="recuperaContra" placeholder="Ingresa tu email">
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="__closemodal" data-dismiss="modal">Close</button>
+                  <button type="submit" class="__sendEmail">Enviar email</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
   </main>
   <!-- EndMain -->
 

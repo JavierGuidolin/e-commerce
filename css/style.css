@@ -386,6 +386,33 @@ header.__background-login {
   background-position: center center;
 }
 
+.modal-dialog {
+  font-family: "Poppins", sans-serif;
+  font-size: 1em;
+}
+
+.modal-footer .__sendEmail, .modal-footer .__closemodal {
+  width: auto;
+  padding: 10px;
+  background: #f17108;
+  color: #fff;
+  font-size: 12px;
+  box-shadow: 0 0 3px 0 rgba(0, 0, 0, .2);
+  cursor: pointer;
+  border: none;
+}
+
+.modal-footer .__closemodal {
+  width: auto;
+  padding: 10px;
+  background: #5a5858;
+  color: #fff;
+  font-size: 12px;
+  box-shadow: 0 0 3px 0 rgba(0, 0, 0, .2);
+  cursor: pointer;
+  border: none;
+}
+
 /************************************ Pagina Carrito ***********************************/
 header.__background-cart {
   background: url("../img/bs-cart.jpg");
@@ -430,7 +457,8 @@ header.__background-cart {
 .register input[type="password"],
 .register input[type="email"],
 .register input[type="file"],
-.login input {
+.login input,
+.__resetPass {
   width: 100%;
   padding: 5px;
   font-size: 16px;
@@ -442,16 +470,17 @@ header.__background-cart {
   color: #333;
 }
 
-.register .__perfil-pic{
+.register .__perfil-pic {
   font-size: 1.3em;
 }
-.register .__perfil-pic::after{
+
+.register .__perfil-pic::after {
   content: "Buscar";
   background-color: #F39200;
   color: white;
 }
 
-.register .form-check-label{
+.register .form-check-label {
   font-size: 1.25em;
 }
 
@@ -468,7 +497,7 @@ header.__background-cart {
   font-size: 12px;
   box-shadow: 0 0 3px 0 rgba(0, 0, 0, .2);
   cursor: pointer;
-  border:none;
+  border: none;
 }
 
 .register::after {
@@ -559,6 +588,7 @@ header.__background-contacto {
 .__side {
   background-color: #F39200;
 }
+
 /************************************ Pagina Perfil ***********************************/
 header.__background-perfil {
   background: url("../img/bs-book-right.jpg");

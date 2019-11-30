@@ -12,7 +12,7 @@
           if (strlen($camposAValidar["nombre"]) < 4) {
             $errores["nombre"] = "El nombre debe contener 4 o mas caracteres.";
           } elseif (!preg_match($patron, $camposAValidar["nombre"])){
-            $errores["nombre"] .= "<br> El nombre debe contener solo letras.";
+            $errores["nombre"] = "<br> El nombre debe contener solo letras.";
           }
         }
 
@@ -22,7 +22,7 @@
           if (!filter_var($camposAValidar["correo"], FILTER_VALIDATE_EMAIL)) {
             $errores["correo"] = "<br> Formato incorrecto de email.";
           } elseif (emailRegistrado($camposAValidar["correo"])) {
-            $errores["correo"] .= "<br> El email ya se encuentra registrado.";
+            $errores["correo"] = "<br> El email ya se encuentra registrado.";
           }
         }
 
@@ -31,7 +31,7 @@
           if (strlen($camposAValidar["contrasenia"]) < 8) {
             $errores["contrasenia"] = "<br> La contrasenia debe tener al menos 8 caracteres.";
           } elseif (!ctype_alnum($camposAValidar["contrasenia"])){
-            $errores["contrasenia"] .= "<br> La contraseña debe ser alfanumerica.";
+            $errores["contrasenia"] = "<br> La contraseña debe ser alfanumerica.";
           }
         }
 
@@ -50,9 +50,9 @@
           if ($_FILES["fotoPerfil"]["error"] != 0) {
             $errores["fotoPerfil"] = "<br> Hubo un problema al cargar la foto.";
           }elseif(($extension != "jpg") && ($extension != "jpeg") && ($extension != "png")){
-            $errores["fotoPerfil"] .= "<br> La foto debe ser png, jpg o jpeg.";
+            $errores["fotoPerfil"] = "<br> La foto debe ser png, jpg o jpeg.";
           }elseif ($_FILES["fotoPerfil"]["size"] > 5000000) {
-            $errores["fotoPerfil"] .= "<br> La foto no debe superar los 5MB";
+            $errores["fotoPerfil"] = "<br> La foto no debe superar los 5MB";
           }
 
         }
@@ -94,12 +94,11 @@
       $registrado = false;
       $users =  json_decode(file_get_contents("../database/users.json"), true);
 
-      foreach ($users as $usuarios) {
-        foreach ($usuarios as $usuario) {
+      foreach ($users as $usuario) {
+
           if ($usuario["correo"] == $mailComprobar) {
             $registrado = true;
           }
-        }
 
       }
 
@@ -109,14 +108,14 @@
 function ValidarLogin($mails,$passw){ //Valida el usuario y la contraseña, comparando con el mail registrado en el archivo json, recibe por parametro los datos ingresados en el login
   $valido = false;
     $users =  json_decode(file_get_contents("../database/users.json"), true);
-      foreach ($users as $usuarios) {
-        foreach ($usuarios as $usuario) {
-          if (($usuario["correo"] == $_POST["correo"]) && (password_verify($_POST['contrasenia'], $usuario['contrasenia']))) {
-          $valido = true;
-         }
+
+     foreach ($users as $usuario) {
+      if ($usuario["correo"] == $_POST["correo"] && password_verify($_POST['contrasenia'], $usuario['contrasenia'])) {
+        $valido = true;
       }
-      return $valido;
-      }
+    }
+
+    return $valido;
 }
 
  ?>
