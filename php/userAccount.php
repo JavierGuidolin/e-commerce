@@ -1,4 +1,56 @@
-<?php session_start(); ?>
+<?php
+
+  session_start();
+
+  require_once ("../modulos/validarRegistro.php");
+  $resultadoValidacion = sinErrores();
+  $dataUsuario = recuperarUsuario($_SESSION["user"]);
+
+    if ($_POST && $_FILES) {
+
+      $cargaArchivo = $insercionDato = "";
+
+      $resultadoValidacion = validarRegistro($_POST); //Esta funcion devuelve los errores de la validacion
+
+        if (empty($resultadoValidacion)) { //Si el resultado de la funcion varlidar Registro es vacio, procede a la carga de datos
+
+          $users = json_decode(file_get_contents("../database/users.json"), true); //Trae el archivo con formato json y lo convierte en array
+
+          if (!empty($_FILES["fotoPerfil"]["name"])) { //Compruebo si sube foto
+            $extension = pathinfo($_FILES["fotoPerfil"]["name"], PATHINFO_EXTENSION); //Obtiene la extension de la imagen a cargar y la guarda en la variable $extension
+            $cargaArchivo = move_uploaded_file($_FILES["fotoPerfil"]["tmp_name"], "../img/fotos-usuarios/". $idNuevo . "." . $extension);
+            $path = "../img/fotos-usuarios/" . $dataUsuario["id"] . "." . $extension;
+          }else{
+            $path = $dataUsuario["fotoPerfil"];
+          }
+
+          foreach ($users as $key => $usuario) {
+            if ($usuario["correo"] == $dataUsuario["correo"] ) {
+              $users[$key]["nombre"] = $_POST["nombre"];
+              $users[$key]["correo"] = $_POST["correo"];
+              $users[$key]["contrasenia"] = password_hash($_POST["contrasenia"], PASSWORD_DEFAULT);
+              $users[$key]["fotoPerfil"] = $path;
+              break;
+            }
+
+          }
+
+          $usuarioFinal = json_encode($users);
+          $insercionDato = file_put_contents("../database/users.json", $usuarioFinal);
+
+        }
+
+        header("Location: userAccount.php?actualiza=end");
+
+      }
+
+      $display ="d-none";
+      if (isset($_GET["editar"]) && ($_GET["editar"]) == "editar") {
+        $display= "d-block";
+      }
+
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -60,7 +112,14 @@
       </div>
       <!-- EndPath -->
 
-    </section>
+
+      <?php if (isset($_GET["actualiza"]) && $_GET["actualiza"] == "end" ): ?>
+        <div class="alert alert-success" role="alert">
+          Datos actualizados correctamente.
+        </div>
+      <?php endif; ?>
+
+
     <section id="profile">
 
       <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
@@ -75,19 +134,19 @@
             <div class="author-card pb-3">
 
                 <div class="author-card-profile">
-                    <div class="author-card-avatar"><img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="Daniel Adams">
+                    <div class="author-card-avatar"><img src="<?= $dataUsuario["fotoPerfil"]?>" alt="h">
                     </div>
                     <div class="author-card-details">
-                        <h5 class="author-card-name text-lg">Nombre usuario</h5><span class="author-card-position">Joined February 06, 2017</span>
+                        <h5 class="author-card-name text-lg"><?= $dataUsuario["nombre"] ?></h5><span class="author-card-position">Joined February 06, 2017</span>
                     </div>
                 </div>
             </div>
             <div class="wizard">
                 <nav class="list-group list-group-flush">
-                  <a class="list-group-item" href="userAccount.php">
+                  <a class="list-group-item" href="userAccount.php?editar=editar">
                   <div class="d-flex justify-content-between align-items-center">
                       <div><i class="fa fa-shopping-bag mr-1 text-muted"></i>
-                          <div class="d-inline-block font-weight-medium text-uppercase">configurar perfil</div>
+                          <div class="d-inline-block font-weight-medium text-uppercase">Configurar perfil</div>
                       </div><span class="badge badge-secondary"></span>
                   </div>
                     </a>
@@ -117,75 +176,64 @@
             </div>
         </div>
         <!-- Wishlist-->
+
         <div class="col-lg-8 pb-5">
             <!-- Item-->
-            <div class="tab-pane active" id="home">
+            <div class="tab-pane active <?php echo $display ?>" id="home">
+              <h2>Actualizar mis datos</h2>
                 <hr>
-                  <form class="form" action="##" method="post" id="registrationForm">
-                      <div class="form-group">
+                  <form action="userAccount.php" method="POST" enctype="multipart/form-data">
 
-                          <div class="col-xs-6">
-                              <label for="first_name"><h4>First name</h4></label>
-                              <input type="text" class="form-control" name="first_name" id="first_name" placeholder="first name" title="enter your first name if any.">
-                          </div>
-                      </div>
-                      <div class="form-group">
-
-                          <div class="col-xs-6">
-                            <label for="last_name"><h4>Last name</h4></label>
-                              <input type="text" class="form-control" name="last_name" id="last_name" placeholder="last name" title="enter your last name if any.">
-                          </div>
-                      </div>
+                    <input type="hidden" name="actualizarData" value="2">
 
                       <div class="form-group">
-
                           <div class="col-xs-6">
-                              <label for="phone"><h4>Phone</h4></label>
-                              <input type="text" class="form-control" name="phone" id="phone" placeholder="enter phone" title="enter your phone number if any.">
+                              <label for="nombre">Nombre</label>
+                              <input type="text" class="form-control" name="nombre" id="nombre" placeholder="Nombre" value="<?= $dataUsuario["nombre"]?>">
+                              <small id="nameHelp" class="mb-3 form-text text-danger"><?= isset($resultadoValidacion['nombre']) ? $resultadoValidacion['nombre'] : "" ?></small>
                           </div>
                       </div>
 
                       <div class="form-group">
                           <div class="col-xs-6">
-                             <label for="mobile"><h4>Mobile</h4></label>
-                              <input type="text" class="form-control" name="mobile" id="mobile" placeholder="enter mobile number" title="enter your mobile number if any.">
+                              <label for="correo">Email</label>
+                              <input type="email" class="form-control" name="correo" id="correo" placeholder="email@email.com" value="<?= $dataUsuario["correo"]?>">
+                              <small id="nameHelp" class="mb-3 form-text text-danger"><?= isset($resultadoValidacion['correo']) ? $resultadoValidacion['correo'] : "" ?></small>
                           </div>
                       </div>
-                      <div class="form-group">
 
+                      <div class="form-group">
                           <div class="col-xs-6">
-                              <label for="email"><h4>Email</h4></label>
-                              <input type="email" class="form-control" name="email" id="email" placeholder="you@email.com" title="enter your email.">
+                              <label for="contrasenia">Contraseña</label>
+                              <input type="password" class="form-control" name="contrasenia" id="contrasenia" placeholder="password">
+                              <small id="nameHelp" class="mb-3 form-text text-danger"><?= isset($resultadoValidacion['contrasenia']) ? $resultadoValidacion['contrasenia'] : "" ?></small>
                           </div>
                       </div>
-                      <div class="form-group">
 
+                      <div class="form-group">
                           <div class="col-xs-6">
-                              <label for="email"><h4>Location</h4></label>
-                              <input type="email" class="form-control" id="location" placeholder="somewhere" title="enter a location">
+                            <label for="confirmaContra">Repite tu contraseña</label>
+                            <input type="password" class="form-control" name="confirmaContra" id="confirmaContra" placeholder="Repetir password">
+                            <small id="nameHelp" class="mb-3 form-text text-danger"><?= isset($resultadoValidacion['contrasenia']) ? $resultadoValidacion['contrasenia'] : "" ?></small>
                           </div>
                       </div>
-                      <div class="form-group">
 
-                          <div class="col-xs-6">
-                              <label for="password"><h4>Password</h4></label>
-                              <input type="password" class="form-control" name="password" id="password" placeholder="password" title="enter your password.">
-                          </div>
-                      </div>
                       <div class="form-group">
+                        <div class="custom-file">
+                            <input type="file" class="custom-file-input" id="fotoPerfil" name="fotoPerfil">
+                            <label class="custom-file-label" for="customFile">Foto de perfil</label>
+                        </div>
+                        <small id="nameHelp" class="mb-3 form-text text-danger"><?= isset($resultadoValidacion['fotoPerfil']) ? $resultadoValidacion['fotoPerfil'] : "" ?></small>
+                      </div>
 
-                          <div class="col-xs-6">
-                            <label for="password2"><h4>Verify</h4></label>
-                              <input type="password" class="form-control" name="password2" id="password2" placeholder="password2" title="enter your password2.">
-                          </div>
-                      </div>
                       <div class="form-group">
-                           <div class="col-xs-12">
-                                <br>
-                                <button class="btn btn-lg btn-success" type="submit"><i class="glyphicon glyphicon-ok-sign"></i> Save</button>
-                                <button class="btn btn-lg" type="reset"><i class="glyphicon glyphicon-repeat"></i> Reset</button>
-                            </div>
+                        <div class="col-xs-12">
+                            <br>
+                            <button class="btn btn-success" type="submit"> Guardar</button>
+                            <button class="btn" type="button"> Cancelar</button>
+                        </div>
                       </div>
+
                 </form>
 
               </hr>
@@ -195,10 +243,7 @@
 
             <!-- Item-->
 
-            <div class="custom-control custom-checkbox">
-                <input class="custom-control-input" type="checkbox" checked="" id="inform-me">
-                <label class="custom-control-label" for="inform-me">Deseo suscribirme al newsletter</label>
-            </div>
+
         </div>
     </div>
 </div>

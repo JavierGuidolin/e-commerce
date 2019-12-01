@@ -9,7 +9,8 @@
         require_once ("../modulos/validarRegistro.php");
         $resultadoValidacion = sinErrores();
 
-        $cargaArchivo = $insercionDato = "";
+        $cargaArchivo = true;
+        $insercionDato = "";
 
           if ($_POST && $_FILES) {
 
@@ -20,15 +21,21 @@
                 $arrayUsuarios = json_decode(file_get_contents("../database/users.json"), true); //Trae el archivo con formato json y lo convierte en array
                 $idNuevo = count($arrayUsuarios) + 1; //Cuenta la cantidad de usuarios y le suma 1 para el nuevo usuario
 
-                $extension = pathinfo($_FILES["fotoPerfil"]["name"], PATHINFO_EXTENSION); //Obtiene la extension de la imagen a cargar y la guarda en la variable $extension
-                $cargaArchivo = move_uploaded_file($_FILES["fotoPerfil"]["tmp_name"], "../img/fotos-usuarios/". $idNuevo . "." . $extension);
+
+                if (!empty($_FILES["fotoPerfil"]["name"])) { //Compruebo si sube foto
+                  $extension = pathinfo($_FILES["fotoPerfil"]["name"], PATHINFO_EXTENSION); //Obtiene la extension de la imagen a cargar y la guarda en la variable $extension
+                  $cargaArchivo = move_uploaded_file($_FILES["fotoPerfil"]["tmp_name"], "../img/fotos-usuarios/". $idNuevo . "." . $extension);
+                  $path = "../img/fotos-usuarios/" . $idNuevo. "." . $extension;
+                }else{
+                  $path = "../img/fotos-usuarios/defecto.jpg";
+                }
 
                 $usuarioNuevo = [  //Carga los datos a registrar en el array $usuarioNuevo
                   "id" => $idNuevo,
                   "nombre" => $_POST["nombre"],
                   "correo" => $_POST["correo"],
                   "contrasenia" => password_hash($_POST["contrasenia"], PASSWORD_DEFAULT),
-                  "fotoPerfil" => "../img/fotos-usuarios/" . $idNuevo. "." . $extension ,
+                  "fotoPerfil" => $path
                 ];
 
 
@@ -36,7 +43,6 @@
 
                 $usuarioFinal = json_encode($arrayUsuarios);
                 $insercionDato = file_put_contents("../database/users.json", $usuarioFinal);
-
               }
 
             }
@@ -122,6 +128,8 @@
         <div class="register">
           <h2>Registrarse</h2>
           <form action="register.php" method="post" enctype="multipart/form-data">
+
+            <input type="hidden" name="actualizarData" value="1">
 
             <input type="text" class="mb-1" name="nombre" placeholder="Nombre" class="nombre" value="<?=persistir($resultadoValidacion, 'nombre'); ?>">
             <small id="nameHelp" class="mb-3 form-text text-danger"><?= isset($resultadoValidacion['nombre']) ? $resultadoValidacion['nombre'] : "" ?></small>

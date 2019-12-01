@@ -21,8 +21,10 @@
 
           if (!filter_var($camposAValidar["correo"], FILTER_VALIDATE_EMAIL)) {
             $errores["correo"] = "<br> Formato incorrecto de email.";
-          } elseif (emailRegistrado($camposAValidar["correo"])) {
+          } elseif ($camposAValidar["actualizarData"]!=2) {
+          if (emailRegistrado($camposAValidar["correo"])) {
             $errores["correo"] = "<br> El email ya se encuentra registrado.";
+          }
           }
         }
 
@@ -43,12 +45,14 @@
         }
 
         //fotoPerfil
-        if (isset($_FILES["fotoPerfil"])) {
+        if (isset($_FILES["fotoPerfil"]["name"]) && !empty($_FILES["fotoPerfil"]["name"])) {
 
           $extension = pathinfo($_FILES["fotoPerfil"]["name"], PATHINFO_EXTENSION);
 
           if ($_FILES["fotoPerfil"]["error"] != 0) {
             $errores["fotoPerfil"] = "<br> Hubo un problema al cargar la foto.";
+          }elseif($_FILES["fotoPerfil"]["error"] == 4){
+              $errores["fotoPerfil"] = "";
           }elseif(($extension != "jpg") && ($extension != "jpeg") && ($extension != "png")){
             $errores["fotoPerfil"] = "<br> La foto debe ser png, jpg o jpeg.";
           }elseif ($_FILES["fotoPerfil"]["size"] > 5000000) {
@@ -116,6 +120,21 @@ function ValidarLogin($mails,$passw){ //Valida el usuario y la contraseña, comp
     }
 
     return $valido;
+}
+
+
+  function recuperarUsuario($email){
+    $users =  json_decode(file_get_contents("../database/users.json"), true);
+    foreach ($users as $usuario) {
+     if ($usuario["correo"] == $email) {
+       return $usuario;
+     }
+  }
+}
+
+function recuperarTodosUsuarios(){
+  $users =  json_decode(file_get_contents("../database/users.json"), true);
+  return $users;
 }
 
  ?>

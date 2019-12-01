@@ -1,1 +1,7 @@
-[{"id":1,"nombre":"guachin","correo":"javierguidolin.o@gmail.com","contrasenia":"$2y$10$vvxV0wvLTnwAjPZ0SYyr0egqSSl7kW1WgPcodppdL8ky70i1GFlwi","fotoPerfil":"..\/img\/fotos-usuarios\/2.png"},{"id":2,"nombre":"administrador","correo":"administrador@administrador.com","contrasenia":"$2y$10$W\/at5X0t0JjMI5LL3vJ.GeHevpV6j5lTrPpstbHlXL0eppUnLHknS","fotoPerfil":"..\/img\/fotos-usuarios\/2.png"},{"id":3,"nombre":"guachin","correo":"guachin@guachin.com","contrasenia":"$2y$10$oDgPkNdwTy4I4urLxN2UuO257mHxagwMfX11FD0.hbmoqAM4aXU26","fotoPerfil":"..\/img\/fotos-usuarios\/3.png"}]
+[{
+  "id": 1,
+  "nombre": "administrador jr",
+  "correo": "admin@admin.com",
+  "contrasenia": "$2y$10$sDlHJBFkOh0paWeV0\/5o5essuglYjG8To2ASFaXQ69RPFFpBtUCZS",
+  "fotoPerfil": "..\/img\/fotos-usuarios\/1.png"
+}]
