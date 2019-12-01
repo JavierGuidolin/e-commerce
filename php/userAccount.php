@@ -2,52 +2,57 @@
 
   session_start();
 
-  require_once ("../modulos/validarRegistro.php");
-  $resultadoValidacion = sinErrores();
-  $dataUsuario = recuperarUsuario($_SESSION["user"]);
+  if (!isset($_SESSION["user"])) {
 
-    if ($_POST && $_FILES) {
+    header("Location: ../index.php");
 
-      $cargaArchivo = $insercionDato = "";
+  }else{
 
-      $resultadoValidacion = validarRegistro($_POST); //Esta funcion devuelve los errores de la validacion
+    require_once ("../modulos/validarRegistro.php");
+    $resultadoValidacion = sinErrores();
+    $dataUsuario = recuperarUsuario($_SESSION["user"]);
 
-        if (empty($resultadoValidacion)) { //Si el resultado de la funcion varlidar Registro es vacio, procede a la carga de datos
+      if ($_POST && $_FILES) {
 
-          $users = json_decode(file_get_contents("../database/users.json"), true); //Trae el archivo con formato json y lo convierte en array
+        $resultadoValidacion = validarRegistro($_POST); //Esta funcion devuelve los errores de la validacion
 
-          if (!empty($_FILES["fotoPerfil"]["name"])) { //Compruebo si sube foto
-            $extension = pathinfo($_FILES["fotoPerfil"]["name"], PATHINFO_EXTENSION); //Obtiene la extension de la imagen a cargar y la guarda en la variable $extension
-            $cargaArchivo = move_uploaded_file($_FILES["fotoPerfil"]["tmp_name"], "../img/fotos-usuarios/". $idNuevo . "." . $extension);
-            $path = "../img/fotos-usuarios/" . $dataUsuario["id"] . "." . $extension;
-          }else{
-            $path = $dataUsuario["fotoPerfil"];
-          }
+          if (empty($resultadoValidacion)) { //Si el resultado de la funcion varlidar Registro es vacio, procede a la carga de datos
 
-          foreach ($users as $key => $usuario) {
-            if ($usuario["correo"] == $dataUsuario["correo"] ) {
-              $users[$key]["nombre"] = $_POST["nombre"];
-              $users[$key]["correo"] = $_POST["correo"];
-              $users[$key]["contrasenia"] = password_hash($_POST["contrasenia"], PASSWORD_DEFAULT);
-              $users[$key]["fotoPerfil"] = $path;
-              break;
+            $users = json_decode(file_get_contents("../database/users.json"), true); //Trae el archivo con formato json y lo convierte en array
+
+            if (!empty($_FILES["fotoPerfil"]["name"])) { //Compruebo si sube foto
+              $extension = pathinfo($_FILES["fotoPerfil"]["name"], PATHINFO_EXTENSION); //Obtiene la extension de la imagen a cargar y la guarda en la variable $extension
+              $cargaArchivo = move_uploaded_file($_FILES["fotoPerfil"]["tmp_name"], "../img/fotos-usuarios/". $idNuevo . "." . $extension);
+              $path = "../img/fotos-usuarios/" . $dataUsuario["id"] . "." . $extension;
+            }else{
+              $path = $dataUsuario["fotoPerfil"];
             }
 
+            foreach ($users as $key => $usuario) {
+              if ($usuario["correo"] == $dataUsuario["correo"] ) {
+                $users[$key]["nombre"] = $_POST["nombre"];
+                $users[$key]["correo"] = $_POST["correo"];
+                $users[$key]["contrasenia"] = password_hash($_POST["contrasenia"], PASSWORD_DEFAULT);
+                $users[$key]["fotoPerfil"] = $path;
+                break;
+              }
+
+            }
+
+            $usuarioFinal = json_encode($users);
+            $insercionDato = file_put_contents("../database/users.json", $usuarioFinal);
+
           }
-
-          $usuarioFinal = json_encode($users);
-          $insercionDato = file_put_contents("../database/users.json", $usuarioFinal);
-
+          header("Location: userAccount.php?actualiza=end");
         }
 
-        header("Location: userAccount.php?actualiza=end");
-
+        //Por defecto no muestro el form de datos. Si lo pide lo despliego
+        $display ="d-none";
+        if (isset($_GET["editar"]) && ($_GET["editar"]) == "editar") {
+          $display= "d-block";
       }
 
-      $display ="d-none";
-      if (isset($_GET["editar"]) && ($_GET["editar"]) == "editar") {
-        $display= "d-block";
-      }
+    }
 
 ?>
 

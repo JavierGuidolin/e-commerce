@@ -70,8 +70,9 @@
 
       <li class="nav-item dropdown">
 
-        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
-          <i class="__icono-usuario fas fa-user-circle pr-1 pl-2"></i><?php if ($_SESSION) {
+        <a href="#" class="nav-link dropdown-toggle text-white" data-toggle="dropdown">
+        <i class="__icono-usuario fas fa-user-circle pr-1 pl-2"></i>
+        <?php if ($_SESSION) {
            echo $_SESSION["user"];}else {
              echo "Perfil";
            }?></a>
