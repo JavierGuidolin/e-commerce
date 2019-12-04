@@ -20,10 +20,17 @@
           header("Location:../index.php");
 
             $_SESSION['user']= $_POST['correo'];
-            //var_dump($_SESSION);
-          }else {
+
+          }if ($_POST["recordarme"]=='on') {
+            setcookie("Email",$_POST["correo"], time()+120);
+            setcookie("Pass",$_POST["contrasenia"], time()+120);
+
+          }
+
+          else {
             $error="Usuario o contraseña invalido";
                 }
+
           }
 
 

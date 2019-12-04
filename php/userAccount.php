@@ -225,8 +225,8 @@
 
                       <div class="form-group">
                         <div class="custom-file">
-                            <input type="file" class="custom-file-input" id="fotoPerfil" name="fotoPerfil">
-                            <label class="custom-file-label" for="customFile">Foto de perfil</label>
+                            <input type="file"  class="custom-file-input" id="fotoPerfil" name="fotoPerfil">
+                            <label class="custom-file-label"  for="customFile">Foto de perfil</label>
                         </div>
                         <small id="nameHelp" class="mb-3 form-text text-danger"><?= isset($resultadoValidacion['fotoPerfil']) ? $resultadoValidacion['fotoPerfil'] : "" ?></small>
                       </div>
@@ -234,8 +234,8 @@
                       <div class="form-group">
                         <div class="col-xs-12">
                             <br>
-                            <button class="btn btn-success" type="submit"> Guardar</button>
-                            <button class="btn" type="button"> Cancelar</button>
+                            <button class="__botonguardar btn " type="submit"> Guardar</button>
+                            <button class="__botoncancelar btn btn-danger" type="button"> Cancelar</button>
                         </div>
                       </div>
 

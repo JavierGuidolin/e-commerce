@@ -1,7 +1,1 @@
-[{
-  "id": 1,
-  "nombre": "administrador jr",
-  "correo": "admin@admin.com",
-  "contrasenia": "$2y$10$sDlHJBFkOh0paWeV0\/5o5essuglYjG8To2ASFaXQ69RPFFpBtUCZS",
-  "fotoPerfil": "..\/img\/fotos-usuarios\/1.png"
-}]
+[{"id":1,"nombre":"administrador jr","correo":"admin@admin.com","contrasenia":"$2y$10$sDlHJBFkOh0paWeV0\/5o5essuglYjG8To2ASFaXQ69RPFFpBtUCZS","fotoPerfil":"..\/img\/fotos-usuarios\/1.png"},{"id":2,"nombre":"Martin","correo":"martin@martin.com","contrasenia":"$2y$10$Oim98S75OjFHRnY0sqz0RubZkYbBEDVYCK0JFJmdVaDX7Dsxzlilm","fotoPerfil":"..\/img\/fotos-usuarios\/2.jpg"}]

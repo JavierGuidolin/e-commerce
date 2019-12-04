@@ -4,6 +4,9 @@
 @import url('https://fonts.googleapis.com/css?family=Ropa+Sans&display=swap');
 
 /************************************ Generales ***********************************/
+
+
+
 body {
   font-family: "Poppins", sans-serif;
   font-size: 12px;
@@ -596,4 +599,12 @@ header.__background-perfil {
   background-repeat: no-repeat;
   min-height: 50vh;
   background-position: center center;
+}
+.__botonguardar{
+  color: #FFF;
+  background-color: #F39200;
+  border-color: #F39200;
+}
+.custom-file-label::after {
+  content: "Explorar";
 }
