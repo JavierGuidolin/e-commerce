@@ -8,7 +8,7 @@
 
   }else{
 
-    require_once ("../modulos/validarRegistro.php");
+    require_once("../modulos/validarRegistro.php");
     $resultadoValidacion = sinErrores();
     $dataUsuario = recuperarUsuario($_SESSION["user"]);
 

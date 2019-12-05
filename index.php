@@ -125,7 +125,7 @@
           <article class="col-xs-6 col-md-6 col-xl-6">
             <div class="pl-4">
               <h1 class="text-uppercase"><span>B</span>ook<span>S</span>tore</h1>
-              <h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h2>
+              <h2><?php print_r($_COOKIE["Email"]); ?></h2>
               <h3><a class="text-reset" href="php/products.php">Comprar Ahora! <i class="fas fa-arrow-circle-right"></i></a></h3>
             </div>
           </article>

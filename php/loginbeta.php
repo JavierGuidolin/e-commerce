@@ -7,7 +7,7 @@
     header("Location: ../index.php");
   }else {
 
-    require_once ("../modulos/validarRegistro.php");
+    require_once("../modulos/validarRegistro.php");
     require_once("../modulos/recuperarPassword.php");
     $mails="";
     $passw="";
@@ -21,9 +21,10 @@
 
             $_SESSION['user']= $_POST['correo'];
 
-          }if ($_POST["recordarme"]=='on') {
-            setcookie("Email",$_POST["correo"], time()+120);
-            setcookie("Pass",$_POST["contrasenia"], time()+120);
+          }
+          if ($_POST["recordarme"]=='recordarme') {
+            setcookie("Email",$_POST["correo"], time()+3600,'/');
+            setcookie("Pass",$_POST["contrasenia"], time()+3600,'/');
 
           }
 
