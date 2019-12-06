@@ -1,6 +1,8 @@
 <?php
 
   session_start();
+  $disableInput = "disabled";
+  $insercionDato = "";
 
   if (!isset($_SESSION["user"])) {
 
@@ -22,7 +24,8 @@
 
             if (!empty($_FILES["fotoPerfil"]["name"])) { //Compruebo si sube foto
               $extension = pathinfo($_FILES["fotoPerfil"]["name"], PATHINFO_EXTENSION); //Obtiene la extension de la imagen a cargar y la guarda en la variable $extension
-              $cargaArchivo = move_uploaded_file($_FILES["fotoPerfil"]["tmp_name"], "../img/fotos-usuarios/". $idNuevo . "." . $extension);
+              unlink($dataUsuario["fotoPerfil"]);
+              $cargaArchivo = move_uploaded_file($_FILES["fotoPerfil"]["tmp_name"], "../img/fotos-usuarios/". $dataUsuario["id"] . "." . $extension);
               $path = "../img/fotos-usuarios/" . $dataUsuario["id"] . "." . $extension;
             }else{
               $path = $dataUsuario["fotoPerfil"];
@@ -31,8 +34,13 @@
             foreach ($users as $key => $usuario) {
               if ($usuario["correo"] == $dataUsuario["correo"] ) {
                 $users[$key]["nombre"] = $_POST["nombre"];
-                $users[$key]["correo"] = $_POST["correo"];
-                $users[$key]["contrasenia"] = password_hash($_POST["contrasenia"], PASSWORD_DEFAULT);
+                $users[$key]["apellido"] = $_POST["apellido"];
+                $users[$key]["direccion"] = $_POST["direccion"];
+                $users[$key]["correo"] = $_SESSION["user"];
+                $users[$key]["ciudad"] = $_POST["ciudad"];
+                $users[$key]["provincia"] = $_POST["provincia"];
+                $users[$key]["cp"] = $_POST["cp"];
+                $users[$key]["telefono"] = $_POST["telefono"];
                 $users[$key]["fotoPerfil"] = $path;
                 break;
               }
@@ -41,15 +49,20 @@
 
             $usuarioFinal = json_encode($users);
             $insercionDato = file_put_contents("../database/users.json", $usuarioFinal);
+            header("Location: userAccount.php?edicion=end");
 
+          }else {
+            $disableInput = "";
           }
-          header("Location: userAccount.php?actualiza=end");
         }
 
-        //Por defecto no muestro el form de datos. Si lo pide lo despliego
-        $display ="d-none";
-        if (isset($_GET["editar"]) && ($_GET["editar"]) == "editar") {
-          $display= "d-block";
+       //Por defecto muestro el form disabled, si quiere editar habilito
+       if (isset($_GET["editar"]) && ($_GET["editar"]) == "editar") {
+        $disableInput= "";
+      }
+
+      if ($_POST && isset($_POST["contrasenia"]) && isset($_POST["confirmaContra"])  ) {
+          $contraseniaActualizada = actualizarContraseña($_SESSION["user"], $_POST["contrasenia"], $_POST["confirmaContra"]);
       }
 
     }
@@ -118,9 +131,15 @@
       <!-- EndPath -->
 
 
-      <?php if (isset($_GET["actualiza"]) && $_GET["actualiza"] == "end" ): ?>
+      <?php if (isset($_GET["edicion"]) && $_GET["edicion"] == "end" ): ?>
         <div class="alert alert-success" role="alert">
           Datos actualizados correctamente.
+        </div>
+      <?php endif; ?>
+
+      <?php if (isset($contraseniaActualizada)): ?>
+        <div class="alert alert-success" role="alert">
+          <?=$contraseniaActualizada?>
         </div>
       <?php endif; ?>
 
@@ -139,10 +158,10 @@
             <div class="author-card pb-3">
 
                 <div class="author-card-profile">
-                    <div class="author-card-avatar"><img src="<?= $dataUsuario["fotoPerfil"]?>" alt="h">
+                    <div class="author-card-avatar"><img src="<?= $dataUsuario["fotoPerfil"]?>" alt="Foto de perfil">
                     </div>
                     <div class="author-card-details">
-                        <h5 class="author-card-name text-lg"><?= $dataUsuario["nombre"] ?></h5><span class="author-card-position">Joined February 06, 2017</span>
+                        <h5 class="author-card-name text-lg"><?= $dataUsuario["nombre"] . " " . $dataUsuario["apellido"] ?></h5><span class="author-card-position">Joined February 06, 2017</span>
                     </div>
                 </div>
             </div>
@@ -187,72 +206,147 @@
             <div class="tab-pane active <?php echo $display ?>" id="home">
               <h2>Actualizar mis datos</h2>
                 <hr>
-                  <form action="userAccount.php" method="POST" enctype="multipart/form-data">
+                <form action="userAccount.php" method="POST" enctype="multipart/form-data">
 
-                    <input type="hidden" name="actualizarData" value="2">
+                      <input type="hidden" name="actualizarData" value="2">
 
-                      <div class="form-group">
-                          <div class="col-xs-6">
-                              <label for="nombre">Nombre</label>
-                              <input type="text" class="form-control" name="nombre" id="nombre" placeholder="Nombre" value="<?= $dataUsuario["nombre"]?>">
-                              <small id="nameHelp" class="mb-3 form-text text-danger"><?= isset($resultadoValidacion['nombre']) ? $resultadoValidacion['nombre'] : "" ?></small>
-                          </div>
-                      </div>
-
-                      <div class="form-group">
-                          <div class="col-xs-6">
-                              <label for="correo">Email</label>
-                              <input type="email" class="form-control" name="correo" id="correo" placeholder="email@email.com" value="<?= $dataUsuario["correo"]?>">
-                              <small id="nameHelp" class="mb-3 form-text text-danger"><?= isset($resultadoValidacion['correo']) ? $resultadoValidacion['correo'] : "" ?></small>
-                          </div>
-                      </div>
-
-                      <div class="form-group">
-                          <div class="col-xs-6">
-                              <label for="contrasenia">Contraseña</label>
-                              <input type="password" class="form-control" name="contrasenia" id="contrasenia" placeholder="password">
-                              <small id="nameHelp" class="mb-3 form-text text-danger"><?= isset($resultadoValidacion['contrasenia']) ? $resultadoValidacion['contrasenia'] : "" ?></small>
-                          </div>
-                      </div>
-
-                      <div class="form-group">
-                          <div class="col-xs-6">
-                            <label for="confirmaContra">Repite tu contraseña</label>
-                            <input type="password" class="form-control" name="confirmaContra" id="confirmaContra" placeholder="Repetir password">
-                            <small id="nameHelp" class="mb-3 form-text text-danger"><?= isset($resultadoValidacion['contrasenia']) ? $resultadoValidacion['contrasenia'] : "" ?></small>
-                          </div>
-                      </div>
-
-                      <div class="form-group">
-                        <div class="custom-file">
-                            <input type="file"  class="custom-file-input" id="fotoPerfil" name="fotoPerfil">
-                            <label class="custom-file-label"  for="customFile">Foto de perfil</label>
+                      <div class="row">
+                        <div class="col">
+                          <label for="nombre">Nombre</label>
+                          <input type="text" id="nombre" name="nombre" class="form-control" placeholder="Nombre" value="<?=$dataUsuario["nombre"]?>" <?=$disableInput?>>
+                          <small id="nameHelp" class="mb-3 form-text text-danger"><?= isset($resultadoValidacion['nombre']) ? $resultadoValidacion['nombre'] : "" ?></small>
                         </div>
-                        <small id="nameHelp" class="mb-3 form-text text-danger"><?= isset($resultadoValidacion['fotoPerfil']) ? $resultadoValidacion['fotoPerfil'] : "" ?></small>
-                      </div>
-
-                      <div class="form-group">
-                        <div class="col-xs-12">
-                            <br>
-                            <button class="__botonguardar btn " type="submit"> Guardar</button>
-                            <button class="__botoncancelar btn btn-danger" type="button"> Cancelar</button>
+                        <div class="col">
+                          <label for="apellido">Apellido</label>
+                          <input type="text" id="apellido" class="form-control" name="apellido" placeholder="Apellido" value="<?=$dataUsuario["apellido"]?>" <?=$disableInput?>>
+                          <small id="apellidoHelp" class="mb-3 form-text text-danger"><?= isset($resultadoValidacion['apellido']) ? $resultadoValidacion['apellido'] : "" ?></small>
                         </div>
                       </div>
 
-                </form>
+                      <div class="form-group">
+                            <div class="col-xs-6">
+                                <label for="direccion">Direccion</label>
+                                <input type="text" class="form-control" name="direccion" id="direccion" placeholder="Direccion" value="<?=$dataUsuario["direccion"]?>" <?=$disableInput?>>
+                                <small id="direccionHelp" class="mb-3 form-text text-danger"><?= isset($resultadoValidacion['direccion']) ? $resultadoValidacion['direccion'] : "" ?></small>
+                            </div>
+                      </div>
 
-              </hr>
+                      <div class="form-row">
+                        <div class="form-group col-md-6">
+                          <label for="ciudad">Ciudad</label>
+                          <input type="text" placeholder="Ciudad" class="form-control" id="ciudad" name="ciudad" value="<?=$dataUsuario["ciudad"]?>" <?=$disableInput?>>
+                          <small id="ciudadHelp" class="mb-3 form-text text-danger"><?= isset($resultadoValidacion['ciudad']) ? $resultadoValidacion['ciudad'] : "" ?></small>
+                        </div>
 
+                        <div class="form-group col-md-4">
+                          <label for="provincia">Provincia</label>
+                          <select id="provincia" class="form-control" name="provincia" <?=$disableInput?>>
+
+                            <option selected>Elegir...</option>
+
+                            <?php if ($dataUsuario["provincia"] == "mza"): ?>
+                              <option value="mza" selected>Mendoza</option>
+                            <?php else: ?>
+                              <option value="mza">Mendoza</option>
+                            <?php endif; ?>
+
+                            <?php if ($dataUsuario["provincia"] == "slu"): ?>
+                              <option value="slu" selected>San Luis</option>
+                            <?php else: ?>
+                                <option value="slu">San Luis</option>
+                            <?php endif; ?>
+
+                            <?php if ($dataUsuario["provincia"] == "sju"): ?>
+                              <option value="sju" selected>San Juan</option>
+                            <?php else: ?>
+                              <option value="sju">San Juan</option>
+                            <?php endif; ?>
+
+                          </select>
+                          <small id="provinciaHelp" class="mb-3 form-text text-danger"><?= isset($resultadoValidacion['provincia']) ? $resultadoValidacion['provincia'] : "" ?></small>
+                        </div>
+
+                        <div class="form-group col-md-2">
+                          <label for="cp">C. Postal</label>
+                          <input type="number" class="form-control" id="cp" name="cp" placeholder="CP" value="<?=$dataUsuario["cp"]?>" <?=$disableInput?>>
+                          <small id="cpHelp" class="mb-3 form-text text-danger"><?= isset($resultadoValidacion['cp']) ? $resultadoValidacion['cp'] : "" ?></small>
+                        </div>
+                      </div>
+
+                      <div class="row">
+                          <div class="col">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="correo" class="form-control" placeholder="Email" value="<?=$dataUsuario["correo"]?>" disabled>
+                            <small id="emailHelp" class="mb-3 form-text text-danger"><?= isset($resultadoValidacion['correo']) ? $resultadoValidacion['correo'] : "" ?></small>
+                          </div>
+                          <div class="col">
+                            <label for="telefono">Telefono</label>
+                            <input type="text" id="telefono" class="form-control" name="telefono" placeholder="Telefono" value="<?=$dataUsuario["telefono"]?>" <?=$disableInput?>>
+                            <small id="telefono" class="mb-3 form-text text-danger"><?= isset($resultadoValidacion['telefono']) ? $resultadoValidacion['telefono'] : "" ?></small>
+                          </div>
+                        </div>
+
+                        <div class="form-group col-md-12">
+                          <a class="text-muted" href="" data-toggle="modal" data-target="#resetPass"> <i class="fas fa-key"></i> Cambiar contraseña</a>
+                        </div>
+
+
+                        <?php if ($disableInput!="disabled"): ?>
+                          <div class="form-group">
+                            <div class="custom-file">
+                                <input type="file" class="custom-file-input" id="fotoPerfil" name="fotoPerfil">
+                                <label class="custom-file-label" for="customFile">Foto de perfil</label>
+                            </div>
+                            <small id="nameHelp" class="mb-3 form-text text-danger"><?= isset($resultadoValidacion['fotoPerfil']) ? $resultadoValidacion['fotoPerfil'] : "" ?></small>
+                          </div>
+
+                        <div class="form-group">
+                          <div class="col-xs-12">
+                              <br>
+                              <button class="btn btn-success" type="submit"> Guardar</button>
+                              <button class="btn" type="button"> Cancelar</button>
+                          </div>
+                        </div>
+                        <?php endif; ?>
+
+                  </form>
+                </hr>
              </div>
-            <!-- Item-->
-
-            <!-- Item-->
-
-
         </div>
     </div>
 </div>
     </section>
+
+    <div class="modal fade" id="resetPass" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Recordar contraseña</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form action="userAccount.php" method="POST">
+              <div class="form-group">
+                <label for="contrasenia" class="col-form-label">Contraseña:</label>
+                <input type="password" class="form-control __resetPass" id="contrasenia" name="contrasenia" placeholder="Nueva contraseña...">
+              </div>
+              <div class="form-group">
+                <label for="confirmaContra" class="col-form-label">Repetir contraseña:</label>
+                <input type="password" class="form-control __resetPass" id="confirmaContra" name="confirmaContra" placeholder="Repetir contraseña...">
+              </div>
+
+              <div class="modal-footer">
+                <button type="button" class="__closemodal" data-dismiss="modal">Close</button>
+                <button type="submit" class="__sendEmail">Actualizar</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </main>
   <!-- EndMain -->
 

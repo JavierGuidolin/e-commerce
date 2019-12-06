@@ -33,7 +33,13 @@
                 $usuarioNuevo = [  //Carga los datos a registrar en el array $usuarioNuevo
                   "id" => $idNuevo,
                   "nombre" => $_POST["nombre"],
+                  "apellido" => $_POST["apellido"],
+                  "ciudad" => $_POST["ciudad"],
+                  "provincia" => $_POST["provincia"],
+                  "direccion" => $_POST["direccion"],
+                  "cp" => $_POST["cp"],
                   "correo" => $_POST["correo"],
+                  "telefono" => $_POST["telefono"],
                   "contrasenia" => password_hash($_POST["contrasenia"], PASSWORD_DEFAULT),
                   "fotoPerfil" => $path
                 ];
@@ -131,25 +137,102 @@
 
             <input type="hidden" name="actualizarData" value="1">
 
-            <input type="text" class="mb-1" name="nombre" placeholder="Nombre" class="nombre" value="<?=persistir($resultadoValidacion, 'nombre'); ?>">
-            <small id="nameHelp" class="mb-3 form-text text-danger"><?= isset($resultadoValidacion['nombre']) ? $resultadoValidacion['nombre'] : "" ?></small>
-
-            <input type="email" class="mb-1" name="correo" placeholder="Correo" class="correo" value="<?=persistir($resultadoValidacion, 'correo'); ?>" >
-            <small id="nameHelp" class="mb-3 form-text text-danger"><?= isset($resultadoValidacion['correo']) ? $resultadoValidacion['correo'] : "" ?></small>
-
-            <input type="password" class="mb-1" name="contrasenia" placeholder="Contraseña" class="pass">
-            <small id="nameHelp" class="mb-3 form-text text-danger"><?= isset($resultadoValidacion['contrasenia']) ? $resultadoValidacion['contrasenia'] : "" ?></small>
-
-            <input type="password" class="mb-1" name="confirmaContra" placeholder="Confirma contraseña" class="repass">
-            <small id="nameHelp" class="mb-3 form-text text-danger"><?= isset($resultadoValidacion['contrasenia']) ? $resultadoValidacion['contrasenia'] : "" ?></small>
-
-            <div class="input-group mb-2">
-                <div class="custom-file">
-                  <input type="file" name="fotoPerfil" class="custom-file-input">
-                  <label class="custom-file-label __perfil-pic">Foto de perfil</label>
-                </div>
+            <div class="row">
+              <div class="col">
+                <label for="nombre">Nombre</label>
+                <input type="text" id="nombre" name="nombre" class="form-control" placeholder="Nombre" value="<?=persistir($resultadoValidacion, "nombre")?>">
+                <small id="nameHelp" class="mb-3 form-text text-danger"><?= isset($resultadoValidacion['nombre']) ? $resultadoValidacion['nombre'] : "" ?></small>
+              </div>
+              <div class="col">
+                <label for="apellido">Apellido</label>
+                <input type="text" id="apellido" class="form-control" name="apellido" placeholder="Apellido" value="<?=persistir($resultadoValidacion, "apellido")?>">
+                <small id="apellidoHelp" class="mb-3 form-text text-danger"><?= isset($resultadoValidacion['apellido']) ? $resultadoValidacion['apellido'] : "" ?></small>
+              </div>
             </div>
-            <small id="nameHelp" class="mb-3 form-text text-danger"><?= isset($resultadoValidacion['fotoPerfil']) ? $resultadoValidacion['fotoPerfil'] : "" ?></small>
+
+            <div class="form-group">
+                  <div class="col-xs-6">
+                      <label for="direccion">Direccion</label>
+                      <input type="text" class="form-control" name="direccion" id="direccion" placeholder="Direccion" value="<?=persistir($resultadoValidacion, "direccion")?>">
+                      <small id="direccionHelp" class="mb-3 form-text text-danger"><?= isset($resultadoValidacion['direccion']) ? $resultadoValidacion['direccion'] : "" ?></small>
+                  </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="ciudad">Ciudad</label>
+                <input type="text" placeholder="Ciudad" class="form-control" id="ciudad" name="ciudad" value="<?=persistir($resultadoValidacion, "ciudad")?>">
+                <small id="ciudadHelp" class="mb-3 form-text text-danger"><?= isset($resultadoValidacion['ciudad']) ? $resultadoValidacion['ciudad'] : "" ?></small>
+              </div>
+
+              <div class="form-group col-md-4">
+                <label for="provincia">Provincia</label>
+                <select id="provincia" class="form-control" name="provincia">
+
+                  <option selected>Elegir...</option>
+
+                  <?php if (persistir($resultadoValidacion, "provincia") == "mza"): ?>
+                    <option value="mza" selected>Mendoza</option>
+                  <?php else: ?>
+                    <option value="mza">Mendoza</option>
+                  <?php endif; ?>
+
+                  <?php if (persistir($resultadoValidacion, "provincia") == "slu"): ?>
+                    <option value="slu" selected>San Luis</option>
+                  <?php else: ?>
+                      <option value="slu">San Luis</option>
+                  <?php endif; ?>
+
+                  <?php if (persistir($resultadoValidacion, "provincia") == "sju"): ?>
+                    <option value="sju" selected>San Juan</option>
+                  <?php else: ?>
+                    <option value="sju">San Juan</option>
+                  <?php endif; ?>
+
+                </select>
+                <small id="provinciaHelp" class="mb-3 form-text text-danger"><?= isset($resultadoValidacion['provincia']) ? $resultadoValidacion['provincia'] : "" ?></small>
+              </div>
+
+              <div class="form-group col-md-2">
+                <label for="cp">C. Postal</label>
+                <input type="number" class="form-control" id="cp" name="cp" placeholder="CP" value="<?=persistir($resultadoValidacion, "cp")?>">
+                <small id="cpHelp" class="mb-3 form-text text-danger"><?= isset($resultadoValidacion['cp']) ? $resultadoValidacion['cp'] : "" ?></small>
+              </div>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                  <label for="email">Email</label>
+                  <input type="email" id="email" name="correo" class="form-control" placeholder="Email" value="<?=persistir($resultadoValidacion, "correo")?>">
+                  <small id="emailHelp" class="mb-3 form-text text-danger"><?= isset($resultadoValidacion['correo']) ? $resultadoValidacion['correo'] : "" ?></small>
+                </div>
+                <div class="col">
+                  <label for="telefono">Telefono</label>
+                  <input type="text" id="telefono" class="form-control" name="telefono" placeholder="Telefono" value="<?=persistir($resultadoValidacion, "telefono")?>">
+                  <small id="telefono" class="mb-3 form-text text-danger"><?= isset($resultadoValidacion['telefono']) ? $resultadoValidacion['telefono'] : "" ?></small>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <div class="custom-file">
+                    <input type="file" class="custom-file-input" id="fotoPerfil" name="fotoPerfil">
+                    <label class="custom-file-label" for="customFile">Foto de perfil</label>
+                </div>
+                <small id="nameHelp" class="mb-3 form-text text-danger"><?= isset($resultadoValidacion['fotoPerfil']) ? $resultadoValidacion['fotoPerfil'] : "" ?></small>
+              </div>
+
+              <div class="row">
+                <div class="col">
+                  <label for="contrasenia">Contraseña</label>
+                  <input type="password" id="contrasenia" name="contrasenia" class="form-control" placeholder="Contraseña">
+                  <small id="passHelp" class="mb-3 form-text text-danger"><?= isset($resultadoValidacion['contrasenia']) ? $resultadoValidacion['contrasenia'] : "" ?></small>
+                </div>
+                <div class="col">
+                  <label for="confirmaContra">Confirmar Contraseña</label>
+                  <input type="password" id="confirmaContra" class="form-control" name="confirmaContra" placeholder="Repetir contraseña">
+                  <small id="confirmaContraHelp" class="mb-3 form-text text-danger"><?= isset($resultadoValidacion['confirmaContra']) ? $resultadoValidacion['confirmaContra'] : "" ?></small>
+                </div>
+              </div>
 
             <div class="form-check">
               <div class="form-group">
