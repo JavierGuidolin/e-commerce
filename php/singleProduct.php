@@ -1,4 +1,3 @@
-<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -23,7 +22,7 @@
   <!-- Header -->
   <header class="__background-detalle-producto">
 
-    <?php require_once("../modulos/navigationBar.php"); ?>
+    <?php require_once("../modules/navigationBar.php"); ?>
 
     <section class="__header-detalle-producto">
       <div class="container">
@@ -295,7 +294,7 @@
   <!-- Footer -->
   <footer class="justify-content-center">
 
-    <?php require_once("../modulos/footer.php"); ?>
+    <?php require_once("../modules/footer.php"); ?>
 
   </footer>
   <!-- Footer -->

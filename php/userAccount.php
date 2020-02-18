@@ -1,74 +1,3 @@
-<?php
-
-  session_start();
-  $disableInput = "disabled";
-  $insercionDato = "";
-
-  if (!isset($_SESSION["user"])) {
-
-    header("Location: ../index.php");
-
-  }else{
-
-    require_once("../modulos/validarRegistro.php");
-    $resultadoValidacion = sinErrores();
-    $dataUsuario = recuperarUsuario($_SESSION["user"]);
-
-      if ($_POST && $_FILES) {
-
-        $resultadoValidacion = validarRegistro($_POST); //Esta funcion devuelve los errores de la validacion
-
-          if (empty($resultadoValidacion)) { //Si el resultado de la funcion varlidar Registro es vacio, procede a la carga de datos
-
-            $users = json_decode(file_get_contents("../database/users.json"), true); //Trae el archivo con formato json y lo convierte en array
-
-            if (!empty($_FILES["fotoPerfil"]["name"])) { //Compruebo si sube foto
-              $extension = pathinfo($_FILES["fotoPerfil"]["name"], PATHINFO_EXTENSION); //Obtiene la extension de la imagen a cargar y la guarda en la variable $extension
-              unlink($dataUsuario["fotoPerfil"]);
-              $cargaArchivo = move_uploaded_file($_FILES["fotoPerfil"]["tmp_name"], "../img/fotos-usuarios/". $dataUsuario["id"] . "." . $extension);
-              $path = "../img/fotos-usuarios/" . $dataUsuario["id"] . "." . $extension;
-            }else{
-              $path = $dataUsuario["fotoPerfil"];
-            }
-
-            foreach ($users as $key => $usuario) {
-              if ($usuario["correo"] == $dataUsuario["correo"] ) {
-                $users[$key]["nombre"] = $_POST["nombre"];
-                $users[$key]["apellido"] = $_POST["apellido"];
-                $users[$key]["direccion"] = $_POST["direccion"];
-                $users[$key]["correo"] = $_SESSION["user"];
-                $users[$key]["ciudad"] = $_POST["ciudad"];
-                $users[$key]["provincia"] = $_POST["provincia"];
-                $users[$key]["cp"] = $_POST["cp"];
-                $users[$key]["telefono"] = $_POST["telefono"];
-                $users[$key]["fotoPerfil"] = $path;
-                break;
-              }
-
-            }
-
-            $usuarioFinal = json_encode($users);
-            $insercionDato = file_put_contents("../database/users.json", $usuarioFinal);
-            header("Location: userAccount.php?edicion=end");
-
-          }else {
-            $disableInput = "";
-          }
-        }
-
-       //Por defecto muestro el form disabled, si quiere editar habilito
-       if (isset($_GET["editar"]) && ($_GET["editar"]) == "editar") {
-        $disableInput= "";
-      }
-
-      if ($_POST && isset($_POST["contrasenia"]) && isset($_POST["confirmaContra"])  ) {
-          $contraseniaActualizada = actualizarContraseña($_SESSION["user"], $_POST["contrasenia"], $_POST["confirmaContra"]);
-      }
-
-    }
-
-?>
-
 <!DOCTYPE html>
 <html lang="es">
 
@@ -92,7 +21,7 @@
   <!-- Header -->
   <header id="header" class="__background-perfil">
 
-    <?php require_once("../modulos/navigationBar.php"); ?>
+    <?php require_once "../modules/navigationBar.php";?>
 
     <!-- TextHeader -->
     <section class="__header-perfil">
@@ -131,17 +60,17 @@
       <!-- EndPath -->
 
 
-      <?php if (isset($_GET["edicion"]) && $_GET["edicion"] == "end" ): ?>
+      <?php if (isset($_GET["edicion"]) && $_GET["edicion"] == "end"): ?>
         <div class="alert alert-success" role="alert">
           Datos actualizados correctamente.
         </div>
-      <?php endif; ?>
+      <?php endif;?>
 
       <?php if (isset($contraseniaActualizada)): ?>
         <div class="alert alert-success" role="alert">
           <?=$contraseniaActualizada?>
         </div>
-      <?php endif; ?>
+      <?php endif;?>
 
 
     <section id="profile">
@@ -158,10 +87,10 @@
             <div class="author-card pb-3">
 
                 <div class="author-card-profile">
-                    <div class="author-card-avatar"><img src="<?= $dataUsuario["fotoPerfil"]?>" alt="Foto de perfil">
+                    <div class="author-card-avatar"><img src="<?=$dataUsuario["fotoPerfil"]?>" alt="Foto de perfil">
                     </div>
                     <div class="author-card-details">
-                        <h5 class="author-card-name text-lg"><?= $dataUsuario["nombre"] . " " . $dataUsuario["apellido"] ?></h5><span class="author-card-position">Joined February 06, 2017</span>
+                        <h5 class="author-card-name text-lg"><?=$dataUsuario["nombre"] . " " . $dataUsuario["apellido"]?></h5><span class="author-card-position">Joined February 06, 2017</span>
                     </div>
                 </div>
             </div>
@@ -214,12 +143,12 @@
                         <div class="col">
                           <label for="nombre">Nombre</label>
                           <input type="text" id="nombre" name="nombre" class="form-control" placeholder="Nombre" value="<?=$dataUsuario["nombre"]?>" <?=$disableInput?>>
-                          <small id="nameHelp" class="mb-3 form-text text-danger"><?= isset($resultadoValidacion['nombre']) ? $resultadoValidacion['nombre'] : "" ?></small>
+                          <small id="nameHelp" class="mb-3 form-text text-danger"><?=isset($resultadoValidacion['nombre']) ? $resultadoValidacion['nombre'] : ""?></small>
                         </div>
                         <div class="col">
                           <label for="apellido">Apellido</label>
                           <input type="text" id="apellido" class="form-control" name="apellido" placeholder="Apellido" value="<?=$dataUsuario["apellido"]?>" <?=$disableInput?>>
-                          <small id="apellidoHelp" class="mb-3 form-text text-danger"><?= isset($resultadoValidacion['apellido']) ? $resultadoValidacion['apellido'] : "" ?></small>
+                          <small id="apellidoHelp" class="mb-3 form-text text-danger"><?=isset($resultadoValidacion['apellido']) ? $resultadoValidacion['apellido'] : ""?></small>
                         </div>
                       </div>
 
@@ -227,7 +156,7 @@
                             <div class="col-xs-6">
                                 <label for="direccion">Direccion</label>
                                 <input type="text" class="form-control" name="direccion" id="direccion" placeholder="Direccion" value="<?=$dataUsuario["direccion"]?>" <?=$disableInput?>>
-                                <small id="direccionHelp" class="mb-3 form-text text-danger"><?= isset($resultadoValidacion['direccion']) ? $resultadoValidacion['direccion'] : "" ?></small>
+                                <small id="direccionHelp" class="mb-3 form-text text-danger"><?=isset($resultadoValidacion['direccion']) ? $resultadoValidacion['direccion'] : ""?></small>
                             </div>
                       </div>
 
@@ -235,7 +164,7 @@
                         <div class="form-group col-md-6">
                           <label for="ciudad">Ciudad</label>
                           <input type="text" placeholder="Ciudad" class="form-control" id="ciudad" name="ciudad" value="<?=$dataUsuario["ciudad"]?>" <?=$disableInput?>>
-                          <small id="ciudadHelp" class="mb-3 form-text text-danger"><?= isset($resultadoValidacion['ciudad']) ? $resultadoValidacion['ciudad'] : "" ?></small>
+                          <small id="ciudadHelp" class="mb-3 form-text text-danger"><?=isset($resultadoValidacion['ciudad']) ? $resultadoValidacion['ciudad'] : ""?></small>
                         </div>
 
                         <div class="form-group col-md-4">
@@ -248,28 +177,28 @@
                               <option value="mza" selected>Mendoza</option>
                             <?php else: ?>
                               <option value="mza">Mendoza</option>
-                            <?php endif; ?>
+                            <?php endif;?>
 
                             <?php if ($dataUsuario["provincia"] == "slu"): ?>
                               <option value="slu" selected>San Luis</option>
                             <?php else: ?>
                                 <option value="slu">San Luis</option>
-                            <?php endif; ?>
+                            <?php endif;?>
 
                             <?php if ($dataUsuario["provincia"] == "sju"): ?>
                               <option value="sju" selected>San Juan</option>
                             <?php else: ?>
                               <option value="sju">San Juan</option>
-                            <?php endif; ?>
+                            <?php endif;?>
 
                           </select>
-                          <small id="provinciaHelp" class="mb-3 form-text text-danger"><?= isset($resultadoValidacion['provincia']) ? $resultadoValidacion['provincia'] : "" ?></small>
+                          <small id="provinciaHelp" class="mb-3 form-text text-danger"><?=isset($resultadoValidacion['provincia']) ? $resultadoValidacion['provincia'] : ""?></small>
                         </div>
 
                         <div class="form-group col-md-2">
                           <label for="cp">C. Postal</label>
                           <input type="number" class="form-control" id="cp" name="cp" placeholder="CP" value="<?=$dataUsuario["cp"]?>" <?=$disableInput?>>
-                          <small id="cpHelp" class="mb-3 form-text text-danger"><?= isset($resultadoValidacion['cp']) ? $resultadoValidacion['cp'] : "" ?></small>
+                          <small id="cpHelp" class="mb-3 form-text text-danger"><?=isset($resultadoValidacion['cp']) ? $resultadoValidacion['cp'] : ""?></small>
                         </div>
                       </div>
 
@@ -277,12 +206,12 @@
                           <div class="col">
                             <label for="email">Email</label>
                             <input type="email" id="email" name="correo" class="form-control" placeholder="Email" value="<?=$dataUsuario["correo"]?>" disabled>
-                            <small id="emailHelp" class="mb-3 form-text text-danger"><?= isset($resultadoValidacion['correo']) ? $resultadoValidacion['correo'] : "" ?></small>
+                            <small id="emailHelp" class="mb-3 form-text text-danger"><?=isset($resultadoValidacion['correo']) ? $resultadoValidacion['correo'] : ""?></small>
                           </div>
                           <div class="col">
                             <label for="telefono">Telefono</label>
                             <input type="text" id="telefono" class="form-control" name="telefono" placeholder="Telefono" value="<?=$dataUsuario["telefono"]?>" <?=$disableInput?>>
-                            <small id="telefono" class="mb-3 form-text text-danger"><?= isset($resultadoValidacion['telefono']) ? $resultadoValidacion['telefono'] : "" ?></small>
+                            <small id="telefono" class="mb-3 form-text text-danger"><?=isset($resultadoValidacion['telefono']) ? $resultadoValidacion['telefono'] : ""?></small>
                           </div>
                         </div>
 
@@ -291,13 +220,13 @@
                         </div>
 
 
-                        <?php if ($disableInput!="disabled"): ?>
+                        <?php if ($disableInput != "disabled"): ?>
                           <div class="form-group">
                             <div class="custom-file">
                                 <input type="file" class="custom-file-input" id="fotoPerfil" name="fotoPerfil">
                                 <label class="custom-file-label" for="customFile">Foto de perfil</label>
                             </div>
-                            <small id="nameHelp" class="mb-3 form-text text-danger"><?= isset($resultadoValidacion['fotoPerfil']) ? $resultadoValidacion['fotoPerfil'] : "" ?></small>
+                            <small id="nameHelp" class="mb-3 form-text text-danger"><?=isset($resultadoValidacion['fotoPerfil']) ? $resultadoValidacion['fotoPerfil'] : ""?></small>
                           </div>
 
                         <div class="form-group">
@@ -307,7 +236,7 @@
                               <button class="btn" type="button"> Cancelar</button>
                           </div>
                         </div>
-                        <?php endif; ?>
+                        <?php endif;?>
 
                   </form>
                 </hr>
@@ -353,7 +282,7 @@
   <!-- Footer -->
 
 
-      <?php require_once("../modulos/footer.php"); ?>
+      <?php require_once "../modules/footer.php";?>
 
     </footer>
     <!-- Footer -->
