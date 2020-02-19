@@ -1,4 +1,3 @@
-<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -94,10 +93,15 @@
           <li class="nav-item dropdown">
 
             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
-              <i class="__icono-usuario fas fa-user-circle pr-1 pl-2"></i><?php if ($_SESSION) {
-               echo $_SESSION["user"];}else {
-                 echo "Perfil";
-               }?></a>
+              <i class="__icono-usuario fas fa-user-circle pr-1 pl-2"></i>
+              <?php 
+                if ($_SESSION) {
+                  echo $_SESSION["name"];
+                }else {
+                  echo "Perfil";
+                }
+               ?>
+            </a>
 
 
                <div class="dropdown-menu dropdown-menu-right">
@@ -125,7 +129,7 @@
           <article class="col-xs-6 col-md-6 col-xl-6">
             <div class="pl-4">
               <h1 class="text-uppercase"><span>B</span>ook<span>S</span>tore</h1>
-              <h2><?php print_r($_COOKIE["Email"]); ?></h2>
+              <h2>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nesciunt.</h2>
               <h3><a class="text-reset" href="php/products.php">Comprar Ahora! <i class="fas fa-arrow-circle-right"></i></a></h3>
             </div>
           </article>

@@ -72,10 +72,14 @@
 
         <a href="#" class="nav-link dropdown-toggle text-white" data-toggle="dropdown">
         <i class="__icono-usuario fas fa-user-circle pr-1 pl-2"></i>
-        <?php if ($_SESSION) {
-           echo $_SESSION["user"];}else {
-             echo "Perfil";
-           }?></a>
+        <?php
+            if ($_SESSION) {
+                echo $_SESSION["name"];
+            } else {
+                echo "Perfil";
+            }
+        ?>
+          </a>
 
         <div class="dropdown-menu dropdown-menu-right">
           <?php if ($_SESSION): ?>
@@ -85,7 +89,7 @@
           <?php else: ?>
             <a href="../php/register.php" class="dropdown-item pl-2 "><i class="dropdown-icon fas fa-user-edit pr-2"></i> Registrarse</a>
             <a href="../php/login.php" class="dropdown-item pl-2"><i class="dropdown-icon fas fa-sign-in-alt pr-2"></i> Iniciar sesion</a>
-          <?php endif; ?>
+          <?php endif;?>
         </div>
 
       </li>
