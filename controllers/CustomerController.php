@@ -53,4 +53,23 @@ class CustomerController
 
     }
 
+    public static function updateCustomer(User $customer){
+    
+        $conection = Database::connect();
+
+        $query = $conection->prepare('UPDATE users SET name = :name, surname = :surname, password = :password WHERE id = :id');
+
+        $hashPassword = password_hash($customer->getPassword(), PASSWORD_DEFAULT);
+
+        $query->bindValue(':name', $customer->getName());
+        $query->bindValue(':surname', $customer->getSurname());
+        $query->bindValue(':password', $hashPassword);
+        $query->bindValue(':id', $customer->getId());
+
+        $insertValue = $query->execute();
+
+        return $insertValue;
+
+    }
+
 }
