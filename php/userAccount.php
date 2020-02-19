@@ -1,3 +1,12 @@
+<?php
+require_once 'autoload.php';
+
+if (!$_SESSION['email']) {
+    header('Location: register.php'); // Debe haber un usuario logeado para ver esta seccion
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -60,19 +69,6 @@
       <!-- EndPath -->
 
 
-      <?php if (isset($_GET["edicion"]) && $_GET["edicion"] == "end"): ?>
-        <div class="alert alert-success" role="alert">
-          Datos actualizados correctamente.
-        </div>
-      <?php endif;?>
-
-      <?php if (isset($contraseniaActualizada)): ?>
-        <div class="alert alert-success" role="alert">
-          <?=$contraseniaActualizada?>
-        </div>
-      <?php endif;?>
-
-
     <section id="profile">
 
       <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
@@ -81,18 +77,12 @@
     <div class="row">
 
 
-        <div class="col-lg-4 pb-5">
+        <div class="col-lg-12 pb-5">
 
             <!-- Account Sidebar-->
             <div class="author-card pb-3">
 
-                <div class="author-card-profile">
-                    <div class="author-card-avatar"><img src="<?=$dataUsuario["fotoPerfil"]?>" alt="Foto de perfil">
-                    </div>
-                    <div class="author-card-details">
-                        <h5 class="author-card-name text-lg"><?=$dataUsuario["nombre"] . " " . $dataUsuario["apellido"]?></h5><span class="author-card-position">Joined February 06, 2017</span>
-                    </div>
-                </div>
+                <div> <h3 class="text-center">Bienvenido  <?=$_SESSION['name'] . ' ' . $_SESSION['surname']?></h3></div>
             </div>
             <div class="wizard">
                 <nav class="list-group list-group-flush">
@@ -125,122 +115,29 @@
                             </div><span class="badge badge-secondary">4</span>
                         </div>
                     </a>
+                    <a class="list-group-item" href="updateProfile.php">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div><i class="fa fa-tag mr-1 text-muted"></i>
+                                <div class="d-inline-block font-weight-medium text-uppercase">Actualizar Perfil</div>
+                            </div><span class="badge badge-secondary">4</span>
+                        </div>
+                    </a>
+
+                    <?php if ($_SESSION['rol'] == 1): /*Si es admin habilitar esta opcion*/ ?>
+                      <a class="list-group-item" href="admin/admin.php">
+                          <div class="d-flex justify-content-between align-items-center">
+                              <div><i class="fa fa-tag mr-1 text-muted"></i>
+                                  <div class="bg-info text-white d-inline-block font-weight-medium text-uppercase">ADMIN SITE</div>
+                              </div><span class="badge badge-secondary">4</span>
+                          </div>
+                      </a>
+                    <?php endif;?>
+
                 </nav>
             </div>
         </div>
         <!-- Wishlist-->
 
-        <div class="col-lg-8 pb-5">
-            <!-- Item-->
-            <div class="tab-pane active <?php echo $display ?>" id="home">
-              <h2>Actualizar mis datos</h2>
-                <hr>
-                <form action="userAccount.php" method="POST" enctype="multipart/form-data">
-
-                      <input type="hidden" name="actualizarData" value="2">
-
-                      <div class="row">
-                        <div class="col">
-                          <label for="nombre">Nombre</label>
-                          <input type="text" id="nombre" name="nombre" class="form-control" placeholder="Nombre" value="<?=$dataUsuario["nombre"]?>" <?=$disableInput?>>
-                          <small id="nameHelp" class="mb-3 form-text text-danger"><?=isset($resultadoValidacion['nombre']) ? $resultadoValidacion['nombre'] : ""?></small>
-                        </div>
-                        <div class="col">
-                          <label for="apellido">Apellido</label>
-                          <input type="text" id="apellido" class="form-control" name="apellido" placeholder="Apellido" value="<?=$dataUsuario["apellido"]?>" <?=$disableInput?>>
-                          <small id="apellidoHelp" class="mb-3 form-text text-danger"><?=isset($resultadoValidacion['apellido']) ? $resultadoValidacion['apellido'] : ""?></small>
-                        </div>
-                      </div>
-
-                      <div class="form-group">
-                            <div class="col-xs-6">
-                                <label for="direccion">Direccion</label>
-                                <input type="text" class="form-control" name="direccion" id="direccion" placeholder="Direccion" value="<?=$dataUsuario["direccion"]?>" <?=$disableInput?>>
-                                <small id="direccionHelp" class="mb-3 form-text text-danger"><?=isset($resultadoValidacion['direccion']) ? $resultadoValidacion['direccion'] : ""?></small>
-                            </div>
-                      </div>
-
-                      <div class="form-row">
-                        <div class="form-group col-md-6">
-                          <label for="ciudad">Ciudad</label>
-                          <input type="text" placeholder="Ciudad" class="form-control" id="ciudad" name="ciudad" value="<?=$dataUsuario["ciudad"]?>" <?=$disableInput?>>
-                          <small id="ciudadHelp" class="mb-3 form-text text-danger"><?=isset($resultadoValidacion['ciudad']) ? $resultadoValidacion['ciudad'] : ""?></small>
-                        </div>
-
-                        <div class="form-group col-md-4">
-                          <label for="provincia">Provincia</label>
-                          <select id="provincia" class="form-control" name="provincia" <?=$disableInput?>>
-
-                            <option selected>Elegir...</option>
-
-                            <?php if ($dataUsuario["provincia"] == "mza"): ?>
-                              <option value="mza" selected>Mendoza</option>
-                            <?php else: ?>
-                              <option value="mza">Mendoza</option>
-                            <?php endif;?>
-
-                            <?php if ($dataUsuario["provincia"] == "slu"): ?>
-                              <option value="slu" selected>San Luis</option>
-                            <?php else: ?>
-                                <option value="slu">San Luis</option>
-                            <?php endif;?>
-
-                            <?php if ($dataUsuario["provincia"] == "sju"): ?>
-                              <option value="sju" selected>San Juan</option>
-                            <?php else: ?>
-                              <option value="sju">San Juan</option>
-                            <?php endif;?>
-
-                          </select>
-                          <small id="provinciaHelp" class="mb-3 form-text text-danger"><?=isset($resultadoValidacion['provincia']) ? $resultadoValidacion['provincia'] : ""?></small>
-                        </div>
-
-                        <div class="form-group col-md-2">
-                          <label for="cp">C. Postal</label>
-                          <input type="number" class="form-control" id="cp" name="cp" placeholder="CP" value="<?=$dataUsuario["cp"]?>" <?=$disableInput?>>
-                          <small id="cpHelp" class="mb-3 form-text text-danger"><?=isset($resultadoValidacion['cp']) ? $resultadoValidacion['cp'] : ""?></small>
-                        </div>
-                      </div>
-
-                      <div class="row">
-                          <div class="col">
-                            <label for="email">Email</label>
-                            <input type="email" id="email" name="correo" class="form-control" placeholder="Email" value="<?=$dataUsuario["correo"]?>" disabled>
-                            <small id="emailHelp" class="mb-3 form-text text-danger"><?=isset($resultadoValidacion['correo']) ? $resultadoValidacion['correo'] : ""?></small>
-                          </div>
-                          <div class="col">
-                            <label for="telefono">Telefono</label>
-                            <input type="text" id="telefono" class="form-control" name="telefono" placeholder="Telefono" value="<?=$dataUsuario["telefono"]?>" <?=$disableInput?>>
-                            <small id="telefono" class="mb-3 form-text text-danger"><?=isset($resultadoValidacion['telefono']) ? $resultadoValidacion['telefono'] : ""?></small>
-                          </div>
-                        </div>
-
-                        <div class="form-group col-md-12">
-                          <a class="text-muted" href="" data-toggle="modal" data-target="#resetPass"> <i class="fas fa-key"></i> Cambiar contraseña</a>
-                        </div>
-
-
-                        <?php if ($disableInput != "disabled"): ?>
-                          <div class="form-group">
-                            <div class="custom-file">
-                                <input type="file" class="custom-file-input" id="fotoPerfil" name="fotoPerfil">
-                                <label class="custom-file-label" for="customFile">Foto de perfil</label>
-                            </div>
-                            <small id="nameHelp" class="mb-3 form-text text-danger"><?=isset($resultadoValidacion['fotoPerfil']) ? $resultadoValidacion['fotoPerfil'] : ""?></small>
-                          </div>
-
-                        <div class="form-group">
-                          <div class="col-xs-12">
-                              <br>
-                              <button class="btn btn-success" type="submit"> Guardar</button>
-                              <button class="btn" type="button"> Cancelar</button>
-                          </div>
-                        </div>
-                        <?php endif;?>
-
-                  </form>
-                </hr>
-             </div>
         </div>
     </div>
 </div>

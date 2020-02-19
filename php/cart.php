@@ -1,3 +1,10 @@
+<?php
+
+require_once 'classes/Authenticator.php';
+Authenticator::initSession();
+
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 

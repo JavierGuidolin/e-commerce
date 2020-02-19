@@ -1,3 +1,10 @@
+<?php
+
+require_once 'classes/Authenticator.php';
+Authenticator::initSession();
+
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -94,13 +101,13 @@
 
             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
               <i class="__icono-usuario fas fa-user-circle pr-1 pl-2"></i>
-              <?php 
-                if ($_SESSION) {
-                  echo $_SESSION["name"];
-                }else {
-                  echo "Perfil";
-                }
-               ?>
+              <?php
+if ($_SESSION) {
+    echo $_SESSION["name"];
+} else {
+    echo "Perfil";
+}
+?>
             </a>
 
 
@@ -112,7 +119,7 @@
                  <?php else: ?>
                    <a href="php/register.php" class="dropdown-item pl-2 "><i class="dropdown-icon fas fa-user-edit pr-2"></i> Registrarse</a>
                    <a href="php/login.php" class="dropdown-item pl-2"><i class="dropdown-icon fas fa-sign-in-alt pr-2"></i> Iniciar sesion</a>
-                 <?php endif; ?>
+                 <?php endif;?>
                </div>
 
           </li>

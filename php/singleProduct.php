@@ -1,3 +1,10 @@
+<?php
+
+require_once 'classes/Authenticator.php';
+Authenticator::initSession();
+
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -22,7 +29,7 @@
   <!-- Header -->
   <header class="__background-detalle-producto">
 
-    <?php require_once("../modules/navigationBar.php"); ?>
+    <?php require_once "../modules/navigationBar.php";?>
 
     <section class="__header-detalle-producto">
       <div class="container">
@@ -294,7 +301,7 @@
   <!-- Footer -->
   <footer class="justify-content-center">
 
-    <?php require_once("../modules/footer.php"); ?>
+    <?php require_once "../modules/footer.php";?>
 
   </footer>
   <!-- Footer -->

@@ -1,3 +1,56 @@
+<?php
+
+require_once 'autoload.php';
+
+if (isset($_SESSION['email'])) {
+    header("Location: ../index.php");
+}
+
+$errors = notErrors();
+
+if ($_POST) {
+
+    $customer = new Customer($_POST['email'], $_POST['password']);
+    $errors = $validator->validateLogin($customer);
+
+    $notErrors = implode('', $errors);
+
+    //Si no hay errores en el formato de los datos
+    if ($notErrors == '') {
+
+        //Traigo de la bd el usuario completo
+        $customerLog = CustomerController::findByEmail($customer->getEmail());
+
+        //Si existe el usuario
+        if ($customerLog != null) {
+
+            //Valido la pass
+            $customerPass = Authenticator::validatePass($customer->getPassword(), $customerLog->getPassword());
+
+            //Si la pass es correcta
+            if ($customerPass) {
+
+                Authenticator::setSession($customerLog);
+
+                if (isset($_POST['remember'])) {
+                    Authenticator::setCookies($customerLog);
+                }
+
+                header('Location: userAccount.php'); // Si todo esta bien redirijo a perfil
+
+            } else {
+                $LoginResult = "Las datos ingresados son incorrectos";
+            }
+
+        } else {
+            $LoginResult = "Las datos ingresados son incorrectos";
+        }
+
+    }
+
+}
+
+?>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -21,7 +74,7 @@
   <!-- Header -->
   <header id="header" class="__background-login">
 
-    <?php require_once("../modules/navigationBar.php"); ?>
+    <?php require_once "../modules/navigationBar.php";?>
 
     <!-- TextHeader -->
     <section class="__header-login">
@@ -60,13 +113,16 @@
       </div>
       <!-- EndPath -->
 
-      <?php if (isset($contraseñaRecuperada)): ?>
-        <div class="alert alert-success" role="alert">
-            <?= $contraseñaRecuperada; ?>
-        </div>
-      <?php endif; ?>
+      <?php if (isset($LoginResult) && $LoginResult): ?>
+          <div class="alert alert-danger" role="alert">
+            <?=$LoginResult?> <a href="register.php" class="alert-link">Quiero registrarme!</a>
+          </div>
+      <?php $_POST = "";?>
+      <?php endif;?>
 
     </section>
+
+
 
     <div class="container-login">
       <div class="login-container">
@@ -74,28 +130,28 @@
           <h2>Iniciar sesión</h2>
           <form action="login.php" method="post" enctype="multipart/form-data">
 
-            <input type="email" class="mb-1" name="correo" placeholder="Correo" class="correo">
-            <small id="nameHelp" class="mb-3 form-text text-danger"></small>
+            <input type="email" class="mb-1" name="email" placeholder="Email" class="email" value="<?=persistence($errors, "email")?>">
+            <small id="emailHelp" class="mb-3 form-text text-danger"><?=isset($errors['email']) ? $errors['email'] : ""?></small>
 
-            <input type="password" class="mb-1" name="contrasenia" placeholder="Contraseña" class="pass">
-            <small id="nameHelp" class="mb-3 form-text text-danger"></small>
+            <input type="password" class="mb-1" name="password" placeholder="Contraseña" class="pass">
+            <small id="passHelp" class="mb-3 form-text text-danger"><?=isset($errors['password']) ? $errors['password'] : ""?></small>
 
             <div class="form-check">
               <div class="form-group">
-                <input class="form-check-input" name="recordarme" type="checkbox" value="recordarme" id="recordarme">
-                <label class="form-check-label" for="recordarme">
+                <input class="form-check-input" name="remember" type="checkbox" value="remember" id="recordarme">
+                <label class="form-check-label" for="remember">
                   Recordarme
                 </label>
               </div>
             </div>
-            <?php if (isset($error) && $error==!0): ?>
+            <?php if (isset($error) && $error == !0): ?>
               <div class="alert alert-danger" role="alert">
                 <?=$error?>
 
               </div>
-            <?php endif; ?>
+            <?php endif;?>
 
-            <a class="d-block text-muted" href="" data-toggle="modal" data-target="#resetPass">Olvide mi contraseña</a>
+            <a class="d-block text-muted" href="#">Olvide mi contraseña</a>
 
             <input type="submit" class="mt-3 submit" value="INGRESAR">
 
@@ -105,38 +161,13 @@
 
       </div>
 
-      <div class="modal fade" id="resetPass" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Recordar contraseña</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-              <form action="login.php" method="POST">
-                <div class="form-group">
-                  <label for="email" class="col-form-label">Email:</label>
-                  <input type="email" class="form-control __resetPass" id="email" name="recuperaContra" placeholder="Ingresa tu email">
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="__closemodal" data-dismiss="modal">Close</button>
-                  <button type="submit" class="__sendEmail">Enviar email</button>
-                </div>
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
-
   </main>
   <!-- EndMain -->
 
   <!-- Footer -->
   <footer class="justify-content-center">
 
-    <?php require_once("../modules/footer.php"); ?>
+    <?php require_once "../modules/footer.php";?>
 
   </footer>
   <!-- Footer -->

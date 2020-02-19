@@ -25,10 +25,3 @@ function notErrors()
     ];
 
 }
-
-function privateRoute(string $route)
-{
-    if (isset($_SESSION['email'])) {
-        header("Location: $route");
-    }
-}

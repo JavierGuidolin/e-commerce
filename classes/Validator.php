@@ -3,7 +3,8 @@
 class Validator
 {
 
-    public function validateRegister(Customer $user, $update){
+    public function validateRegister(Customer $user, $update)
+    {
 
         //Validaciones reutilizadas de la version anterior!
 
@@ -40,7 +41,7 @@ class Validator
 
             $email = trim($user->getEmail());
             $isEmailReg = CustomerController::findByEmail($email);
-    
+
             if (isset($email)) {
                 if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
                     $errors["email"] = "El email no tiene formato valido";
@@ -48,9 +49,8 @@ class Validator
                     $errors["email"] = "El email ya se encuentra registrado";
                 }
             }
-            
+
         }
-        
 
         //password
         $password = trim($user->getPassword());
@@ -76,6 +76,31 @@ class Validator
         return $errors;
     }
 
+    public function validateLogin(Customer $user)
+    {
 
+        $errors = [];
+
+        //email
+        $email = trim($user->getEmail());
+
+        if (isset($email)) {
+            if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+                $errors["email"] = "El email no tiene formato valido";
+            }
+        }
+
+        //password
+        $password = trim($user->getPassword());
+
+        if (isset($password)) {
+            if (strlen($password) == 0) {
+                $errors["password"] = "La contraseña no debe estar vacia";
+            }
+        }
+
+        return $errors;
+
+    }
 
 }
