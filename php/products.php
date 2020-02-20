@@ -1,7 +1,15 @@
 <?php
-
+require_once '../classes/Database.php';
 require_once '../classes/Authenticator.php';
 Authenticator::initSession();
+
+
+$conection = Database::connect();
+$query=$conection->prepare("SELECT authors.name,books.title,books.price,books.resume  FROM `books`
+INNER JOIN author_book ON author_book.book_id=books.id
+INNER JOIN authors ON authors.id=author_book.author_id");
+$query->execute();
+$libros=$query->fetchAll(PDO::FETCH_ASSOC);
 
 ?>
 
@@ -153,7 +161,7 @@ Authenticator::initSession();
         <div class="product-grid col-md-8 col-lg-9">
 
           <div class="row">
-
+               <?php foreach ($libros as $libro): ?>
             <!-- Producto-->
             <div class="offset-1 col-10  offset-md-0 col-md-6 col-lg-3">
               <div class="__tarjeta-producto shadow rounded">
@@ -163,10 +171,10 @@ Authenticator::initSession();
                 </div>
 
                 <img class="rounded w-100" src="../img/libros-portadas/sun-book.jpg" alt="The Sun Portada">
-                <h2 class="__titulo-producto pt-2"><a class="text-reset" href="singleProduct.php">The Sun, The Monn, The Stars</a></h2>
-                <p>by <span>Junot Diaz</span></p>
-                <p class="__precio-producto">$19.99</p>
-                <p class="px-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae cupiditate nisi fuga nam iusto commodi!</p>
+                <h2 class="__titulo-producto pt-2"><a class="text-reset" href="singleProduct.php"><?= $libro["title"]?></a></h2>
+                <p>by <span><?= $libro["name"]?></span></p>
+                <p class="__precio-producto"><?= $libro["price"]?></p>
+                <p class="px-2"><?= $libro["resume"]?></p>
                 <p>
                   <button class="rounded-bottom">
                     Add to Cart
@@ -174,117 +182,9 @@ Authenticator::initSession();
                 </p>
               </div>
             </div>
+            <?php endforeach; ?>
             <!-- EndProducto-->
 
-            <!-- Producto-->
-            <div class="offset-1 col-10 offset-md-0 col-md-6 col-lg-3">
-              <div class="__tarjeta-producto shadow rounded">
-
-                <div class="__favorito position-absolute m-2">
-                  <a class="text-reset" href=""> <i class="fas fa-heart"> </a></i>
-                </div>
-
-                <img class="rounded w-100" src="../img/libros-portadas/killer-book.jpg" alt="The Killer Poison Portada">
-                <h2 class="__titulo-producto pt-2"><a class="text-reset" href="singleProduct.php">The Killer Poison</a></h2>
-                <p>by <span>Julie Martinez</span></p>
-                <p class="__precio-producto">$179.99</p>
-                <p class="px-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae cupiditate nisi fuga nam iusto commodi!</p>
-                <p>
-                  <button class="rounded-bottom">
-                    Add to Cart
-                  </button>
-                </p>
-              </div>
-            </div>
-            <!-- EndProducto-->
-
-            <!-- Producto-->
-            <div class="offset-1 col-10 offset-md-0 col-md-6 col-lg-3">
-              <div class="__tarjeta-producto shadow rounded">
-
-                <div class="__favorito position-absolute m-2">
-                  <a class="text-reset" href=""> <i class="fas fa-heart"> </a></i>
-                </div>
-
-                <img class="rounded w-100" src="../img/libros-portadas/busi-book.jpg" alt="Bussines Portada">
-                <h2 class="__titulo-producto pt-2"><a class="text-reset" href="singleProduct.php">Creative Businnes</a></h2>
-                <p>by <span>Jen Brazel</span></p>
-                <p class="__precio-producto">$600.00</p>
-                <p class="px-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae cupiditate nisi fuga nam iusto commodi!</p>
-                <p>
-                  <button class="rounded-bottom">
-                    Add to Cart
-                  </button>
-                </p>
-              </div>
-            </div>
-            <!-- EndProducto-->
-
-            <!-- Producto-->
-            <div class="offset-1 col-10 offset-md-0 col-md-6 col-lg-3">
-              <div class="__tarjeta-producto shadow rounded">
-
-                <div class="__favorito position-absolute m-2">
-                  <a class="text-reset" href=""> <i class="fas fa-heart"> </a></i>
-                </div>
-
-                <img class="rounded w-100" src="../img/libros-portadas/smile-book.jpg" alt="Smile Portada">
-                <h2 class="__titulo-producto pt-2"><a class="text-reset" href="singleProduct.php">The last smile in Sunder City</a></h2>
-                <p>by <span>Luke Arnold</span></p>
-                <p class="__precio-producto">$600.00</p>
-                <p class="px-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae cupiditate nisi fuga nam iusto commodi!</p>
-                <p>
-                  <button class="rounded-bottom">
-                    Add to Cart
-                  </button>
-                </p>
-              </div>
-            </div>
-            <!-- EndProducto-->
-
-            <!-- Producto-->
-            <div class="offset-1 col-10 offset-md-0 col-md-6 col-lg-3">
-              <div class="__tarjeta-producto shadow rounded">
-
-                <div class="__favorito position-absolute m-2">
-                  <a class="text-reset" href=""> <i class="fas fa-heart"> </a></i>
-                </div>
-
-                <img class="rounded w-100" src="../img/libros-portadas/olio-book.jpg" alt="Olio Portada">
-                <h2 class="__titulo-producto pt-2"><a class="text-reset" href="singleProduct.php">OLIO</a></h2>
-                <p>by <span>Madhu Sashon</span></p>
-                <p class="__precio-producto">$600.00</p>
-                <p class="px-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae cupiditate nisi fuga nam iusto commodi!</p>
-                <p>
-                  <button class="rounded-bottom">
-                    Add to Cart
-                  </button>
-                </p>
-              </div>
-            </div>
-            <!-- EndProducto-->
-
-            <!-- Producto-->
-            <div class="offset-1 col-10 offset-md-0 col-md-6 col-lg-3">
-              <div class="__tarjeta-producto shadow rounded">
-
-                <div class="__favorito position-absolute m-2">
-                  <a class="text-reset" href=""> <i class="fas fa-heart"> </a></i>
-                </div>
-
-                <img class="rounded w-100" src="../img/libros-portadas/teaching-book.jpg" alt="Teaching Portada">
-                <h2 class="__titulo-producto pt-2"><a class="text-reset" href="singleProduct.php">Teching Book</a></h2>
-                <p>by <span>Weston D. and Clay B.</span></p>
-                <p class="__precio-producto">$179.40</p>
-                <p class="px-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae cupiditate nisi fuga nam iusto commodi!</p>
-                <p>
-                  <button class="rounded-bottom">
-                    Add to Cart
-                  </button>
-                </p>
-              </div>
-            </div>
-            <!-- EndProducto-->
 
 
           </div>
