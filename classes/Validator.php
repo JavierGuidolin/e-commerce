@@ -103,4 +103,78 @@ class Validator
 
     }
 
+    public function validateBook(Book $book){
+
+        $errors = [];
+
+
+        /***validations***/
+        //title
+        $title = trim($book->getTitle());
+
+        if (isset($title)) {
+
+            if (strlen($title) < 1) {
+                $errors["title"] = "El titulo debe contener al menos un caracter.";
+            }
+
+        }
+
+        //resume
+        $resume = trim($book->getResume());
+
+        if (isset($resume)) {
+
+            if (strlen($resume) < 50 || strlen($resume) > 999) {
+                $errors["resume"] = "El nombre debe contener entre 50 y 1000 caracteres.";
+            }
+
+        }
+
+
+         //price
+         $price = trim($book->getPrice());
+
+         if (isset($price)) {
+ 
+             if (!is_numeric($price)) {
+                 $errors["price"] = "El precio debe contener solo numeros.";
+             }
+ 
+         }
+
+         //cat
+         $category = trim($book->getCategory()->getName());
+
+         if (isset($category)) {
+ 
+            if (!$category) {
+                $errors["category"] = "Debe Seleccionar una categoria";
+            }
+
+        }
+
+         //cover
+         $cover = $book->getCover();
+
+         if (isset($cover["name"]) && !empty($cover["name"])) {
+
+            $extension = pathinfo($cover["name"], PATHINFO_EXTENSION);
+    
+            if($cover["error"] != 0){
+                $errors["cover"] = "Hubo un problema al cargar la foto.";
+            }elseif(($extension != "jpg") && ($extension != "jpeg") && ($extension != "png")){
+              $errors["cover"] = "La foto debe ser png, jpg o jpeg.";
+            }elseif ($cover["size"] > 3000000) {
+              $errors["cover"] = "La foto no debe superar los 3MB";
+            }
+    
+          }else{
+            $errors["cover"] = "Debe subir una imagen.";
+          }
+
+         return $errors;
+
+    }
+
 }
