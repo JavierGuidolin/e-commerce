@@ -1,0 +1,610 @@
+/************************************ Fonts ***********************************/
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700|Open+Sans:400,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,700,800,900&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Ropa+Sans&display=swap');
+
+/************************************ Generales ***********************************/
+
+
+
+body {
+  font-family: "Poppins", sans-serif;
+  font-size: 12px;
+  color: #5A5858;
+}
+
+header .__header-perfil,
+header .__header-contacto,
+header .__header-cart,
+header .__header-login,
+header .__header-productos,
+header .__header-detalle-producto,
+header .__header-faq {
+  padding-top: 20vh;
+}
+
+.__header-perfil h1,
+.__header-contacto h1,
+.__header-cart h1,
+.__header-login h1,
+.__header-productos h1,
+.__header-faq h1,
+.__header-detalle-producto h1 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 800;
+  color: #F39200;
+}
+
+/************************************ Pagina Home ***********************************/
+header.__background-home {
+  background: url("../img/bs-top-back.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 75vh;
+  background-position: center center;
+}
+
+/*----------- Navegacion -----------*/
+.navbar-brand {
+  width: 125px;
+}
+
+.__logo {
+  width: 100%;
+}
+
+i.__icono-nav {
+  font-size: 1.5em;
+}
+
+i.__icono-usuario, i.__icono-carrito {
+  font-size: 1.65em;
+}
+
+.dropdown-menu {
+  background-color: #393D42;
+  border: 0.5px solid #F39200;
+}
+
+.dropdown-item {
+  color: #9A9DA0;
+  font-size: 12px;
+}
+
+.dropdown-icon {
+  font-size: 1.5em;
+}
+
+/*----------- TextHeader -----------*/
+.__header-home {
+  padding-top: 35vh;
+}
+
+.__header-home h1 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 800;
+}
+
+.__header-home h1 span {
+  color: #F39200;
+}
+
+.__header-home h3, h2 {
+  font-size: 2em;
+  font-family: "Poppins", sans-serif;
+}
+
+/*----------- BestSellers -----------*/
+.__tarjeta-libro-home {
+  border: solid 1px #F39200;
+}
+
+/*----------- Newsletter -----------*/
+.__newsletter {
+  background: url("../img/bs-newsletter.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 50vh;
+  background-position: center center;
+  padding-top: 100px;
+  color: #F39200;
+}
+
+.__newsletter p {
+  background-color: rgba(226, 226, 226, 0.8);
+}
+
+.__newsletter input, .__newsletter button {
+  font-size: 1em;
+}
+
+/*----------- Footer -----------*/
+.__social-links {
+  background-color: #F39200;
+  width: 100%;
+  color: #FFF;
+  font-size: 1.5em;
+}
+
+/************************************Pagina Detalle Producto***********************************/
+header.__background-detalle-producto {
+  background: url("../img/bs-faq.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 50vh;
+  background-position: center center;
+}
+
+/*----------- Carousel -----------*/
+.carousel-thumbnails .carousel-indicators li {
+  height: auto;
+  width: 6.25rem;
+  max-width: 6.25rem;
+  border-width: initial;
+  border-style: none;
+  border-color: initial;
+  border-image: initial;
+}
+
+.carousel-indicators li::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: 0px;
+  display: inline-block;
+  width: 100%;
+  height: 10px;
+}
+
+.carousel-indicators li::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 0px;
+  display: inline-block;
+  width: 100%;
+  height: 10px;
+}
+
+.carousel-thumbnails .carousel-indicators {
+  margin-bottom: -1.5rem;
+}
+
+.__hr {
+  border: 0.5px solid #F39200;
+  width: 100%;
+}
+
+/*----------- InfoProducto -----------*/
+.__input-cantidad {
+  border: 1px solid #EBEBEB;
+  font-size: 1em;
+  height: 40px;
+  text-align: center;
+  width: 80px;
+  margin: 0 15px 15px 0;
+}
+
+.__boton-añadir, .__boton-enviar-review {
+  background: #F39200;
+  border: 0 none;
+  color: #FFF;
+  font-size: 1.15em;
+  font-weight: 600;
+  height: 40px;
+  line-height: 40px;
+  padding: 0 25px;
+  transition: opacity 0.3s;
+}
+
+.__boton-añadir:hover, .__boton-enviar-review:hover {
+  opacity: 0.7;
+}
+
+.__icono-share {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.__icono-share a {
+  border: 2px solid #F39200;
+  border-radius: 100%;
+  margin: 5px;
+  height: 30px;
+  width: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #F39200;
+}
+
+.__icono-info-producto {
+  font-size: 1.5em;
+}
+
+@media (min-width: 768px) {
+  .__icono-share {
+    justify-content: center;
+  }
+}
+
+/*----------- Mi Review -----------*/
+.__mi-review textarea, .__mi-review input, .__mi-review select {
+  font-size: 1em;
+}
+
+.__tarjeta-review {
+  border: 0.5px solid #F39200;
+}
+
+/************************************Pagina FAQ***********************************/
+/*----------- Header -----------*/
+header.__background-faq {
+  background: url("../img/bs-faq.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 50vh;
+  background-position: center center;
+}
+
+/*----------- Tarjeta -----------*/
+.__tarjeta-faq, .__cabecera-tarjeta-faq {
+  background-color: transparent !important;
+  border: none;
+  font-family: "Poppins", sans-serif;
+}
+
+.__tarjeta-faq img {
+  width: 100%;
+}
+
+.__pregunta-tarjeta-faq {
+  height: auto;
+  color: #5A5858;
+  text-align: left;
+  text-decoration: none;
+  font-size: 0.7em;
+}
+
+.__pregunta-tarjeta-faq:after {
+  content: "\2212";
+  width: 25px;
+  font-size: 1em;
+  text-align: center;
+  right: 5px;
+  top: 5px;
+  position: absolute;
+  color: #F39200;
+}
+
+.__pregunta-tarjeta-faq.collapsed:after {
+  content: "\002B";
+}
+
+.__cuerpo-tarjeta-faq {
+  background-color: #E8C082;
+}
+
+.list-group-item.active {
+  background-color: #E8C082;
+  border-color: #E8C082;
+}
+
+/************************************Pagina Productos***********************************/
+/*----------- Header -----------*/
+header.__background-productos {
+  background: url("../img/bs-shop.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 50vh;
+  background-position: center center;
+}
+
+/*----------- Producto -----------*/
+.__tarjeta-producto {
+  text-align: center;
+  font-family: "Ropa Sans", sans-serif;
+}
+
+.__tarjeta-producto>p {
+  font-size: 1.1em;
+}
+
+.__tarjeta-producto .__titulo-producto {
+  font-family: "Ropa Sans", sans-serif;
+  font-weight: 300;
+}
+
+.__tarjeta-producto .__precio-producto {
+  /*color: grey;*/
+  font-size: 1.75em;
+  font-family: "Ropa Sans", sans-serif;
+  color: #F39200;
+}
+
+.__tarjeta-producto button {
+  border: none;
+  outline: 0;
+  padding: 12px;
+  color: white;
+  background-color: #F39200;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 1.15em;
+  text-transform: uppercase;
+  font-weight: 500;
+  transition: opacity 0.3s;
+}
+
+.__tarjeta-producto button:hover {
+  opacity: 0.7;
+}
+
+.__favorito {
+  font-size: 1.5em;
+  color: #F39200;
+}
+
+.__favorito:hover {
+  font-size: 1.8em;
+  opacity: 0.8;
+}
+
+/*----------- Paginacion -----------*/
+.page-link {
+  border: 1px solid #F39200;
+}
+
+/*----------- Etiquetas -----------*/
+.__boton-etiqueta {
+  background-color: rgba(0, 0, 0, .3);
+  transition: background-color 0.3s;
+  font-size: 1em;
+}
+
+.__boton-etiqueta:hover {
+  background-color: #F39200;
+}
+
+.__etiquetas-titulo {
+  border-bottom: 1px solid #F39200;
+  font-family: "Ropa Sans";
+}
+
+/*----------- Categorias -----------*/
+.badge-pill {
+  background-color: #F39200;
+}
+
+/************************************Pagina Login / Registro***********************************/
+header.__background-login {
+  background: url("../img/bs-book-center.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 50vh;
+  background-position: center center;
+}
+
+.modal-dialog {
+  font-family: "Poppins", sans-serif;
+  font-size: 1em;
+}
+
+.modal-footer .__sendEmail, .modal-footer .__closemodal {
+  width: auto;
+  padding: 10px;
+  background: #f17108;
+  color: #fff;
+  font-size: 12px;
+  box-shadow: 0 0 3px 0 rgba(0, 0, 0, .2);
+  cursor: pointer;
+  border: none;
+}
+
+.modal-footer .__closemodal {
+  width: auto;
+  padding: 10px;
+  background: #5a5858;
+  color: #fff;
+  font-size: 12px;
+  box-shadow: 0 0 3px 0 rgba(0, 0, 0, .2);
+  cursor: pointer;
+  border: none;
+}
+
+/************************************ Pagina Carrito ***********************************/
+header.__background-cart {
+  background: url("../img/bs-cart.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 50vh;
+  background-position: center center;
+}
+
+.container-login {
+  background-size: cover;
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-container {
+  display: flex;
+  width: 650px;
+  height: auto;
+  background: #fff;
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, .2);
+}
+
+.register, .login {
+  flex: 1;
+}
+
+.register {
+  padding: 40px;
+  position: relative;
+}
+
+.register h2 {
+  color: #797979;
+  margin-bottom: 30px;
+}
+
+.register input[type="text"],
+.register input[type="password"],
+.register input[type="email"],
+.register input[type="file"],
+.login input,
+.__resetPass {
+  width: 100%;
+  padding: 5px;
+  font-size: 16px;
+  margin-bottom: 25px;
+  border-top-style: none;
+  border-left-style: none;
+  border-right-style: none;
+  border-bottom: 1px solid #a8a8a8;
+  color: #333;
+}
+
+.register .__perfil-pic {
+  font-size: 1.3em;
+}
+
+.register .__perfil-pic::after {
+  content: "Buscar";
+  background-color: #F39200;
+  color: white;
+}
+
+.register .form-check-label {
+  font-size: 1.25em;
+}
+
+.register input[type="text"]:active,
+.register input[type="password"]:focus {
+  outline: none;
+}
+
+.register .submit {
+  width: auto;
+  padding: 10px;
+  background: #f17108;
+  color: #fff;
+  font-size: 12px;
+  box-shadow: 0 0 3px 0 rgba(0, 0, 0, .2);
+  cursor: pointer;
+  border: none;
+}
+
+.register::after {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  top: 50%;
+  right: -23px;
+  padding: 10px;
+  text-align: center;
+  font-size: 19px;
+  background: #f1f1f1;
+  border-radius: 50%;
+  transform: translateY(-50%);
+  box-shadow: -1px 1px 3px 1px rgba(0, 0, 0, .2);
+  color: #7c7c7c;
+}
+
+.login {
+  background-image: linear-gradient(to bottom right, #dc8820, #a55809);
+  padding: 40px;
+}
+
+.login h2 {
+  color: #fff;
+  margin-bottom: 45px;
+}
+
+.login button i {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+}
+
+.login button {
+  width: 100%;
+  margin: 15px 0px;
+  padding: 10px;
+  box-shadow: 0 0 3px 0 rgba(0, 0, 0, .2);
+  cursor: pointer;
+  position: relative;
+}
+
+.login .fb {
+  background: #3b5999;
+  border-style: none;
+  color: #fff;
+}
+
+.login .tw {
+  background: #55acef;
+  border-style: none;
+  color: #fff;
+}
+
+.login .correo {
+  background: #33d4ce;
+  border-style: none;
+  color: #fff;
+}
+
+@media only screen and (max-width: 540px) {
+  .login-container {
+    display: block;
+  }
+
+  .register, .login {
+    flex: none;
+  }
+
+  .register::after {
+    top: unset;
+    bottom: -25px;
+    left: 50%;
+    transform: translateX(-50%) rotate(90deg);
+  }
+}
+
+/************************************ Pagina Contacto ***********************************/
+header.__background-contacto {
+  background: url("../img/bs-faq.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 50vh;
+  background-position: center center;
+}
+
+.__side {
+  background-color: #F39200;
+}
+
+/************************************ Pagina Perfil ***********************************/
+header.__background-perfil {
+  background: url("../img/bs-book-right.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 50vh;
+  background-position: center center;
+}
+.__botonguardar{
+  color: #FFF;
+  background-color: #F39200;
+  border-color: #F39200;
+}
+.custom-file-label::after {
+  content: "Explorar";
+}
