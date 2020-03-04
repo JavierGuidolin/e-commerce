@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\Auth;
+namespace app\Http\Controllers\Auth;
 
-use App\User;
 use App\Http\Controllers\Controller;
+use App\User;
+use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
-use Illuminate\Foundation\Auth\RegistersUsers;
 
 class RegisterController extends Controller
 {
@@ -19,7 +19,7 @@ class RegisterController extends Controller
     | validation and creation. By default this controller uses a trait to
     | provide this functionality without requiring any additional code.
     |
-    */
+     */
 
     use RegistersUsers;
 
@@ -48,25 +48,43 @@ class RegisterController extends Controller
      */
     protected function validator(array $data)
     {
-        return Validator::make($data, [
-            'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
-        ]);
+        return Validator::make($data,
+            [
+                'name' => ['required', 'string', 'max:50'],
+                'surname' => ['required', 'string', 'max:50'],
+                'email' => ['required', 'string', 'email', 'max:100', 'unique:users'],
+                'password' => ['required', 'string', 'min:8', 'max:50', 'confirmed'],
+            ],
+
+            [
+                'required' => "El :attribute debe estar completo",
+                'string' => "El :attribute debe ser caracteres alfanuméricos",
+                'unique' => "El :attribute ingresado ya se encuentra registrado",
+                'confirmed' => "Las contraseñas deben coincidir",
+
+                'name.max' => "El :attribute debe tener :max como máximo",
+                'surname.max' => "El :attribute debe tener :max como máximo",
+                'email' => "Debe ingresar un :attribute valido",
+                'password.min' => "La :attribute debe tener :min caracteres",
+                'password.max' => "La :attribute debe tener :max caracteres como máximo",
+
+            ]);
     }
 
     /**
      * Create a new user instance after a valid registration.
      *
      * @param  array  $data
-     * @return \App\User
+     * @return \app\User
      */
     protected function create(array $data)
     {
         return User::create([
             'name' => $data['name'],
+            'surname' => $data['surname'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
+            'rol' => 1,
         ]);
     }
 }
