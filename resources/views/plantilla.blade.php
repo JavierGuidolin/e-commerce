@@ -22,7 +22,7 @@
       <!-- Navegacion -->
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark  fixed-top">
 
-        <a href="../index.php" class="navbar-brand">
+        <a href="inicio" class="navbar-brand">
           <img class="__logo" src="../img/bs-logo.png" alt="Logo BookStore">
         </a>
 
@@ -34,27 +34,27 @@
 
           <ul class="nav navbar-nav">
             <li class="nav-item">
-              <a href="../index.php" class="nav-link">
+              <a href="inicio" class="nav-link">
                 <i class="__icono-nav fas fa-home pr-2"></i> Inicio</a>
             </li>
 
             <li class="nav-item">
-              <a href="faq.php" class="nav-link">
+              <a href="FAQ" class="nav-link">
                 <i class="__icono-nav fas fa-question-circle pr-2"></i> FAQ</a>
             </li>
 
             <li class="nav-item">
-              <a href="faq.php" class="nav-link">
+              <a href="FAQ" class="nav-link">
                 <i class="__icono-nav fas fa-users pr-2"></i> Quienes somos</a>
             </li>
 
             <li class="nav-item">
-              <a href="contact.php" class="nav-link">
+              <a href="contacto" class="nav-link">
                 <i class="__icono-nav far fa-id-card pr-2"></i> Contacto</a>
             </li>
 
             <li class="nav-item">
-              <a href="products.php" class="nav-link">
+              <a href="productos" class="nav-link">
                 <i class="__icono-nav fas fa-book pr-2"></i> Books</a>
             </li>
 
@@ -68,11 +68,11 @@
               </a>
 
               <div class="dropdown-menu">
-                <a href="cart.php" class="dropdown-item pl-2">
+                <a href="cart" class="dropdown-item pl-2">
                   <i class="dropdown-icon fas fa-gift pr-2"></i> Wish list</a>
-                <a href="cart.php" class="dropdown-item pl-2">
+                <a href="cart" class="dropdown-item pl-2">
                   <i class="dropdown-icon fas fa-shipping-fast pr-2"></i>Pedidos</a>
-                <a href="cart.php" class="dropdown-item pl-2">
+                <a href="cart" class="dropdown-item pl-2">
                   <i class="dropdown-icon fas fa-thumbs-down pr-2"></i> Cancelar pedido</a>
               </div>
             </li>
@@ -80,7 +80,7 @@
             <li class="nav-item">
               <form class="form-inline my-2 my-lg-0">
                 <div class="input-group input-group-sm mb-1">
-                  <input type="text" class="form-control" placeholder="Buscar..." aria-label="Recipient's username" aria-describedby="basic-addon2">
+                  <input type="text" class="form-control" placeholder="Buscar..." aria-label="Recipient's username" aria-describedby="basic-addon2"><!--HACER QUE FUNCIONE -->
                   <div class="input-group-append">
                     <button class="btn btn-sm btn-outline-secondary" type="button"> <i class="fas fa-search"></i> </button>
                   </div>
@@ -103,12 +103,12 @@
 
               <div class="dropdown-menu dropdown-menu-right">
               <!--    if ($_SESSION):  -->
-                  <a href="../php/userAccount.php" class="dropdown-item pl-2"><i class="dropdown-icon fas fa-sign-in-alt pr-2"></i> Mi cuenta</a>
+                  <a href="/userAccount" class="dropdown-item pl-2"><i class="dropdown-icon fas fa-sign-in-alt pr-2"></i> Mi cuenta</a>
                   <div class="dropdown-divider"></div>
-                  <a href="../php/logout.php"  class="dropdown-item pl-2"><i class="fas fa-door-open pr-2"></i>Salir</a>
+                  <a href=""  class="dropdown-item pl-2"><i class="fas fa-door-open pr-2"></i>Salir</a>
               <!--   else: -->
-                  <a href="../php/register.php" class="dropdown-item pl-2 "><i class="dropdown-icon fas fa-user-edit pr-2"></i> Registrarse</a>
-                  <a href="../php/login.php" class="dropdown-item pl-2"><i class="dropdown-icon fas fa-sign-in-alt pr-2"></i> Iniciar sesion</a>
+                  <a href="/register" class="dropdown-item pl-2 "><i class="dropdown-icon fas fa-user-edit pr-2"></i> Registrarse</a>
+                  <a href="/login" class="dropdown-item pl-2"><i class="dropdown-icon fas fa-sign-in-alt pr-2"></i> Iniciar sesion</a>
               <!--     endif;-->
               </div>
 

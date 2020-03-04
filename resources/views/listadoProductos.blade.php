@@ -52,12 +52,12 @@
       <div class="row __filtro">
 
         <div class="col-12 col-md-7">
-          <p class="text-center text-md-right mt-md-2 mt-lg-2">Mostrando 1-12 resultados de 40</p>
+          <p class="text-center text-md-right mt-md-2 mt-lg-2">Mostrando 1-12 resultados de 40</p><!-- ARREGLAR QUE SALGA LA CANTIDAD DE PRODUCTOS -->
         </div>
 
         <div class="col-12 col-md-5">
           <form class="form-inline my-2 my-lg-0 ml-auto justify-content-center justify-content-md-right">
-            <label class="pr-3" for="filtro">Filtrar por: </label>
+            <label class="pr-3" for="filtro">Filtrar por: </label><!-- HACER QUE FUNCIONE -->
             <select name="filtro" id="filtro" class="form-control-sm" id="exampleFormControlSelect1">
               <option value="">Precio</option>
               <option value="">Paginas</option>
@@ -83,7 +83,7 @@
           <ul class="list-group pt-1">
             <li class="list-group-item d-flex justify-content-between align-items-center">
               <a href="categorias">{{$categorie->name}}</a>
-              <span class="badge badge-primary badge-pill">Cantidad por genero</span>
+              <span class="badge badge-primary badge-pill">Cantidad por genero</span><!-- ARREGLAR QUE SALGA LA CANTIDAD POR GENERO -->
             </li>
             </ul>
             @endforeach
