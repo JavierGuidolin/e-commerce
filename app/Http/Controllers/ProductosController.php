@@ -8,16 +8,18 @@ Use App\Category;
 class ProductosController extends Controller
 {
     public function verProductos(){
-      $books=Book::paginate(8);//trae todos los libros y los pagina por 8
+      $books=Book::paginate(8);
+      $libros=Book::all();//trae todos los libros y los pagina por 8
       $categories=Category::all();
-      $vac= compact('books','categories');//variable a compartir en la vista
+      $vac= compact('books','categories','libros');//variable a compartir en la vista
 
       return view('listadoProductos',$vac);
 
     }
     public function detalleProducto($id){
       $books=Book::find($id);
-      $vac= compact('books');
+      $categories=Category::all();
+      $vac= compact('books','categories');
       return view('singleProduct',$vac);
     }
 }
