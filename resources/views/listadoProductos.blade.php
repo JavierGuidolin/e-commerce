@@ -52,7 +52,7 @@
       <div class="row __filtro">
 
         <div class="col-12 col-md-7">
-          <p class="text-center text-md-right mt-md-2 mt-lg-2">Mostrando 1-12 resultados de 40</p><!-- ARREGLAR QUE SALGA LA CANTIDAD DE PRODUCTOS -->
+          <p class="text-center text-md-right mt-md-2 mt-lg-2">Mostrando {{$books->count()}} articulos de {{$libros->count()}}</p>
         </div>
 
         <div class="col-12 col-md-5">
@@ -83,7 +83,7 @@
           <ul class="list-group pt-1">
             <li class="list-group-item d-flex justify-content-between align-items-center">
               <a href="categorias">{{$categorie->name}}</a>
-              <span class="badge badge-primary badge-pill">Cantidad por genero</span><!-- ARREGLAR QUE SALGA LA CANTIDAD POR GENERO -->
+              <span class="badge badge-primary badge-pill">{{$categorie->books->count()}}</span>
             </li>
             </ul>
             @endforeach

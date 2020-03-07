@@ -137,41 +137,20 @@
         <!--Categorias-->
         <div class="d-none d-lg-block col-lg-4">
           <!-- Categorias -->
+          <!-- Categorias -->
           <h2 class="pb-2 __etiquetas-titulo">Categorias</h2>
+          @foreach ($categories as $categorie)
+
+
           <ul class="list-group pt-1">
             <li class="list-group-item d-flex justify-content-between align-items-center">
-              <a href="products.php">Humor</a>
-              <span class="badge badge-primary badge-pill">14</span>
+              <a href="categorias">{{$categorie->name}}</a>
+              <span class="badge badge-primary badge-pill">{{$categorie->books->count()}}</span>
             </li>
-            <li class="list-group-item d-flex justify-content-between align-items-center">
-              <a href="products.php">Fantasia</a>
-              <span class="badge badge-primary badge-pill">2</span>
-            </li>
-            <li class="list-group-item d-flex justify-content-between align-items-center">
-              <a href="products.php">Ciencia Ficcion</a>
-              <span class="badge badge-primary badge-pill">2</span>
-            </li>
-            <li class="list-group-item d-flex justify-content-between align-items-center">
-              <a href="products.php">Kids</a>
-              <span class="badge badge-primary badge-pill">2</span>
-            </li>
-            <li class="list-group-item d-flex justify-content-between align-items-center">
-              <a href="products.php">Arte</a>
-              <span class="badge badge-primary badge-pill">2</span>
-            </li>
-            <li class="list-group-item d-flex justify-content-between align-items-center">
-              <a href="products.php">Negocios</a>
-              <span class="badge badge-primary badge-pill">2</span>
-            </li>
-            <li class="list-group-item d-flex justify-content-between align-items-center">
-              <a href="products.php">Autoayuda</a>
-              <span class="badge badge-primary badge-pill">2</span>
-            </li>
-            <li class="list-group-item d-flex justify-content-between align-items-center">
-              <a href="products.php">Horror</a>
-              <span class="badge badge-primary badge-pill">1</span>
-            </li>
-          </ul>
+            </ul>
+            @endforeach
+
+        
           <!-- EndCategorias -->
 
           <!-- Etiquetas -->
