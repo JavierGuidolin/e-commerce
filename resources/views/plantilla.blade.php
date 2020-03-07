@@ -66,6 +66,8 @@
               <a href="cart.php" class="nav-link dropdown-toggle" data-toggle="dropdown">
                 <i class="__icono-carrito fas fa-shopping-cart"></i>
               </a>
+                  @if (Auth::user()!=NULL)
+
 
               <div class="dropdown-menu">
                 <a href="cart" class="dropdown-item pl-2">
@@ -75,6 +77,7 @@
                 <a href="cart" class="dropdown-item pl-2">
                   <i class="dropdown-icon fas fa-thumbs-down pr-2"></i> Cancelar pedido</a>
               </div>
+                @endif
             </li>
 
             <li class="nav-item">
@@ -102,14 +105,16 @@
                 </a>
 
               <div class="dropdown-menu dropdown-menu-right">
-              <!--    if ($_SESSION):  -->
+              <!--    if ($_SESSION):  -->@if (Auth::user()!=NULL)
+
+
                   <a href="/userAccount" class="dropdown-item pl-2"><i class="dropdown-icon fas fa-sign-in-alt pr-2"></i> Mi cuenta</a>
                   <div class="dropdown-divider"></div>
-                  <a href=""  class="dropdown-item pl-2"><i class="fas fa-door-open pr-2"></i>Salir</a>
-              <!--   else: -->
+                  <a href="/logout"  class="dropdown-item pl-2"><i class="fas fa-door-open pr-2"></i>Salir</a>
+              <!--   else: -->  @else
                   <a href="/register" class="dropdown-item pl-2 "><i class="dropdown-icon fas fa-user-edit pr-2"></i> Registrarse</a>
                   <a href="/login" class="dropdown-item pl-2"><i class="dropdown-icon fas fa-sign-in-alt pr-2"></i> Iniciar sesion</a>
-              <!--     endif;-->
+              <!--     endif;-->@endif
               </div>
 
             </li>
