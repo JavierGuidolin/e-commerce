@@ -1,0 +1,16 @@
+.__social-links {
+    background-color: #EF7752;
+    width: 100%;
+    color: #FFF;
+    font-size: 1.5em;
+}
+
+
+footer a {
+    color: #EF7752;
+    font-size: 0.9em;
+}
+
+footer a:hover {
+    color: #ece8dd;
+}

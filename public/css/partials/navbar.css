@@ -1,0 +1,157 @@
+/*--------------Navegacion--------------*/
+.__logo {
+    width: 50%;
+  }
+  
+  
+  /*--------------Generales--------------*/
+  body {
+    font-family: 'Lora', sans-serif;
+    font-size: 14px;
+  }
+  
+  a:hover {
+    text-decoration: none;
+  }
+  
+  i {
+    color: #ef7752;
+    font-size: 1.2em
+  }
+  
+  /*--------------Navegacion--------------*/
+  
+  .fa-bars {
+    font-size: 1em;
+  }
+  
+  .__header-search-form {
+    background-color: #e4ded6;
+    width: 90%;
+    border: 1px solid gray;
+    border-radius: 30px;
+  }
+  
+  .__search-input {
+    width: 85%;
+    height: 5vh;
+    outline: 0;
+    border: none;
+    background: none;
+  }
+  
+  .__search-button {
+    width: 10%;
+    height: 5vh;
+    border: none;
+    background: none;
+  }
+  
+  .__items {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    border-radius: 50%;
+    height: 15px;
+    width: 15px;
+    padding: 10px;
+    color: #fff;
+    top: -12px;
+    left: 10px;
+    font-size: .8em
+  }
+  
+  .navbar {
+    font-family: 'Lora', serif;
+    padding-bottom: 0.5rem !important;
+  }
+  
+  .navbar li a {
+    color: #fff !important;
+  }
+  
+  
+  @media (min-width: 768px) and (max-width: 1024px) {
+  
+    .__logo {
+      width: 70%;
+    }
+  
+  
+    .__header-search-form {
+      width: 55%
+    }
+  
+    .__cool-link::after {
+      content: none;
+    }
+  
+  
+    .__user-info {
+      font-size: 0.9em;
+    }
+  
+  
+  }
+  
+  
+  @media (min-width: 1025px) and (max-width: 1280px) {
+  
+    .logo {
+      width: 30%;
+    }
+  
+    .__header-search-form {
+      width: 55%
+    }
+  
+    .__cool-link::after {
+      content: '';
+      display: block;
+      width: 0;
+      height: 2px;
+      background: #ef7752;
+      transition: width .3s;
+    }
+  
+    .__cool-link:hover::after {
+      width: 100%;
+      transition: width .3s;
+    }
+  
+    .navbar {
+      padding-bottom: 0 !important;
+    }
+  
+  }
+  
+  @media (min-width: 1281px) {
+  
+    .logo {
+      width: 30%;
+    }
+  
+    .__header-search-form {
+      width: 40%
+    }
+  
+    .__cool-link::after {
+      content: '';
+      display: block;
+      width: 0;
+      height: 2px;
+      background: #ef7752;
+      transition: width .3s;
+    }
+  
+    .__cool-link:hover::after {
+      width: 100%;
+      transition: width .3s;
+    }
+  
+    .navbar {
+      padding-bottom: 0 !important;
+    }
+  
+  }

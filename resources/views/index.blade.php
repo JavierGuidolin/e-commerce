@@ -1,138 +1,330 @@
-@extends('plantilla')
+@extends('layouts.plantilla')
+
  @section('titulo')
    Inicio
  @endsection
+
+ @section('styles')
+    <link rel="stylesheet" href="/css/owl-carousel/owl.carousel.min.css">
+    <link rel="stylesheet" href="/css/owl-carousel/owl.theme.default.min.css">
+    <link rel="stylesheet" href="/css/index.css">
+ @endsection
+
  @section('principal')
 
-<header id="header" class="__background-home">
-    <!-- TextHeader -->
-    <section class="__header-home">
-      <div class="container">
-        <div class="row">
-          <article class="col-xs-6 col-md-6 col-xl-6">
-            <div class="pl-4">
-              <h1 class="text-uppercase"><span>B</span>ook<span>S</span>tore</h1>
-              <h2>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nesciunt.</h2>
-              <h3><a class="text-reset" href="php/products.php">Comprar Ahora! <i class="fas fa-arrow-circle-right"></i></a></h3>
-            </div>
-          </article>
-        </div>
+ <main>
+
+  <!-- Hero Section -->
+  <section class="__hero-index col-12">
+
+      <div class="__hero-data pl-4 pt-2 h-100">
+          <p class="text-uppercase animated fadeInDown delay-1s">a sofa,</p>
+          <p class="text-uppercase animated fadeInDown delay-2s">a good book,</p>
+          <p class="text-uppercase animated fadeInDown delay-3s">and you.</p>
       </div>
-    </section>
-    <!-- EndTextHeader -->
 
-  </header>
-  <!-- EndHeader -->
+  </section>
+  <!-- End Hero Section -->
 
-  <!-- Main -->
-  <main>
+  <!-- Welcome Section -->
+  <section class="__welcome">
 
-    <!-- BestSellers -->
-    <section>
-      <div class="container">
-        <div class="row">
+      <div class="container py-5">
 
-          <div class="col-xs-6 col-md-12">
-            <div class="text-center p-3 pl-2 mt-5">
-              <h3>Bestsellers</h3>
-              <p class="">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe neque veritatis velit praesentium magnam dolore commodi qui quas fuga, tempora quidem corporis, accusantium architecto, quam.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="card-columns">
-
-          <!-- Libro -->
-          <div class="card __tarjeta-libro-home">
-            <img src="img/libros-portadas/busi-book.jpg" class="card-img-top" alt="Businnes Portada">
-            <div class="card-body">
-              <h5 class="card-title text-center text-center">Creative Business Book</h5>
-              <p class="card-text text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur accusamus debitis possimus temporibus dolorum, minus harum hic veniam, magni a, laboriosam qui deserunt, sunt reprehenderit!</p>
-            </div>
-          </div>
-          <!-- EndLibro -->
-
-          <!-- Libro -->
-          <div class="card __tarjeta-libro-home">
-            <img src="img/libros-portadas/olio-book.jpg" class="card-img-top" alt="Olio Portada">
-            <div class="card-body">
-              <h5 class="card-title text-center">Olio</h5>
-              <p class="card-text text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet nobis ut quis ea, maxime illum!</p>
-            </div>
-          </div>
-          <!-- EndLibro -->
-
-          <!-- Libro -->
-          <div class="card __tarjeta-libro-home">
-            <img src="img/libros-portadas/smile-book.jpg" class="card-img-top" alt="Smile Portada">
-            <div class="card-body">
-              <h5 class="card-title text-center">The last smile in Sunder City</h5>
-              <p class="card-text text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla, quibusdam. Assumenda.</p>
-            </div>
-          </div>
-          <!-- EndLibro -->
-
-          <!-- Libro -->
-          <div class="card __tarjeta-libro-home">
-            <img src="img/libros-portadas/sun-book.jpg" class="card-img-top" alt="Sun Portada">
-            <div class="card-body">
-              <h5 class="card-title text-center">The Sun, The Moon, The Stars</h5>
-              <p class="card-text text-center">Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
-            </div>
-          </div>
-          <!-- EndLibro -->
-
-          <!-- Libro -->
-          <div class="card __tarjeta-libro-home">
-            <img src="img/libros-portadas/killer-book.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title text-center">The Killer Poison</h5>
-              <p class="card-text text-center">Lorem ipum dolor sit amet, consectetur adipisicing elit. Nulla, quibusdam. Assumenda.</p>
-            </div>
-          </div>
-          <!-- EndLibro -->
-
-          <!-- Libro -->
-          <div class="card __tarjeta-libro-home">
-            <img src="img/libros-portadas/teaching-book.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title text-center">Unleashing Great Teaching</h5>
-              <p class="card-text text-center">Consectetur adipisicing elit. Mollitia necessitatibus neque molestiae corporis consequatur numquam, eveniet provident explicabo suscipit beatae sunt possimus voluptatum, aperiam voluptas officia odit ex
-                et rem?</p>
-            </div>
-          </div>
-          <!-- EndLibro -->
-
-        </div>
-      </div>
-    </section>
-    <!-- EndBestSellers -->
-
-    <!-- Newsletter -->
-    <section class="__newsletter" class="mt-5 mb-5">
-      <div class="container">
-        <div class="col-lg-7 offset-lg-5 col-md-7 offset-md-5 col-12">
-          <div class="text-center">
-            <h2>Stay With Us</h2>
-          </div>
-          <div class=" text-center">
-            <p>Suscribite a nuestro newsletter y esta al Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet temporibus cumque ipsum, at quos! Laudantium sequi, illo quis eaque amet deserunt sed tenetur sunt sint earum iusto ipsam,
-              excepturi repudiandae?</p>
-            <form action="#">
-              <div class="input-group mb-3">
-                <input type="text" class="form-control" placeholder="Ingresa tu email..." aria-label="Recipient's username" aria-describedby="basic-addon2">
-                <div class="input-group-append">
-                  <button class="btn btn-outline-secondary" type="button">Suscribirse</button>
-                </div>
+          <div class="row">
+              <div class="col-12 col-md-10 offset-md-1 mb-5">
+                  <h1 class="text-center font-weight-bold pt-3">WELCOME TO BOOKSTORE</h1>
+                  <h2 class="text-center pt-3">
+                      " Lorem ipsum dolor sit amet consectetur, <b>adipisicing elit. Iure molestiae quae est
+                          repudiandae
+                          eum!
+                          Facere error beatae praesentium similique</b> fuga eos illum deleniti consectetur?
+                      Deserunt."
+                  </h2>
               </div>
-            </form>
           </div>
-        </div>
-      </div>
-    </section>
-    <!-- Newsletter -->
 
-  </main>
-  <!-- EndMain -->
+
+          <div class="row">
+
+              <div class="offset-1 col-10 col-md-4 offset-md-0 text-center __welcome-options">
+                  <i class="fas fa-book p-3 animated pulse infinite"></i>
+                  <p>
+                      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Suscipit, sapiente. Facere
+                      omnis error accusamus unde modi corporis laborum. Accusamus, sequi.
+                  </p>
+            </div>
+
+
+              <div class="offset-1 col-10 col-md-4 offset-md-0 text-center __welcome-options">
+                  <i class="fas fa-pen-alt p-3 animated pulse infinite"></i>
+                  <p class="">
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam dolor doloremque
+                      laboriosam, delectus similique assumenda officia repellat fugiat.
+                  </p>
+              </div>
+
+              <div class="offset-1 col-10 col-md-4 offset-md-0 text-center  __welcome-options ">
+                  <i class="fas fa-glasses p-3 animated pulse infinite"></i>
+                  <p class="">
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere voluptate illum
+                      dolores quibusdam sit.
+                  </p>
+              </div>
+
+          </div>
+
+      </div>
+
+    </div>
+
+  </section>
+  <!-- End Welcome Section -->
+
+  <!-- Bestsellers Section -->
+  <section class="__betsellers">
+
+      <div class="pt-4 pb-4">
+          <h2 class="text-center">Bestsellers</h2>
+      </div>
+
+      <div class="owl-carousel owl-theme">
+
+          <div class="item">
+              <div class="__cover-bestseller">
+                  <img class="w-75 mx-auto " src="/img/libros-portadas/the-arsonist.jpg" alt="">
+                  <div class="__options pb-2">
+
+                      <a class="__options-add-to-cart mr-1 mb-1" href="#">
+                          <i class="fas fa-shopping-bag"></i>
+                          <span>BUY</span>
+                      </a>
+                      <a class="__options-add-to-fav mr-1" href="#">
+                          <i class="far fa-heart"></i>
+                      </a>
+
+                  </div>
+              </div>
+              <div class="pt-3">
+                  <h3 class="text-center font-weight-bold">
+                      <a href="">The girl in red</a>
+                  </h3>
+                  <h6 class="text-center">by Chloe Hooper</h6>
+                  <h3 class="text-center">$ 27.99</h3>
+              </div>
+          </div>
+
+          <div class="item">
+              <div class="__cover-bestseller">
+                  <img class="w-75 mx-auto " src="/img/libros-portadas/the-girl-in-red.jpg" alt="">
+                  <div class="__options pb-2">
+
+                      <a class="__options-add-to-cart mr-1 mb-1" href="#">
+                          <i class="fas fa-shopping-bag"></i>
+                          <span>BUY</span>
+                      </a>
+                      <a class="__options-add-to-fav mr-1" href="#">
+                          <i class="far fa-heart"></i>
+                      </a>
+
+                  </div>
+              </div>
+              <div class="pt-3">
+                  <h3 class="text-center font-weight-bold">
+                     <a href="">The Arsonist</a>
+                    </h3>
+                  <h6 class="text-center">by Create Media</h6>
+                  <h3 class="text-center">$ 12.99</h3>
+              </div>
+          </div>
+
+          <div class="item">
+              <div class="__cover-bestseller">
+                  <img class="w-75 mx-auto " src="/img/libros-portadas/there-there.jpg" alt="">
+                  <div class="__options pb-2">
+
+                      <a class="__options-add-to-cart mr-1 mb-1" href="#">
+                          <i class="fas fa-shopping-bag"></i>
+                          <span>BUY</span>
+                      </a>
+                      <a class="__options-add-to-fav mr-1" href="#">
+                          <i class="far fa-heart"></i>
+                      </a>
+
+                  </div>
+              </div>
+              <div class="pt-3">
+                  <h3 class="text-center font-weight-bold">
+                      <a href="">There There</a>
+                    </h3>
+                  <h6 class="text-center">by Tommy Orange</h6>
+                  <h3 class="text-center">$ 12.99</h3>
+              </div>
+          </div>
+
+          <div class="item">
+              <div class="__cover-bestseller">
+                  <img class="w-75 mx-auto " src="/img/libros-portadas/very-nice.jpg" alt="">
+                  <div class="__options pb-2">
+
+                      <a class="__options-add-to-cart mr-1 mb-1" href="#">
+                          <i class="fas fa-shopping-bag"></i>
+                          <span>BUY</span>
+                      </a>
+                      <a class="__options-add-to-fav mr-1" href="#">
+                          <i class="far fa-heart"></i>
+                      </a>
+
+                  </div>
+              </div>
+              <div class="pt-3">
+                  <h3 class="text-center font-weight-bold">
+                      <a href="">Very Nice</a>
+                  </h3>
+                  <h6 class="text-center">by Mary Watchwosky</h6>
+                  <h3 class="text-center">$ 12.99</h3>
+              </div>
+          </div>
+
+      </div>
+
+  </section>
+  <!-- End Bestsellers Section -->
+
+  <!-- New Books Section -->
+  <section class="__betsellers">
+
+      <div class="pt-4 pb-4">
+          <h2 class="text-center">Special Offer</h2>
+      </div>
+
+      <div class="owl-carousel owl-theme">
+
+          <div class="item">
+              <div class="__cover-bestseller">
+                  <img class="w-75 mx-auto " src="/img/libros-portadas/ballad.jpg" alt="">
+                  <div class="__options pb-2">
+
+                      <a class="__options-add-to-cart mr-1 mb-1" href="#">
+                          <i class="fas fa-shopping-bag"></i>
+                          <span>BUY</span>
+                      </a>
+                      <a class="__options-add-to-fav mr-1" href="#">
+                          <i class="far fa-heart"></i>
+                      </a>
+
+                  </div>
+              </div>
+              <div class="pt-3">
+                  <h3 class="text-center font-weight-bold">
+                      <a href="">The Ballada Of Songbirds and Snakes</a>
+                    </h3>
+                  <h6 class="text-center">by Suzanne Collins</h6>
+                  <h3 class="text-center">$ 27.99</h3>
+              </div>
+          </div>
+
+          <div class="item">
+              <div class="__cover-bestseller">
+                  <img class="w-75 mx-auto " src="/img/libros-portadas/hp-cursed-child.jpg" alt="">
+                  <div class="__options pb-2">
+
+                      <a class="__options-add-to-cart mr-1 mb-1" href="#">
+                          <i class="fas fa-shopping-bag"></i>
+                          <span>BUY</span>
+                      </a>
+                      <a class="__options-add-to-fav mr-1" href="#">
+                          <i class="far fa-heart"></i>
+                      </a>
+
+                  </div>
+              </div>
+              <div class="pt-3">
+                  <h3 class="text-center font-weight-bold">
+                      <a href="">Harry Potter</a>
+                    </h3>
+                  <h6 class="text-center">by J.K. Rowlings</h6>
+                  <h3 style="text-decoration: line-through;" class="text-center">$ 12.99</h3>
+                  <h3 style="font-size: 1.2em;" class="text-center">$ 12.99</h3>
+              </div>
+          </div>
+
+          <div class="item">
+              <div class="__cover-bestseller">
+                  <img class="w-75 mx-auto " src="/img/libros-portadas/a.webp" alt="">
+                  <div class="__options pb-2">
+
+                      <a class="__options-add-to-cart mr-1 mb-1" href="#">
+                          <i class="fas fa-shopping-bag"></i>
+                          <span>BUY</span>
+                      </a>
+                      <a class="__options-add-to-fav mr-1" href="#">
+                          <i class="far fa-heart"></i>
+                      </a>
+
+                  </div>
+              </div>
+              <div class="pt-3">
+                  <h3 class="text-center font-weight-bold">
+                     <a href="">The Happy Lemon</a>
+                    </h3>
+                  <h6 class="text-center">by Tommy Orange</h6>
+                  <h3 class="text-center">$ 12.99</h3>
+              </div>
+          </div>
+
+          <div class="item">
+              <div class="__cover-bestseller">
+                  <img class="w-75 mx-auto " src="/img/libros-portadas/very-nice.jpg" alt="">
+                  <div class="__options pb-2">
+
+                      <a class="__options-add-to-cart mr-1 mb-1" href="#">
+                          <i class="fas fa-shopping-bag"></i>
+                          <span>BUY</span>
+                      </a>
+                      <a class="__options-add-to-fav mr-1" href="#">
+                          <i class="far fa-heart"></i>
+                      </a>
+
+                  </div>
+              </div>
+              <div class="pt-3">
+                  <h3 class="text-center font-weight-bold">
+                      <a href="">Very Nice</a>
+                    </h3>
+                  <h6 class="text-center">by Mary Watchwosky</h6>
+                  <h3 class="text-center">$ 12.99</h3>
+              </div>
+          </div>
+
+      </div>
+
+  </section>
+  <!-- End Books Section -->
+
+  <!-- Random Cite Section -->
+  <section class="__random-cite mt-5 ">
+      <div class="h-100">
+          <div class="h-100 text-light d-flex justify-content-center align-items-center font">
+              <blockquote class=" blockquote text-center col-md-10 col-lg-8">
+                  <p class="mb-0 font-weight-bold font-italic">Lorem ipsum dolor sit amet, consectetur adipiscing
+                      elit. Integer posuere erat a
+                      ante.</p>
+                  <footer class="blockquote-footer text-light">Someone famous in <cite title="Source Title">Source
+                          Title</cite></footer>
+              </blockquote>
+          </div>
+      </div>
+  </section>
+  <!-- End Random Cite Section -->
+
+
+@endsection
+
+
+@section('scripts')
+
+<script src="/js/owl.carousel.min.js"></script>
+<script src="/js/manageOwlCarousel.js"></script>
 
 @endsection
