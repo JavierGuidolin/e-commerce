@@ -1,0 +1,93 @@
+body {
+    font-family: 'Merriweather', sans-serif;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+/*-------------login----------------*/
+.__image-side-login,
+.__image-side-register,
+.__image-side-forgot-pass,
+.__image-side-reset {
+    display: none;
+}
+
+.__form-side {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.__forgot-pass {
+    padding-left: 0;
+}
+
+@media(min-width:768px) {
+
+    .__form-side {
+        width: 50%;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .__auth {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .__image-side-login,
+    .__image-side-register,
+    .__image-side-forgot-pass,
+    .__image-side-reset {
+        width: 50%;
+        height: 100vh;
+        background-size: cover;
+        background-position: center center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-family: 'Libre Baskerville', sans-serif;
+    }
+
+    .__image-side-login {
+        background-image: url('/img/login.jpg');
+    }
+
+    .__image-side-register {
+        background-image: url('/img/register.jpg');
+    }
+
+    .__image-side-forgot-pass {
+        background-image: url('/img/way.jpg');
+    }
+
+    .__image-side-reset {
+        background-image: url('/img/password.jpg');
+    }
+    
+    .__image-side-login h1,
+    .__image-side-register h1,
+    .__image-side-forgot-pass h1,
+    .__image-side-reset h1 {
+        color: #fff;
+        font-size: 4em;
+    }
+
+    .__image-side-login p,
+    .__image-side-register p,
+    .__image-side-forgot-pass p,
+    .__image-side-reset p {
+        color: #fff;
+        font-size: 1.2em;
+    }
+
+
+}

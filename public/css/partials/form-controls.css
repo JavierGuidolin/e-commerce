@@ -1,0 +1,17 @@
+input[type=password],
+input[type=email],
+input[type=text],
+textarea {
+    background-color: antiquewhite !important;
+    color: #61605e;
+}
+
+.__btn {
+    background-color: #ef7756;
+    color: #fff;
+}
+
+.__btn:hover {
+    background-color: #946d62;
+    color: #fff;
+}

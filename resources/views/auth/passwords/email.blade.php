@@ -1,47 +1,74 @@
-@extends('layouts.app')
+@extends('layouts.plantilla-lr')
+
+@section('titulo')
+Olvide mi contraseña
+@endsection
+
+@section('styles')
+    <link rel="stylesheet" href="/css/auth.css">
+@endsection
+
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Reset Password') }}</div>
+<main>
+    
+    <section class="__auth">
 
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
+        <div class="__image-side-forgot-pass">
 
-                    <form method="POST" action="{{ route('password.email') }}">
-                        @csrf
+            <h1 class="text-center">Lorem</h1>
+            <p class="text-center">Lorem ipsum dolor sit amet.</p>
 
-                        <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
+        </div>
 
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+        <div class="__form-side">
 
-                                @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
+            <div class="">
+                <a href="/"><img class="w-100 mx-auto" src="/img/bookStoreLogo.svg" alt=""></a>
+            </div>
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 offset-md-2 col-md-8  py-5">
+
+                        <h5>¿Olvidaste tu contraseña?</h5>
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsum officiis sunt, magni nemo
+                            expedita voluptas!</p>
+
+                        <form method="POST" action="{{ route('password.email') }}">
+
+                            @csrf
+
+                            <div class="row">
+
+                                <div class="col">
+                                    <label for="email">Email</label>
+                                    <input id="email" type="email"
+                                        class="form-control @error('email') is-invalid @enderror" name="email"
+                                        value="{{ old('email') }}" required autocomplete="email" autofocus>
+
+                                    @error('email')
+                                    <small id="nameHelp" class="mb-3 form-text text-danger">
+                                        {{ $message }}
+                                    </small>
+                                    @enderror
+                                </div>
                             </div>
-                        </div>
 
-                        <div class="form-group row mb-0">
-                            <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Send Password Reset Link') }}
-                                </button>
+                            <div class="text-right mt-2">
+                                <input type="submit" class="btn text-uppercase __btn" value="Enviar Link">
                             </div>
-                        </div>
-                    </form>
+                        </form>
+                    </div>
                 </div>
             </div>
+
+
         </div>
-    </div>
-</div>
+
+
+    </section>
+
+
+</main>
 @endsection

@@ -12,7 +12,7 @@
       <link href="https://fonts.googleapis.com/css?family=PT+Serif:700&display=swap" rel="stylesheet">
 
       <link rel="stylesheet" href="/css/app.css">   
-      <link rel="stylesheet" href="/css/style.css">   
+      <!--<link rel="stylesheet" href="/css/style.css">-->
       <link rel="stylesheet" href="/css/partials/navbar.css">
       <link rel="stylesheet" href="/css/partials/footer.css">
       <link rel="stylesheet" href="/css/partials/main.css">
@@ -40,7 +40,7 @@
                     <!-- Logo -->
                     <div class="col-12 col-md-4">
                         <div class="p-4 text-center">
-                            <a href="./index.html" href="#">
+                            <a href="/" href="#">
                                 <img class="__logo" src="/img/bookStoreLogo.svg" alt="BookStore Logo">
                             </a>
                         </div>
