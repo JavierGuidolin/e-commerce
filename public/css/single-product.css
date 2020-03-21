@@ -1,0 +1,135 @@
+.__input-qty {
+    border: 1px solid #ced4da;
+    font-size: 1em;
+    height: 40px;
+    text-align: center;
+    width: 60px;
+    margin: 0 8px 15px 0;
+    border-radius: 3px
+}
+
+.__btn-add {
+    border: 0 none;
+    font-size: 1.15em;
+    font-weight: 600;
+    height: 40px;
+    line-height: 40px;
+    padding: 0 25px;
+    font-family: Merriweather, sans-serif
+}
+
+.__icono-share {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center
+}
+
+.__icono-share a {
+    border: 2px solid #f39200;
+    border-radius: 100%;
+    margin: 5px;
+    height: 30px;
+    width: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #f39200
+}
+
+@media (min-width:768px) {
+    .__icono-share {
+        justify-content: left
+    }
+}
+
+.__single-product-section {
+    background-color: #ede8ed
+}
+
+.fa-star,
+.fa-star-half-alt {
+    font-size: 1.2em;
+    color: #ef7752
+}
+
+.fa-facebook-f,
+.fa-linkedin-in,
+.fa-twitter {
+    font-size: 1em
+}
+
+.__title-product {
+    font-weight: 700
+}
+
+.__description-product {
+    font-family: Merriweather, sans-serif;
+    font-weight: 300;
+    font-size: .9em
+}
+
+.__author-product {
+    font-family: Merriweather, sans-serif;
+    font-size: .8em
+}
+
+.__price-product {
+    font-family: Merriweather, sans-serif;
+    font-weight: 700
+}
+
+.__author-details {
+    background-color: #252420
+}
+
+.__author-description {
+    color: #e4ded6
+}
+
+.__author-description h5 {
+    font-family: 'PT Serif', sans-serif;
+    font-weight: 300
+}
+
+.__author-description p {
+    font-size: .7em;
+    font-family: Merriweather, sans-serif;
+    font-weight: 300
+}
+
+.__product-rel-title {
+    color: #e4ded6;
+    font-size: .9em
+}
+
+
+/*--------------reviews--------------*/
+.__review {
+    font-family: Merriweather, sans-serif
+}
+
+.__review h6 {
+    font-weight: 700
+}
+
+.__review p {
+    font-weight: 300
+}
+
+.__review-individual p {
+    font-size: .8em
+}
+
+.__review-individual span {
+    color: #ef7752
+}
+
+.__review input[type=email],
+.__review input[type=text],
+.__review textarea {
+    background-color: #ffebcd !important;
+    color: #61605e;
+    font-family: Merriweather
+}
