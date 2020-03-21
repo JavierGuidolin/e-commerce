@@ -23,6 +23,7 @@ body {
 
 .__forgot-pass {
     padding-left: 0;
+    color: #555556;
 }
 
 @media(min-width:768px) {
@@ -58,19 +59,19 @@ body {
     }
 
     .__image-side-login {
-        background-image: url('/img/login.jpg');
+        background-image: url('/img/login.webp');
     }
 
     .__image-side-register {
-        background-image: url('/img/register.jpg');
+        background-image: url('/img/register.webp');
     }
 
     .__image-side-forgot-pass {
-        background-image: url('/img/way.jpg');
+        background-image: url('/img/way.webp');
     }
 
     .__image-side-reset {
-        background-image: url('/img/password.jpg');
+        background-image: url('/img/password.webp');
     }
     
     .__image-side-login h1,

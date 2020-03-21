@@ -23,7 +23,7 @@ Login
     <div class="__form-side">
 
         <div class="">
-            <a href="/"><img class="w-100 mx-auto" src="/img/bookStoreLogo.svg" alt=""></a>
+            <a href="/"><img class="w-100 mx-auto" src="/img/bookStoreLogo.svg" alt="BookStore Logo"></a>
         </div>
 
         <div class="container">
@@ -36,7 +36,7 @@ Login
                             <div class="col">
                                 <label for="email">Email</label>
                                 <input type="email" id="email" name="email"
-                                    class="form-control @error('email') is-invalid @enderror"
+                                    class="form-control __form-input @error('email') is-invalid @enderror"
                                     value="{{ old('email') }}" required autocomplete="email">
                                 @error('email')
                                 <small id="emailHelp" class="mb-3 form-text text-danger">
@@ -50,7 +50,7 @@ Login
                             <div class="col">
                                 <label for="password">Contraseña</label>
                                 <input type="password" id="password" name="password"
-                                    class="form-control @error('password') is-invalid @enderror"
+                                    class="form-control __form-input @error('password') is-invalid @enderror"
                                     value="{{ old('password') }}" required autocomplete="password">
                                 @error('password')
                                 <small id="passwordHelp" class="mb-3 form-text text-danger">
@@ -67,11 +67,11 @@ Login
                         </div>
 
                         <div class="text-right">
-                            <input type="submit" class="btn text-uppercase __btn" value="login">
+                            <input type="submit" class="btn font-weight-bold text-uppercase __btn" value="login">
                         </div>
 
                         @if (Route::has('password.request'))
-                        <a class="btn btn-link __forgot-pass pt-2" href="{{ route('password.request') }}">
+                        <a class="btn btn-link font-weight-bold  __forgot-pass pt-2" href="{{ route('password.request') }}">
                             {{ __('¿Olvidaste tu contraseña?') }}
                         </a>
                         @endif

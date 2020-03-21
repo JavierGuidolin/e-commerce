@@ -24,7 +24,7 @@ Olvide mi contraseña
         <div class="__form-side">
 
             <div class="">
-                <a href=""><img class="w-100 mx-auto" src="bookStoreLogo.svg" alt=""></a>
+                <a href=""><img class="w-100 mx-auto" src="bookStoreLogo.svg" alt="BookStore Logo"></a>
             </div>
 
             <div class="container">
@@ -46,7 +46,7 @@ Olvide mi contraseña
                                 <div class="col">
                                     <label for="email">Email</label>
                                     <input id="email" type="email"
-                                        class="form-control @error('email') is-invalid @enderror" name="email"
+                                        class="form-control __form-input @error('email') is-invalid @enderror" name="email"
                                         value="{{ old('email') }}" required autocomplete="email" autofocus>
 
                                     @error('email')
@@ -62,7 +62,7 @@ Olvide mi contraseña
                                 <div class="col">
                                     <label for="password">Password</label>
                                     <input id="password" type="password"
-                                        class="form-control @error('password') is-invalid @enderror" name="password"
+                                        class="form-control __form-input @error('password') is-invalid @enderror" name="password"
                                         required autocomplete="new-password">
 
                                     @error('password')
@@ -74,13 +74,13 @@ Olvide mi contraseña
 
                                 <div class="col">
                                     <label for="password-confirm">Confirmar</label>
-                                    <input id="password-confirm" type="password" class="form-control"
+                                    <input id="password-confirm" type="password" class="form-control __form-input"
                                         name="password_confirmation" required autocomplete="new-password">
                                 </div>
                             </div>
 
                             <div class="text-right mt-2">
-                                <input type="submit" class="btn text-uppercase __btn" value="Cambiar Contraseña">
+                                <input type="submit" class="btn font-weight-bold text-uppercase __btn" value="Cambiar Contraseña">
                             </div>
                         </form>
                         

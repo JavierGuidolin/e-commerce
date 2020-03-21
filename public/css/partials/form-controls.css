@@ -1,7 +1,4 @@
-input[type=password],
-input[type=email],
-input[type=text],
-textarea {
+.__form-input {
     background-color: antiquewhite !important;
     color: #61605e;
 }

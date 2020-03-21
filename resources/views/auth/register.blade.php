@@ -25,7 +25,7 @@ Register
     <div class="__form-side">
 
         <div class="">
-            <a href="/"><img class="w-100 mx-auto" src="/img/bookStoreLogo.svg" alt=""></a>
+            <a href="/"><img class="w-100 mx-auto" src="/img/bookStoreLogo.svg" alt="BookStore Logo"></a>
         </div>
 
         <div class="container">
@@ -41,7 +41,7 @@ Register
                             <div class="col py-2">
                                 <label for="name">Nombre</label>
                                 <input type="text" id="name" name="name"
-                                    class="form-control @error('name') is-invalid @enderror"
+                                    class="form-control __form-input @error('name') is-invalid @enderror"
                                     value="{{ old('name') }}" required autocomplete="name" autofocus>
                                 @error('name')
                                 <small id="nameHelp" class="mb-3 form-text text-danger">
@@ -53,7 +53,7 @@ Register
                             <div class="col py-2">
                                 <label for="surname">Apellido</label>
                                 <input type="text" id="surname" name="surname"
-                                    class="form-control @error('surname') is-invalid @enderror"
+                                    class="form-control __form-input @error('surname') is-invalid @enderror"
                                     value="{{ old('surname') }}" required autocomplete="surname" autofocus>
                                 @error('surname')
                                 <small id="surnameHelp" class="mb-3 form-text text-danger">
@@ -68,7 +68,7 @@ Register
                             <div class="col py-2">
                                 <label for="email">Email</label>
                                 <input type="email" id="email" name="email"
-                                    class="form-control @error('email') is-invalid @enderror"
+                                    class="form-control __form-input @error('email') is-invalid @enderror"
                                     value="{{ old('email') }}" required autocomplete="email">
                                 @error('email')
                                 <small id="emailHelp" class="mb-3 form-text text-danger">
@@ -82,7 +82,7 @@ Register
                             <div class="col py-2">
                                 <label for="password">Contraseña</label>
                                 <input type="password" id="password" name="password"
-                                    class="form-control  @error('password') is-invalid @enderror" required
+                                    class="form-control __form-input  @error('password') is-invalid @enderror" required
                                     autocomplete="new-password">
                                 @error('password')
                                 <small id="emailHelp" class="mb-3 form-text text-danger">
@@ -92,14 +92,14 @@ Register
                             </div>
                             <div class="col py-2">
                                 <label for="rePassword">Confirmar</label>
-                                <input type="password" id="rePassword" class="form-control"
+                                <input type="password" id="rePassword" class="form-control __form-input"
                                     name="password_confirmation" required autocomplete="new-password">
                                 <small id="rePasswordHelp" class="mb-3 form-text text-danger"></small>
                             </div>
                         </div>
 
                         <div class="text-right">
-                            <input type="submit" class="btn text-uppercase __btn" value="registrarse">
+                            <input type="submit" class="btn font-weight-bold text-uppercase __btn" value="registrarse">
                         </div>
                     </form>
                 </div>

@@ -24,7 +24,7 @@ Olvide mi contraseña
         <div class="__form-side">
 
             <div class="">
-                <a href="/"><img class="w-100 mx-auto" src="/img/bookStoreLogo.svg" alt=""></a>
+                <a href="/"><img class="w-100 mx-auto" src="/img/bookStoreLogo.svg" alt="BookStore Logo"></a>
             </div>
 
             <div class="container">
@@ -44,7 +44,7 @@ Olvide mi contraseña
                                 <div class="col">
                                     <label for="email">Email</label>
                                     <input id="email" type="email"
-                                        class="form-control @error('email') is-invalid @enderror" name="email"
+                                        class="form-control __form-input @error('email') is-invalid @enderror" name="email"
                                         value="{{ old('email') }}" required autocomplete="email" autofocus>
 
                                     @error('email')
@@ -56,7 +56,7 @@ Olvide mi contraseña
                             </div>
 
                             <div class="text-right mt-2">
-                                <input type="submit" class="btn text-uppercase __btn" value="Enviar Link">
+                                <input type="submit" class="btn font-weight-bold text-uppercase __btn" value="Enviar Link">
                             </div>
                         </form>
                     </div>
