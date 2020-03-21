@@ -1,16 +1,20 @@
 .__social-links {
-    background-color: #EF7752;
+    background-color: rgb(245, 151, 122);
     width: 100%;
     color: #FFF;
     font-size: 1.5em;
 }
 
+footer {
+    color: #555556;
+}
 
 footer a {
-    color: #EF7752;
     font-size: 0.9em;
+    font-weight: bold;
 }
 
 footer a:hover {
-    color: #ece8dd;
+    color: #ef7752;
+    font-weight: bold;
 }

@@ -47,29 +47,36 @@
 
           <div class="row">
 
-              <div class="offset-1 col-10 col-md-4 offset-md-0 text-center __welcome-options">
+
+            <div class="offset-1 col-10 col-md-4 offset-md-0 ">
+                <div class="text-center __welcome-options">
                   <i class="fas fa-book p-3 animated pulse infinite"></i>
                   <p>
                       Lorem ipsum dolor sit amet consectetur, adipisicing elit. Suscipit, sapiente. Facere
                       omnis error accusamus unde modi corporis laborum. Accusamus, sequi.
                   </p>
+                </div>
             </div>
 
 
-              <div class="offset-1 col-10 col-md-4 offset-md-0 text-center __welcome-options">
-                  <i class="fas fa-pen-alt p-3 animated pulse infinite"></i>
-                  <p class="">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam dolor doloremque
-                      laboriosam, delectus similique assumenda officia repellat fugiat.
-                  </p>
+              <div class="offset-1 col-10 col-md-4 offset-md-0">
+                <div class="text-center __welcome-options">
+                    <i class="fas fa-pen-alt p-3 animated pulse infinite"></i>
+                    <p class="">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam dolor doloremque
+                        laboriosam, delectus similique assumenda officia repellat fugiat.
+                    </p>
+                </div>
               </div>
 
-              <div class="offset-1 col-10 col-md-4 offset-md-0 text-center  __welcome-options ">
-                  <i class="fas fa-glasses p-3 animated pulse infinite"></i>
-                  <p class="">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere voluptate illum
-                      dolores quibusdam sit.
-                  </p>
+              <div class="offset-1 col-10 col-md-4 offset-md-0">
+                <div class="text-center  __welcome-options">
+                    <i class="fas fa-glasses p-3 animated pulse infinite"></i>
+                    <p class="">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere voluptate illum
+                        dolores quibusdam sit.
+                    </p>
+                </div>
               </div>
 
           </div>
@@ -92,7 +99,7 @@
 
           <div class="item">
               <div class="__cover-bestseller">
-                  <img class="w-75 mx-auto " src="/img/libros-portadas/the-arsonist.jpg" alt="">
+                  <img class="w-75 mx-auto " src="/img/libros-portadas/the-arsonist.webp" alt="">
                   <div class="__options pb-2">
 
                       <a class="__options-add-to-cart mr-1 mb-1" href="#">
@@ -116,7 +123,7 @@
 
           <div class="item">
               <div class="__cover-bestseller">
-                  <img class="w-75 mx-auto " src="/img/libros-portadas/the-girl-in-red.jpg" alt="">
+                  <img class="w-75 mx-auto " src="/img/libros-portadas/the-girl-in-red.webp" alt="">
                   <div class="__options pb-2">
 
                       <a class="__options-add-to-cart mr-1 mb-1" href="#">
@@ -140,7 +147,7 @@
 
           <div class="item">
               <div class="__cover-bestseller">
-                  <img class="w-75 mx-auto " src="/img/libros-portadas/there-there.jpg" alt="">
+                  <img class="w-75 mx-auto " src="/img/libros-portadas/the-arsonist.webp" alt="">
                   <div class="__options pb-2">
 
                       <a class="__options-add-to-cart mr-1 mb-1" href="#">
@@ -164,7 +171,7 @@
 
           <div class="item">
               <div class="__cover-bestseller">
-                  <img class="w-75 mx-auto " src="/img/libros-portadas/very-nice.jpg" alt="">
+                  <img class="w-75 mx-auto " src="/img/libros-portadas/very-nice.webp" alt="">
                   <div class="__options pb-2">
 
                       <a class="__options-add-to-cart mr-1 mb-1" href="#">
@@ -202,7 +209,7 @@
 
           <div class="item">
               <div class="__cover-bestseller">
-                  <img class="w-75 mx-auto " src="/img/libros-portadas/ballad.jpg" alt="">
+                  <img class="w-75 mx-auto " src="/img/libros-portadas/the-girl-in-red.webp" alt="">
                   <div class="__options pb-2">
 
                       <a class="__options-add-to-cart mr-1 mb-1" href="#">
@@ -226,7 +233,7 @@
 
           <div class="item">
               <div class="__cover-bestseller">
-                  <img class="w-75 mx-auto " src="/img/libros-portadas/hp-cursed-child.jpg" alt="">
+                  <img class="w-75 mx-auto " src="/img/libros-portadas/hp-cursed-child.webp" alt="">
                   <div class="__options pb-2">
 
                       <a class="__options-add-to-cart mr-1 mb-1" href="#">
@@ -275,7 +282,7 @@
 
           <div class="item">
               <div class="__cover-bestseller">
-                  <img class="w-75 mx-auto " src="/img/libros-portadas/very-nice.jpg" alt="">
+                  <img class="w-75 mx-auto " src="/img/libros-portadas/very-nice.webp" alt="">
                   <div class="__options pb-2">
 
                       <a class="__options-add-to-cart mr-1 mb-1" href="#">

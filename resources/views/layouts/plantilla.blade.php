@@ -1,15 +1,17 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="es" dir="ltr">
 
     <head>
 
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <meta name="description" content="BookStore, es una tienda de venta de libros."/>
 
-      <link href="https://fonts.googleapis.com/css?family=Lato|Lora&display=swap" rel="stylesheet">
-      <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville:700|Merriweather:700,300&display=swap" rel="stylesheet">
-      <link href="https://fonts.googleapis.com/css?family=PT+Serif:700&display=swap" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=Lato|Lora&display=fallback" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville:700|Merriweather:700,300&display=fallback" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=PT+Serif:700&display=fallback" rel="stylesheet">
+      <script src="https://kit.fontawesome.com/7c3c4957c1.js" crossorigin="anonymous"></script>
 
       <link rel="stylesheet" href="/css/app.css">   
       <!--<link rel="stylesheet" href="/css/style.css">-->
@@ -55,7 +57,7 @@
                             <form class="__header-search-form rounded-pill mx-auto w-100">
                                 <input class="__search-input p-3" type="text" id="search"
                                     placeholder="Buscar en BookStore..." />
-                                <button name="search" class="__search-button">
+                                <button name="search" class="__search-button"  aria-label="buscar">
                                     <i class="fas fa-search"></i>
                                 </button>
                             </form>
@@ -73,8 +75,8 @@
                             @auth
                                 <div class="pt-3 text-center">
                                     <i class="fas fa-user"></i>
-                                    <a class="text-muted" href="/userAccount">Hola Jose Luis!</a> | 
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                    <a class="" href="/home">Hola {{Auth::user()->name}}</a> | 
+                                    <a class="" href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
                                             document.getElementById('logout-form').submit();">
                                             {{ __('Salir') }}
@@ -89,7 +91,7 @@
                             @guest
                                 <div class="pt-3 text-center">
                                     <i class="fas fa-user"></i>
-                                    <a class="text-muted" href="/login">Login</a> | <a class="text-muted"
+                                    <a class="" href="/login">Login</a> | <a class=""
                                         href="/register">Register</a>
                                 </div>
                             @endguest
@@ -99,7 +101,7 @@
                                     <i class="fas fa-shopping-cart position-relative ">
                                         <span class="__items position-absolute">10</span>
                                     </i>
-                                    <a class="text-muted pl-3" href="/cart">Carrito</a>
+                                    <a class="pl-3" href="/carrito">Carrito</a>
                                 </div>
                             </div>
                         </div>
@@ -167,9 +169,7 @@
 </header>
 
  <!-- Main Section -->
-<section>
     @yield('principal')
-</section>
  <!-- Main Section -->
 
 <!-- Footer -->
@@ -180,29 +180,29 @@
           <div class="row py-4 d-flex align-items-center">
 
               <div class="__social-links col-md-6 col-lg-5 text-center text-md-left mb-4 mb-md-0">
-                  <h6 class="mb-0">Seguinos en nuestras redes sociales!</h6>
+                  <h6 class="mb-0 font-weight-bold text-dark">Seguinos en nuestras redes sociales!</h6>
               </div>
 
               <div class="col-md-6 col-lg-7 text-center text-md-right">
 
                   <!-- Facebook -->
-                  <a href="https://facebook.com">
+                  <a href="https://facebook.com" aria-label="Facebook">
                       <i class="fab fa-facebook-f text-white mr-4"> </i>
                   </a>
                   <!-- Twitter -->
-                  <a href="https://twitter.com">
+                  <a href="https://twitter.com" aria-label="Twitter">
                       <i class="fab fa-twitter text-white mr-4"> </i>
                   </a>
                   <!-- Google +-->
-                  <a href="https://google.com" class="gplus-ic">
+                  <a href="https://google.com" class="gplus-ic" aria-label="Google +">
                       <i class="fab fa-google-plus-g text-white mr-4"> </i>
                   </a>
                   <!--Linkedin -->
-                  <a href="https://linkedin.com" class="li-ic">
+                  <a href="https://linkedin.com" class="li-ic" aria-label="Linkedin">
                       <i class="fab fa-linkedin-in text-white mr-4"> </i>
                   </a>
                   <!--Instagram-->
-                  <a href="https://instagram.com" class="ins-ic">
+                  <a href="https://instagram.com" class="ins-ic" aria-label="Instagram">
                       <i class="fab fa-instagram text-white"> </i>
                   </a>
 
@@ -216,7 +216,7 @@
   </div>
 
   <!-- Footer Links -->
-  <div class="container text-center text-md-left mt-5 text-muted">
+  <div class="container text-center text-md-left mt-5">
 
       <!-- Grid row -->
       <div class="row mt-3">
@@ -252,10 +252,10 @@
               <!-- Links -->
               <h6 class="text-uppercase font-weight-bold">Links utiles</h6>
               <hr class="accent-2 mb-4 mt-0 d-inline-block mx-auto">
-              <p><a href="/userAccount">Tu cuenta</a></p>
+              <p><a href="/home">Tu cuenta</a></p>
               <p><a href="/contacto">Contacto</a></p>
-              <p><a href="/FAQ">Ayuda</a></p>
-              <p><a href="/FAQ">Quienes Somos</a></p>
+              <p><a href="/faq">Ayuda</a></p>
+              <p><a href="/faq">Quienes Somos</a></p>
 
           </div>
           <!-- Grid column -->
@@ -296,7 +296,7 @@ crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
 integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
 crossorigin="anonymous"></script>
-<script src="https://kit.fontawesome.com/7c3c4957c1.js" crossorigin="anonymous"></script>
+
  <!-- Nav Categorias -->
 
 
