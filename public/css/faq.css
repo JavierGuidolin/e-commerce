@@ -1,0 +1,40 @@
+.__header-card-faq,
+.__card-faq {
+    background-color: transparent !important;
+    border: none;
+    font-family: Merriweather, sans-serif;
+    font-weight: 300;
+    font-weight: .8em
+}
+
+.__question-card-faq {
+    height: auto;
+    color: #ef7752;
+    text-align: left;
+    text-decoration: none;
+    font-size: .7em
+}
+
+.__question-card-faq::after {
+    content: "\2212";
+    width: 25px;
+    font-size: 1em;
+    text-align: center;
+    right: 5px;
+    top: 5px;
+    position: absolute;
+    color: #ef7752
+}
+
+.__question-card-faq.collapsed:after {
+    content: "\002B"
+}
+
+.__cuerpo-card-faq {
+    background-color: #ee9276
+}
+
+.list-group-item.active {
+    background-color: #ee9276;
+    border-color: #ee9276
+}

@@ -1,4 +1,4 @@
-@extends('plantilla')
+@extends('layouts.plantilla')
  @section('titulo')
    Carro de compras
  @endsection

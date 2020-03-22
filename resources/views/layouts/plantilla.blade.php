@@ -21,7 +21,7 @@
       
       @yield('styles')
       
-      <link rel="shortcut icon" type="image/png" href="../img/bs-favicon.png" />
+      <link rel="shortcut icon" type="image/png" href="../img/bs-favicon.ico" />
       <title> BookStore | @yield('titulo')</title>
 
     </head>

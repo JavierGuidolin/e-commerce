@@ -1,94 +1,103 @@
-@extends('plantilla')
- @section('titulo')
+@extends('layouts.plantilla')
+
+
+@section('styles')
+  <link rel="stylesheet" href="/css/contact.css">
+  <link rel="stylesheet" href="/css/partials/form-controls.css">
+@endsection
+ 
+@section('titulo')
    Contacto
- @endsection
+@endsection
 
 @section('principal')
- <!-- Header -->
-<header id="header" class="__background-contacto">
 
-
-
-  <!-- TextHeader -->
-  <section class="__header-contacto">
-    <div class="container">
-      <div class="row">
-        <article class="col-12">
-          <div class="pl-4">
-            <h1 class="text-uppercase text-center">Contacto</h1>
-            <blockquote class="blockquote text-center">
-              <p class="mb-0 text-white-50">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-              <footer class="text-white-50 blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
-            </blockquote>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
-  <!-- EndTextHeader -->
-
-</header>
-<!-- EndHeader -->
-
-<!-- Main -->
 <main>
-  <section class="container">
-    <!-- Path -->
-    <div class="mt-5">
-      <nav aria-label="breadcrumb ">
-        <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a class="text-reset" href="../index.php">Home</a></li>
-          <li class="breadcrumb-item active"><a class="text-reset">Contacto</a></li>
-        </ol>
-      </nav>
-    </div>
+  <section class="my-5">
+
+      <div class="container">
+          <div class="row">
+
+              <div class="col-sm-12 col-md-6">
+
+                <!-- Side info -->
+                <div>
+
+                    <div class="pl-3 mb-4">
+
+                          <h1>Contacto</h1>
+                            <p>
+                              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Necessitatibus ipsum impedit
+                              laboriosam tempore, quos laudantium.
+                            </p>
+
+                            <p>
+                                Voluptatibus maxime voluptatum quae id veniam? Lorem ipsum dolor sit amet consectetur adipisicing.
+                            </p>
+
+                            <p class="mb-1">11/234 Main Street Disneyland</p>
+                            <p class="mb-1">Email: info@example.com</p>
+                            <p class="mb-1">Phone: + 01 234 567 88</p>
+                            <p class="mb-0">Phone: + 01 234 567 89</p>
+                    </div>
+
+
+                    <form action="">
+                        <div class="form-group">
+                            <label class="control-label col-sm-2" for="fname">Nombre:</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control __form-input" id="fname" name="fname">
+                            </div>
+                        </div>
+                    
+                        <div class="form-group">
+                            <label class="control-label col-sm-2" for="lname">Apellido:</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control __form-input" id="lname" name="lname">
+                            </div>
+                        </div>
+                    
+                        <div class="form-group">
+                            <label class="control-label col-sm-2" for="email">Email:</label>
+                            <div class="col-sm-10">
+                                <input type="email" class="form-control __form-input" id="email" name="email">
+                            </div>
+                        </div>
+                    
+                        <div class="form-group">
+                            <label class="control-label col-sm-2" for="comment">Mensaje:</label>
+                            <div class="col-sm-10">
+                                <textarea class="form-control __form-input" rows="5" id="comment"></textarea>
+                            </div>
+                        </div>
+                    
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-10 text-right">
+                                <button type="submit" class="__btn font-weight-bold btn text-uppercase">Enviar</button>
+                            </div>
+                        </div>
+                    </form>
+                  
+                    
+                  </div>
+                  <!-- Side info -->
+
+              </div>
+
+              <!-- Map info -->
+              <div class="col-sm-12 col-md-6">
+                  <iframe
+                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2787.5327787698243!2d-117.94177155473878!3d33.813504951452494!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80dcd7d12b3b5e6b%3A0x2ef62f8418225cfa!2sDisneyland!5e0!3m2!1ses-419!2sar!4v1584415614241!5m2!1ses-419!2sar"
+                      frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0" title="nuestra localizacion">
+                  </iframe>
+              </div>
+              <!-- Map info -->
+
+          </div>
+      </div>
+
+
   </section>
-
-  <div class="container contact">
-    <div class="row">
-      <div class="col-md-3 __side ">
-        <div class="contact-info">
-          <img src="https://image.ibb.co/kUASdV/contact-image.png" alt="image"/>
-          <h2><br>Contactanos<br></h2>
-
-          <h4><br>Apreciamos tu opinion! <br></h4>
-        </div>
-      </div>
-      <div class="col-md-9">
-        <div class="contact-form">
-          <div class="form-group">
-            <label class="control-label col-sm-2" for="fname">Nombre:</label>
-            <div class="col-sm-10">
-            <input type="text" class="form-control" id="fname" placeholder="Ingresa tu nombre" name="fname">
-            </div>
-          </div>
-          <div class="form-group">
-            <label class="control-label col-sm-2" for="lname">Apellido:</label>
-            <div class="col-sm-10">
-            <input type="text" class="form-control" id="lname" placeholder="Ingresa tu apellido" name="lname">
-            </div>
-          </div>
-          <div class="form-group">
-            <label class="control-label col-sm-2" for="email">Email:</label>
-            <div class="col-sm-10">
-            <input type="email" class="form-control" id="email" placeholder="Ingresa tu Email" name="email">
-            </div>
-          </div>
-          <div class="form-group">
-            <label class="control-label col-sm-2" for="comment">Mensaje:</label>
-            <div class="col-sm-10">
-            <textarea class="form-control" rows="5" id="comment"></textarea>
-            </div>
-          </div>
-          <div class="form-group">
-            <div class="col-sm-offset-2 col-sm-10">
-            <button type="submit" class="__botonguardar btn ">Enviar</button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
 </main>
- @section('principal')
+ 
+@endsection
