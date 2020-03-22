@@ -1,170 +1,242 @@
-@extends('plantilla')
- @section('titulo')
-   Listado de productos
- @endsection
+@extends('layouts.plantilla')
+
+@section('styles')
+  <link rel="stylesheet" href="/css/list-products.css">
+@endsection
+ 
+@section('titulo')
+   Libros
+@endsection
+
  @section('principal')
+ <main>
 
+  <section>
 
-  <!-- Header -->
-  <header id="header" class="__background-productos">
-
-
-    <!-- TextHeader -->
-
-    <section class="__header-productos">
       <div class="container">
-        <div class="row">
-          <article class="col-12">
-            <div class="pl-4">
-              <h1 class="text-uppercase text-center">SHOP</h1>
-              <blockquote class="blockquote text-center">
-                <p class="mb-0 text-white-50">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-                <footer class="text-white-50 blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
-              </blockquote>
+
+        <!-- Filter input -->
+        <div class="form-group row mt-3">
+                
+            <label for="inputPassword3" class="col-4 offset-md-7 col-md-2 col-form-label">Filtrar por:</label>
+            <div class="col-8 col-md-3">
+                <select id="inputState" class="form-control __filter-input">
+                <option selected>A - Z</option>
+                <option>Precio</option>
+                <option>News</option>
+                <option>???</option>
+                <option>???</option>
+                </select>
             </div>
-          </article>
-        </div>
-      </div>
-    </section>
-    <!-- EndTextHeader -->
-
-  </header>
-  <!-- EndHeader -->
-
-  <!-- Main -->
-  <main>
-
-    <section class="container">
-
-      <!-- Path -->
-      <div class="mt-5">
-        <nav aria-label="breadcrumb ">
-          <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a class="text-reset" href="#">Home</a></li>
-            <li class="breadcrumb-item"><a class="text-reset" href="#">Libros</a></li>
-            <li class="breadcrumb-item active" aria-current="page">All</li>
-          </ol>
-        </nav>
-      </div>
-      <!-- EndPath -->
-
-      <!-- Filtro -->
-      <div class="row __filtro">
-
-        <div class="col-12 col-md-7">
-          <p class="text-center text-md-right mt-md-2 mt-lg-2">Mostrando {{$books->count()}} articulos de {{$libros->count()}}</p>
-        </div>
-
-        <div class="col-12 col-md-5">
-          <form class="form-inline my-2 my-lg-0 ml-auto justify-content-center justify-content-md-right">
-            <label class="pr-3" for="filtro">Filtrar por: </label><!-- HACER QUE FUNCIONE -->
-            <select name="filtro" id="filtro" class="form-control-sm" id="exampleFormControlSelect1">
-              <option value="">Precio</option>
-              <option value="">Paginas</option>
-              <option>Año</option>
-              <option>Mas vendidos</option>
-              <option>Menos vendidos</option>
-            </select>
-          </form>
-        </div>
-
-      </div>
-      <!-- EndFiltro -->
-
-
-      <div class="row">
-        <div class="offset-1 col-10 offset-md-0 col-md-4 col-lg-3">
-
-          <!-- Categorias -->
-          <h2 class="pb-2 __etiquetas-titulo">Categorias</h2>
-          @foreach ($categories as $categorie)
-
-
-          <ul class="list-group pt-1">
-            <li class="list-group-item d-flex justify-content-between align-items-center">
-              <a href="categorias">{{$categorie->name}}</a>
-              <span class="badge badge-primary badge-pill">{{$categorie->books->count()}}</span>
-            </li>
-            </ul>
-            @endforeach
-
-          <!-- EndCategorias -->
-
-          <!-- Etiquetas -->
-          <div class="mt-3 mb-3">
-            <h2 class="pb-2 __etiquetas-titulo">Tags</h2>
-            <a class="m-1 btn btn-sm __boton-etiqueta text-white" href="products.php" role="button">Humor</a>
-            <a class="m-1 btn btn-sm __boton-etiqueta text-white" href="products.php" role="button">Terror</a>
-            <a class="m-1 btn btn-sm __boton-etiqueta text-white" href="products.php" role="button">Junot Diaz</a>
-            <a class="m-1 btn btn-sm __boton-etiqueta text-white" href="products.php" role="button">Negocios</a>
-            <a class="m-1 btn btn-sm __boton-etiqueta text-white" href="products.php" role="button">Autoayuda</a>
-            <a class="m-1 btn btn-sm __boton-etiqueta text-white" href="products.php" role="button">Julie Martinez</a>
-            <a class="m-1 btn btn-sm __boton-etiqueta text-white" href="products.php" role="button">Ciencia Ficcion</a>
-            <a class="m-1 btn btn-sm __boton-etiqueta text-white" href="products.php" role="button">Negocios</a>
-          </div>
-          <!-- EndEtiquetas -->
 
         </div>
+         <!-- Filter input -->
+       
+        <div class="row">
 
-        <!-- Productos-->
-        <div class="product-grid col-md-8 col-lg-9">
+              <div class="col-5 col-md-3">
 
-          <div class="row">
-            <!--    foreach ($libros as $libro): --> @forelse ($books as $book)
-            <!-- Producto-->
-            <div class="offset-1 col-10  offset-md-0 col-md-6 col-lg-3">
-              <div class="__tarjeta-producto shadow rounded">
+                 <!-- Filter side -->
+                  <div class="__filter-side my-3 border-right">
 
-                <div class="__favorito position-absolute m-2">
-                  <a class="text-reset" href=""> <i class="fas fa-heart"> </a></i>
-                </div>
+                      <div class="pb-4 border-bottom">
+                          <h3 class="text-uppercase font-weight-bold pb-3">Favoritos</h3>
+                          <p><a href="">Best Sellers</a></p>
+                          <p><a href="">Nuevos</a></p>
+                          <p><a href="">Proximamente</a></p>
+                      </div>
 
-                <img class="rounded w-100" src="../img/libros-portadas/sun-book.jpg" alt="The Sun Portada">
-                <h2 class="__titulo-producto pt-2"><a class="text-reset" href="productos/{{$book->id}}">{{$book->title}}</a></h2>
-                @foreach ($book->autor as $autor)
-                  <p>Autor:<span>{{$autor->name}}</span></p>
-                @endforeach
-                <p>Categoria:<span>{{$book->categoria->name}}</span></p>
-                <p class="__precio-producto">Precio: ${{ $book->price}}</p>
-                <p class="px-2">{{$book->resume}}</p>
-                <p>
-                  <button class="rounded-bottom">
-                    Add to Cart
-                  </button>
-                </p>
+                      <div class="pt-5">
+                          <h3 class="text-uppercase font-weight-bold pb-3">Categorias</h3>
+                          <p><a href="">Arte & Fotografia</a></p>
+                          <p><a href="">Biografias</a></p>
+                          <p><a href="">Negocios</a></p>
+                          <p><a href="">Cocina</a></p>
+                          <p><a href="">Humor</a></p>
+                          <p><a href="">Historia</a></p>
+                          <p><a href="">Religion</a></p>
+                          <p><a href="">Sci-Fi & Fantasia</a></p>
+                          <p><a href="">Auto-Ayuda</a></p>
+                          <p><a href="">Misterio & Crimen</a></p>
+                          <p><a href=""> Deportes</a></p>
+                      </div>
+
+                  </div>
+                <!-- Filter input -->
+
               </div>
-            </div>
-          @empty
-             <p>No hay productos cargados</p>
-            <!-- endforeach;-->
-           @endforelse
-            <!-- EndProducto-->
+
+              <div class="col-7 col-md-9">
+
+                  <div class="my-3">
+                      <div class="row">
+
+                          <!-- Producto -->
+                          <div class="offset-1 col-10 col-md-4 offset-md-0 col-lg-3">
+                              <div class="px-2 px-xl-4 item">
+                                  <div class="__cover-bestseller">
+                                      <img class="w-100 mx-auto " src="/img/libros-portadas/the-girl-in-red.webp" alt="">
+                                      <div class="__options pb-2">
+
+                                          <a class="__options-add-to-cart mr-1 mb-1" href="#">
+                                              <i class="fas fa-shopping-bag"></i>
+                                              <span>BUY</span>
+                                          </a>
+                                          <a class="__options-add-to-fav mr-1" href="#">
+                                              <i class="far fa-heart"></i>
+                                          </a>
+
+                                      </div>
+                                  </div>
+                                  <div class="pt-3">
+                                      <h3 class="text-center font-weight-bold">
+                                          <a href="">The girl in red</a>
+                                        </h3>
+                                      <h6 class="text-center">by Chloe Hooper</h6>
+                                      <h3 class="text-center">$ 27.99</h3>
+                                  </div>
+                              </div>
+                          </div>
+                          <!-- Producto -->
+
+                         
+                          <!-- Producto -->
+                          <div class="offset-1 col-10 col-md-4 offset-md-0 col-lg-3">
+                            <div class="px-2 px-xl-4 item">
+                                <div class="__cover-bestseller">
+                                    <img class="w-100 mx-auto " src="/img/libros-portadas/the-arsonist.webp" alt="">
+                                    <div class="__options pb-2">
+
+                                        <a class="__options-add-to-cart mr-1 mb-1" href="#">
+                                            <i class="fas fa-shopping-bag"></i>
+                                            <span>BUY</span>
+                                        </a>
+                                        <a class="__options-add-to-fav mr-1" href="#">
+                                            <i class="far fa-heart"></i>
+                                        </a>
+
+                                    </div>
+                                </div>
+                                <div class="pt-3">
+                                    <h3 class="text-center font-weight-bold">
+                                        <a href="">The arsonist</a>
+                                      </h3>
+                                    <h6 class="text-center">by Chloe Hooper</h6>
+                                    <h3 class="text-center">$ 27.99</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Producto -->
 
 
+                          <!-- Producto -->
+                          <div class="offset-1 col-10 col-md-4 offset-md-0 col-lg-3">
+                            <div class="px-2 px-xl-4 item">
+                                <div class="__cover-bestseller">
+                                    <img class="w-100 mx-auto " src="/img/libros-portadas/very-nice.webp" alt="">
+                                    <div class="__options pb-2">
+
+                                        <a class="__options-add-to-cart mr-1 mb-1" href="#">
+                                            <i class="fas fa-shopping-bag"></i>
+                                            <span>BUY</span>
+                                        </a>
+                                        <a class="__options-add-to-fav mr-1" href="#">
+                                            <i class="far fa-heart"></i>
+                                        </a>
+
+                                    </div>
+                                </div>
+                                <div class="pt-3">
+                                    <h3 class="text-center font-weight-bold">
+                                        <a href="">Very Nice</a>
+                                      </h3>
+                                    <h6 class="text-center">by Chloe Hooper</h6>
+                                    <h3 class="text-center">$ 27.99</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Producto -->
+
+                        <!-- Producto -->
+                         <div class="offset-1 col-10 col-md-4 offset-md-0 col-lg-3">
+                            <div class="px-2 px-xl-4 item">
+                                <div class="__cover-bestseller">
+                                    <img class="w-100 mx-auto " src="/img/libros-portadas/the-arsonist.webp" alt="">
+                                    <div class="__options pb-2">
+
+                                        <a class="__options-add-to-cart mr-1 mb-1" href="#">
+                                            <i class="fas fa-shopping-bag"></i>
+                                            <span>BUY</span>
+                                        </a>
+                                        <a class="__options-add-to-fav mr-1" href="#">
+                                            <i class="far fa-heart"></i>
+                                        </a>
+
+                                    </div>
+                                </div>
+                                <div class="pt-3">
+                                    <h3 class="text-center font-weight-bold">
+                                        <a href="">The arsonist</a>
+                                      </h3>
+                                    <h6 class="text-center">by Chloe Hooper</h6>
+                                    <h3 class="text-center">$ 27.99</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Producto -->
+
+                         <!-- Producto -->
+                         <div class="offset-1 col-10 col-md-4 offset-md-0 col-lg-3">
+                            <div class="px-2 px-xl-4 item">
+                                <div class="__cover-bestseller">
+                                    <img class="w-100 mx-auto " src="/img/libros-portadas/there-there.webp" alt="">
+                                    <div class="__options pb-2">
+
+                                        <a class="__options-add-to-cart mr-1 mb-1" href="#">
+                                            <i class="fas fa-shopping-bag"></i>
+                                            <span>BUY</span>
+                                        </a>
+                                        <a class="__options-add-to-fav mr-1" href="#">
+                                            <i class="far fa-heart"></i>
+                                        </a>
+
+                                    </div>
+                                </div>
+                                <div class="pt-3">
+                                    <h3 class="text-center font-weight-bold">
+                                        <a href="">There There</a>
+                                      </h3>
+                                    <h6 class="text-center">by Chloe Hooper</h6>
+                                    <h3 class="text-center">$ 27.99</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Producto -->
+
+                      </div>
+                  </div>
+
+                  <!-- Pagination -->
+                 <!-- 
+                    <nav class="">
+                      <ul class="pagination ml-auto">
+                          <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+                          <li class="page-item"><a class="page-link" href="#">1</a></li>
+                          <li class="page-item"><a class="page-link" href="#">2</a></li>
+                          <li class="page-item"><a class="page-link" href="#">3</a></li>
+                          <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                      </ul>
+                  </nav>
+                -->
+                <!-- Pagination -->
+              </div>
 
           </div>
 
-        </div>
-        <!-- EndProductos-->
+
       </div>
 
-      <!-- Paginacion-->
+  </section>
 
-      <div class="container">
-        <div class="row">
-          <div class="col-12">
-            <nav aria-label="Paginacion">
-              <ul class="pagination justify-content-end">
-                {{$books->links()}}
-
-              </ul>
-            </nav>
-          </div>
-        </div>
-      </div>
-      <!-- EndPaginacion-->
-
-    </section>
-
-  </main>
+</main>
 @endsection
