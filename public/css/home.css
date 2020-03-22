@@ -1,0 +1,76 @@
+.__edit-address {
+    top: 0;
+    right: 0;
+    font-size: .8em
+}
+
+.__edit-profile {
+    top: 0;
+    background-color: #fff;
+    color: #fff;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    right: -12%
+}
+
+.__my-account h5 {
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 1em;
+    font-family: 'PT Serif'
+}
+
+.__my-account i {
+    font-size: 1.3em
+}
+
+.__admin-site {
+    font-size: 1.2em;
+    color: #ef7752;
+    font-weight: 700
+}
+
+a.active i {
+    color: #fff
+}
+
+.list-group-item.active {
+    background-color: #ee9276;
+    border-color: #ee9276
+}
+
+.__review-cal i {
+    font-size: .8em
+}
+
+.__review-desc {
+    font-size: .8em
+}
+
+@media (min-width:425px) {
+    .__edit-profile {
+        top: 0;
+        right: -8%
+    }
+}
+
+@media (min-width:768px) {
+    .__edit-profile {
+        top: 0;
+        right: -4%
+    }
+}
+
+.__validate-account {
+    font-weight: 700
+}
+
+.__validate-account a {
+    color: #ef7752 !important;
+    text-decoration: underline;
+    line-height: 1.2em
+}
