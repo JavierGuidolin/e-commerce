@@ -1,0 +1,50 @@
+.__card {
+    font-family: 'Merriweather', sans-serif;
+}
+
+.__product-name,
+.fa-trash {
+    font-size: 1em;
+}
+
+.__product-description {
+    font-size: 1.1em;
+}
+
+.__width-img-cart {
+    width: 35%;
+}
+
+.__product-price {
+    font-size: .9em;
+}
+
+.__form-input {
+    background-color: antiquewhite !important;
+    color: #61605e;
+    font-size: 1em;
+}
+
+.__btn {
+    background-color: #ef7752;
+    color: #fff;
+}
+
+.__btn-checkout {
+    background-color: transparent;
+    border: 1px solid #ef7752;
+    color: #ef7752;
+}
+
+.__btn-checkout:hover {
+    background-color: #946d62;
+    color: #fff;
+}
+
+@media(min-width:768px) {
+
+    .__width-img-cart {
+        width: 100%;
+    }
+
+}
