@@ -1,6 +1,9 @@
-@extends('plantilla')
+@extends('layouts.plantilla')
  @section('titulo')
    Generos
+ @endsection
+ @section('styles')
+   <link rel="stylesheet" href="/css/list-products.css">
  @endsection
  @section('principal')
    <!-- Header -->
@@ -48,7 +51,7 @@
            <ul>
              @foreach ($category->books as $book)
                <li>
-                 <a href="/productos/{{$book->id}}">{{$book->title}}</a>
+                 <a href="/libros/{{$book->id}}">{{$book->title}}</a>
                </li>
              @endforeach
            </ul>

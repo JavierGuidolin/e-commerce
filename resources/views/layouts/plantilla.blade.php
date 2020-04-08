@@ -13,14 +13,14 @@
       <link href="https://fonts.googleapis.com/css?family=PT+Serif:700&display=fallback" rel="stylesheet">
       <script src="https://kit.fontawesome.com/7c3c4957c1.js" crossorigin="anonymous"></script>
 
-      <link rel="stylesheet" href="/css/app.css">   
+      <link rel="stylesheet" href="/css/app.css">
       <!--<link rel="stylesheet" href="/css/style.css">-->
       <link rel="stylesheet" href="/css/partials/navbar.css">
       <link rel="stylesheet" href="/css/partials/footer.css">
       <link rel="stylesheet" href="/css/partials/main.css">
-      
+
       @yield('styles')
-      
+
       <link rel="shortcut icon" type="image/png" href="../img/bs-favicon.ico" />
       <title> BookStore | @yield('titulo')</title>
 
@@ -71,11 +71,11 @@
                     <div class="col-sm-12 col-md-3">
 
                         <div class="__user-info h-100 d-flex justify-content-center align-items-center flex-column">
-                            
+
                             @auth
                                 <div class="pt-3 text-center">
                                     <i class="fas fa-user"></i>
-                                    <a class="" href="/home">Hola {{Auth::user()->name}}</a> | 
+                                    <a class="" href="/home">Hola {{Auth::user()->name}}</a> |
                                     <a class="" href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
                                             document.getElementById('logout-form').submit();">
@@ -105,7 +105,7 @@
                                 </div>
                             </div>
                         </div>
-                        
+
                     </div>
                      <!-- Account -->
 
@@ -129,37 +129,37 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav text-lg-center mx-auto text-uppercase">
                 <li class="nav-item __cool-link">
-                    <a class="nav-link " href="/productos">Arte & Fotografia</a>
+                    <a class="nav-link " href="/libros">Arte & Fotografia</a>
                 </li>
                 <li class="nav-item __cool-link">
-                    <a class="nav-link pt-lg-3 pt-xl-2" href="/productos">Biografias</a>
+                    <a class="nav-link pt-lg-3 pt-xl-2" href="/libros">Biografias</a>
                 </li>
                 <li class="nav-item __cool-link">
-                    <a class="nav-link pt-lg-3 pt-xl-2" href="/productos">Negocios</a>
+                    <a class="nav-link pt-lg-3 pt-xl-2" href="/libros">Negocios</a>
                 </li>
                 <li class="nav-item __cool-link">
-                    <a class="nav-link pt-lg-3 pt-xl-2" href="/productos">Cocina</a>
+                    <a class="nav-link pt-lg-3 pt-xl-2" href="/libros">Cocina</a>
                 </li>
                 <li class="nav-item __cool-link">
-                    <a class="nav-link pt-lg-3 pt-xl-2" href="/productos">Humor</a>
+                    <a class="nav-link pt-lg-3 pt-xl-2" href="/libros">Humor</a>
                 </li>
                 <li class="nav-item __cool-link">
-                    <a class="nav-link pt-lg-3 pt-xl-2" href="/productos">Historia</a>
+                    <a class="nav-link pt-lg-3 pt-xl-2" href="/libros">Historia</a>
                 </li>
                 <li class="nav-item __cool-link">
-                    <a class="nav-link pt-lg-3 pt-xl-2" href="/productos">Religión</a>
+                    <a class="nav-link pt-lg-3 pt-xl-2" href="/libros">Religión</a>
                 </li>
                 <li class="nav-item __cool-link">
-                    <a class="nav-link" href="/productos">Sci-Fi & Fantasia</a>
+                    <a class="nav-link" href="/libros">Sci-Fi & Fantasia</a>
                 </li>
                 <li class="nav-item __cool-link">
-                    <a class="nav-link" href="/productos">Auto-Ayuda</a>
+                    <a class="nav-link" href="/libros">Auto-Ayuda</a>
                 </li>
                 <li class="nav-item __cool-link">
-                    <a class="nav-link" href="/productos">Misterio & Crimen</a>
+                    <a class="nav-link" href="/libros">Misterio & Crimen</a>
                 </li>
                 <li class="nav-item __cool-link">
-                    <a class="nav-link pt-lg-3 pt-xl-2" href="/productos">Deportes</a>
+                    <a class="nav-link pt-lg-3 pt-xl-2" href="/libros">Deportes</a>
                 </li>
 
             </ul>
@@ -300,7 +300,7 @@ crossorigin="anonymous"></script>
  <!-- Nav Categorias -->
 
 
-<!-- Scripts --> 
+<!-- Scripts -->
     @yield('scripts')
 <!-- Scripts -->
 
