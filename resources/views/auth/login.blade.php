@@ -30,7 +30,7 @@ Login
             <div class="row">
                 <div class="col-12 col-md-10 offset-md-1 offset-lg-2 col-lg-8 py-5">
 
-                    <form method="POST" action="{{ route('login') }}">
+                    <form method="POST" action="{{ route('login') }}" class="loginForm">
                         @csrf
                         <div class="row">
                             <div class="col">
@@ -75,9 +75,12 @@ Login
                             {{ __('¿Olvidaste tu contraseña?') }}
                         </a>
                         @endif
-
+                        <br>
+                        <a class="btn btn-link font-weight-bold  __forgot-pass pt-2" href="{{ route('register') }}">
+                            {{ __('Registrarse') }}
+                        </a>
                     </form>
-                   
+
                 </div>
             </div>
         </div>
@@ -87,5 +90,6 @@ Login
 
 
 </section>
+<script src="js/loginValidations.js"></script>
 
 @endsection

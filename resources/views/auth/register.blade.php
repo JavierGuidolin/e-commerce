@@ -32,7 +32,7 @@ Register
             <div class="row">
                 <div class="col-12 offset-lg-2 col-lg-8 py-5">
 
-                    <form method="POST" action="{{ route('register') }}">
+                    <form method="POST" action="{{ route('register') }}" class="regForm">
 
                         @csrf
 
@@ -101,6 +101,9 @@ Register
                         <div class="text-right">
                             <input type="submit" class="btn font-weight-bold text-uppercase __btn" value="registrarse">
                         </div>
+                        <a class="btn btn-link font-weight-bold  __forgot-pass pt-2" href="{{ route('login') }}">
+                            {{ __('Ya tengo una cuenta') }}
+                        </a>
                     </form>
                 </div>
             </div>
@@ -111,5 +114,5 @@ Register
 
 
 </section>
-
+  <script src="js/registerValidation.js" charset="utf-8"></script>
 @endsection

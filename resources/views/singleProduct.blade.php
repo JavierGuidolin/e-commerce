@@ -5,7 +5,7 @@
   <link rel="stylesheet" href="/css/single-product.css">
   <link rel="stylesheet" href="/css/partials/form-controls.css">
 @endsection
- 
+
 @section('titulo')
    Producto simple
 @endsection
@@ -29,7 +29,7 @@
 
                 <!--InfoProducto-->
                 <div class="col-12 col-md-6 offset-lg-1 col-lg-5">
-                    <div class="pt-5 px-4"">
+                    <div class="pt-5 px-4">
                         <p>ISBN: 1250010071</p>
                         <h1 class="__title-product">The arsonist: A Mind on Fire</h2>
                             <h6 class="__author-product">by Chloe Hooper</h5>
@@ -65,8 +65,8 @@
 
 
 
-                                <p class="mt-3">Categorias: 
-                                    <a href="">Adventure</a>, 
+                                <p class="mt-3">Categorias:
+                                    <a href="">Adventure</a>,
                                     <a href="">Kids</a>,
                                     <a href="">Music</a>
                                 </p>
@@ -189,7 +189,7 @@
                 </div>
                 <!--Side menu-->
 
-                 
+
                 <div class="offset-md-2 col-md-8">
 
                     <!--Product additional data-->
@@ -275,17 +275,17 @@
                                 </div>
 
                             </div>
-                            
+
                             <div class="text-right mt-2">
                                 <input type="submit" class="btn text-uppercase __btn __btn-add" value="enviar">
                             </div>
-    
+
                         </form>
 
-                       
+
                     </div>
                     <!--My review-->
-                    
+
                 </div>
             </div>
         </div>
