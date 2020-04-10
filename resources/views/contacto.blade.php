@@ -5,7 +5,7 @@
   <link rel="stylesheet" href="/css/contact.css">
   <link rel="stylesheet" href="/css/partials/form-controls.css">
 @endsection
- 
+
 @section('titulo')
    Contacto
 @endsection
@@ -42,43 +42,43 @@
                     </div>
 
 
-                    <form action="">
+                    <form action="" class="contactForm">
                         <div class="form-group">
                             <label class="control-label col-sm-2" for="fname">Nombre:</label>
                             <div class="col-sm-10">
                                 <input type="text" class="form-control __form-input" id="fname" name="fname">
                             </div>
                         </div>
-                    
+
                         <div class="form-group">
                             <label class="control-label col-sm-2" for="lname">Apellido:</label>
                             <div class="col-sm-10">
                                 <input type="text" class="form-control __form-input" id="lname" name="lname">
                             </div>
                         </div>
-                    
+
                         <div class="form-group">
                             <label class="control-label col-sm-2" for="email">Email:</label>
                             <div class="col-sm-10">
                                 <input type="email" class="form-control __form-input" id="email" name="email">
                             </div>
                         </div>
-                    
+
                         <div class="form-group">
                             <label class="control-label col-sm-2" for="comment">Mensaje:</label>
                             <div class="col-sm-10">
-                                <textarea class="form-control __form-input" rows="5" id="comment"></textarea>
+                                <textarea class="form-control __form-input" rows="5" id="comment" name="mensaje"></textarea>
                             </div>
                         </div>
-                    
+
                         <div class="form-group">
                             <div class="col-sm-offset-2 col-sm-10 text-right">
                                 <button type="submit" class="__btn font-weight-bold btn text-uppercase">Enviar</button>
                             </div>
                         </div>
                     </form>
-                  
-                    
+
+
                   </div>
                   <!-- Side info -->
 
@@ -99,5 +99,5 @@
 
   </section>
 </main>
- 
+ <script src="js/contactValidation.js" charset="utf-8"></script>
 @endsection

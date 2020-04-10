@@ -11,14 +11,14 @@ regForm.onsubmit = function (event) {
   if (regElement.name.value.trim()=='') {   //name
     alert('El campo nombre es obligatorio');
     event.preventDefault();
-  }else if (regElement.name.length <3) {
+  }else if (regElement.name.value.length <3) {
    alert('El campo nombre debe ser mas largo');
    event.preventDefault();
  }
  if (regElement.surname.value.trim()=='') { //surname
    alert('El campo nombre es obligatorio');
    event.preventDefault();
- }else if (regElement.surname.length <3) {
+ }else if (regElement.surname.value.length <3) {
   alert('El campo nombre debe ser mas largo');
   event.preventDefault();
 }
