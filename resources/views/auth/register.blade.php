@@ -114,5 +114,6 @@ Register
 
 
 </section>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   <script src="js/registerValidation.js" charset="utf-8"></script>
 @endsection

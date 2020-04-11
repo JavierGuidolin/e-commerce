@@ -99,5 +99,6 @@
 
   </section>
 </main>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
  <script src="js/contactValidation.js" charset="utf-8"></script>
 @endsection

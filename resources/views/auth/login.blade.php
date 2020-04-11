@@ -90,6 +90,7 @@ Login
 
 
 </section>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script src="js/loginValidations.js"></script>
 
 @endsection

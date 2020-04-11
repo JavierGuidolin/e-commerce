@@ -3,6 +3,10 @@ body {
     font-size: 14px;
     box-sizing: border-box;
 }
+.swal-button{
+    background-color: #ef7756;
+
+}
 
 /*-------------login----------------*/
 .__image-side-login,
@@ -73,7 +77,7 @@ body {
     .__image-side-reset {
         background-image: url('/img/password.webp');
     }
-    
+
     .__image-side-login h1,
     .__image-side-register h1,
     .__image-side-forgot-pass h1,

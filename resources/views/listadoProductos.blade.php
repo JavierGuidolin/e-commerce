@@ -3,7 +3,7 @@
 @section('styles')
   <link rel="stylesheet" href="/css/list-products.css">
 @endsection
- 
+
 @section('titulo')
    Libros
 @endsection
@@ -17,7 +17,7 @@
 
         <!-- Filter input -->
         <div class="form-group row mt-3">
-                
+
             <label for="inputPassword3" class="col-4 offset-md-7 col-md-2 col-form-label">Filtrar por:</label>
             <div class="col-8 col-md-3">
                 <select id="inputState" class="form-control __filter-input">
@@ -31,7 +31,7 @@
 
         </div>
          <!-- Filter input -->
-       
+
         <div class="row">
 
               <div class="col-5 col-md-3">
@@ -99,7 +99,7 @@
                           </div>
                           <!-- Producto -->
 
-                         
+
                           <!-- Producto -->
                           <div class="offset-1 col-10 col-md-4 offset-md-0 col-lg-3">
                             <div class="px-2 px-xl-4 item">
@@ -217,7 +217,7 @@
                   </div>
 
                   <!-- Pagination -->
-                 <!-- 
+                 <!--
                     <nav class="">
                       <ul class="pagination ml-auto">
                           <li class="page-item"><a class="page-link" href="#">Previous</a></li>
