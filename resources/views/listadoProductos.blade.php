@@ -78,7 +78,7 @@
                                       <img class="w-100 mx-auto " src="/img/libros-portadas/the-girl-in-red.webp" alt="">
                                       <div class="__options pb-2">
 
-                                          <a class="__options-add-to-cart mr-1 mb-1" href="#">
+                                          <a class="__options-add-to-cart mr-1 mb-1" href="#" id="addItem">
                                               <i class="fas fa-shopping-bag"></i>
                                               <span>BUY</span>
                                           </a>
@@ -90,14 +90,16 @@
                                   </div>
                                   <div class="pt-3">
                                       <h3 class="text-center font-weight-bold">
-                                          <a href="">The girl in red</a>
+                                          <a href="" id="title">The girl in red</a>
                                         </h3>
-                                      <h6 class="text-center">by Chloe Hooper</h6>
-                                      <h3 class="text-center">$ 27.99</h3>
+                                      <h6 class="text-center" id="autor">by Chloe Hooper</h6>
+                                      <h3 class="text-center" id="price">27.99</h3>
                                   </div>
                               </div>
                           </div>
                           <!-- Producto -->
+
+
 
 
                           <!-- Producto -->
@@ -239,4 +241,7 @@
   </section>
 
 </main>
+
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script src="js/shoppingcart.js" charset="utf-8"></script>
 @endsection
