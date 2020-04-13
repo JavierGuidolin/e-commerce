@@ -70,7 +70,15 @@
 
                   <div class="my-3">
                       <div class="row">
+                          <div class="java" id="cart-products">
 
+                          </div>
+
+
+
+
+
+                          
                           <!-- Producto -->
                           <div class="offset-1 col-10 col-md-4 offset-md-0 col-lg-3">
                               <div class="px-2 px-xl-4 item">
@@ -243,7 +251,7 @@
 </main>
 <script>
     console.log({!!$libros!!});
-    localStorage.setItem('Libros',JSON.stringify({!!$libros!!}));
+    localStorage.setItem('Libros',JSON.stringify({!!$libros!!})); //Guarda el array de libros traido de la base de datos y almacena como JSON en local storage
 </script>
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script src="js/shoppingcart.js" charset="utf-8"></script>
