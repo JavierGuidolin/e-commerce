@@ -85,11 +85,18 @@ add : function(){
     cart.elementos[this.dataset.id]['cantidad']++;
   }
   cart.save();
+  swal({
+  icon: "success",
+  text: 'Producto añadido',
+
+});
+},
 
 
 
-}
 };
+
+
 window.addEventListener("load", function(){ //Cuando se refresca la pagina se cargan los datos de la compra
   cart.load();
 
