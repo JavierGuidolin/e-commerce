@@ -2,9 +2,12 @@
 let products = JSON.parse(localStorage.getItem('Libros'));
 
 
+window.addEventListener("load", function(){
 let container = document.getElementById("cart-products"),
     items = null, part = null;
 
+container.classList.add('offset-1','col-10','col-md-4','offset-md-0','col-lg-3');
+//let cart=[];
 //RENDERIZADO//
 for (let i in products) {
   items = document.createElement("div");
@@ -25,7 +28,7 @@ for (let i in products) {
   // Precio
   part = document.createElement("div");
   part.innerHTML = "$" + products[i]['price'];
-  part.classList.add("p-price");
+  part.classList.add("p-price,text-center");
   items.appendChild(part);
 
   // Descripcion del producto
@@ -45,23 +48,51 @@ for (let i in products) {
 
   container.appendChild(items);
 }
-//});
+});
 
 //OBJETO CARRO
-let cart ={
+var cart ={
+elementos :null , //Empieza el carro vacio
 
-elementos:null, //Empieza el carro vacio
 
-load:,  //Esta funcion cargaria los datos del carrito, por si se cierra la pagina
+//load:,  // carga los datos del carrito, al refrescar la pagina
+load : function(){
 
-save:, //Guarda los datos del carro en el local storage
+  cart.elementos = localStorage.getItem("cart");
+  if (cart.elementos == null) { cart.elementos = {}; }
+  else { cart.elementos = JSON.parse(cart.elementos); }
+},
+//save:, //Guarda los datos del carro en el local storage
+save: function(){
+  localStorage.setItem("cart", JSON.stringify(cart.elementos));
+},
+//list:, //Muestra una lista de los productos, y el total a pagar
 
-add:, //Añade los items al carro
+//reset:,//Vacia el carro
 
-list:, //Muestra una lista de los productos, y el total a pagar
+//checkout:,//Procede al checkout
+add : function(){
+  if (cart.elementos[this.dataset.id] == undefined) {
+    var product = products[this.dataset.id];
+    cart.elementos[this.dataset.id] = {
+      idProducto:product['id'],
+      title : product['title'],
+      resume : product['resume'],
+      price : product['price'],
+      cantidad : 1
+    };
+  } else {
+    cart.elementos[this.dataset.id]['cantidad']++;
+  }
+  cart.save();
 
-reset:,//Vacia el carro
 
-checkout:,//Procede al checkout
 
+}
 };
+window.addEventListener("load", function(){ //Cuando se refresca la pagina se cargan los datos de la compra
+  cart.load();
+
+});
+
+console.log('Carro de compras: '+localStorage.getItem('cart'));
