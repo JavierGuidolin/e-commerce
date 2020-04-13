@@ -78,7 +78,7 @@
                                       <img class="w-100 mx-auto " src="/img/libros-portadas/the-girl-in-red.webp" alt="">
                                       <div class="__options pb-2">
 
-                                          <a class="__options-add-to-cart mr-1 mb-1" href="#" id="addItem">
+                                          <a class="__options-add-to-cart mr-1 mb-1" href="#" id="addItem" onclick="return añadir()">
                                               <i class="fas fa-shopping-bag"></i>
                                               <span>BUY</span>
                                           </a>
@@ -241,7 +241,10 @@
   </section>
 
 </main>
-
+<script>
+    console.log({!!$libros!!});
+    localStorage.setItem('Libros',JSON.stringify({!!$libros!!}));
+</script>
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script src="js/shoppingcart.js" charset="utf-8"></script>
 @endsection

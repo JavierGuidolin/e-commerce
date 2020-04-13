@@ -13,8 +13,9 @@ let cart ={
 }; //Inicializo la variable cart
 let addItem= document.getElementById('addItem');
 
-
-addItem.onclick = function(){
+console.log('Los libros'+localStorage.getItem('Libros'));
+function añadir() {
+//addItem.onclick = function(){
   let autor = document.getElementById('autor').innerHTML;
   let title = document.getElementById('title').innerHTML;
   let price = document.getElementById('price').innerHTML;
