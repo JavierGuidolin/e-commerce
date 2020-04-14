@@ -8,7 +8,7 @@ var cart = {
     let container=document.querySelector('.__container')
     //console.log(container);
     let divRow=null,divImg=null,divImg2=null,divDesc=null,divTitle=null,divOptions=null,divPrice=null,divQuantity=null,divInput=null,divButton=null,
-    imgCover=null,h5Title=null,h4Desc=null,h6Price=null,inputQuantity=null,buttonTrash=null,iconTrash=null,hr=null;
+    imgCover=null,h5Title=null,h4Desc=null,h6Price=null,inputQuantity=null,buttonTrash=null,iconTrash=null,hr=null,divSubtotal=null,total = 0, subtotal = 0;
 
     ///RENDERIZADO//
     for (let i in carrito) {
@@ -110,24 +110,37 @@ var cart = {
 
       hr=document.createElement('hr');
       divRow.appendChild(hr);
+      ///////////Subtotal///////////////
+      subtotal = carrito[i]['cantidad'] * carrito[i]['price'];
+      total += subtotal;
+
     }
+    divSubtotal=document.createElement('div')
+    divSubtotal.innerHTML="Total:"+total;
+    console.log(total);
+    console.log(subtotal);
+    divRow.appendChild(divSubtotal);
+
   },
   save : function(){
     localStorage.setItem("cart", JSON.stringify(cart.data));
   },
-
   delete: function(){
-    delete cart.data[this.dataset.id];
-    cart.save();
-    location.reload();
-    return false;
+   delete cart.data[this.dataset.id];
+
+
+
+        cart.save();
+        location.reload();
+        return false;
 
   },
-}
 
+}
 
 window.addEventListener("load", function(){ //Cuando se refresca la pagina se cargan los datos de la compra
  cart.list();
+
 });
 console.log(cart.data);
-console.log(localStorage.getItem('cart'));
+console.log();
