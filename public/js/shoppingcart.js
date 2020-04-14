@@ -3,15 +3,77 @@ let products = JSON.parse(localStorage.getItem('Libros'));
 
 
 window.addEventListener("load", function(){
-let container = document.getElementById("cart-products"),
-    items = null, part = null;
-
-container.classList.add('offset-1','col-10','col-md-4','offset-md-0','col-lg-3');
+let container = document.querySelector('.libros'),
+    items = null, part = null, item2= null,cover=null,options=null,datosDelProducto=null,img=null;
+    addToCart=null,iconShop=null,spanBuy=null,h3BookTitle=null,linkBookTitle=null,h6BookAutor=null,h3BookPrice=null;
+//container.classList.add('offset-1','col-10','col-md-4','offset-md-0','col-lg-3');
 //let cart=[];
 //RENDERIZADO//
 for (let i in products) {
   items = document.createElement("div");
-  items.classList.add("p-item");
+  items.classList.add("offset-1","col-10","col-md-4","offset-md-0","col-lg-3");
+
+
+  item2 = document.createElement("div");
+  item2.classList.add("px-2","px-xl-4");
+
+
+  cover = document.createElement("div");
+  cover.classList.add("__cover-bestseller");
+  img = document.createElement('img');
+  img.classList.add("w-100","mx-auto");
+  img.setAttribute('src',products[i]['cover']);
+  cover.appendChild(img);
+
+  //console.log(cover);
+
+///////////////////////////////////////////////////
+  options = document.createElement("div");
+  options.classList.add("__options","pb-2");
+
+  addToCart=document.createElement('a');
+  addToCart.classList.add("__option-add-to-cart","mr-1","mb-1");
+   addToCart.onclick = cart.add;
+   addToCart.dataset.id = i;
+  addToCart.innerHTML='<span>BUY</span>';
+
+  iconShop=document.createElement('i');
+  iconShop.classList.add("fas","fa-shopping-bag");
+
+
+  options.appendChild(addToCart);
+  addToCart.appendChild(iconShop);
+  cover.appendChild(options);
+  //console.log(cover);
+
+
+
+
+  datosDelProducto = document.createElement("div");
+  datosDelProducto.classList.add("pt-3");
+
+  h3BookTitle=document.createElement('h3');
+  h3BookTitle.classList.add("text-center","font-weight-bold");
+
+  linkBookTitle=document.createElement('a');
+  linkBookTitle.innerHTML=products[i]['title'];
+
+  h6BookAutor=document.createElement('h6');
+  h6BookAutor.classList.add("text-center");
+  h6BookAutor.innerHTML="NOMBRE DEL AUTOR";
+
+  h3BookPrice=document.createElement('h3');
+  h3BookPrice.classList.add("text-center");
+  h3BookPrice.innerHTML="$"+products[i]['price'];
+
+  h3BookTitle.appendChild(linkBookTitle);
+  datosDelProducto.appendChild(h3BookTitle,h6BookAutor,h3BookPrice);
+
+  item2.appendChild(cover);
+  item2.appendChild(datosDelProducto);
+  items.appendChild(item2);
+  container.appendChild(items);
+  console.log(container);
 
   // // Product Image
   // part = document.createElement("img");
@@ -20,33 +82,33 @@ for (let i in products) {
   // item.appendChild(part);
 
   // Nombre del producto
-  part = document.createElement("div");
-  part.innerHTML = products[i]['title'];
-  part.classList.add("p-name");
-  items.appendChild(part);
-
-  // Precio
-  part = document.createElement("div");
-  part.innerHTML = "$" + products[i]['price'];
-  part.classList.add("p-price,text-center");
-  items.appendChild(part);
-
-  // Descripcion del producto
-  part = document.createElement("div");
-  part.innerHTML = products[i]['resume'];
-  part.classList.add("p-desc");
-  items.appendChild(part);
-
-  // Boton añadir al carro
-  part = document.createElement("input");
-  part.type = "button";
-  part.value = "Add to Cart";
-  part.classList.add("p-add");
-  part.onclick = cart.add;
-  part.dataset.id = i;
-  items.appendChild(part);
-
-  container.appendChild(items);
+  // part = document.createElement("div");
+  // part.innerHTML = products[i]['title'];
+  // part.classList.add("p-name");
+  // items.appendChild(part);
+  //
+  // // Precio
+  // part = document.createElement("div");
+  // part.innerHTML = "$" + products[i]['price'];
+  // part.classList.add("p-price,text-center");
+  // items.appendChild(part);
+  //
+  // // Descripcion del producto
+  // part = document.createElement("div");
+  // part.innerHTML = products[i]['resume'];
+  // part.classList.add("p-desc");
+  // items.appendChild(part);
+  //
+  // // Boton añadir al carro
+  // part = document.createElement("input");
+  // part.type = "button";
+  // part.value = "Add to Cart";
+  // part.classList.add("p-add");
+  // part.onclick = cart.add;
+  // part.dataset.id = i;
+  // items.appendChild(part);
+  //
+  // container.appendChild(items);
 }
 });
 
@@ -95,7 +157,6 @@ add : function(){
 
 
 };
-
 
 window.addEventListener("load", function(){ //Cuando se refresca la pagina se cargan los datos de la compra
   cart.load();

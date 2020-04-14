@@ -69,7 +69,7 @@
               <div class="col-7 col-md-9">
 
                   <div class="my-3">
-                      <div class="row">
+                      <div class="row libros">
                           <div class="java" id="cart-products">
 
                           </div>
