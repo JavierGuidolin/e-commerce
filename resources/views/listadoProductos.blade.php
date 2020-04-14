@@ -70,13 +70,6 @@
 
                   <div class="my-3">
                       <div class="row libros">
-                          <div class="java" id="cart-products">
-
-                          </div>
-
-
-
-
 
 
                           <!-- Producto -->
@@ -119,7 +112,7 @@
 
                                         <a class="__options-add-to-cart mr-1 mb-1" href="#">
                                             <i class="fas fa-shopping-bag"></i>
-                                            <span>BUY</span>
+                                            <span>COMPRAR</span>
                                         </a>
                                         <a class="__options-add-to-fav mr-1" href="#">
                                             <i class="far fa-heart"></i>
