@@ -71,7 +71,7 @@ for (let i in products) {
 
   h6BookAutor=document.createElement('h6');
   h6BookAutor.classList.add("text-center");
-  h6BookAutor.innerHTML="NOMBRE DEL AUTOR";
+  h6BookAutor.innerHTML="{{$books->find("+products[i]['id']+")}}";
 
   h3BookPrice=document.createElement('h3');
   h3BookPrice.classList.add("text-center");
@@ -155,6 +155,7 @@ add : function(){
       title : product['title'],
       resume : product['resume'],
       price : product['price'],
+      cover : product['cover'],
       cantidad : 1
     };
   } else {

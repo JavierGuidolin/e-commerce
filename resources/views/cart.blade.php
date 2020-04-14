@@ -5,7 +5,7 @@
   <link rel="stylesheet" href="/css/cart.css">
   <link rel="stylesheet" href="/css/partials/form-controls.css">
 @endsection
- 
+
 @section('titulo')
    Carrito
 @endsection
@@ -35,6 +35,8 @@
                     </div>
                     <hr>
                     <!-- Head Table -->
+
+                    <div class="__container">
 
                     <!-- product -->
                     <div class="row">
@@ -81,10 +83,11 @@
                         </div>
 
                         <!-- Options -->
-
+  <hr>
                     </div>
 
-                    <hr>
+
+
                     <!-- Product -->
 
                     <!-- product -->
@@ -137,6 +140,7 @@
                     </div>
 
                     <hr>
+                    </div>
                     <!-- Product -->
 
                     <div class="row">
@@ -234,4 +238,5 @@
     </div>
 
 </main>
+<script src="/js/cartView.js" charset="utf-8"></script>
 @endsection

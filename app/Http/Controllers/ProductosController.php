@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 Use App\Book;
-
 Use App\Category;
 class ProductosController extends Controller
 {
