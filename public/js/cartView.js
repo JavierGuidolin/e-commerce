@@ -128,7 +128,7 @@ var cart = {
   delete: function(){
    delete cart.data[this.dataset.id];
 
-
+      swal('Producto eliminado');
 
         cart.save();
         location.reload();

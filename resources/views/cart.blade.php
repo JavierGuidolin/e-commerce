@@ -238,5 +238,7 @@
     </div>
 
 </main>
-<script src="/js/cartView.js" charset="utf-8"></script>
+
 @endsection
+<script src="/js/cartView.js" charset="utf-8"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
