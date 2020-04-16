@@ -147,7 +147,7 @@
                         <div class="col-12">
                             <div class="pb-1 px-3 font-weight-bold d-flex justify-content-between">
                                 <p class="mb-0 mt-1">Subtotal</p>
-                                <p class="mb-0 mt-1">$ 80.36</p>
+                                <p class="mb-0 mt-1 __subtotal">$ 0</p>
                             </div>
                         </div>
                     </div>
@@ -182,7 +182,7 @@
                             <div class="__resume-values">
                                 <div class="pb-1">
                                     <p class="mb-0 mt-1">Subtotal</p>
-                                    <p class="mb-0 mt-1">$ 80.36</p>
+                                    <p class="mb-0 mt-1 __subtotal">$ 0</p>
                                 </div>
 
                                 <div class="pb-1">
@@ -197,7 +197,7 @@
 
                                 <div class="__resume-total border-top pt-2  font-weight-bold">
                                     <p class="text-uppercase mb-0 pb-2">total</p>
-                                    <p class="text-uppercase mb-0 pb-2">$65.00</p>
+                                    <p class="text-uppercase mb-0 pb-2 __subtotal">$ 0</p>
                                 </div>
 
                             </div>

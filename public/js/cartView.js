@@ -115,11 +115,13 @@ var cart = {
       total += subtotal;
 
     }
-    divSubtotal=document.createElement('div')
-    divSubtotal.innerHTML="Total:"+total;
+    divSubtotal=document.querySelectorAll('.__subtotal');
+    divSubtotal.forEach(element=>element.innerHTML="$ "+total);
+
+
     console.log(total);
     console.log(subtotal);
-    divRow.appendChild(divSubtotal);
+
 
   },
   save : function(){
