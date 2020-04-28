@@ -5,8 +5,8 @@ var cart = {
 
   list : function(){
 
-    let container=document.querySelector('.__container')
-    //console.log(container);
+    let container=document.querySelector('.books')
+
     let divRow=null,divImg=null,divImg2=null,divDesc=null,divTitle=null,divOptions=null,divPrice=null,divQuantity=null,divInput=null,divButton=null,
     imgCover=null,h5Title=null,h4Desc=null,h6Price=null,inputQuantity=null,buttonTrash=null,iconTrash=null,hr=null,divSubtotal=null,total = 0, subtotal = 0;
 
@@ -119,8 +119,6 @@ var cart = {
     divSubtotal.forEach(element=>element.innerHTML="$ "+total);
 
 
-    console.log(total);
-    console.log(subtotal);
 
 
   },
@@ -128,13 +126,27 @@ var cart = {
     localStorage.setItem("cart", JSON.stringify(cart.data));
   },
   delete: function(){
-   delete cart.data[this.dataset.id];
+            swal({
+                    title: "Estas seguro que deseas eliminar el producto?",
+                    icon: "warning",
+                    buttons: true,
+                    dangerMode: true,
+        })
+        .then((willDelete) => {
+        if (willDelete) {
 
-      swal('Producto eliminado');
+          delete cart.data[this.dataset.id];
+          swal("Producto eliminado", {
+            icon: "success",
+          });
+          let container=document.querySelector('.books');
+          container.innerHTML="";
+          cart.save();
+          cart.list();
+        }
+        });
 
-        cart.save();
-        location.reload();
-        return false;
+
 
   },
 
@@ -144,5 +156,3 @@ window.addEventListener("load", function(){ //Cuando se refresca la pagina se ca
  cart.list();
 
 });
-console.log(cart.data);
-console.log();
