@@ -1,7 +1,7 @@
 let carrito=JSON.parse(localStorage.getItem('cart'));
 
 var cart = {
-  data : carrito, // current shopping cart
+  data : carrito,
 
   list : function(){
 
@@ -152,7 +152,7 @@ var cart = {
 
 }
 
-window.addEventListener("load", function(){ //Cuando se refresca la pagina se cargan los datos de la compra
+window.addEventListener("load", function(){ 
  cart.list();
 
 });

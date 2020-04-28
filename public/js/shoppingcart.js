@@ -91,7 +91,7 @@ for (let i in products) {
 var cart ={
 elementos:null , //Empieza el carro vacio
 
-//load:,  // carga los datos del carrito, al refrescar la pagina
+
 load : function(){
 
   cart.elementos = localStorage.getItem("cart");
@@ -125,6 +125,6 @@ add : function(){
 },
 };
 
-window.addEventListener("load", function(){ //Cuando se refresca la pagina se cargan los datos de la compra
+window.addEventListener("load", function(){ 
   cart.load();
 });
