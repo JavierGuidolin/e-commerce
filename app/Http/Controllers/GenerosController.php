@@ -2,17 +2,24 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-Use App\Book;
-Use App\Category;
+use App\Category;
+
 class GenerosController extends Controller
 {
-  public function verGeneros(){
+    public function verGeneros()
+    {
+        $categories = Category::paginate(2);
 
-    $categories=Category::paginate(2);
+        $vac = compact('categories');
+        return view('listadoGeneros', $vac); //variable a compartir en la vista
 
-      $vac= compact('categories');
-    return view('listadoGeneros',$vac);//variable a compartir en la vista
+    }
 
-  }
+    public function all()
+    {
+
+        $categories = Category::all()->toJSON();
+        return $categories;
+
+    }
 }

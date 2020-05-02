@@ -25,3 +25,8 @@ Route::get('/inicio', function(){return view('index');});
 Route::get('/contacto', function(){return view('contacto');});
 Route::get('/faq', function(){return view('faq');});
 Route::get('/carrito', function(){return view('cart');});
+
+//Admin routes
+Route::get('/admin', function(){
+    return view('admin');
+})->middleware('admin');

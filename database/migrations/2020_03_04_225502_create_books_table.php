@@ -19,10 +19,15 @@ class CreateBooksTable extends Migration
             $table->longText('resume');
             $table->float('price');
             $table->string('cover');
-
+            $table->string('isbn');
+            $table->string('pages');
+            $table->date('date');
+            $table->tinyInteger('stock');
+            
             $table->unsignedBigInteger('category_id');
             $table->foreign('category_id')->references('id')->on('categories');
 
+            $table->softDeletes();
             $table->timestamps();
         });
     }
