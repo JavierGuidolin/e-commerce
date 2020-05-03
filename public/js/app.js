@@ -6542,10 +6542,10 @@ module.exports = {
 
 /***/ }),
 
-/***/ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./resources/js/components/AddBook/AddBook.css":
-/*!*************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader??ref--6-1!./node_modules/postcss-loader/src??ref--6-2!./resources/js/components/AddBook/AddBook.css ***!
-  \*************************************************************************************************************************************/
+/***/ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./resources/js/components/AdminPage/AdminPage.css":
+/*!*****************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader??ref--6-1!./node_modules/postcss-loader/src??ref--6-2!./resources/js/components/AdminPage/AdminPage.css ***!
+  \*****************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -6554,17 +6554,17 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".__input-form {\r\n    width: 100%;\r\n    border: none;\r\n    background-color: #e9e3e3;\r\n    border-bottom: 1px solid #c3c2c2;\r\n    outline: none;\r\n    color: #555556;\r\n    font-size: 0.8em;\r\n    padding: 5px;\r\n    transition: border 0.5s ease-in;\r\n}\r\n\r\n\r\n.__label-form {\r\n    font-size: 0.8em;\r\n    display: block;\r\n    color: #17a2b8\r\n}\r\n\r\n\r\ninput[type=\"file\"] {\r\n    display: none;\r\n}\r\n\r\n.__custom-file-upload {\r\n    border: 1px solid #ccc;\r\n    display: inline-block;\r\n    padding: 6px 12px;\r\n    cursor: pointer;\r\n}\r\n\r\n", ""]);
+exports.push([module.i, "body {\r\n    background-color: #e9e3e3;\r\n    color: #555556;\r\n    font-weight: 300;\r\n}\r\n\r\nmain {\r\n    min-height: 100vh;\r\n}\r\n\r\n.nav-item .nav-link {\r\n    color: #555556;\r\n    font-weight: 300;\r\n    border-radius: 3px;\r\n}\r\n\r\n.nav-item .nav-link.active {\r\n    background-color: #17a2b8;\r\n    color: #fff !important;\r\n}\r\n\r\n.navbar{\r\n    align-items: flex-start;\r\n}", ""]);
 
 // exports
 
 
 /***/ }),
 
-/***/ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./resources/js/components/AddBook/Animations.css":
-/*!****************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader??ref--6-1!./node_modules/postcss-loader/src??ref--6-2!./resources/js/components/AddBook/Animations.css ***!
-  \****************************************************************************************************************************************/
+/***/ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./resources/js/components/BookForms/Animations.css":
+/*!******************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader??ref--6-1!./node_modules/postcss-loader/src??ref--6-2!./resources/js/components/BookForms/Animations.css ***!
+  \******************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -6580,28 +6580,9 @@ exports.push([module.i, ".slide-exited {\r\n    -webkit-animation-name: slideInR
 
 /***/ }),
 
-/***/ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./resources/js/components/AddBook/FirstStep/FirstStep.css":
-/*!*************************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader??ref--6-1!./node_modules/postcss-loader/src??ref--6-2!./resources/js/components/AddBook/FirstStep/FirstStep.css ***!
-  \*************************************************************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
-// imports
-
-
-// module
-exports.push([module.i, ".fa-trash-alt {\r\n    font-size: .8em;\r\n    color: #ef7853;\r\n    cursor: pointer;\r\n}", ""]);
-
-// exports
-
-
-/***/ }),
-
-/***/ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./resources/js/components/AdminPage/AdminPage.css":
+/***/ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./resources/js/components/BookForms/BookForms.css":
 /*!*****************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader??ref--6-1!./node_modules/postcss-loader/src??ref--6-2!./resources/js/components/AdminPage/AdminPage.css ***!
+  !*** ./node_modules/css-loader??ref--6-1!./node_modules/postcss-loader/src??ref--6-2!./resources/js/components/BookForms/BookForms.css ***!
   \*****************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
@@ -6611,7 +6592,26 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "body {\r\n    background-color: #e9e3e3;\r\n    color: #555556;\r\n    font-weight: 300;\r\n}\r\n\r\nmain {\r\n    min-height: 100vh;\r\n}\r\n\r\n.nav-item .nav-link {\r\n    color: #555556;\r\n    font-weight: 300;\r\n    border-radius: 3px;\r\n}\r\n\r\n.nav-item .nav-link.active {\r\n    background-color: #17a2b8;\r\n    color: #fff !important;\r\n}\r\n\r\n.navbar{\r\n    align-items: flex-start;\r\n}", ""]);
+exports.push([module.i, ".__input-form {\r\n    width: 100%;\r\n    border: none;\r\n    background-color: #e9e3e3;\r\n    border-bottom: 1px solid #c3c2c2;\r\n    outline: none;\r\n    color: #555556;\r\n    font-size: 0.8em;\r\n    padding: 5px;\r\n    transition: border 0.5s ease-in;\r\n}\r\n\r\n\r\n.__label-form {\r\n    font-size: 0.8em;\r\n    display: block;\r\n    color: #17a2b8\r\n}\r\n\r\n\r\ninput[type=\"file\"] {\r\n    display: none;\r\n}\r\n\r\n.__custom-file-upload {\r\n    border: 1px solid #ccc;\r\n    display: inline-block;\r\n    padding: 6px 12px;\r\n    cursor: pointer;\r\n}\r\n\r\n", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./resources/js/components/BookForms/FirstStep/FirstStep.css":
+/*!***************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader??ref--6-1!./node_modules/postcss-loader/src??ref--6-2!./resources/js/components/BookForms/FirstStep/FirstStep.css ***!
+  \***************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".fa-trash-alt {\r\n    font-size: .8em;\r\n    color: #ef7853;\r\n    cursor: pointer;\r\n}", ""]);
 
 // exports
 
@@ -72845,247 +72845,6 @@ module.exports = function(module) {
 
 /***/ }),
 
-/***/ "./resources/js/ValidationRules.js":
-/*!*****************************************!*\
-  !*** ./resources/js/ValidationRules.js ***!
-  \*****************************************/
-/*! exports provided: validating */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "validating", function() { return validating; });
-var validating = function validating(input, inputValue, other) {
-  switch (input) {
-    case 'title':
-      return title(inputValue);
-
-    case 'isbn':
-      return isbn(inputValue);
-
-    case 'pages':
-      return pages(inputValue);
-
-    case 'resume':
-      return resume(inputValue);
-
-    case 'date':
-      return date(inputValue);
-
-    case 'price':
-      return price(inputValue);
-
-    case 'stock':
-      return stock(inputValue);
-
-    case 'category':
-      return category(inputValue, other);
-
-    case 'cover':
-      return cover(inputValue);
-
-    default:
-      break;
-  }
-};
-
-var title = function title(inputValue) {
-  inputValue = inputValue.trim();
-
-  if (inputValue.length < 1) {
-    return {
-      message: 'Debe incluir el titulo del producto',
-      status: false
-    };
-  }
-
-  if (inputValue.trim().length > 250) {
-    return {
-      message: 'El título del producto no puede tener mas de 250 caracteres',
-      status: false
-    };
-  }
-
-  return {
-    status: true
-  };
-};
-
-var pages = function pages(inputValue) {
-  if (isNaN(inputValue)) {
-    return {
-      message: 'El numero de paginas debe ser un valor numerico',
-      status: false
-    };
-  }
-
-  if (inputValue > 9999 || inputValue < 10) {
-    return {
-      message: 'El numero de paginas debe estar entre 10 y 99999',
-      status: false
-    };
-  }
-
-  return {
-    status: true
-  };
-};
-
-var isbn = function isbn(inputValue) {
-  inputValue = inputValue.trim();
-
-  if (inputValue.length < 1) {
-    return {
-      message: 'Debe incluir el ISBN u otro valor identificatorio',
-      status: false
-    };
-  }
-
-  if (inputValue.length > 15 || inputValue.length < 10) {
-    return {
-      message: 'El ISBN o el ID  debe tener ente 10 y 15 caracteres',
-      status: false
-    };
-  }
-
-  return {
-    status: true
-  };
-};
-
-var resume = function resume(inputValue) {
-  inputValue = inputValue.trim();
-
-  if (inputValue.length < 1) {
-    return {
-      message: 'Debe incluir el resumen del producto',
-      status: false
-    };
-  }
-
-  if (inputValue.length < 30 || inputValue.length > 500) {
-    return {
-      message: 'El numero de caracteres debe estar entre 30 y 500',
-      status: false
-    };
-  }
-
-  return {
-    status: true
-  };
-};
-
-var date = function date(inputValue) {
-  var date = /^\d{4}-\d{2}-\d{2}$/.test(inputValue);
-
-  if (!date) {
-    return {
-      message: 'La fecha indicada no es valida',
-      status: false
-    };
-  }
-
-  return {
-    status: true
-  };
-};
-
-var price = function price(inputValue) {
-  if (isNaN(inputValue)) {
-    return {
-      message: 'El precio debe ser un valor numerico',
-      status: false
-    };
-  }
-
-  if (inputValue < 0.1 || inputValue > 99999) {
-    return {
-      message: 'El precio debe estar entre 0.1 y 99999',
-      status: false
-    };
-  }
-
-  return {
-    status: true
-  };
-};
-
-var stock = function stock(inputValue) {
-  if (isNaN(inputValue)) {
-    return {
-      message: 'El stock debe ser un valor numerico',
-      status: false
-    };
-  }
-
-  if (Number.isInteger(inputValue)) {
-    return {
-      message: 'El stock debe ser un valor entero',
-      status: false
-    };
-  }
-
-  if (inputValue < 0 || inputValue > 999) {
-    return {
-      message: 'El stock debe estar entre 0 y 999',
-      status: false
-    };
-  }
-
-  return {
-    status: true
-  };
-};
-
-var category = function category(inputValue, other) {
-  if (inputValue.length <= 0) {
-    return {
-      message: 'Debe seleccionar una categoria',
-      status: false
-    };
-  }
-
-  var exist = other.filter(function (category) {
-    return category.id == inputValue;
-  });
-
-  if (!exist.length) {
-    return {
-      message: 'La categoria seleccionada no es valida',
-      status: false
-    };
-  }
-
-  return {
-    status: true
-  };
-};
-
-var cover = function cover(inputValue) {
-  var SUPPORTED_FORMATS = ["image/bmp", "image/jpeg", "image/gif", "image/png"];
-  var FILE_SIZE = 5000000;
-
-  if (!SUPPORTED_FORMATS.includes(inputValue.type)) {
-    return {
-      message: 'La portada debe ser una imagen jpg, jpeg, gif o png',
-      status: false
-    };
-  }
-
-  if (inputValue.size > FILE_SIZE) {
-    return {
-      message: 'La portada no debe ser mayor a 5MB',
-      status: false
-    };
-  }
-
-  return {
-    status: true
-  };
-};
-
-/***/ }),
-
 /***/ "./resources/js/app.js":
 /*!*****************************!*\
   !*** ./resources/js/app.js ***!
@@ -73155,15 +72914,15 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 /***/ }),
 
-/***/ "./resources/js/components/AddBook/AddBook.css":
-/*!*****************************************************!*\
-  !*** ./resources/js/components/AddBook/AddBook.css ***!
-  \*****************************************************/
+/***/ "./resources/js/components/AdminPage/AdminPage.css":
+/*!*********************************************************!*\
+  !*** ./resources/js/components/AdminPage/AdminPage.css ***!
+  \*********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-var content = __webpack_require__(/*! !../../../../node_modules/css-loader??ref--6-1!../../../../node_modules/postcss-loader/src??ref--6-2!./AddBook.css */ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./resources/js/components/AddBook/AddBook.css");
+var content = __webpack_require__(/*! !../../../../node_modules/css-loader??ref--6-1!../../../../node_modules/postcss-loader/src??ref--6-2!./AdminPage.css */ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./resources/js/components/AdminPage/AdminPage.css");
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 
@@ -73185,10 +72944,88 @@ if(false) {}
 
 /***/ }),
 
-/***/ "./resources/js/components/AddBook/AddBook.jsx":
-/*!*****************************************************!*\
-  !*** ./resources/js/components/AddBook/AddBook.jsx ***!
-  \*****************************************************/
+/***/ "./resources/js/components/AdminPage/AdminPage.jsx":
+/*!*********************************************************!*\
+  !*** ./resources/js/components/AdminPage/AdminPage.jsx ***!
+  \*********************************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
+/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var _Logo_Logo__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Logo/Logo */ "./resources/js/components/AdminPage/Logo/Logo.jsx");
+/* harmony import */ var _Reusable_OldSchoolMenuLink_OldSchoolMenuLink__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../Reusable/OldSchoolMenuLink/OldSchoolMenuLink */ "./resources/js/components/Reusable/OldSchoolMenuLink/OldSchoolMenuLink.jsx");
+/* harmony import */ var _BookForms_AddBook__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../BookForms/AddBook */ "./resources/js/components/BookForms/AddBook.jsx");
+/* harmony import */ var _BookForms_EditBook__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../BookForms/EditBook */ "./resources/js/components/BookForms/EditBook.jsx");
+/* harmony import */ var _BookList_BookList__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../BookList/BookList */ "./resources/js/components/BookList/BookList.jsx");
+/* harmony import */ var _AdminPage_css__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./AdminPage.css */ "./resources/js/components/AdminPage/AdminPage.css");
+/* harmony import */ var _AdminPage_css__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_AdminPage_css__WEBPACK_IMPORTED_MODULE_8__);
+
+
+
+
+
+
+
+
+
+
+var AdminPage = function AdminPage() {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "container"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "row"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["BrowserRouter"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav", {
+    className: "navbar col-12 col-md-4"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+    className: "navbar-nav mx-auto"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+    className: "nav-item"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
+    to: "/admin"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Logo_Logo__WEBPACK_IMPORTED_MODULE_3__["default"], null))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+    className: "nav-item"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Reusable_OldSchoolMenuLink_OldSchoolMenuLink__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    to: "/book/list",
+    label: "Listado de Libros"
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+    className: "nav-item"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Reusable_OldSchoolMenuLink_OldSchoolMenuLink__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    to: "/book/add",
+    label: "A\xF1adir Libro"
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+    className: "nav-item"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Reusable_OldSchoolMenuLink_OldSchoolMenuLink__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    to: "/author/add",
+    label: "A\xF1adir Autor"
+  })))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Switch"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
+    path: "/book/add"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_BookForms_AddBook__WEBPACK_IMPORTED_MODULE_5__["default"], null)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
+    path: "/book/edit/:id"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_BookForms_EditBook__WEBPACK_IMPORTED_MODULE_6__["default"], null)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
+    path: "/book/list"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_BookList_BookList__WEBPACK_IMPORTED_MODULE_7__["default"], null)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
+    path: "/author/add"
+  }, "A\xF1adir author"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
+    path: "/admin"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_BookList_BookList__WEBPACK_IMPORTED_MODULE_7__["default"], null))))));
+};
+
+if (document.getElementById('root')) {
+  react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(AdminPage, null), document.getElementById('root'));
+}
+
+/***/ }),
+
+/***/ "./resources/js/components/AdminPage/Logo/Logo.jsx":
+/*!*********************************************************!*\
+  !*** ./resources/js/components/AdminPage/Logo/Logo.jsx ***!
+  \*********************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -73196,13 +73033,40 @@ if(false) {}
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _FirstStep_FirstStep__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./FirstStep/FirstStep */ "./resources/js/components/AddBook/FirstStep/FirstStep.jsx");
-/* harmony import */ var _SecondStep_SecondStep__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./SecondStep/SecondStep */ "./resources/js/components/AddBook/SecondStep/SecondStep.jsx");
-/* harmony import */ var _ThirdStep_ThirdStep__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./ThirdStep/ThirdStep */ "./resources/js/components/AddBook/ThirdStep/ThirdStep.jsx");
+
+
+var Logo = function Logo() {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "w-100 text-center d-block"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    className: "navbar-brand mx-auto w-75 py-4",
+    src: "/img/bookStoreLogo.svg",
+    alt: "BookStore Logo"
+  }));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Logo);
+
+/***/ }),
+
+/***/ "./resources/js/components/BookForms/AddBook.jsx":
+/*!*******************************************************!*\
+  !*** ./resources/js/components/BookForms/AddBook.jsx ***!
+  \*******************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _FirstStep_FirstStep__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./FirstStep/FirstStep */ "./resources/js/components/BookForms/FirstStep/FirstStep.jsx");
+/* harmony import */ var _SecondStep_SecondStep__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./SecondStep/SecondStep */ "./resources/js/components/BookForms/SecondStep/SecondStep.jsx");
+/* harmony import */ var _ThirdStep_ThirdStep__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./ThirdStep/ThirdStep */ "./resources/js/components/BookForms/ThirdStep/ThirdStep.jsx");
 /* harmony import */ var _Reusable_Titles_Titles__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../Reusable/Titles/Titles */ "./resources/js/components/Reusable/Titles/Titles.jsx");
-/* harmony import */ var _ValidationRules__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../ValidationRules */ "./resources/js/ValidationRules.js");
-/* harmony import */ var _AddBook_css__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./AddBook.css */ "./resources/js/components/AddBook/AddBook.css");
-/* harmony import */ var _AddBook_css__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_AddBook_css__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _validationRules__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../validationRules */ "./resources/js/validationRules.js");
+/* harmony import */ var _BookForms_css__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./BookForms.css */ "./resources/js/components/BookForms/BookForms.css");
+/* harmony import */ var _BookForms_css__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_BookForms_css__WEBPACK_IMPORTED_MODULE_6__);
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -73302,11 +73166,11 @@ var AddBook = function AddBook() {
     var val = '';
 
     if (name == 'category') {
-      val = Object(_ValidationRules__WEBPACK_IMPORTED_MODULE_5__["validating"])(name, value, categories);
+      val = Object(_validationRules__WEBPACK_IMPORTED_MODULE_5__["validating"])(name, value, categories);
     } else if (name == 'cover') {
-      val = Object(_ValidationRules__WEBPACK_IMPORTED_MODULE_5__["validating"])(name, event.target.files[0]);
+      val = Object(_validationRules__WEBPACK_IMPORTED_MODULE_5__["validating"])(name, event.target.files[0]);
     } else {
-      val = Object(_ValidationRules__WEBPACK_IMPORTED_MODULE_5__["validating"])(name, value);
+      val = Object(_validationRules__WEBPACK_IMPORTED_MODULE_5__["validating"])(name, value);
     }
 
     setErrors(_objectSpread(_objectSpread({}, errors), {}, _defineProperty({}, name, val)));
@@ -73370,7 +73234,8 @@ var AddBook = function AddBook() {
       setBook(_objectSpread(_objectSpread({}, book), {}, {
         authors: book.authors.concat({
           id: data.id,
-          name: data.name + ' ' + data.surname
+          name: data.name,
+          surname: data.surname
         }),
         searchAuthor: ''
       }));
@@ -73460,15 +73325,15 @@ var AddBook = function AddBook() {
 
 /***/ }),
 
-/***/ "./resources/js/components/AddBook/Animations.css":
-/*!********************************************************!*\
-  !*** ./resources/js/components/AddBook/Animations.css ***!
-  \********************************************************/
+/***/ "./resources/js/components/BookForms/Animations.css":
+/*!**********************************************************!*\
+  !*** ./resources/js/components/BookForms/Animations.css ***!
+  \**********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-var content = __webpack_require__(/*! !../../../../node_modules/css-loader??ref--6-1!../../../../node_modules/postcss-loader/src??ref--6-2!./Animations.css */ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./resources/js/components/AddBook/Animations.css");
+var content = __webpack_require__(/*! !../../../../node_modules/css-loader??ref--6-1!../../../../node_modules/postcss-loader/src??ref--6-2!./Animations.css */ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./resources/js/components/BookForms/Animations.css");
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 
@@ -73490,15 +73355,376 @@ if(false) {}
 
 /***/ }),
 
-/***/ "./resources/js/components/AddBook/FirstStep/FirstStep.css":
-/*!*****************************************************************!*\
-  !*** ./resources/js/components/AddBook/FirstStep/FirstStep.css ***!
-  \*****************************************************************/
+/***/ "./resources/js/components/BookForms/BookForms.css":
+/*!*********************************************************!*\
+  !*** ./resources/js/components/BookForms/BookForms.css ***!
+  \*********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-var content = __webpack_require__(/*! !../../../../../node_modules/css-loader??ref--6-1!../../../../../node_modules/postcss-loader/src??ref--6-2!./FirstStep.css */ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./resources/js/components/AddBook/FirstStep/FirstStep.css");
+var content = __webpack_require__(/*! !../../../../node_modules/css-loader??ref--6-1!../../../../node_modules/postcss-loader/src??ref--6-2!./BookForms.css */ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./resources/js/components/BookForms/BookForms.css");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
+/***/ "./resources/js/components/BookForms/EditBook.jsx":
+/*!********************************************************!*\
+  !*** ./resources/js/components/BookForms/EditBook.jsx ***!
+  \********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var _FirstStep_FirstStep__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./FirstStep/FirstStep */ "./resources/js/components/BookForms/FirstStep/FirstStep.jsx");
+/* harmony import */ var _SecondStep_SecondStep__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./SecondStep/SecondStep */ "./resources/js/components/BookForms/SecondStep/SecondStep.jsx");
+/* harmony import */ var _ThirdStep_ThirdStep__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./ThirdStep/ThirdStep */ "./resources/js/components/BookForms/ThirdStep/ThirdStep.jsx");
+/* harmony import */ var _Reusable_Titles_Titles__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../Reusable/Titles/Titles */ "./resources/js/components/Reusable/Titles/Titles.jsx");
+/* harmony import */ var _validationRules__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../validationRules */ "./resources/js/validationRules.js");
+/* harmony import */ var _BookForms_css__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./BookForms.css */ "./resources/js/components/BookForms/BookForms.css");
+/* harmony import */ var _BookForms_css__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_BookForms_css__WEBPACK_IMPORTED_MODULE_7__);
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+
+
+
+
+
+
+
+
+
+var EditBook = function EditBook() {
+  var header = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+
+  var _useParams = Object(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["useParams"])(),
+      id = _useParams.id;
+
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])({
+    id: 0,
+    title: '',
+    isbn: '',
+    pages: 0,
+    resume: '',
+    date: '',
+    price: 0,
+    stock: 0,
+    category: '',
+    cover: null,
+    newCover: null,
+    searchAuthor: '',
+    authors: []
+  }),
+      _useState2 = _slicedToArray(_useState, 2),
+      book = _useState2[0],
+      setBook = _useState2[1];
+
+  var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(1),
+      _useState4 = _slicedToArray(_useState3, 2),
+      step = _useState4[0],
+      setStep = _useState4[1];
+
+  var _useState5 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])([]),
+      _useState6 = _slicedToArray(_useState5, 2),
+      authorResult = _useState6[0],
+      setAuthorResult = _useState6[1];
+
+  var _useState7 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(null),
+      _useState8 = _slicedToArray(_useState7, 2),
+      loading = _useState8[0],
+      setLoading = _useState8[1];
+
+  var _useState9 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])({}),
+      _useState10 = _slicedToArray(_useState9, 2),
+      errors = _useState10[0],
+      setErrors = _useState10[1];
+
+  var _useState11 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])({
+    one: true,
+    two: true
+  }),
+      _useState12 = _slicedToArray(_useState11, 2),
+      valid = _useState12[0],
+      setValid = _useState12[1];
+
+  var _useState13 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])([]),
+      _useState14 = _slicedToArray(_useState13, 2),
+      categories = _useState14[0],
+      setCategories = _useState14[1];
+
+  var _useState15 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])({}),
+      _useState16 = _slicedToArray(_useState15, 2),
+      serverErrors = _useState16[0],
+      setServerErrors = _useState16[1];
+
+  var handleChange = function handleChange(e) {
+    var _event$target = event.target,
+        name = _event$target.name,
+        value = _event$target.value;
+    var val = '';
+
+    if (name == 'category') {
+      val = Object(_validationRules__WEBPACK_IMPORTED_MODULE_6__["validating"])(name, value, categories);
+    } else if (name == 'cover') {
+      val = Object(_validationRules__WEBPACK_IMPORTED_MODULE_6__["validating"])(name, event.target.files[0]);
+    } else {
+      val = Object(_validationRules__WEBPACK_IMPORTED_MODULE_6__["validating"])(name, value);
+    }
+
+    setErrors(_objectSpread(_objectSpread({}, errors), {}, _defineProperty({}, name, val)));
+
+    if (name == 'cover') {
+      setBook(_objectSpread(_objectSpread({}, book), {}, _defineProperty({}, e.target.name, e.target.files[0])));
+    } else {
+      setBook(_objectSpread(_objectSpread({}, book), {}, _defineProperty({}, name, value)));
+    }
+  };
+
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
+    var _errors$title, _errors$isbn, _errors$pages, _errors$resume, _errors$date, _errors$price, _errors$stock, _errors$category, _errors$cover;
+
+    setValid({
+      one: ((_errors$title = errors.title) === null || _errors$title === void 0 ? void 0 : _errors$title.status) && ((_errors$isbn = errors.isbn) === null || _errors$isbn === void 0 ? void 0 : _errors$isbn.status) && ((_errors$pages = errors.pages) === null || _errors$pages === void 0 ? void 0 : _errors$pages.status) && ((_errors$resume = errors.resume) === null || _errors$resume === void 0 ? void 0 : _errors$resume.status) && ((_errors$date = errors.date) === null || _errors$date === void 0 ? void 0 : _errors$date.status),
+      two: ((_errors$price = errors.price) === null || _errors$price === void 0 ? void 0 : _errors$price.status) && ((_errors$stock = errors.stock) === null || _errors$stock === void 0 ? void 0 : _errors$stock.status) && ((_errors$category = errors.category) === null || _errors$category === void 0 ? void 0 : _errors$category.status) && ((_errors$cover = errors.cover) === null || _errors$cover === void 0 ? void 0 : _errors$cover.status)
+    });
+  }, [errors]);
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
+    if (book.searchAuthor != '') getAuthorsResults();
+  }, [book.searchAuthor]);
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
+    getCategories();
+  }, []);
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
+    getBookById(id);
+  }, [categories]);
+
+  var getBookById = function getBookById(id) {
+    var data = {
+      method: 'GET',
+      headers: {
+        'X-CSRF-TOKEN': header
+      }
+    };
+    fetch('/api/books/edit/' + id, data).then(function (response) {
+      return response.json();
+    }).then(function (book) {
+      setBookById(book);
+    })["catch"](function (error) {
+      return console.log(error);
+    });
+  };
+
+  var setBookById = function setBookById(book) {
+    var val = '';
+    var errores = {};
+
+    for (var key in book) {
+      if (key != 'cover' && key != 'autor' && key != 'id') {
+        if (key == 'category') {
+          val = Object(_validationRules__WEBPACK_IMPORTED_MODULE_6__["validating"])(key, book[key], categories);
+        } else {
+          val = Object(_validationRules__WEBPACK_IMPORTED_MODULE_6__["validating"])(key, book[key]);
+        }
+
+        errores = _objectSpread(_objectSpread({}, errores), {}, _defineProperty({}, key, val));
+      }
+    }
+
+    errores = _objectSpread(_objectSpread({}, errores), {}, {
+      'cover': {
+        'status': true
+      }
+    });
+    setErrors(errores);
+    setBook({
+      title: book.title,
+      isbn: book.isbn,
+      pages: book.pages,
+      resume: book.resume,
+      date: book.date,
+      price: book.price,
+      stock: book.stock,
+      category: book.category,
+      cover: book.cover,
+      authors: book.autor,
+      id: id
+    });
+  };
+
+  var getAuthorsResults = function getAuthorsResults() {
+    setLoading(true);
+    var data = {
+      method: 'GET',
+      headers: {
+        'X-CSRF-TOKEN': header
+      }
+    };
+    fetch('/api/authors/all/' + book.searchAuthor, data).then(function (response) {
+      return response.json();
+    }).then(function (authors) {
+      setAuthorResult(authors);
+      setLoading(false);
+    })["catch"](function (error) {
+      return console.log(error);
+    });
+  };
+
+  var getCategories = function getCategories() {
+    fetch('/api/categories/all').then(function (response) {
+      return response.json();
+    }).then(function (categories) {
+      setCategories(categories);
+    })["catch"](function (error) {
+      return console.log(error);
+    });
+  };
+
+  var selectSearchAuthor = function selectSearchAuthor(data) {
+    var exist = book.authors.filter(function (author) {
+      return author.id === data.id;
+    });
+
+    if (!exist.length) {
+      setBook(_objectSpread(_objectSpread({}, book), {}, {
+        authors: book.authors.concat({
+          id: data.id,
+          name: data.name,
+          surname: data.surname
+        }),
+        searchAuthor: ''
+      }));
+    }
+  };
+
+  var quitAuthor = function quitAuthor(id) {
+    setBook(_objectSpread(_objectSpread({}, book), {}, {
+      authors: book.authors.filter(function (searchAuthor) {
+        return searchAuthor.id != id;
+      })
+    }));
+  };
+
+  var handleForm = function handleForm(e) {
+    e.preventDefault();
+    setLoading(true);
+    var formData = new FormData();
+    var authorsJson = JSON.stringify(book.authors);
+    formData.append('authors', authorsJson);
+
+    for (var key in book) {
+      if (key != 'authors' && key != 'searchAuthor') {
+        formData.append(key, book[key]);
+      }
+    }
+
+    var data = {
+      method: 'POST',
+      body: formData,
+      // data del formulario
+      headers: {
+        'X-CSRF-TOKEN': header,
+        "Accept": "application/json, text-plain, */*"
+      }
+    };
+    fetch('/api/books/edit', data).then(function (response) {
+      return response.json();
+    }).then(function (info) {
+      if (info.errors) setServerErrors(info.errors);
+      if (info.success) setServerErrors(info);
+      setLoading(false);
+    })["catch"](function (error) {
+      return console.log(error);
+    });
+  };
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
+    className: "col-12 col-md-8 col-lg-8"
+  }, step === 1 && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Reusable_Titles_Titles__WEBPACK_IMPORTED_MODULE_5__["Title"], {
+    icon: "fas fa-book",
+    text: "A\xF1adir un nuevo libro"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_FirstStep_FirstStep__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    book: book,
+    handleChange: handleChange,
+    setStep: setStep,
+    authorResult: authorResult,
+    selectSearchAuthor: selectSearchAuthor,
+    quitAuthor: quitAuthor,
+    loading: loading,
+    errors: errors,
+    valid: valid
+  })), step === 2 && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Reusable_Titles_Titles__WEBPACK_IMPORTED_MODULE_5__["Subtitle"], {
+    icon: "fas fa-info-circle",
+    text: "Otros detalles"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_SecondStep_SecondStep__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    handleChange: handleChange,
+    setStep: setStep,
+    handleForm: handleForm,
+    categories: categories,
+    book: book,
+    errors: errors,
+    valid: valid
+  })), step === 3 && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Reusable_Titles_Titles__WEBPACK_IMPORTED_MODULE_5__["Subtitle"], {
+    icon: "fas fa-hand-paper",
+    text: "Vas a ingresar el siguiente producto."
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_ThirdStep_ThirdStep__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    setStep: setStep,
+    handleForm: handleForm,
+    book: book,
+    serverErrors: serverErrors,
+    loading: loading ? 1 : 0
+  })));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (EditBook);
+
+/***/ }),
+
+/***/ "./resources/js/components/BookForms/FirstStep/FirstStep.css":
+/*!*******************************************************************!*\
+  !*** ./resources/js/components/BookForms/FirstStep/FirstStep.css ***!
+  \*******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../../../node_modules/css-loader??ref--6-1!../../../../../node_modules/postcss-loader/src??ref--6-2!./FirstStep.css */ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./resources/js/components/BookForms/FirstStep/FirstStep.css");
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 
@@ -73520,10 +73746,10 @@ if(false) {}
 
 /***/ }),
 
-/***/ "./resources/js/components/AddBook/FirstStep/FirstStep.jsx":
-/*!*****************************************************************!*\
-  !*** ./resources/js/components/AddBook/FirstStep/FirstStep.jsx ***!
-  \*****************************************************************/
+/***/ "./resources/js/components/BookForms/FirstStep/FirstStep.jsx":
+/*!*******************************************************************!*\
+  !*** ./resources/js/components/BookForms/FirstStep/FirstStep.jsx ***!
+  \*******************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -73531,13 +73757,13 @@ if(false) {}
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _SearchByAuthor_SearchByAuthor__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./SearchByAuthor/SearchByAuthor */ "./resources/js/components/AddBook/FirstStep/SearchByAuthor/SearchByAuthor.jsx");
+/* harmony import */ var _SearchByAuthor_SearchByAuthor__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./SearchByAuthor/SearchByAuthor */ "./resources/js/components/BookForms/FirstStep/SearchByAuthor/SearchByAuthor.jsx");
 /* harmony import */ var react_transition_group__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-transition-group */ "./node_modules/react-transition-group/esm/index.js");
 /* harmony import */ var _Reusable_Error_Error__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../Reusable/Error/Error */ "./resources/js/components/Reusable/Error/Error.jsx");
-/* harmony import */ var _FirstStep_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./FirstStep.css */ "./resources/js/components/AddBook/FirstStep/FirstStep.css");
+/* harmony import */ var _FirstStep_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./FirstStep.css */ "./resources/js/components/BookForms/FirstStep/FirstStep.css");
 /* harmony import */ var _FirstStep_css__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_FirstStep_css__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _AddBook_Animations_css__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../AddBook/Animations.css */ "./resources/js/components/AddBook/Animations.css");
-/* harmony import */ var _AddBook_Animations_css__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_AddBook_Animations_css__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _BookForms_Animations_css__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../BookForms/Animations.css */ "./resources/js/components/BookForms/Animations.css");
+/* harmony import */ var _BookForms_Animations_css__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_BookForms_Animations_css__WEBPACK_IMPORTED_MODULE_5__);
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 
@@ -73671,10 +73897,10 @@ var FirstStep = function FirstStep(props) {
 
 /***/ }),
 
-/***/ "./resources/js/components/AddBook/FirstStep/SearchByAuthor/SearchByAuthor.jsx":
-/*!*************************************************************************************!*\
-  !*** ./resources/js/components/AddBook/FirstStep/SearchByAuthor/SearchByAuthor.jsx ***!
-  \*************************************************************************************/
+/***/ "./resources/js/components/BookForms/FirstStep/SearchByAuthor/SearchByAuthor.jsx":
+/*!***************************************************************************************!*\
+  !*** ./resources/js/components/BookForms/FirstStep/SearchByAuthor/SearchByAuthor.jsx ***!
+  \***************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -73682,11 +73908,11 @@ var FirstStep = function FirstStep(props) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _SearchResult_SearchResultAuthor__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../SearchResult/SearchResultAuthor */ "./resources/js/components/AddBook/FirstStep/SearchResult/SearchResultAuthor.jsx");
+/* harmony import */ var _SearchResult_SearchResultAuthor__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../SearchResult/SearchResultAuthor */ "./resources/js/components/BookForms/FirstStep/SearchResult/SearchResultAuthor.jsx");
 /* harmony import */ var _Reusable_Preloader_Preloader__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../Reusable/Preloader/Preloader */ "./resources/js/components/Reusable/Preloader/Preloader.jsx");
 /* harmony import */ var react_transition_group__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-transition-group */ "./node_modules/react-transition-group/esm/index.js");
-/* harmony import */ var _AddBook_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../AddBook.css */ "./resources/js/components/AddBook/AddBook.css");
-/* harmony import */ var _AddBook_css__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_AddBook_css__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _BookForms_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../BookForms.css */ "./resources/js/components/BookForms/BookForms.css");
+/* harmony import */ var _BookForms_css__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_BookForms_css__WEBPACK_IMPORTED_MODULE_4__);
 
 
 
@@ -73712,7 +73938,7 @@ var SearchByAuthor = function SearchByAuthor(props) {
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
         className: "animated fade-".concat(status),
         key: author.id
-      }, author.name, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+      }, author.name + ' ' + author.surname, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
         onClick: function onClick() {
           quitAuthor(author.id);
         },
@@ -73743,10 +73969,10 @@ var SearchByAuthor = function SearchByAuthor(props) {
 
 /***/ }),
 
-/***/ "./resources/js/components/AddBook/FirstStep/SearchResult/SearchResultAuthor.jsx":
-/*!***************************************************************************************!*\
-  !*** ./resources/js/components/AddBook/FirstStep/SearchResult/SearchResultAuthor.jsx ***!
-  \***************************************************************************************/
+/***/ "./resources/js/components/BookForms/FirstStep/SearchResult/SearchResultAuthor.jsx":
+/*!*****************************************************************************************!*\
+  !*** ./resources/js/components/BookForms/FirstStep/SearchResult/SearchResultAuthor.jsx ***!
+  \*****************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -73776,10 +74002,10 @@ var SearchResultAuthor = function SearchResultAuthor(_ref) {
 
 /***/ }),
 
-/***/ "./resources/js/components/AddBook/SecondStep/SecondStep.jsx":
-/*!*******************************************************************!*\
-  !*** ./resources/js/components/AddBook/SecondStep/SecondStep.jsx ***!
-  \*******************************************************************/
+/***/ "./resources/js/components/BookForms/SecondStep/SecondStep.jsx":
+/*!*********************************************************************!*\
+  !*** ./resources/js/components/BookForms/SecondStep/SecondStep.jsx ***!
+  \*********************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -73789,7 +74015,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_transition_group__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-transition-group */ "./node_modules/react-transition-group/esm/index.js");
 /* harmony import */ var _Reusable_Error_Error__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../Reusable/Error/Error */ "./resources/js/components/Reusable/Error/Error.jsx");
-/* harmony import */ var _Animations_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../Animations.css */ "./resources/js/components/AddBook/Animations.css");
+/* harmony import */ var _Animations_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../Animations.css */ "./resources/js/components/BookForms/Animations.css");
 /* harmony import */ var _Animations_css__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_Animations_css__WEBPACK_IMPORTED_MODULE_3__);
 
 
@@ -73882,13 +74108,17 @@ var SecondStep = function SecondStep(props) {
       name: "cover",
       id: "cover",
       accept: "image/*",
-      onChange: props.handleChange,
+      onChange: handleChange,
       required: true
     }), errors.cover && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Reusable_Error_Error__WEBPACK_IMPORTED_MODULE_2__["default"], {
       message: errors.cover.message
     }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
       className: "w-50 mx-auto"
-    }, props.book.cover && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    }, typeof book.cover === 'string' ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+      className: "w-100",
+      src: "/storage/covers/".concat(props.book.cover),
+      alt: "cover"
+    }) : book.cover != null && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
       className: "w-100",
       src: props.book.cover && URL.createObjectURL(props.book.cover),
       alt: "cover"
@@ -73913,10 +74143,10 @@ var SecondStep = function SecondStep(props) {
 
 /***/ }),
 
-/***/ "./resources/js/components/AddBook/ThirdStep/ThirdStep.jsx":
-/*!*****************************************************************!*\
-  !*** ./resources/js/components/AddBook/ThirdStep/ThirdStep.jsx ***!
-  \*****************************************************************/
+/***/ "./resources/js/components/BookForms/ThirdStep/ThirdStep.jsx":
+/*!*******************************************************************!*\
+  !*** ./resources/js/components/BookForms/ThirdStep/ThirdStep.jsx ***!
+  \*******************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -73927,7 +74157,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Reusable_Preloader_Preloader__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../Reusable/Preloader/Preloader */ "./resources/js/components/Reusable/Preloader/Preloader.jsx");
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 /* harmony import */ var react_transition_group__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-transition-group */ "./node_modules/react-transition-group/esm/index.js");
-/* harmony import */ var _Animations_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../Animations.css */ "./resources/js/components/AddBook/Animations.css");
+/* harmony import */ var _Animations_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../Animations.css */ "./resources/js/components/BookForms/Animations.css");
 /* harmony import */ var _Animations_css__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_Animations_css__WEBPACK_IMPORTED_MODULE_4__);
 
 
@@ -73954,7 +74184,7 @@ var ThirdStep = function ThirdStep(_ref) {
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, key), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, book[key]));
   });
   var authors = book.authors.map(function (author) {
-    return author.name + " ";
+    return author.name + " " + author.surname;
   });
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_transition_group__WEBPACK_IMPORTED_MODULE_3__["Transition"], {
     timeout: 500
@@ -73991,137 +74221,6 @@ var ThirdStep = function ThirdStep(_ref) {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (ThirdStep);
-
-/***/ }),
-
-/***/ "./resources/js/components/AdminPage/AdminPage.css":
-/*!*********************************************************!*\
-  !*** ./resources/js/components/AdminPage/AdminPage.css ***!
-  \*********************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-
-var content = __webpack_require__(/*! !../../../../node_modules/css-loader??ref--6-1!../../../../node_modules/postcss-loader/src??ref--6-2!./AdminPage.css */ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./resources/js/components/AdminPage/AdminPage.css");
-
-if(typeof content === 'string') content = [[module.i, content, '']];
-
-var transform;
-var insertInto;
-
-
-
-var options = {"hmr":true}
-
-options.transform = transform
-options.insertInto = undefined;
-
-var update = __webpack_require__(/*! ../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
-
-if(content.locals) module.exports = content.locals;
-
-if(false) {}
-
-/***/ }),
-
-/***/ "./resources/js/components/AdminPage/AdminPage.jsx":
-/*!*********************************************************!*\
-  !*** ./resources/js/components/AdminPage/AdminPage.jsx ***!
-  \*********************************************************/
-/*! no exports provided */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
-/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
-/* harmony import */ var _Logo_Logo__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Logo/Logo */ "./resources/js/components/AdminPage/Logo/Logo.jsx");
-/* harmony import */ var _Reusable_OldSchoolMenuLink_OldSchoolMenuLink__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../Reusable/OldSchoolMenuLink/OldSchoolMenuLink */ "./resources/js/components/Reusable/OldSchoolMenuLink/OldSchoolMenuLink.jsx");
-/* harmony import */ var _AddBook_AddBook__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../AddBook/AddBook */ "./resources/js/components/AddBook/AddBook.jsx");
-/* harmony import */ var _BookList_BookList__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../BookList/BookList */ "./resources/js/components/BookList/BookList.jsx");
-/* harmony import */ var _AdminPage_css__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./AdminPage.css */ "./resources/js/components/AdminPage/AdminPage.css");
-/* harmony import */ var _AdminPage_css__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_AdminPage_css__WEBPACK_IMPORTED_MODULE_7__);
-
-
-
-
-
-
-
-
-
-var AdminPage = function AdminPage() {
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "container"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "row"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["BrowserRouter"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav", {
-    className: "navbar col-12 col-md-4"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
-    className: "navbar-nav mx-auto"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-    className: "nav-item"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
-    to: "/admin"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Logo_Logo__WEBPACK_IMPORTED_MODULE_3__["default"], null))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-    className: "nav-item"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Reusable_OldSchoolMenuLink_OldSchoolMenuLink__WEBPACK_IMPORTED_MODULE_4__["default"], {
-    to: "/book/list",
-    label: "Listado de Libros"
-  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-    className: "nav-item"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Reusable_OldSchoolMenuLink_OldSchoolMenuLink__WEBPACK_IMPORTED_MODULE_4__["default"], {
-    to: "/book/add",
-    label: "A\xF1adir Libro"
-  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-    className: "nav-item"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Reusable_OldSchoolMenuLink_OldSchoolMenuLink__WEBPACK_IMPORTED_MODULE_4__["default"], {
-    to: "/author/add",
-    label: "A\xF1adir Autor"
-  })))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Switch"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
-    path: "/book/add"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_AddBook_AddBook__WEBPACK_IMPORTED_MODULE_5__["default"], null)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
-    path: "/book/list"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_BookList_BookList__WEBPACK_IMPORTED_MODULE_6__["default"], null)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
-    path: "/author/add"
-  }, "A\xF1adir author"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
-    path: "/admin"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_BookList_BookList__WEBPACK_IMPORTED_MODULE_6__["default"], null))))));
-};
-
-if (document.getElementById('root')) {
-  react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(AdminPage, null), document.getElementById('root'));
-}
-
-/***/ }),
-
-/***/ "./resources/js/components/AdminPage/Logo/Logo.jsx":
-/*!*********************************************************!*\
-  !*** ./resources/js/components/AdminPage/Logo/Logo.jsx ***!
-  \*********************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-
-
-var Logo = function Logo() {
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "w-100 text-center d-block"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-    className: "navbar-brand mx-auto w-75 py-4",
-    src: "/img/bookStoreLogo.svg",
-    alt: "BookStore Logo"
-  }));
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (Logo);
 
 /***/ }),
 
@@ -74166,8 +74265,10 @@ if(false) {}
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _Book_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Book.css */ "./resources/js/components/BookList/Book/Book.css");
-/* harmony import */ var _Book_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_Book_css__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var _Book_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Book.css */ "./resources/js/components/BookList/Book/Book.css");
+/* harmony import */ var _Book_css__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_Book_css__WEBPACK_IMPORTED_MODULE_2__);
+
 
 
 
@@ -74180,16 +74281,15 @@ var Book = function Book(_ref) {
     className: "card mt-2 bg-transparent"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
     className: "p-0 col-12",
-    src: data.cover,
-    alt: data.title
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-    className: "btn btn-info btn-sm text-white",
-    onClick: function onClick() {
-      return deleteBook(data.id, data.title);
-    }
+    src: "/storage/covers/".concat(data.cover),
+    alt: "".concat(data.title)
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+    to: "/book/edit/".concat(data.id)
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "btn btn-info btn-sm text-white d-block"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
     className: "fas fa-edit"
-  }), " Editar"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+  }), " Editar")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
     className: "btn btn-danger btn-sm text-white",
     onClick: function onClick(e) {
       return deleteBook(e, data.id, data.title);
@@ -74618,6 +74718,247 @@ var Title = function Title(_ref2) {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
     className: "".concat(icon, " pr-3")
   }), text)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate, libero amet. Assumenda impedit vel dignissimos qui quos! Voluptate, sunt?"));
+};
+
+/***/ }),
+
+/***/ "./resources/js/validationRules.js":
+/*!*****************************************!*\
+  !*** ./resources/js/validationRules.js ***!
+  \*****************************************/
+/*! exports provided: validating */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "validating", function() { return validating; });
+var validating = function validating(input, inputValue, other) {
+  switch (input) {
+    case 'title':
+      return title(inputValue);
+
+    case 'isbn':
+      return isbn(inputValue);
+
+    case 'pages':
+      return pages(inputValue);
+
+    case 'resume':
+      return resume(inputValue);
+
+    case 'date':
+      return date(inputValue);
+
+    case 'price':
+      return price(inputValue);
+
+    case 'stock':
+      return stock(inputValue);
+
+    case 'category':
+      return category(inputValue, other);
+
+    case 'cover':
+      return cover(inputValue);
+
+    default:
+      break;
+  }
+};
+
+var title = function title(inputValue) {
+  inputValue = inputValue.trim();
+
+  if (inputValue.length < 1) {
+    return {
+      message: 'Debe incluir el titulo del producto',
+      status: false
+    };
+  }
+
+  if (inputValue.trim().length > 250) {
+    return {
+      message: 'El título del producto no puede tener mas de 250 caracteres',
+      status: false
+    };
+  }
+
+  return {
+    status: true
+  };
+};
+
+var pages = function pages(inputValue) {
+  if (isNaN(inputValue)) {
+    return {
+      message: 'El numero de paginas debe ser un valor numerico',
+      status: false
+    };
+  }
+
+  if (inputValue > 9999 || inputValue < 10) {
+    return {
+      message: 'El numero de paginas debe estar entre 10 y 99999',
+      status: false
+    };
+  }
+
+  return {
+    status: true
+  };
+};
+
+var isbn = function isbn(inputValue) {
+  inputValue = inputValue.trim();
+
+  if (inputValue.length < 1) {
+    return {
+      message: 'Debe incluir el ISBN u otro valor identificatorio',
+      status: false
+    };
+  }
+
+  if (inputValue.length > 15 || inputValue.length < 10) {
+    return {
+      message: 'El ISBN o el ID  debe tener ente 10 y 15 caracteres',
+      status: false
+    };
+  }
+
+  return {
+    status: true
+  };
+};
+
+var resume = function resume(inputValue) {
+  inputValue = inputValue.trim();
+
+  if (inputValue.length < 1) {
+    return {
+      message: 'Debe incluir el resumen del producto',
+      status: false
+    };
+  }
+
+  if (inputValue.length < 30 || inputValue.length > 500) {
+    return {
+      message: 'El numero de caracteres debe estar entre 30 y 500',
+      status: false
+    };
+  }
+
+  return {
+    status: true
+  };
+};
+
+var date = function date(inputValue) {
+  var date = /^\d{4}-\d{2}-\d{2}$/.test(inputValue);
+
+  if (!date) {
+    return {
+      message: 'La fecha indicada no es valida',
+      status: false
+    };
+  }
+
+  return {
+    status: true
+  };
+};
+
+var price = function price(inputValue) {
+  if (isNaN(inputValue)) {
+    return {
+      message: 'El precio debe ser un valor numerico',
+      status: false
+    };
+  }
+
+  if (inputValue < 0.1 || inputValue > 99999) {
+    return {
+      message: 'El precio debe estar entre 0.1 y 99999',
+      status: false
+    };
+  }
+
+  return {
+    status: true
+  };
+};
+
+var stock = function stock(inputValue) {
+  if (isNaN(inputValue)) {
+    return {
+      message: 'El stock debe ser un valor numerico',
+      status: false
+    };
+  }
+
+  if (!Number.isInteger(parseInt(inputValue))) {
+    return {
+      message: 'El stock debe ser un valor entero',
+      status: false
+    };
+  }
+
+  if (inputValue < 0 || inputValue > 999) {
+    return {
+      message: 'El stock debe estar entre 0 y 999',
+      status: false
+    };
+  }
+
+  return {
+    status: true
+  };
+};
+
+var category = function category(inputValue, other) {
+  if (inputValue.length <= 0) {
+    return {
+      message: 'Debe seleccionar una categoria',
+      status: false
+    };
+  }
+
+  var exist = other.filter(function (category) {
+    return category.id == inputValue;
+  });
+
+  if (!exist.length) {
+    return {
+      message: 'La categoria seleccionada no es valida',
+      status: false
+    };
+  }
+
+  return {
+    status: true
+  };
+};
+
+var cover = function cover(inputValue) {
+  var SUPPORTED_FORMATS = ["image/bmp", "image/jpeg", "image/gif", "image/png"];
+  var FILE_SIZE = 5000000;
+
+  if (!SUPPORTED_FORMATS.includes(inputValue.type)) {
+    return {
+      message: 'La portada debe ser una imagen jpg, jpeg, gif o png',
+      status: false
+    };
+  }
+
+  if (inputValue.size > FILE_SIZE) {
+    return {
+      message: 'La portada no debe ser mayor a 5MB',
+      status: false
+    };
+  }
+
+  return {
+    status: true
+  };
 };
 
 /***/ }),

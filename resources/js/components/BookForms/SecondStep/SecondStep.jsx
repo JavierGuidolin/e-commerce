@@ -95,7 +95,7 @@ let SecondStep = (props) => {
                             name="cover"
                             id="cover"
                             accept="image/*"
-                            onChange={props.handleChange}
+                            onChange={handleChange}
                             required
                         />
 
@@ -105,13 +105,23 @@ let SecondStep = (props) => {
 
                         <div className="w-50 mx-auto">
                             {
-                                props.book.cover &&
-                                <img
-                                    className="w-100"
-                                    src={props.book.cover && URL.createObjectURL(props.book.cover)}
-                                    alt="cover"
-                                />
+                                typeof book.cover === 'string' ?
+                                    <img
+                                        className="w-100"
+                                        src={`/storage/covers/${props.book.cover}`}
+                                        alt="cover"
+                                    />
+                                    
+                                    :
+
+                                    book.cover != null &&
+                                    <img
+                                        className="w-100"
+                                        src={props.book.cover && URL.createObjectURL(props.book.cover)}
+                                        alt="cover"
+                                    />
                             }
+
                         </div>
 
                     </div>

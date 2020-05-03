@@ -18,8 +18,12 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::post('/books/add', 'ProductosController@add');
+Route::post('/books/edit', 'ProductosController@edit');
+Route::get('/books/all', 'ProductosController@all');
+Route::post('/books/delete', 'ProductosController@delete');
+
+Route::get('/books/edit/{id}', 'ProductosController@getBookById');
+
+
 Route::get('/authors/all/{busqueda}', 'AuthorController@all');
 Route::get('/categories/all', 'GenerosController@all');
-Route::get('/books/all', 'ProductosController@all');
-
-Route::post('/books/delete', 'ProductosController@delete');

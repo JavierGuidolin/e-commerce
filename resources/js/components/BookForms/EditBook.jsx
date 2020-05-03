@@ -1,18 +1,21 @@
 import React, { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 
 import FirstStep from './FirstStep/FirstStep'
 import SecondStep from './SecondStep/SecondStep'
 import ThirdStep from './ThirdStep/ThirdStep';
 import { Title, Subtitle } from '../Reusable/Titles/Titles'
-import { validating } from '../../ValidationRules'
+import { validating } from '../../validationRules';
 
-import './AddBook.css';
+import './BookForms.css';
 
-const AddBook = () => {
+const EditBook = () => {
 
     const header = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+    let { id } = useParams();
 
     const [book, setBook] = useState({
+        id: 0,
         title: '',
         isbn: '',
         pages: 0,
@@ -22,17 +25,18 @@ const AddBook = () => {
         stock: 0,
         category: '',
         cover: null,
+        newCover: null,
         searchAuthor: '',
         authors: []
-    }); //info que se va a almacenar
+    }); 
 
-    const [step, setStep] = useState(1); //pasos del formulario
-    const [authorResult, setAuthorResult] = useState([]); //resultados de la busqueda de author
-    const [loading, setLoading] = useState(null); //proceso de carga de fetch
-    const [errors, setErrors] = useState({}); //errors de js
-    const [valid, setValid] = useState({ one: true, two: true }); //Si cada uno de los pasos esta correcto
-    const [categories, setCategories] = useState([]); //resultados de fetch de categorias
-    const [serverErrors, setServerErrors] = useState({}); //errores de la validacion en el server
+    const [step, setStep] = useState(1); 
+    const [authorResult, setAuthorResult] = useState([]); 
+    const [loading, setLoading] = useState(null); 
+    const [errors, setErrors] = useState({});
+    const [valid, setValid] = useState({ one: true, two: true });
+    const [categories, setCategories] = useState([]);
+    const [serverErrors, setServerErrors] = useState({});
 
 
     let handleChange = (e) => {
@@ -58,10 +62,10 @@ const AddBook = () => {
 
     }
 
-     useEffect(() => {
+    useEffect(() => {
 
         setValid({
-    
+
             one: errors.title?.status &&
                 errors.isbn?.status &&
                 errors.pages?.status &&
@@ -75,17 +79,75 @@ const AddBook = () => {
         });
 
     }, [errors]);
- 
-    useEffect(() => {
 
+    useEffect(() => {
         if (book.searchAuthor != '')
             getAuthorsResults();
-
     }, [book.searchAuthor]);
 
     useEffect(() => {
         getCategories();
     }, []);
+
+    useEffect(() => {
+        getBookById(id);
+    }, [categories]);
+
+
+    let getBookById = (id) => {
+
+        let data = {
+            method: 'GET',
+            headers: { 'X-CSRF-TOKEN': header }
+        };
+
+        fetch('/api/books/edit/' + id, data)
+            .then(response => response.json())
+            .then(book => {
+                setBookById(book)
+            })
+            .catch(error => console.log(error))
+    }
+
+    let setBookById = (book) => {
+
+        let val = '';
+        let errores = {};
+
+        for (const key in book) {
+
+            if (key != 'cover' && key != 'autor' && key != 'id') {
+
+                if (key == 'category') {
+                    val = validating(key, book[key], categories);
+                } else {
+                    val = validating(key, book[key]);
+                }
+
+                errores = { ...errores, [key]: val };
+
+            }
+        }
+
+        errores = { ...errores, 'cover': { 'status': true } }
+        setErrors(errores);
+
+        setBook({
+            title: book.title,
+            isbn: book.isbn,
+            pages: book.pages,
+            resume: book.resume,
+            date: book.date,
+            price: book.price,
+            stock: book.stock,
+            category: book.category,
+            cover: book.cover,
+            authors: book.autor,
+            id: id
+        });
+
+    }
+
 
 
     let getAuthorsResults = () => {
@@ -110,7 +172,9 @@ const AddBook = () => {
     let getCategories = () => {
         fetch('/api/categories/all')
             .then(response => response.json())
-            .then(categories => setCategories(categories))
+            .then(categories => {
+                setCategories(categories)
+            })
             .catch(error => console.log(error));
     }
 
@@ -124,7 +188,8 @@ const AddBook = () => {
                 ...book,
                 authors: book.authors.concat({
                     id: data.id,
-                    name: data.name + ' ' + data.surname
+                    name: data.name, 
+                    surname: data.surname
                 }),
                 searchAuthor: ''
             });
@@ -167,7 +232,7 @@ const AddBook = () => {
             }
         }
 
-        fetch('/api/books/add', data)
+        fetch('/api/books/edit', data)
             .then(response => response.json())
             .then(info => {
 
@@ -252,4 +317,4 @@ const AddBook = () => {
 
 }
 
-export default AddBook;
+export default EditBook;

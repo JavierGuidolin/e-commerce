@@ -20,9 +20,9 @@ class CreateBooksTable extends Migration
             $table->float('price');
             $table->string('cover');
             $table->string('isbn');
-            $table->string('pages');
+            $table->smallInteger('pages');
             $table->date('date');
-            $table->tinyInteger('stock');
+            $table->smallInteger('stock');
             
             $table->unsignedBigInteger('category_id');
             $table->foreign('category_id')->references('id')->on('categories');

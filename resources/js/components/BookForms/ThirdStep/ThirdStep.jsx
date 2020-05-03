@@ -19,7 +19,7 @@ const ThirdStep = ({ book, setStep, handleForm, serverErrors, loading }) => {
         </tr>
     )
 
-    const authors = book.authors.map(author => author.name + " ")
+    const authors = book.authors.map(author => author.name + " " + author.surname)
 
 
     return (

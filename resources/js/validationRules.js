@@ -61,7 +61,7 @@ let isbn = (inputValue) => {
         return { message: 'Debe incluir el ISBN u otro valor identificatorio', status: false }
     }
 
-    if (inputValue.length > 15 || inputValue.length < 10 ) {
+    if (inputValue.length > 15 || inputValue.length < 10) {
         return { message: 'El ISBN o el ID  debe tener ente 10 y 15 caracteres', status: false }
     }
 
@@ -84,9 +84,9 @@ let resume = (inputValue) => {
 }
 
 let date = (inputValue) => {
- 
+
     const date = /^\d{4}-\d{2}-\d{2}$/.test(inputValue);
-  
+
     if (!date) {
         return { message: 'La fecha indicada no es valida', status: false }
     }
@@ -112,7 +112,7 @@ let stock = (inputValue) => {
         return { message: 'El stock debe ser un valor numerico', status: false }
     }
 
-    if (Number.isInteger(inputValue)) {
+    if (!(Number.isInteger(parseInt(inputValue)))) {
         return { message: 'El stock debe ser un valor entero', status: false }
     }
 
@@ -126,18 +126,19 @@ let stock = (inputValue) => {
 
 let category = (inputValue, other) => {
 
+
     if (inputValue.length <= 0) {
         return { message: 'Debe seleccionar una categoria', status: false }
     }
 
     let exist = other.filter(category => category.id == inputValue);
-
+    
     if (!exist.length) {
         return { message: 'La categoria seleccionada no es valida', status: false }
     }
 
-    return { status: true }
 
+    return { status: true }
 }
 
 let cover = (inputValue) => {

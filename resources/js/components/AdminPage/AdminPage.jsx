@@ -4,7 +4,8 @@ import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
 import Logo from './Logo/Logo';
 import OldSchoolMenuLink from '../Reusable/OldSchoolMenuLink/OldSchoolMenuLink';
-import AddBook from '../AddBook/AddBook';
+import AddBook from '../BookForms/AddBook';
+import EditBook from '../BookForms/EditBook';
 import BookList from '../BookList/BookList';
 
 import './AdminPage.css';
@@ -53,8 +54,13 @@ let AdminPage = () => {
                     </nav>
 
                     <Switch>
+
                         <Route path="/book/add">
                             <AddBook />
+                        </Route>
+
+                        <Route path="/book/edit/:id">
+                            <EditBook />
                         </Route>
 
                         <Route path="/book/list">

@@ -3,12 +3,11 @@ import SearchResultAuthor from '../SearchResult/SearchResultAuthor';
 import Preloader from '../../../Reusable/Preloader/Preloader'
 import { Transition } from 'react-transition-group';
 
-import '../../AddBook.css';
+import '../../BookForms.css';
 
 let SearchByAuthor = (props) => {
 
     const { book, handleChange, authorResult, selectSearchAuthor, quitAuthor, loading } = props;
-
 
     return (
         <>
@@ -23,7 +22,7 @@ let SearchByAuthor = (props) => {
                             {book.authors && book.authors.map(author =>
 
                                 <li className={`animated fade-${status}`} key={author.id}>
-                                    {author.name}
+                                    {author.name + ' ' + author.surname}
                                     <a>
                                         <i
                                             onClick={() => { quitAuthor(author.id) }}
