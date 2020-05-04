@@ -7,6 +7,8 @@ import OldSchoolMenuLink from '../Reusable/OldSchoolMenuLink/OldSchoolMenuLink';
 import AddBook from '../BookForms/AddBook';
 import EditBook from '../BookForms/EditBook';
 import BookList from '../BookList/BookList';
+import AddAdmin from '../AdminForms/AddAdmin';
+import AdminList from '../AdminList/AdminList'
 
 import './AdminPage.css';
 
@@ -49,6 +51,21 @@ let AdminPage = () => {
                                 />
                             </li>
 
+                            <li className="nav-item">
+                                <OldSchoolMenuLink
+                                    to="/users/add"
+                                    label="Añadir Administrador"
+                                />
+                            </li>
+
+                            <li className="nav-item">
+                                <OldSchoolMenuLink
+                                    to="/users/list"
+                                    label="Listado de Admins"
+                                />
+                            </li>
+                            
+
                         </ul>
 
                     </nav>
@@ -71,6 +88,14 @@ let AdminPage = () => {
                             Añadir author
                         </Route>
 
+                        <Route path="/users/add">
+                            <AddAdmin />
+                        </Route>
+
+                        <Route path="/users/list">
+                            <AdminList />
+                        </Route>
+                            
                         <Route path="/admin">
                             <BookList />
                         </Route>

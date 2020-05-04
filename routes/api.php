@@ -24,6 +24,9 @@ Route::post('/books/delete', 'ProductosController@delete');
 
 Route::get('/books/edit/{id}', 'ProductosController@getBookById');
 
-
 Route::get('/authors/all/{busqueda}', 'AuthorController@all');
 Route::get('/categories/all', 'GenerosController@all');
+
+Route::post('/admins/add', 'UserController@add');
+Route::get('/admins/all', 'UserController@allAdmins');
+Route::post('/admins/delete', 'UserController@delete');

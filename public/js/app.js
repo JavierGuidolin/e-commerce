@@ -6542,6 +6542,63 @@ module.exports = {
 
 /***/ }),
 
+/***/ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./resources/js/components/AdminForms/AdminForms.css":
+/*!*******************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader??ref--6-1!./node_modules/postcss-loader/src??ref--6-2!./resources/js/components/AdminForms/AdminForms.css ***!
+  \*******************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".__input-form {\r\n    width: 100%;\r\n    border: none;\r\n    background-color: #e9e3e3;\r\n    border-bottom: 1px solid #c3c2c2;\r\n    outline: none;\r\n    color: #555556;\r\n    font-size: 0.8em;\r\n    padding: 5px;\r\n    transition: border 0.5s ease-in;\r\n}\r\n\r\n\r\n.__label-form {\r\n    font-size: 0.8em;\r\n    display: block;\r\n    color: #17a2b8\r\n}\r\n\r\n\r\ninput[type=\"file\"] {\r\n    display: none;\r\n}\r\n\r\n.__custom-file-upload {\r\n    border: 1px solid #ccc;\r\n    display: inline-block;\r\n    padding: 6px 12px;\r\n    cursor: pointer;\r\n}\r\n\r\n", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./resources/js/components/AdminList/Admin/Admin.css":
+/*!*******************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader??ref--6-1!./node_modules/postcss-loader/src??ref--6-2!./resources/js/components/AdminList/Admin/Admin.css ***!
+  \*******************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".fa-trash-alt {\r\n    font-size: 1em;\r\n    color: #ef7853;\r\n    cursor: pointer;\r\n}", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./resources/js/components/AdminList/AdminList.css":
+/*!*****************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader??ref--6-1!./node_modules/postcss-loader/src??ref--6-2!./resources/js/components/AdminList/AdminList.css ***!
+  \*****************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./resources/js/components/AdminPage/AdminPage.css":
 /*!*****************************************************************************************************************************************!*\
   !*** ./node_modules/css-loader??ref--6-1!./node_modules/postcss-loader/src??ref--6-2!./resources/js/components/AdminPage/AdminPage.css ***!
@@ -72914,6 +72971,530 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 /***/ }),
 
+/***/ "./resources/js/components/AdminForms/AddAdmin.jsx":
+/*!*********************************************************!*\
+  !*** ./resources/js/components/AdminForms/AddAdmin.jsx ***!
+  \*********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _FirstStep_FirstStep__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./FirstStep/FirstStep */ "./resources/js/components/AdminForms/FirstStep/FirstStep.jsx");
+/* harmony import */ var _Reusable_Titles_Titles__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../Reusable/Titles/Titles */ "./resources/js/components/Reusable/Titles/Titles.jsx");
+/* harmony import */ var _validationRules__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../validationRules */ "./resources/js/validationRules.js");
+/* harmony import */ var _AdminForms_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./AdminForms.css */ "./resources/js/components/AdminForms/AdminForms.css");
+/* harmony import */ var _AdminForms_css__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_AdminForms_css__WEBPACK_IMPORTED_MODULE_4__);
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+
+
+
+
+
+
+var AddAdmin = function AddAdmin() {
+  var _React$createElement;
+
+  var header = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])({
+    name: '',
+    surname: '',
+    email: '',
+    password: '',
+    password_confirmation: ''
+  }),
+      _useState2 = _slicedToArray(_useState, 2),
+      user = _useState2[0],
+      setUser = _useState2[1];
+
+  var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false),
+      _useState4 = _slicedToArray(_useState3, 2),
+      valid = _useState4[0],
+      setValid = _useState4[1];
+
+  var _useState5 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])({}),
+      _useState6 = _slicedToArray(_useState5, 2),
+      errors = _useState6[0],
+      setErrors = _useState6[1];
+
+  var _useState7 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false),
+      _useState8 = _slicedToArray(_useState7, 2),
+      loading = _useState8[0],
+      setLoading = _useState8[1];
+
+  var _useState9 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])({}),
+      _useState10 = _slicedToArray(_useState9, 2),
+      serverErrors = _useState10[0],
+      setServerErrors = _useState10[1];
+
+  var handleChange = function handleChange(e) {
+    var val = '';
+
+    if (e.target.name == "password_confirmation") {
+      val = Object(_validationRules__WEBPACK_IMPORTED_MODULE_3__["validatingAdmin"])(e.target.name, e.target.value, user.password);
+    } else {
+      val = Object(_validationRules__WEBPACK_IMPORTED_MODULE_3__["validatingAdmin"])(e.target.name, e.target.value);
+    }
+
+    setErrors(_objectSpread(_objectSpread({}, errors), {}, _defineProperty({}, e.target.name, val)));
+    setUser(_objectSpread(_objectSpread({}, user), {}, _defineProperty({}, e.target.name, e.target.value)));
+  };
+
+  var handleForm = function handleForm(e) {
+    e.preventDefault();
+    var formData = new FormData();
+
+    for (var key in user) {
+      formData.append(key, user[key]);
+    }
+
+    var data = {
+      method: 'POST',
+      body: formData,
+      // data del formulario
+      headers: {
+        'X-CSRF-TOKEN': header,
+        "Accept": "application/json, text-plain, */*"
+      }
+    };
+    fetch('/api/admins/add', data).then(function (response) {
+      return response.json();
+    }).then(function (info) {
+      if (info.errors) setServerErrors(info.errors);
+      if (info.success) setServerErrors(info);
+      setLoading(false);
+    })["catch"](function (error) {
+      return console.log(error);
+    });
+  };
+
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
+    var _errors$name, _errors$surname, _errors$email, _errors$password, _errors$password_conf;
+
+    setValid(((_errors$name = errors.name) === null || _errors$name === void 0 ? void 0 : _errors$name.status) && ((_errors$surname = errors.surname) === null || _errors$surname === void 0 ? void 0 : _errors$surname.status) && ((_errors$email = errors.email) === null || _errors$email === void 0 ? void 0 : _errors$email.status) && ((_errors$password = errors.password) === null || _errors$password === void 0 ? void 0 : _errors$password.status) && ((_errors$password_conf = errors.password_confirmation) === null || _errors$password_conf === void 0 ? void 0 : _errors$password_conf.status));
+  }, [errors]);
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
+    className: "col-12 col-md-8 col-lg-8"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Reusable_Titles_Titles__WEBPACK_IMPORTED_MODULE_2__["Title"], {
+    text: "A\xF1adir un administrador",
+    icon: "fas fa-user"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_FirstStep_FirstStep__WEBPACK_IMPORTED_MODULE_1__["default"], (_React$createElement = {
+    handleChange: handleChange,
+    user: user,
+    handleForm: handleForm,
+    errors: errors,
+    valid: valid
+  }, _defineProperty(_React$createElement, "errors", errors), _defineProperty(_React$createElement, "loading", loading), _defineProperty(_React$createElement, "serverErrors", serverErrors), _React$createElement)));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (AddAdmin);
+
+/***/ }),
+
+/***/ "./resources/js/components/AdminForms/AdminForms.css":
+/*!***********************************************************!*\
+  !*** ./resources/js/components/AdminForms/AdminForms.css ***!
+  \***********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../../node_modules/css-loader??ref--6-1!../../../../node_modules/postcss-loader/src??ref--6-2!./AdminForms.css */ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./resources/js/components/AdminForms/AdminForms.css");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
+/***/ "./resources/js/components/AdminForms/FirstStep/FirstStep.jsx":
+/*!********************************************************************!*\
+  !*** ./resources/js/components/AdminForms/FirstStep/FirstStep.jsx ***!
+  \********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _Reusable_Error_Error__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../Reusable/Error/Error */ "./resources/js/components/Reusable/Error/Error.jsx");
+/* harmony import */ var _Reusable_Preloader_Preloader__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../Reusable/Preloader/Preloader */ "./resources/js/components/Reusable/Preloader/Preloader.jsx");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+
+
+
+
+
+var FirstStep = function FirstStep(props) {
+  var handleChange = props.handleChange,
+      handleForm = props.handleForm,
+      user = props.user,
+      valid = props.valid,
+      errors = props.errors,
+      loading = props.loading,
+      serverErrors = props.serverErrors;
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+    onSubmit: handleForm
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "row"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "col py-2"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+    className: "__label-form",
+    htmlFor: "name"
+  }, "Nombre"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    type: "text",
+    id: "name",
+    name: "name",
+    className: "__input-form",
+    onChange: handleChange,
+    onBlur: handleChange,
+    value: user.name,
+    required: true
+  }), errors.name && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Reusable_Error_Error__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    message: errors.name.message
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "col py-2"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+    className: "__label-form",
+    htmlFor: "surname"
+  }, "Apellido"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    type: "text",
+    id: "surname",
+    name: "surname",
+    className: "__input-form",
+    onChange: handleChange,
+    onBlur: handleChange,
+    value: user.surname,
+    required: true
+  }), errors.surname && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Reusable_Error_Error__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    message: errors.surname.message
+  }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "row"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "col py-2"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+    className: "__label-form",
+    htmlFor: "email"
+  }, "Email"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    type: "email",
+    id: "email",
+    name: "email",
+    className: "__input-form",
+    onChange: handleChange,
+    onBlur: handleChange,
+    value: user.email,
+    required: true
+  }), errors.email && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Reusable_Error_Error__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    message: errors.email.message
+  }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "row"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "col py-2"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+    className: "__label-form",
+    htmlFor: "password"
+  }, "Contrase\xF1a"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    type: "password",
+    id: "password",
+    name: "password",
+    className: "__input-form",
+    onChange: handleChange,
+    onBlur: handleChange,
+    value: user.password,
+    required: true
+  }), errors.password && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Reusable_Error_Error__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    message: errors.password.message
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "col py-2"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+    className: "__label-form",
+    htmlFor: "rePassword"
+  }, "Confirmar"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    type: "password",
+    id: "password_confirmation",
+    className: "__input-form",
+    name: "password_confirmation",
+    onChange: handleChange,
+    onBlur: handleChange,
+    value: user.password_confirmation,
+    required: true
+  }), errors.password_confirmation && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Reusable_Error_Error__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    message: errors.password_confirmation.message
+  }))), errors && errors.length ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+    className: "alert alert-danger fade-".concat(status)
+  }, errors) : '', serverErrors && serverErrors.success ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "alert alert-success"
+  }, "Administrador Registrado!", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_3__["Link"], {
+    to: "/admin"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "alert-link"
+  }, " Volver"))) : '', loading ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Reusable_Preloader_Preloader__WEBPACK_IMPORTED_MODULE_2__["default"], null) : '', !serverErrors.success && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "text-right"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    type: "submit",
+    className: "btn btn-dark float-right my-2",
+    value: "Registrar",
+    disabled: !valid
+  })));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (FirstStep);
+
+/***/ }),
+
+/***/ "./resources/js/components/AdminList/Admin/Admin.css":
+/*!***********************************************************!*\
+  !*** ./resources/js/components/AdminList/Admin/Admin.css ***!
+  \***********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../../../node_modules/css-loader??ref--6-1!../../../../../node_modules/postcss-loader/src??ref--6-2!./Admin.css */ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./resources/js/components/AdminList/Admin/Admin.css");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
+/***/ "./resources/js/components/AdminList/Admin/Admin.jsx":
+/*!***********************************************************!*\
+  !*** ./resources/js/components/AdminList/Admin/Admin.jsx ***!
+  \***********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _Admin_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Admin.css */ "./resources/js/components/AdminList/Admin/Admin.css");
+/* harmony import */ var _Admin_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_Admin_css__WEBPACK_IMPORTED_MODULE_1__);
+
+
+
+var Admin = function Admin(props) {
+  var admin = props.admin,
+      deleteAdmin = props.deleteAdmin;
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, admin.name + ' ' + admin.surname), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, admin.email), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
+    className: "text-center"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+    className: "fas fa-trash-alt",
+    onClick: function onClick() {
+      return deleteAdmin(admin.id, admin.name + ' ' + admin.surname);
+    }
+  })));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Admin);
+
+/***/ }),
+
+/***/ "./resources/js/components/AdminList/AdminList.css":
+/*!*********************************************************!*\
+  !*** ./resources/js/components/AdminList/AdminList.css ***!
+  \*********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../../node_modules/css-loader??ref--6-1!../../../../node_modules/postcss-loader/src??ref--6-2!./AdminList.css */ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./resources/js/components/AdminList/AdminList.css");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
+/***/ "./resources/js/components/AdminList/AdminList.jsx":
+/*!*********************************************************!*\
+  !*** ./resources/js/components/AdminList/AdminList.jsx ***!
+  \*********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _Reusable_Titles_Titles__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../Reusable/Titles/Titles */ "./resources/js/components/Reusable/Titles/Titles.jsx");
+/* harmony import */ var _Admin_Admin__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Admin/Admin */ "./resources/js/components/AdminList/Admin/Admin.jsx");
+/* harmony import */ var _AdminList_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./AdminList.css */ "./resources/js/components/AdminList/AdminList.css");
+/* harmony import */ var _AdminList_css__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_AdminList_css__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var sweetalert__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! sweetalert */ "./node_modules/sweetalert/dist/sweetalert.min.js");
+/* harmony import */ var sweetalert__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(sweetalert__WEBPACK_IMPORTED_MODULE_4__);
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+
+
+
+
+
+
+var AdminList = function AdminList() {
+  var header = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])([]),
+      _useState2 = _slicedToArray(_useState, 2),
+      admins = _useState2[0],
+      setAdmins = _useState2[1];
+
+  var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false),
+      _useState4 = _slicedToArray(_useState3, 2),
+      updateAdmins = _useState4[0],
+      setUpdateAdmins = _useState4[1];
+
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
+    getAdmins();
+  }, [updateAdmins]);
+
+  var getAdmins = function getAdmins() {
+    // setLoading(true);
+    fetch('/api/admins/all').then(function (response) {
+      return response.json();
+    }).then(function (data) {
+      setAdmins(data); // setLoading(false);
+    })["catch"](function (error) {
+      return console.log(error);
+    });
+  };
+
+  var deleteAdmin = function deleteAdmin(id, name) {
+    var formData = new FormData();
+    formData.append('id', id);
+    var data = {
+      method: 'POST',
+      body: formData,
+      headers: {
+        'X-CSRF-TOKEN': header,
+        "Accept": "application/json, text-plain, */*"
+      }
+    };
+    sweetalert__WEBPACK_IMPORTED_MODULE_4___default()({
+      title: '¿Esta seguro de eliminar el administrador?',
+      text: name,
+      icon: "warning",
+      buttons: true,
+      dangerMode: true
+    }).then(function (willDelete) {
+      if (willDelete) {
+        fetch('/api/admins/delete', data).then(function (response) {
+          return response.json();
+        }).then(function (data) {
+          data.success && sweetalert__WEBPACK_IMPORTED_MODULE_4___default()("El admin ha sido eliminado!", {
+            icon: "success"
+          });
+          setUpdateAdmins(!updateAdmins);
+        })["catch"](function (error) {
+          return console.log(error);
+        });
+      } else {
+        sweetalert__WEBPACK_IMPORTED_MODULE_4___default()("La operación de eliminacion ha sido cancelada.");
+      }
+    });
+  };
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
+    className: "col-12 col-md-8 col-lg-8"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Reusable_Titles_Titles__WEBPACK_IMPORTED_MODULE_1__["Title"], {
+    text: "Listado de administradores",
+    icon: "fas fa-user"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("table", {
+    className: "table"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("thead", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", {
+    scope: "col"
+  }, "Administrador"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", {
+    scope: "col"
+  }, "Email"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", {
+    scope: "col"
+  }, "Acci\xF3n"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tbody", null, admins && admins.map(function (admin) {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Admin_Admin__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      key: admin.id,
+      admin: admin,
+      deleteAdmin: deleteAdmin
+    });
+  }))));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (AdminList);
+
+/***/ }),
+
 /***/ "./resources/js/components/AdminPage/AdminPage.css":
 /*!*********************************************************!*\
   !*** ./resources/js/components/AdminPage/AdminPage.css ***!
@@ -72963,8 +73544,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _BookForms_AddBook__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../BookForms/AddBook */ "./resources/js/components/BookForms/AddBook.jsx");
 /* harmony import */ var _BookForms_EditBook__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../BookForms/EditBook */ "./resources/js/components/BookForms/EditBook.jsx");
 /* harmony import */ var _BookList_BookList__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../BookList/BookList */ "./resources/js/components/BookList/BookList.jsx");
-/* harmony import */ var _AdminPage_css__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./AdminPage.css */ "./resources/js/components/AdminPage/AdminPage.css");
-/* harmony import */ var _AdminPage_css__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_AdminPage_css__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var _AdminForms_AddAdmin__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../AdminForms/AddAdmin */ "./resources/js/components/AdminForms/AddAdmin.jsx");
+/* harmony import */ var _AdminList_AdminList__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../AdminList/AdminList */ "./resources/js/components/AdminList/AdminList.jsx");
+/* harmony import */ var _AdminPage_css__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./AdminPage.css */ "./resources/js/components/AdminPage/AdminPage.css");
+/* harmony import */ var _AdminPage_css__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(_AdminPage_css__WEBPACK_IMPORTED_MODULE_10__);
+
+
 
 
 
@@ -73003,6 +73588,16 @@ var AdminPage = function AdminPage() {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Reusable_OldSchoolMenuLink_OldSchoolMenuLink__WEBPACK_IMPORTED_MODULE_4__["default"], {
     to: "/author/add",
     label: "A\xF1adir Autor"
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+    className: "nav-item"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Reusable_OldSchoolMenuLink_OldSchoolMenuLink__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    to: "/users/add",
+    label: "A\xF1adir Administrador"
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+    className: "nav-item"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Reusable_OldSchoolMenuLink_OldSchoolMenuLink__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    to: "/users/list",
+    label: "Listado de Admins"
   })))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Switch"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
     path: "/book/add"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_BookForms_AddBook__WEBPACK_IMPORTED_MODULE_5__["default"], null)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
@@ -73012,6 +73607,10 @@ var AdminPage = function AdminPage() {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_BookList_BookList__WEBPACK_IMPORTED_MODULE_7__["default"], null)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
     path: "/author/add"
   }, "A\xF1adir author"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
+    path: "/users/add"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_AdminForms_AddAdmin__WEBPACK_IMPORTED_MODULE_8__["default"], null)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
+    path: "/users/list"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_AdminList_AdminList__WEBPACK_IMPORTED_MODULE_9__["default"], null)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
     path: "/admin"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_BookList_BookList__WEBPACK_IMPORTED_MODULE_7__["default"], null))))));
 };
@@ -74726,12 +75325,13 @@ var Title = function Title(_ref2) {
 /*!*****************************************!*\
   !*** ./resources/js/validationRules.js ***!
   \*****************************************/
-/*! exports provided: validating */
+/*! exports provided: validating, validatingAdmin */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "validating", function() { return validating; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "validatingAdmin", function() { return validatingAdmin; });
 var validating = function validating(input, inputValue, other) {
   switch (input) {
     case 'title':
@@ -74764,6 +75364,126 @@ var validating = function validating(input, inputValue, other) {
     default:
       break;
   }
+};
+var validatingAdmin = function validatingAdmin(input, inputValue, other) {
+  inputValue = inputValue.trim();
+
+  switch (input) {
+    case 'name':
+      return name(inputValue);
+
+    case 'surname':
+      return surname(inputValue);
+
+    case 'email':
+      return email(inputValue);
+
+    case 'password':
+      return password(inputValue);
+
+    case 'password_confirmation':
+      return password_confirmation(inputValue, other);
+
+    default:
+      break;
+  }
+};
+
+var name = function name(inputValue) {
+  if (inputValue.length < 3) {
+    return {
+      message: 'Debe incluir el nombre del administrador',
+      status: false
+    };
+  }
+
+  if (inputValue.length > 50) {
+    return {
+      message: 'El nombre no debe tener mas de 50 caracteres',
+      status: false
+    };
+  }
+
+  return {
+    status: true
+  };
+};
+
+var surname = function surname(inputValue) {
+  if (inputValue.length < 3) {
+    return {
+      message: 'Debe incluir el apellido del administrador',
+      status: false
+    };
+  }
+
+  if (inputValue.length > 50) {
+    return {
+      message: 'El apellido no debe tener mas de 50 caracteres',
+      status: false
+    };
+  }
+
+  return {
+    status: true
+  };
+};
+
+var email = function email(inputValue) {
+  var regex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+
+  if (!regex.test(inputValue)) {
+    return {
+      message: 'Debe incluir un email válido',
+      status: false
+    };
+  }
+
+  if (inputValue.length > 100) {
+    return {
+      message: 'El email no debe tener mas de 100 caracteres',
+      status: false
+    };
+  }
+
+  return {
+    status: true
+  };
+};
+
+var password = function password(inputValue) {
+  if (inputValue.length < 8) {
+    return {
+      message: 'La contraseña debe tener al menos 8 caracteres',
+      status: false
+    };
+  }
+
+  if (inputValue.length > 50) {
+    return {
+      message: 'La contraseña no debe tener mas de 50 caracteres',
+      status: false
+    };
+  }
+
+  return {
+    status: true
+  };
+};
+
+var password_confirmation = function password_confirmation(inputValue, other) {
+  console.log(inputValue, other);
+
+  if (inputValue != other) {
+    return {
+      message: 'La contraseña no coinciden',
+      status: false
+    };
+  }
+
+  return {
+    status: true
+  };
 };
 
 var title = function title(inputValue) {

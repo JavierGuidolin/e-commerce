@@ -25,6 +25,91 @@ export let validating = (input, inputValue, other) => {
 
 }
 
+export let validatingAdmin = (input, inputValue, other) => {
+
+    inputValue = inputValue.trim();
+
+    switch (input) {
+        case 'name':
+            return name(inputValue);
+        case 'surname':
+            return surname(inputValue);
+        case 'email':
+            return email(inputValue);
+        case 'password':
+            return password(inputValue);
+        case 'password_confirmation':
+            return password_confirmation(inputValue, other);
+        default:
+            break;
+
+    }
+
+}
+
+let name = (inputValue) => {
+
+    if (inputValue.length < 3) {
+        return { message: 'Debe incluir el nombre del administrador', status: false }
+    }
+
+    if (inputValue.length > 50) {
+        return { message: 'El nombre no debe tener mas de 50 caracteres', status: false }
+    }
+
+    return { status: true };
+}
+
+let surname = (inputValue) => {
+
+    if (inputValue.length < 3) {
+        return { message: 'Debe incluir el apellido del administrador', status: false }
+    }
+
+    if (inputValue.length > 50) {
+        return { message: 'El apellido no debe tener mas de 50 caracteres', status: false }
+    }
+
+    return { status: true };
+}
+let email = (inputValue) => {
+
+    const regex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+
+    if (!regex.test(inputValue)) {
+        return { message: 'Debe incluir un email válido', status: false }
+    }
+
+    if (inputValue.length > 100) {
+        return { message: 'El email no debe tener mas de 100 caracteres', status: false }
+    }
+
+    return { status: true };
+
+}
+let password = (inputValue) => {
+
+    if (inputValue.length < 8) {
+        return { message: 'La contraseña debe tener al menos 8 caracteres', status: false }
+    }
+
+    if (inputValue.length > 50) {
+        return { message: 'La contraseña no debe tener mas de 50 caracteres', status: false }
+    }
+
+    return { status: true };
+}
+
+let password_confirmation = (inputValue, other) => {
+    console.log(inputValue, other)
+    if (inputValue != other) {
+        return { message: 'La contraseña no coinciden', status: false }
+    }
+    return { status: true };
+}
+
+
+
 let title = (inputValue) => {
 
     inputValue = inputValue.trim();
@@ -132,7 +217,7 @@ let category = (inputValue, other) => {
     }
 
     let exist = other.filter(category => category.id == inputValue);
-    
+
     if (!exist.length) {
         return { message: 'La categoria seleccionada no es valida', status: false }
     }
@@ -157,4 +242,6 @@ let cover = (inputValue) => {
     return { status: true };
 
 }
+
+
 
