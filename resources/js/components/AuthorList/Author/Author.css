@@ -1,0 +1,8 @@
+.fa-trash-alt, .fa-edit {
+    font-size: 1em;
+    color: #ef7853;
+    cursor: pointer;
+}
+.__author-image{
+    width: 25%;
+}

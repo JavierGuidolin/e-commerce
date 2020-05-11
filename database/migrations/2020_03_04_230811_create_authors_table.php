@@ -17,6 +17,9 @@ class CreateAuthorsTable extends Migration
             $table->bigIncrements('id');
             $table->string('name');
             $table->string('surname');
+            $table->string('cover');
+            
+            $table->softDeletes();
             $table->timestamps();
         });
     }

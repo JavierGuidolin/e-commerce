@@ -8,9 +8,13 @@ import AddBook from '../BookForms/AddBook';
 import EditBook from '../BookForms/EditBook';
 import BookList from '../BookList/BookList';
 import AddAdmin from '../AdminForms/AddAdmin';
-import AdminList from '../AdminList/AdminList'
+import AdminList from '../AdminList/AdminList';
+import AddAuthor from '../AuthorForms/AddAuthor';
+import EditAuthor from '../AuthorForms/EditAuthor';
+import AuthorList from '../AuthorList/AuthorList'
 
 import './AdminPage.css';
+
 
 let AdminPage = () => {
 
@@ -64,7 +68,14 @@ let AdminPage = () => {
                                     label="Listado de Admins"
                                 />
                             </li>
-                            
+
+                            <li className="nav-item">
+                                <OldSchoolMenuLink
+                                    to="/authors/list"
+                                    label="Listado de Autores"
+                                />
+                            </li>
+
 
                         </ul>
 
@@ -85,7 +96,7 @@ let AdminPage = () => {
                         </Route>
 
                         <Route path="/author/add">
-                            Añadir author
+                            <AddAuthor />
                         </Route>
 
                         <Route path="/users/add">
@@ -95,7 +106,15 @@ let AdminPage = () => {
                         <Route path="/users/list">
                             <AdminList />
                         </Route>
-                            
+
+                        <Route path="/authors/list">
+                            <AuthorList />
+                        </Route>
+
+                        <Route path="/authors/edit/:id">
+                            <EditAuthor />
+                        </Route>
+
                         <Route path="/admin">
                             <BookList />
                         </Route>

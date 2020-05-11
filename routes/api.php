@@ -21,7 +21,6 @@ Route::post('/books/add', 'ProductosController@add');
 Route::post('/books/edit', 'ProductosController@edit');
 Route::get('/books/all', 'ProductosController@all');
 Route::post('/books/delete', 'ProductosController@delete');
-
 Route::get('/books/edit/{id}', 'ProductosController@getBookById');
 
 Route::get('/authors/all/{busqueda}', 'AuthorController@all');
@@ -30,3 +29,9 @@ Route::get('/categories/all', 'GenerosController@all');
 Route::post('/admins/add', 'UserController@add');
 Route::get('/admins/all', 'UserController@allAdmins');
 Route::post('/admins/delete', 'UserController@delete');
+
+Route::post('/authors/add', 'AuthorController@add');
+Route::get('/authors/alls', 'AuthorController@alls');
+Route::post('/authors/delete', 'AuthorController@delete');
+Route::post('/authors/update', 'AuthorController@update');
+Route::get('/authors/edit/{id}', 'AuthorController@getAuthorById');

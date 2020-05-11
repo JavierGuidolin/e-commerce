@@ -3,9 +3,12 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Autor extends Model
 {
+    use SoftDeletes;
+
     public $table = 'authors';
     public $guarded = [];
 

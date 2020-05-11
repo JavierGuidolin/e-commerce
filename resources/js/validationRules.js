@@ -47,14 +47,30 @@ export let validatingAdmin = (input, inputValue, other) => {
 
 }
 
+export let validatingAuthor = (input, inputValue) => {
+
+
+    switch (input) {
+        case 'name':
+            return name(inputValue);
+        case 'surname':
+            return surname(inputValue);
+        case 'file':
+            return cover(inputValue);
+        default:
+            break;
+
+    }
+}
+
 let name = (inputValue) => {
 
     if (inputValue.length < 3) {
-        return { message: 'Debe incluir el nombre del administrador', status: false }
+        return { message: 'Este campo no puede estar vacio.', status: false }
     }
 
     if (inputValue.length > 50) {
-        return { message: 'El nombre no debe tener mas de 50 caracteres', status: false }
+        return { message: 'El campo no debe tener mas de 50 caracteres', status: false }
     }
 
     return { status: true };
@@ -101,7 +117,7 @@ let password = (inputValue) => {
 }
 
 let password_confirmation = (inputValue, other) => {
-    console.log(inputValue, other)
+
     if (inputValue != other) {
         return { message: 'La contraseña no coinciden', status: false }
     }
@@ -228,15 +244,16 @@ let category = (inputValue, other) => {
 
 let cover = (inputValue) => {
 
+
     const SUPPORTED_FORMATS = ["image/bmp", "image/jpeg", "image/gif", "image/png"];
     const FILE_SIZE = 5000000;
 
     if (!SUPPORTED_FORMATS.includes(inputValue.type)) {
-        return { message: 'La portada debe ser una imagen jpg, jpeg, gif o png', status: false }
+        return { message: 'El archivo debe ser una imagen jpg, jpeg, gif o png', status: false }
     }
 
     if (inputValue.size > FILE_SIZE) {
-        return { message: 'La portada no debe ser mayor a 5MB', status: false }
+        return { message: 'El archivo no debe ser mayor a 5MB', status: false }
     }
 
     return { status: true };
