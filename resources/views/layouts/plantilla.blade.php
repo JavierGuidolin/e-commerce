@@ -54,10 +54,10 @@
 
                         <div class="d-flex justify-content-center align-items-center flex-nowrap h-100">
 
-                            <form class="__header-search-form rounded-pill mx-auto w-100">
-                                <input class="__search-input p-3" type="text" id="search"
+                            <form method="GET" action="/libros" class="__header-search-form rounded-pill mx-auto w-100">
+                                <input name="search" class="__search-input p-3" type="text" id="search"
                                     placeholder="Buscar en BookStore..." />
-                                <button name="search" class="__search-button"  aria-label="buscar">
+                                <button class="__search-button"  aria-label="buscar">
                                     <i class="fas fa-search"></i>
                                 </button>
                             </form>

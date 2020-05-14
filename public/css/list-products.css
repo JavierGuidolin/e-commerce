@@ -74,3 +74,19 @@
 div.border-bottom {
   border-color: #ef7752
 }
+
+.page-item.active .page-link {
+  z-index: 3;
+  color: #fff;
+  background-color: #ef7752;
+  border-color: #ef7752;
+}
+
+.page-link{
+  color: #000;
+}
+
+.pagination {
+  justify-content: flex-end;
+}
+

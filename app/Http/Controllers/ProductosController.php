@@ -11,16 +11,20 @@ use Illuminate\Support\Facades\Storage;
 
 class ProductosController extends Controller
 {
-    public function verProductos()
+    public function verProductos(Request $request)
     {
 
-        $books = Book::paginate(8); //trae todos los libros y los pagina por 8
-        $libros = Book::all();
-        $categories = Category::all();
-        $vac = compact('books', 'categories', 'libros'); //variable a compartir en la vista
+        $search = $request->get('search');
+        $search = '%' . $search . '%';
+
+        $books = Book::where('title', 'like', $search)->orWhere('resume', 'like', $search)->paginate(8);
+        $libros = json_encode($books->items());
+        $vac = compact('books', 'libros');
+
         return view('listadoProductos', $vac);
 
     }
+
     public function detalleProducto($id)
     {
         $books = Book::find($id);
