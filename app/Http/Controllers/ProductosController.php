@@ -6,6 +6,7 @@ use App\Autor;
 use App\Book;
 use App\Category;
 use App\Http\Requests\BookRequest;
+use App\Review;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
@@ -27,16 +28,33 @@ class ProductosController extends Controller
 
     public function detalleProducto($id)
     {
-        $books = Book::find($id);
-        $categories = Category::all();
-        $vac = compact('books', 'categories');
+
+        $book = Book::where('id', $id)->with('categoria')->with('authors')->first();
+        $book->date = date('d/m/Y', strtotime($book->date));
+
+        $qtyAuthors = $book->authors->count();
+        $relatedBooks = $this->relatedBooks($qtyAuthors, $book);
+
+        $rating = (int) Review::where('book_id', $id)->avg('stars');
+
+        $vac = compact('book', 'relatedBooks', 'rating');
         return view('singleProduct', $vac);
+    }
+
+    private function relatedBooks($qtyAuthors, $book)
+    {
+       if ($qtyAuthors != 0) {
+        $id = $book->authors->random(1)->first()->id;
+        $author = Autor::where('id', $id)->with('books')->first();
+        return $author->books->count() > 3 ? $author->books->random(3) : $author->books->all(); 
+       }
+       return [];
     }
 
     public function all()
     {
 
-        $books = Book::with('autor')->with('categoria')->get();
+        $books = Book::with('authors')->with('categoria')->get();
         return $books;
 
     }
@@ -44,7 +62,7 @@ class ProductosController extends Controller
     public function getBookById($id)
     {
 
-        $book = Book::select('cover', 'category_id as category', 'resume', 'date', 'id', 'isbn', 'pages', 'price', 'title', 'stock')->where('id', $id)->with('autor')->first();
+        $book = Book::select('cover', 'category_id as category', 'resume', 'date', 'id', 'isbn', 'pages', 'price', 'title', 'stock')->where('id', $id)->with('authors')->first();
         return $book->toJson();
     }
 
@@ -68,7 +86,7 @@ class ProductosController extends Controller
             "category_id" => $req->category,
         ]);
 
-        $resultado = $book->autor()->saveMany($authors);
+        $resultado = $book->authors()->saveMany($authors);
 
         return response()->json(['success' => 'success'], 200);
 
@@ -101,8 +119,8 @@ class ProductosController extends Controller
             "category_id" => $req->category,
         ]);
 
-        $deletingAuthors = $book->autor()->detach();
-        $resultado = $book->autor()->saveMany($authors);
+        $deletingAuthors = $book->authors()->detach();
+        $resultado = $book->authors()->saveMany($authors);
 
         return response()->json(['success' => 'success'], 200);
 

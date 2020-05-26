@@ -17,7 +17,7 @@ class Book extends Model
         return $this->belongsTo('App\Category', 'category_id');
     }
 
-    public function autor()
+    public function authors()
     {
         return $this->belongsToMany('App\Autor', 'author_book', 'book_id', 'author_id');
     }
@@ -25,5 +25,10 @@ class Book extends Model
     public function items()
     {
         return $this->hasMany('App\Item', 'book_id');
+    }
+
+    public function reviews()
+    {
+        return $this->hasMany('App\Review');
     }
 }

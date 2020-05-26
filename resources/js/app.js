@@ -13,3 +13,4 @@ require('./bootstrap');
  */
 
 require('./components/AdminPage/AdminPage');
+require('./components/Reviews/ReviewContainer');

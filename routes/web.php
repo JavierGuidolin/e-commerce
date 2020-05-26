@@ -30,3 +30,9 @@ Route::get('/carrito', function(){return view('cart');});
 Route::get('/admin', function(){
     return view('admin');
 })->middleware('admin');
+
+//reviews
+Route::post('/reviews/add', 'ReviewController@add');
+Route::get('/reviews/all/{id}', 'ReviewController@all');
+Route::post('/reviews/delete', 'ReviewController@delete');
+Route::get('/reviews/reviewable/{id}', 'ReviewController@reviewable');

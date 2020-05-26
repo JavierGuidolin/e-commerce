@@ -49,6 +49,11 @@ class User extends Authenticatable implements MustVerifyEmail
         return $this->hasMany('App\Order', 'user_id');
     }
 
+    public function reviews()
+    {
+        return $this->hasMany('App\Review');
+    }
+
     public function sendPasswordResetNotification($token)
     {
         $this->notify(new UserResetPass($token));

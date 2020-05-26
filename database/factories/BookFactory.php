@@ -13,9 +13,9 @@ $factory->define(Book::class, function (Faker $faker) {
 
     return [
         'title' => $faker->sentence(7, true),
-        'isbn' => $faker->sentence(7, true),
-        'pages' => $faker->numberBetween(1000, 1500),
-        'stock' => $faker->numberBetween(10, 99),
+        'isbn' => $faker->randomNumber(9),
+        'pages' => $faker->numberBetween(250, 1600),
+        'stock' => $faker->numberBetween(1, 99),
         'date' => $faker->date($format = 'Y-m-d', $max = 'now'),
         'resume' => $faker->paragraph(8, true),
         'price' => $faker->randomFloat(2, 0, 5000),

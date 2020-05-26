@@ -26,7 +26,10 @@
     },
     "dependencies": {
         "react-js-pagination": "^3.0.3",
+        "react-rating": "^2.0.5",
+        "react-rating-stars-component": "^1.0.3",
         "react-router-dom": "^5.1.2",
+        "react-star-rating-component": "^1.4.1",
         "react-transition-group": "^4.3.0",
         "sweetalert": "^2.1.2"
     }

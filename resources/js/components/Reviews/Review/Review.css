@@ -1,0 +1,18 @@
+.fa-times-circle {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}
+
+.__review-individual {
+    position: relative;
+}
+
+.__review-individual p {
+    font-size: .8em;
+}
+
+.__review-individual span {
+    color: #ef7752;
+}

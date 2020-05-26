@@ -6808,6 +6808,44 @@ exports.push([module.i, ".__subtitle {\r\n    font-size: 1.2em;\r\n    line-heig
 
 /***/ }),
 
+/***/ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./resources/js/components/Reviews/MyReview/ReviewForm/ReviewForm.css":
+/*!************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader??ref--6-1!./node_modules/postcss-loader/src??ref--6-2!./resources/js/components/Reviews/MyReview/ReviewForm/ReviewForm.css ***!
+  \************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".__review textarea {\r\n    background-color: #ffebcd !important;\r\n    color: #61605e;\r\n    font-family: Merriweather;\r\n}", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./resources/js/components/Reviews/Review/Review.css":
+/*!*******************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader??ref--6-1!./node_modules/postcss-loader/src??ref--6-2!./resources/js/components/Reviews/Review/Review.css ***!
+  \*******************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".fa-times-circle {\r\n    position: absolute;\r\n    top: 10px;\r\n    right: 10px;\r\n    cursor: pointer;\r\n}\r\n\r\n.__review-individual {\r\n    position: relative;\r\n}\r\n\r\n.__review-individual p {\r\n    font-size: .8em;\r\n}\r\n\r\n.__review-individual span {\r\n    color: #ef7752;\r\n}", ""]);
+
+// exports
+
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/lib/css-base.js":
 /*!*************************************************!*\
   !*** ./node_modules/css-loader/lib/css-base.js ***!
@@ -65207,6 +65245,594 @@ if (false) {} else {
 
 /***/ }),
 
+/***/ "./node_modules/react-rating/lib/react-rating.esm.js":
+/*!***********************************************************!*\
+  !*** ./node_modules/react-rating/lib/react-rating.esm.js ***!
+  \***********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+
+function _typeof(obj) {
+  if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") {
+    _typeof = function (obj) {
+      return typeof obj;
+    };
+  } else {
+    _typeof = function (obj) {
+      return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
+    };
+  }
+
+  return _typeof(obj);
+}
+
+function _classCallCheck(instance, Constructor) {
+  if (!(instance instanceof Constructor)) {
+    throw new TypeError("Cannot call a class as a function");
+  }
+}
+
+function _defineProperties(target, props) {
+  for (var i = 0; i < props.length; i++) {
+    var descriptor = props[i];
+    descriptor.enumerable = descriptor.enumerable || false;
+    descriptor.configurable = true;
+    if ("value" in descriptor) descriptor.writable = true;
+    Object.defineProperty(target, descriptor.key, descriptor);
+  }
+}
+
+function _createClass(Constructor, protoProps, staticProps) {
+  if (protoProps) _defineProperties(Constructor.prototype, protoProps);
+  if (staticProps) _defineProperties(Constructor, staticProps);
+  return Constructor;
+}
+
+function _defineProperty(obj, key, value) {
+  if (key in obj) {
+    Object.defineProperty(obj, key, {
+      value: value,
+      enumerable: true,
+      configurable: true,
+      writable: true
+    });
+  } else {
+    obj[key] = value;
+  }
+
+  return obj;
+}
+
+function _extends() {
+  _extends = Object.assign || function (target) {
+    for (var i = 1; i < arguments.length; i++) {
+      var source = arguments[i];
+
+      for (var key in source) {
+        if (Object.prototype.hasOwnProperty.call(source, key)) {
+          target[key] = source[key];
+        }
+      }
+    }
+
+    return target;
+  };
+
+  return _extends.apply(this, arguments);
+}
+
+function _objectSpread(target) {
+  for (var i = 1; i < arguments.length; i++) {
+    var source = arguments[i] != null ? arguments[i] : {};
+    var ownKeys = Object.keys(source);
+
+    if (typeof Object.getOwnPropertySymbols === 'function') {
+      ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) {
+        return Object.getOwnPropertyDescriptor(source, sym).enumerable;
+      }));
+    }
+
+    ownKeys.forEach(function (key) {
+      _defineProperty(target, key, source[key]);
+    });
+  }
+
+  return target;
+}
+
+function _inherits(subClass, superClass) {
+  if (typeof superClass !== "function" && superClass !== null) {
+    throw new TypeError("Super expression must either be null or a function");
+  }
+
+  subClass.prototype = Object.create(superClass && superClass.prototype, {
+    constructor: {
+      value: subClass,
+      writable: true,
+      configurable: true
+    }
+  });
+  if (superClass) _setPrototypeOf(subClass, superClass);
+}
+
+function _getPrototypeOf(o) {
+  _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) {
+    return o.__proto__ || Object.getPrototypeOf(o);
+  };
+  return _getPrototypeOf(o);
+}
+
+function _setPrototypeOf(o, p) {
+  _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) {
+    o.__proto__ = p;
+    return o;
+  };
+
+  return _setPrototypeOf(o, p);
+}
+
+function _assertThisInitialized(self) {
+  if (self === void 0) {
+    throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+  }
+
+  return self;
+}
+
+function _possibleConstructorReturn(self, call) {
+  if (call && (typeof call === "object" || typeof call === "function")) {
+    return call;
+  }
+
+  return _assertThisInitialized(self);
+}
+
+var style = {
+  display: 'inline-block',
+  borderRadius: '50%',
+  border: '5px double white',
+  width: 30,
+  height: 30
+};
+var Style = {
+  empty: _objectSpread({}, style, {
+    backgroundColor: '#ccc'
+  }),
+  full: _objectSpread({}, style, {
+    backgroundColor: 'black'
+  }),
+  placeholder: _objectSpread({}, style, {
+    backgroundColor: 'red'
+  })
+};
+
+// Return the corresponding React node for an icon.
+var _iconNode = function _iconNode(icon) {
+  // If it is already a React Element just return it.
+  if (react__WEBPACK_IMPORTED_MODULE_0___default.a.isValidElement(icon)) {
+    return icon;
+  } // If it is an object, try to use it as a CSS style object.
+
+
+  if (_typeof(icon) === 'object' && icon !== null) {
+    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+      style: icon
+    });
+  } // If it is a string, use it as class names.
+
+
+  if (Object.prototype.toString.call(icon) === '[object String]') {
+    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+      className: icon
+    });
+  }
+};
+
+var RatingSymbol =
+/*#__PURE__*/
+function (_React$PureComponent) {
+  _inherits(RatingSymbol, _React$PureComponent);
+
+  function RatingSymbol() {
+    _classCallCheck(this, RatingSymbol);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(RatingSymbol).apply(this, arguments));
+  }
+
+  _createClass(RatingSymbol, [{
+    key: "render",
+    value: function render() {
+      var _iconContainerStyle;
+
+      var _this$props = this.props,
+          index = _this$props.index,
+          inactiveIcon = _this$props.inactiveIcon,
+          activeIcon = _this$props.activeIcon,
+          percent = _this$props.percent,
+          direction = _this$props.direction,
+          readonly = _this$props.readonly,
+          onClick = _this$props.onClick,
+          onMouseMove = _this$props.onMouseMove;
+
+      var backgroundNode = _iconNode(inactiveIcon);
+
+      var showbgIcon = percent < 100;
+      var bgIconContainerStyle = showbgIcon ? {} : {
+        visibility: 'hidden'
+      };
+
+      var iconNode = _iconNode(activeIcon);
+
+      var iconContainerStyle = (_iconContainerStyle = {
+        display: 'inline-block',
+        position: 'absolute',
+        overflow: 'hidden',
+        top: 0
+      }, _defineProperty(_iconContainerStyle, direction === 'rtl' ? 'right' : 'left', 0), _defineProperty(_iconContainerStyle, "width", "".concat(percent, "%")), _iconContainerStyle);
+      var style = {
+        cursor: !readonly ? 'pointer' : 'inherit',
+        display: 'inline-block',
+        position: 'relative'
+      };
+
+      function handleMouseMove(e) {
+        if (onMouseMove) {
+          onMouseMove(index, e);
+        }
+      }
+
+      function handleMouseClick(e) {
+        if (onClick) {
+          // [Supporting both TouchEvent and MouseEvent](https://developer.mozilla.org/en-US/docs/Web/API/Touch_events/Supporting_both_TouchEvent_and_MouseEvent)
+          // We must prevent firing click event twice on touch devices.
+          e.preventDefault();
+          onClick(index, e);
+        }
+      }
+
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        style: style,
+        onClick: handleMouseClick,
+        onMouseMove: handleMouseMove,
+        onTouchMove: handleMouseMove,
+        onTouchEnd: handleMouseClick
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        style: bgIconContainerStyle
+      }, backgroundNode), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        style: iconContainerStyle
+      }, iconNode));
+    }
+  }]);
+
+  return RatingSymbol;
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.PureComponent); // Define propTypes only in development. They will be void in production.
+
+var Rating =
+/*#__PURE__*/
+function (_React$PureComponent) {
+  _inherits(Rating, _React$PureComponent);
+
+  function Rating(props) {
+    var _this;
+
+    _classCallCheck(this, Rating);
+
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(Rating).call(this, props));
+    _this.state = {
+      // Indicates the value that is displayed to the user in the form of symbols.
+      // It can be either 0 (for no displayed symbols) or (0, end]
+      displayValue: _this.props.value,
+      // Indicates if the user is currently hovering over the rating element
+      interacting: false
+    };
+    _this.onMouseLeave = _this.onMouseLeave.bind(_assertThisInitialized(_assertThisInitialized(_this)));
+    _this.symbolMouseMove = _this.symbolMouseMove.bind(_assertThisInitialized(_assertThisInitialized(_this)));
+    _this.symbolClick = _this.symbolClick.bind(_assertThisInitialized(_assertThisInitialized(_this)));
+    return _this;
+  }
+
+  _createClass(Rating, [{
+    key: "UNSAFE_componentWillReceiveProps",
+    value: function UNSAFE_componentWillReceiveProps(nextProps) {
+      var valueChanged = this.props.value !== nextProps.value;
+      this.setState(function (prevState) {
+        return {
+          displayValue: valueChanged ? nextProps.value : prevState.displayValue
+        };
+      });
+    }
+  }, {
+    key: "componentDidUpdate",
+    value: function componentDidUpdate(prevProps, prevState) {
+      // Ignore state update due to value changed from props.
+      // Usually originated through an onClick event.
+      if (prevProps.value !== this.props.value) {
+        return;
+      } // When hover ends, call this.props.onHover with no value.
+
+
+      if (prevState.interacting && !this.state.interacting) {
+        return this.props.onHover();
+      } // When hover over.
+
+
+      if (this.state.interacting) {
+        this.props.onHover(this.state.displayValue);
+      }
+    }
+  }, {
+    key: "symbolClick",
+    value: function symbolClick(symbolIndex, event) {
+      var value = this.calculateDisplayValue(symbolIndex, event);
+      this.props.onClick(value, event);
+    }
+  }, {
+    key: "symbolMouseMove",
+    value: function symbolMouseMove(symbolIndex, event) {
+      var value = this.calculateDisplayValue(symbolIndex, event); // This call should cause an update only if the state changes.
+      // Mainly the first time the mouse enters and whenever the value changes.
+      // So DidComponentUpdate is NOT called for every mouse movement.
+
+      this.setState({
+        interacting: !this.props.readonly,
+        displayValue: value
+      });
+    }
+  }, {
+    key: "onMouseLeave",
+    value: function onMouseLeave() {
+      this.setState({
+        displayValue: this.props.value,
+        interacting: false
+      });
+    }
+  }, {
+    key: "calculateDisplayValue",
+    value: function calculateDisplayValue(symbolIndex, event) {
+      var percentage = this.calculateHoverPercentage(event); // Get the closest top fraction.
+
+      var fraction = Math.ceil(percentage % 1 * this.props.fractions) / this.props.fractions; // Truncate decimal trying to avoid float precission issues.
+
+      var precision = Math.pow(10, 3);
+      var displayValue = symbolIndex + (Math.floor(percentage) + Math.floor(fraction * precision) / precision); // ensure the returned value is greater than 0 and lower than totalSymbols
+
+      return displayValue > 0 ? displayValue > this.props.totalSymbols ? this.props.totalSymbols : displayValue : 1 / this.props.fractions;
+    }
+  }, {
+    key: "calculateHoverPercentage",
+    value: function calculateHoverPercentage(event) {
+      var clientX = event.nativeEvent.type.indexOf("touch") > -1 ? event.nativeEvent.type.indexOf("touchend") > -1 ? event.changedTouches[0].clientX : event.touches[0].clientX : event.clientX;
+      var targetRect = event.target.getBoundingClientRect();
+      var delta = this.props.direction === 'rtl' ? targetRect.right - clientX : clientX - targetRect.left; // Returning 0 if the delta is negative solves the flickering issue
+
+      return delta < 0 ? 0 : delta / targetRect.width;
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var _this$props = this.props,
+          readonly = _this$props.readonly,
+          quiet = _this$props.quiet,
+          totalSymbols = _this$props.totalSymbols,
+          value = _this$props.value,
+          placeholderValue = _this$props.placeholderValue,
+          direction = _this$props.direction,
+          emptySymbol = _this$props.emptySymbol,
+          fullSymbol = _this$props.fullSymbol,
+          placeholderSymbol = _this$props.placeholderSymbol,
+          className = _this$props.className,
+          id = _this$props.id,
+          style = _this$props.style,
+          tabIndex = _this$props.tabIndex;
+      var _this$state = this.state,
+          displayValue = _this$state.displayValue,
+          interacting = _this$state.interacting;
+      var symbolNodes = [];
+      var empty = [].concat(emptySymbol);
+      var full = [].concat(fullSymbol);
+      var placeholder = [].concat(placeholderSymbol);
+      var shouldDisplayPlaceholder = placeholderValue !== 0 && value === 0 && !interacting; // The value that will be used as base for calculating how to render the symbols
+
+      var renderedValue;
+
+      if (shouldDisplayPlaceholder) {
+        renderedValue = placeholderValue;
+      } else {
+        renderedValue = quiet ? value : displayValue;
+      } // The amount of full symbols
+
+
+      var fullSymbols = Math.floor(renderedValue);
+
+      for (var i = 0; i < totalSymbols; i++) {
+        var percent = void 0; // Calculate each symbol's fullness percentage
+
+        if (i - fullSymbols < 0) {
+          percent = 100;
+        } else if (i - fullSymbols === 0) {
+          percent = (renderedValue - i) * 100;
+        } else {
+          percent = 0;
+        }
+
+        symbolNodes.push(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(RatingSymbol, _extends({
+          key: i,
+          index: i,
+          readonly: readonly,
+          inactiveIcon: empty[i % empty.length],
+          activeIcon: shouldDisplayPlaceholder ? placeholder[i % full.length] : full[i % full.length],
+          percent: percent,
+          direction: direction
+        }, !readonly && {
+          onClick: this.symbolClick,
+          onMouseMove: this.symbolMouseMove,
+          onTouchMove: this.symbolMouseMove,
+          onTouchEnd: this.symbolClick
+        })));
+      }
+
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", _extends({
+        id: id,
+        style: _objectSpread({}, style, {
+          display: 'inline-block',
+          direction: direction
+        }),
+        className: className,
+        tabIndex: tabIndex,
+        "aria-label": this.props['aria-label']
+      }, !readonly && {
+        onMouseLeave: this.onMouseLeave
+      }), symbolNodes);
+    }
+  }]);
+
+  return Rating;
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.PureComponent); // Define propTypes only in development.
+
+function noop() {}
+
+noop._name = 'react_rating_noop';
+
+var RatingAPILayer =
+/*#__PURE__*/
+function (_React$PureComponent) {
+  _inherits(RatingAPILayer, _React$PureComponent);
+
+  function RatingAPILayer(props) {
+    var _this;
+
+    _classCallCheck(this, RatingAPILayer);
+
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(RatingAPILayer).call(this, props));
+    _this.state = {
+      value: props.initialRating
+    };
+    _this.handleClick = _this.handleClick.bind(_assertThisInitialized(_assertThisInitialized(_this)));
+    _this.handleHover = _this.handleHover.bind(_assertThisInitialized(_assertThisInitialized(_this)));
+    return _this;
+  }
+
+  _createClass(RatingAPILayer, [{
+    key: "UNSAFE_componentWillReceiveProps",
+    value: function UNSAFE_componentWillReceiveProps(nextProps) {
+      this.setState({
+        value: nextProps.initialRating
+      });
+    }
+  }, {
+    key: "handleClick",
+    value: function handleClick(value, e) {
+      var _this2 = this;
+
+      var newValue = this.translateDisplayValueToValue(value);
+      this.props.onClick(newValue); // Avoid calling setState if not necessary. Micro optimisation.
+
+      if (this.state.value !== newValue) {
+        // If we have a new value trigger onChange callback.
+        this.setState({
+          value: newValue
+        }, function () {
+          return _this2.props.onChange(_this2.state.value);
+        });
+      }
+    }
+  }, {
+    key: "handleHover",
+    value: function handleHover(displayValue) {
+      var value = displayValue === undefined ? displayValue : this.translateDisplayValueToValue(displayValue);
+      this.props.onHover(value);
+    }
+  }, {
+    key: "translateDisplayValueToValue",
+    value: function translateDisplayValueToValue(displayValue) {
+      var translatedValue = displayValue * this.props.step + this.props.start; // minimum value cannot be equal to start, since it's exclusive
+
+      return translatedValue === this.props.start ? translatedValue + 1 / this.props.fractions : translatedValue;
+    }
+  }, {
+    key: "tranlateValueToDisplayValue",
+    value: function tranlateValueToDisplayValue(value) {
+      if (value === undefined) {
+        return 0;
+      }
+
+      return (value - this.props.start) / this.props.step;
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var _this$props = this.props,
+          step = _this$props.step,
+          emptySymbol = _this$props.emptySymbol,
+          fullSymbol = _this$props.fullSymbol,
+          placeholderSymbol = _this$props.placeholderSymbol,
+          readonly = _this$props.readonly,
+          quiet = _this$props.quiet,
+          fractions = _this$props.fractions,
+          direction = _this$props.direction,
+          start = _this$props.start,
+          stop = _this$props.stop,
+          id = _this$props.id,
+          className = _this$props.className,
+          style = _this$props.style,
+          tabIndex = _this$props.tabIndex;
+
+      function calculateTotalSymbols(start, stop, step) {
+        return Math.floor((stop - start) / step);
+      }
+
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Rating, {
+        id: id,
+        style: style,
+        className: className,
+        tabIndex: tabIndex,
+        "aria-label": this.props['aria-label'],
+        totalSymbols: calculateTotalSymbols(start, stop, step),
+        value: this.tranlateValueToDisplayValue(this.state.value),
+        placeholderValue: this.tranlateValueToDisplayValue(this.props.placeholderRating),
+        readonly: readonly,
+        quiet: quiet,
+        fractions: fractions,
+        direction: direction,
+        emptySymbol: emptySymbol,
+        fullSymbol: fullSymbol,
+        placeholderSymbol: placeholderSymbol,
+        onClick: this.handleClick,
+        onHover: this.handleHover
+      });
+    }
+  }]);
+
+  return RatingAPILayer;
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.PureComponent);
+
+RatingAPILayer.defaultProps = {
+  start: 0,
+  stop: 5,
+  step: 1,
+  readonly: false,
+  quiet: false,
+  fractions: 1,
+  direction: 'ltr',
+  onHover: noop,
+  onClick: noop,
+  onChange: noop,
+  emptySymbol: Style.empty,
+  fullSymbol: Style.full,
+  placeholderSymbol: Style.placeholder
+}; // Define propTypes only in development.
+
+/* harmony default export */ __webpack_exports__["default"] = (RatingAPILayer);
+
+
+/***/ }),
+
 /***/ "./node_modules/react-router-dom/esm/react-router-dom.js":
 /*!***************************************************************!*\
   !*** ./node_modules/react-router-dom/esm/react-router-dom.js ***!
@@ -72981,6 +73607,8 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 __webpack_require__(/*! ./components/AdminPage/AdminPage */ "./resources/js/components/AdminPage/AdminPage.jsx");
 
+__webpack_require__(/*! ./components/Reviews/ReviewContainer */ "./resources/js/components/Reviews/ReviewContainer.jsx");
+
 /***/ }),
 
 /***/ "./resources/js/bootstrap.js":
@@ -76094,11 +76722,513 @@ var Title = function Title(_ref2) {
 
 /***/ }),
 
+/***/ "./resources/js/components/Reviews/MyReview/MyReview.jsx":
+/*!***************************************************************!*\
+  !*** ./resources/js/components/Reviews/MyReview/MyReview.jsx ***!
+  \***************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _ReviewForm_ReviewForm__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ReviewForm/ReviewForm */ "./resources/js/components/Reviews/MyReview/ReviewForm/ReviewForm.jsx");
+/* harmony import */ var _validationRules__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../validationRules */ "./resources/js/validationRules.js");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+
+
+
+
+var MyReview = function MyReview(props) {
+  var header = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+  var bookId = location.pathname.toString().split('/libros/')[1];
+  var getReviews = props.getReviews;
+
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])({
+    rating: 0,
+    review: ''
+  }),
+      _useState2 = _slicedToArray(_useState, 2),
+      review = _useState2[0],
+      setReview = _useState2[1];
+
+  var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(''),
+      _useState4 = _slicedToArray(_useState3, 2),
+      reviewable = _useState4[0],
+      setReviewable = _useState4[1];
+
+  var _useState5 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(null),
+      _useState6 = _slicedToArray(_useState5, 2),
+      loading = _useState6[0],
+      setLoading = _useState6[1];
+
+  var _useState7 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])({}),
+      _useState8 = _slicedToArray(_useState7, 2),
+      errors = _useState8[0],
+      setErrors = _useState8[1];
+
+  var _useState9 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false),
+      _useState10 = _slicedToArray(_useState9, 2),
+      valid = _useState10[0],
+      setValid = _useState10[1];
+
+  var _useState11 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])({}),
+      _useState12 = _slicedToArray(_useState11, 2),
+      serverErrors = _useState12[0],
+      setServerErrors = _useState12[1];
+
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
+    var _errors$review, _errors$rating;
+
+    setValid(((_errors$review = errors.review) === null || _errors$review === void 0 ? void 0 : _errors$review.status) && ((_errors$rating = errors.rating) === null || _errors$rating === void 0 ? void 0 : _errors$rating.status) && review.review != '');
+  });
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
+    getReviewable();
+  });
+
+  var handleChange = function handleChange(e) {
+    var val = Object(_validationRules__WEBPACK_IMPORTED_MODULE_2__["validatingReview"])(e.target.name, e.target.value);
+    setErrors(_objectSpread(_objectSpread({}, errors), {}, _defineProperty({}, e.target.name, val)));
+    setReview(_objectSpread(_objectSpread({}, review), {}, _defineProperty({}, e.target.name, e.target.value)));
+  };
+
+  var ratingChanged = function ratingChanged(newRating) {
+    var val = Object(_validationRules__WEBPACK_IMPORTED_MODULE_2__["validatingReview"])('rating', newRating);
+    setErrors(_objectSpread(_objectSpread({}, errors), {}, {
+      'rating': val
+    }));
+    setReview(_objectSpread(_objectSpread({}, review), {}, {
+      'rating': newRating
+    }));
+  };
+
+  var getReviewable = function getReviewable() {
+    var data = {
+      method: 'GET',
+      headers: {
+        'X-CSRF-TOKEN': header
+      }
+    };
+    fetch('/reviews/reviewable/' + bookId, data).then(function (response) {
+      return response.json();
+    }).then(function (revi) {
+      setReviewable(revi);
+    })["catch"](function (error) {
+      return console.log(error);
+    });
+  };
+
+  var handleForm = function handleForm(e) {
+    setLoading(true);
+    var formData = new FormData();
+    formData.append('review', review.review);
+    formData.append('bookId', props.bookId);
+    formData.append('rating', review.rating);
+    var data = {
+      method: 'POST',
+      body: formData,
+      // data del formulario
+      headers: {
+        'X-CSRF-TOKEN': header,
+        "Accept": "application/json, text-plain, */*"
+      }
+    };
+    fetch('/reviews/add', data).then(function (response) {
+      return response.json();
+    }).then(function (info) {
+      if (info.errors) {
+        toastr.error('Hubo un error al almacenar tu review', 'Ups!');
+        setServerErrors(info.errors);
+      }
+
+      if (info.success) {
+        toastr.success('Tu review ha sido almacenada', 'Genial!');
+        setReview({
+          rating: 0,
+          review: ''
+        });
+        getReviews();
+        getReviewable();
+        setServerErrors(info);
+      }
+
+      setLoading(false);
+    })["catch"](function (error) {
+      return console.log(error);
+    });
+    e.preventDefault();
+  };
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, reviewable ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h6", {
+    className: "text-uppercase border-top pt-3 pb-2"
+  }, "tu review"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_ReviewForm_ReviewForm__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    handleChange: handleChange,
+    review: review,
+    handleForm: handleForm,
+    ratingChanged: ratingChanged,
+    valid: valid,
+    serverErrors: serverErrors,
+    loading: loading
+  })) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    className: "text-center font-weight-bold"
+  }, "Solo puedes hacer una review."));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (MyReview);
+
+/***/ }),
+
+/***/ "./resources/js/components/Reviews/MyReview/ReviewForm/ReviewForm.css":
+/*!****************************************************************************!*\
+  !*** ./resources/js/components/Reviews/MyReview/ReviewForm/ReviewForm.css ***!
+  \****************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../../../../node_modules/css-loader??ref--6-1!../../../../../../node_modules/postcss-loader/src??ref--6-2!./ReviewForm.css */ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./resources/js/components/Reviews/MyReview/ReviewForm/ReviewForm.css");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
+/***/ "./resources/js/components/Reviews/MyReview/ReviewForm/ReviewForm.jsx":
+/*!****************************************************************************!*\
+  !*** ./resources/js/components/Reviews/MyReview/ReviewForm/ReviewForm.jsx ***!
+  \****************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_rating__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-rating */ "./node_modules/react-rating/lib/react-rating.esm.js");
+/* harmony import */ var _ReviewForm_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./ReviewForm.css */ "./resources/js/components/Reviews/MyReview/ReviewForm/ReviewForm.css");
+/* harmony import */ var _ReviewForm_css__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_ReviewForm_css__WEBPACK_IMPORTED_MODULE_2__);
+
+
+
+
+var ReviewForm = function ReviewForm(props) {
+  var handleChange = props.handleChange,
+      review = props.review,
+      handleForm = props.handleForm,
+      ratingChanged = props.ratingChanged,
+      valid = props.valid,
+      serverErrors = props.serverErrors,
+      loading = props.loading;
+  var errors = !serverErrors.success && serverErrors && Object.keys(serverErrors).map(function (key) {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+      className: "ml-2",
+      key: key,
+      value: key
+    }, serverErrors[key]);
+  });
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+    onSubmit: handleForm
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "row mt-3"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "col"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "form-group"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+    htmlFor: "rating"
+  }, "Calificaci\xF3n"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_rating__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    emptySymbol: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+      className: "far fa-star"
+    }),
+    fullSymbol: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+      className: "fas fa-star"
+    }),
+    placeholderSymbol: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+      className: "fas fa-star"
+    }),
+    onChange: ratingChanged,
+    initialRating: review.rating
+  }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "form-group"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+    htmlFor: "review"
+  }, "Review"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("textarea", {
+    type: "text",
+    id: "review",
+    name: "review",
+    className: "form-control __form-input",
+    value: review.review,
+    onChange: handleChange,
+    required: true
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("small", {
+    id: "reviewHelp",
+    className: "mb-3 form-text text-danger"
+  })))), errors && errors.length ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+    className: "alert alert-danger fade-".concat(status)
+  }, errors) : '', /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "text-right mt-2"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    type: "submit",
+    className: "btn text-uppercase __btn __btn-add",
+    value: "enviar",
+    disabled: !valid
+  }, loading ? 'Enviando' : 'Enviar'))));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (ReviewForm);
+
+/***/ }),
+
+/***/ "./resources/js/components/Reviews/Review/Review.css":
+/*!***********************************************************!*\
+  !*** ./resources/js/components/Reviews/Review/Review.css ***!
+  \***********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../../../node_modules/css-loader??ref--6-1!../../../../../node_modules/postcss-loader/src??ref--6-2!./Review.css */ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./resources/js/components/Reviews/Review/Review.css");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
+/***/ "./resources/js/components/Reviews/Review/Review.jsx":
+/*!***********************************************************!*\
+  !*** ./resources/js/components/Reviews/Review/Review.jsx ***!
+  \***********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _Review_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Review.css */ "./resources/js/components/Reviews/Review/Review.css");
+/* harmony import */ var _Review_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_Review_css__WEBPACK_IMPORTED_MODULE_1__);
+
+
+
+var Review = function Review(props) {
+  var review = props.review,
+      deleteReview = props.deleteReview;
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "__review-individual"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "font-weight-bold"
+  }, review.user.name + '' + review.user.surname), " says:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, " ", review.review, " "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, review.stars, " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+    className: "fas fa-star"
+  }), " "), review.edit ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+    className: "far fa-times-circle",
+    onClick: function onClick() {
+      return deleteReview(review.id);
+    }
+  }) : ''));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Review);
+
+/***/ }),
+
+/***/ "./resources/js/components/Reviews/ReviewContainer.jsx":
+/*!*************************************************************!*\
+  !*** ./resources/js/components/Reviews/ReviewContainer.jsx ***!
+  \*************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
+/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _ReviewList_ReviewList__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./ReviewList/ReviewList */ "./resources/js/components/Reviews/ReviewList/ReviewList.jsx");
+/* harmony import */ var _MyReview_MyReview__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./MyReview/MyReview */ "./resources/js/components/Reviews/MyReview/MyReview.jsx");
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+
+
+
+
+
+var ReviewContainer = function ReviewContainer() {
+  var header = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+  var bookId = location.pathname.toString().split('/libros/')[1];
+
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])([]),
+      _useState2 = _slicedToArray(_useState, 2),
+      reviews = _useState2[0],
+      setReviews = _useState2[1];
+
+  var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(null),
+      _useState4 = _slicedToArray(_useState3, 2),
+      loading = _useState4[0],
+      setLoading = _useState4[1];
+
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
+    getReviews();
+  }, []);
+
+  var getReviews = function getReviews() {
+    setLoading(true);
+    var data = {
+      method: 'GET',
+      headers: {
+        'X-CSRF-TOKEN': header
+      }
+    };
+    fetch('/reviews/all/' + bookId, data).then(function (response) {
+      return response.json();
+    }).then(function (reviews) {
+      setReviews(reviews);
+      setLoading(false);
+    })["catch"](function (error) {
+      return console.log(error);
+    });
+  };
+
+  var deleteReview = function deleteReview(id) {
+    var formData = new FormData();
+    formData.append('id', id);
+    var data = {
+      method: 'POST',
+      body: formData,
+      headers: {
+        'X-CSRF-TOKEN': header,
+        "Accept": "application/json, text-plain, */*"
+      }
+    };
+    fetch('/reviews/delete', data).then(function (response) {
+      return response.json();
+    }).then(function (info) {
+      if (info.errors) toastr.error('Hubo un error al eliminar tu review', 'Ups!');
+
+      if (info.success) {
+        toastr.success('Tu review ha sido eliminada', 'Genial!');
+        getReviews();
+      }
+    })["catch"](function (error) {
+      return console.log(error);
+    });
+  };
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, loading ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    className: "font-weight-bold"
+  }, "Cargando reviews...") : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_ReviewList_ReviewList__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    reviews: reviews,
+    deleteReview: deleteReview
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_MyReview_MyReview__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    bookId: bookId,
+    getReviews: getReviews
+  }));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (ReviewContainer);
+
+if (document.getElementById('my-review')) {
+  react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(ReviewContainer, null), document.getElementById('my-review'));
+}
+
+/***/ }),
+
+/***/ "./resources/js/components/Reviews/ReviewList/ReviewList.jsx":
+/*!*******************************************************************!*\
+  !*** ./resources/js/components/Reviews/ReviewList/ReviewList.jsx ***!
+  \*******************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _Review_Review__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../Review/Review */ "./resources/js/components/Reviews/Review/Review.jsx");
+
+
+
+var ReviewList = function ReviewList(props) {
+  var reviews = props.reviews,
+      deleteReview = props.deleteReview;
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h6", {
+    className: "text-uppercase border-top pt-3 pb-2 "
+  }, "reviews"), reviews.map(function (review) {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Review_Review__WEBPACK_IMPORTED_MODULE_1__["default"], {
+      key: review.id,
+      review: review,
+      deleteReview: deleteReview
+    });
+  }));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (ReviewList);
+
+/***/ }),
+
 /***/ "./resources/js/validationRules.js":
 /*!*****************************************!*\
   !*** ./resources/js/validationRules.js ***!
   \*****************************************/
-/*! exports provided: validating, validatingAdmin, validatingAuthor */
+/*! exports provided: validating, validatingAdmin, validatingAuthor, validatingReview */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -76106,6 +77236,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "validating", function() { return validating; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "validatingAdmin", function() { return validatingAdmin; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "validatingAuthor", function() { return validatingAuthor; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "validatingReview", function() { return validatingReview; });
 var validating = function validating(input, inputValue, other) {
   switch (input) {
     case 'title':
@@ -76176,6 +77307,44 @@ var validatingAuthor = function validatingAuthor(input, inputValue) {
     default:
       break;
   }
+};
+var validatingReview = function validatingReview(input, inputValue) {
+  switch (input) {
+    case 'review':
+      return review(inputValue);
+
+    case 'rating':
+      return rating(inputValue);
+
+    default:
+      break;
+  }
+};
+
+var review = function review(inputValue) {
+  if (inputValue.length < 10 || inputValue.length > 250) {
+    return {
+      message: 'Este campo debe contener entre 10 y 250 caracteres',
+      status: false
+    };
+  }
+
+  return {
+    status: true
+  };
+};
+
+var rating = function rating(inputValue) {
+  if (inputValue < 1 || inputValue > 5) {
+    return {
+      message: 'El rating debe ser un valor entre 1 y 5',
+      status: false
+    };
+  }
+
+  return {
+    status: true
+  };
 };
 
 var name = function name(inputValue) {
@@ -76488,8 +77657,8 @@ var cover = function cover(inputValue) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\Mega Tecnología\Desktop\ECOMM 3\e-commerce-DH\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\Users\Mega Tecnología\Desktop\ECOMM 3\e-commerce-DH\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\Mega Tecnología\Desktop\Version React\e-commerce-DH\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Users\Mega Tecnología\Desktop\Version React\e-commerce-DH\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

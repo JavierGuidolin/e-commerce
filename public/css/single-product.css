@@ -117,19 +117,3 @@
 .__review p {
     font-weight: 300
 }
-
-.__review-individual p {
-    font-size: .8em
-}
-
-.__review-individual span {
-    color: #ef7752
-}
-
-.__review input[type=email],
-.__review input[type=text],
-.__review textarea {
-    background-color: #ffebcd !important;
-    color: #61605e;
-    font-family: Merriweather
-}

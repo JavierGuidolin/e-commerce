@@ -63,6 +63,39 @@ export let validatingAuthor = (input, inputValue) => {
     }
 }
 
+
+export let validatingReview = (input, inputValue) => {
+
+    switch (input) {
+        case 'review':
+            return review(inputValue);
+        case 'rating':
+            return rating(inputValue);
+        default:
+            break;
+
+    }
+}
+
+let review = (inputValue) => {
+
+    if (inputValue.length < 10 || inputValue.length > 250) {
+        return { message: 'Este campo debe contener entre 10 y 250 caracteres', status: false }
+    }
+
+    return { status: true };
+
+}
+
+let rating = (inputValue) => {
+
+    if (inputValue < 1 || inputValue > 5) {
+        return { message: 'El rating debe ser un valor entre 1 y 5', status: false }
+    }
+
+    return { status: true };
+}
+
 let name = (inputValue) => {
 
     if (inputValue.length < 3) {
