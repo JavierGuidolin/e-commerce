@@ -18,7 +18,7 @@ class User extends Authenticatable implements MustVerifyEmail
      * @var array
      */
     protected $fillable = [
-        'name', 'surname', 'email', 'password', 'rol',
+        'name', 'surname', 'email', 'password', 'rol', 'dni',
     ];
 
     /**
@@ -38,6 +38,11 @@ class User extends Authenticatable implements MustVerifyEmail
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function fullName()
+    {
+        return ucfirst($this->name) . ' ' . ucfirst($this->surname);
+    }
 
     public function addresses()
     {

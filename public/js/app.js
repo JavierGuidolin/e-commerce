@@ -77657,8 +77657,8 @@ var cover = function cover(inputValue) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\Mega Tecnología\Desktop\Version React\e-commerce-DH\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\Users\Mega Tecnología\Desktop\Version React\e-commerce-DH\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\Mega Tecnología\Desktop\e-commerce-DH\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Users\Mega Tecnología\Desktop\e-commerce-DH\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

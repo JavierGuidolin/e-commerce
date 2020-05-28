@@ -41,6 +41,25 @@
                 <div class="col-lg-8 pt-5 pb-5">
                     <div class="tab-content" id="faq-tab-content">
 
+                   
+                       @if (Session::get('userUpdated') == true)
+                            <div class="alert alert-success" role="alert">
+                                Tu información ha sido actualizada!
+                            </div>
+                       @elseif(!$errors->UpdateInfo->isEmpty())
+                            <div class="alert alert-danger" role="alert">
+                                Ha ocurrido un error al actualizar tu información. Reintentalo para conocer mas detalles.
+                            </div>
+                       @endif
+
+                       @if(Session::get('passwordUpdated') == true)
+                            <div class="alert alert-success" role="alert">
+                                Tu contraseña ha sido actualizada!
+                            </div>
+                       @endif
+
+                       {{old('apellido')}}
+
                         <!-- Panel My account-->
                         <div class="tab-pane active show" id="tab1" role="tabpanel" aria-labelledby="tab1">
 
@@ -52,9 +71,6 @@
                                         <h5> <i class="far fa-id-badge pr-1"></i> Resumen</h5>
                                     </div>
 
-                                    <a href="" class="position-absolute __edit-profile border"><i
-                                            class="fas fa-cog"></i></a>
-
                                 </div>
 
                                 <div class="row">
@@ -62,15 +78,15 @@
                                     <div class="col-4 col-lg-2">
                                         <img class="w-100 rounded-circle" src="/img/profile.webp" alt="">
                                     </div>
-
+                                  
                                     <div class="col-8 col-lg-9">
 
-                                        <h2 class="">Mary Berryton</h2>
+                                        <h2 class="">{{Auth::user()->fullName()}}</h2>
 
                                         <div class="mt-4">
-                                            <p class="font-weight-bold">Member since February 2019</p>
-                                            <p>maryberry@gmail.com</p>
-                                            <p>DNI: -</p>
+                                            <p class="font-weight-bold">Miembro desde {{Auth::user()->created_at}} </p>
+                                            <p>Email: {{Auth::user()->email}}</p>
+                                            <p>Dni: {{Auth::user()->dni}}</p>
                                             <p>Telefono: -</p>
                                         </div>
 
@@ -291,7 +307,7 @@
                                     </div>
                                 </div>
 
-                                <form method="POST" action="{{ route('update') }}">
+                                <form method="POST" action='/user/updateinfo'>
 
                                     @csrf
 
@@ -301,18 +317,22 @@
 
                                         <div class="col py-2">
                                             <label for="name">Nombre</label>
-                                            <input type="text" id="name" name="name" class="form-control __form-input @error('name') is-invalid @enderror" value="{{ Auth::user()->name }}" required autocomplete="name" autofocus> @error('name')
-                                            <small id="nameHelp" class="mb-3 form-text text-danger">
-                                                {{ $message }}
-                                            </small> @enderror
+                                            <input type="text" id="name" name="name" class="form-control __form-input @error('nombre') is-invalid @enderror" value="{{ old('name') != null ?  old('name') : Auth::user()->name }}" required autocomplete="name" autofocus> 
+                                            @if ($errors->UpdateInfo->has('name'))
+                                                <small id="nameHelp" class="mb-3 form-text text-danger">
+                                                    {{$errors->UpdateInfo->first('name') }}
+                                                </small> 
+                                            @endif
                                         </div>
 
                                         <div class="col py-2">
                                             <label for="surname">Apellido</label>
-                                            <input type="text" id="surname" name="surname" class="form-control __form-input @error('surname') is-invalid @enderror" value="{{ Auth::user()->surname }}" required autocomplete="surname" autofocus> @error('surname')
-                                            <small id="surnameHelp" class="mb-3 form-text text-danger">
-                                                {{ $message }}
-                                            </small> @enderror
+                                            <input type="text" id="surname" name="surname" class="form-control __form-input @error('apellido') is-invalid @enderror" value="{{ old('surname') != null ?  old('surname') : Auth::user()->surname }}" required autocomplete="surname" autofocus> 
+                                            @if ($errors->UpdateInfo->has('surname'))
+                                                <small id="nameHelp" class="mb-3 form-text text-danger">
+                                                    {{$errors->UpdateInfo->first('surname') }}
+                                                </small> 
+                                            @endif
                                         </div>
 
                                     </div>
@@ -320,20 +340,19 @@
                                     <div class="row">
                                         <div class="col py-2">
                                             <label for="email">Email</label>
-                                            <input  readonly type="email" id="email" name="email" class="form-control __form-input @error('email') is-invalid @enderror" value="{{ Auth::user()->email }}" required autocomplete="email"> @error('email')
-                                            <small id="emailHelp" class="mb-3 form-text text-danger">
-                                                {{ $message }}
-                                            </small> @enderror
+                                            <input  readonly type="email" id="email" name="email" class="form-control __form-input @error('email') is-invalid @enderror" value="{{ old('email') != null ?  old('email') : Auth::user()->email }}" required autocomplete="email"> 
                                         </div>
                                     </div>
 
                                     <div class="row">
                                         <div class="col-6 py-2">
                                             <label for="dni">DNI</label>
-                                            <input type="dni" id="dni" name="dni" class="form-control __form-input  @error('dni') is-invalid @enderror" autocomplete="dni" value="{{ Auth::user()->dni }}"> @error('dni')/>
-                                            <small id="dniHelp" class="mb-3 form-text text-danger">
-                                                {{ $message }}
-                                            </small> @enderror
+                                            <input type="dni" id="dni" name="dni" class="form-control __form-input  @error('dni') is-invalid @enderror" autocomplete="dni" value="{{ old('dni') != null ?  old('dni') : Auth::user()->dni }}">
+                                            @if ($errors->UpdateInfo->has('dni'))
+                                                <small id="nameHelp" class="mb-3 form-text text-danger">
+                                                    {{$errors->UpdateInfo->first('dni') }}
+                                                </small> 
+                                            @endif
                                         </div>
 
                                     </div>
@@ -357,8 +376,8 @@
                                 </div>
 
                                 <div class="">
-                                    <form action="">
-
+                                    <form method="POST" action="/user/updatepass">
+                                        @csrf
                                         <div class="row">
 
                                             <div class="col py-2">

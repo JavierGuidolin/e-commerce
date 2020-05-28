@@ -4,19 +4,6 @@
     font-size: .8em
 }
 
-.__edit-profile {
-    top: 0;
-    background-color: #fff;
-    color: #fff;
-    width: 30px;
-    height: 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%;
-    right: -12%
-}
-
 .__my-account h5 {
     text-transform: uppercase;
     font-weight: 700;
@@ -49,20 +36,6 @@ a.active i {
 
 .__review-desc {
     font-size: .8em
-}
-
-@media (min-width:425px) {
-    .__edit-profile {
-        top: 0;
-        right: -8%
-    }
-}
-
-@media (min-width:768px) {
-    .__edit-profile {
-        top: 0;
-        right: -4%
-    }
 }
 
 .__validate-account {
