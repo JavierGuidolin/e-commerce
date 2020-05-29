@@ -39,3 +39,6 @@ Route::get('/reviews/reviewable/{id}', 'ReviewController@reviewable');
 //user info
 Route::post('/user/updateinfo', 'UserController@update');
 Route::post('/user/updatepass', 'UserController@updatePass');
+
+//mail contact
+Route::post('/contacto/send', 'ContactFormController@send');

@@ -35,7 +35,7 @@
                             <table class="inner-body" align="center" cellpadding="0" cellspacing="0" role="presentation">
                                 <!-- Body content -->
                                 
-                                <td><img src="{{url('/img/email.jpeg')}}" style="width:100%"/></td>
+                                <td><img src="{{url('/img/email.webp')}}" style="width:100%"/></td>
 
                                 <tr>
                                     <td class="content-cell">

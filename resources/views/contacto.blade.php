@@ -1,6 +1,5 @@
 @extends('layouts.plantilla')
 
-
 @section('styles')
   <link rel="stylesheet" href="/css/contact.css">
   <link rel="stylesheet" href="/css/partials/form-controls.css">
@@ -42,32 +41,89 @@
                     </div>
 
 
-                    <form action="" class="contactForm">
+                    <form action="/contacto/send" method="POST" class="contactForm">
+
+                        @csrf
+
                         <div class="form-group">
                             <label class="control-label col-sm-2" for="fname">Nombre:</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control __form-input" id="fname" name="fname">
+                                <input 
+                                    type="text" 
+                                    class="form-control __form-input @error('fname') is-invalid @enderror"
+                                    id="fname"
+                                    name="fname"
+                                    value="{{old('fname')}}"
+                                    required
+                                >
+
+                                @error('fname')
+                                    <small id="nameHelp" class="mb-3 form-text text-danger">
+                                        {{ $message }}
+                                    </small>
+                                 @enderror
+
                             </div>
                         </div>
 
                         <div class="form-group">
                             <label class="control-label col-sm-2" for="lname">Apellido:</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control __form-input" id="lname" name="lname">
+                                <input 
+                                    type="text"
+                                    class="form-control __form-input @error('lname') is-invalid @enderror"
+                                    id="lname"
+                                    name="lname"
+                                    required
+                                    value="{{old('lname')}}"
+                                >
+                                
+                                @error('lname')
+                                    <small id="surnameHelp" class="mb-3 form-text text-danger">
+                                        {{ $message }}
+                                    </small>
+                                @enderror
+
                             </div>
                         </div>
 
                         <div class="form-group">
                             <label class="control-label col-sm-2" for="email">Email:</label>
                             <div class="col-sm-10">
-                                <input type="email" class="form-control __form-input" id="email" name="email">
+                                <input 
+                                    type="email" 
+                                    class="form-control __form-input @error('email') is-invalid @enderror" 
+                                    id="email" 
+                                    name="email"
+                                    required
+                                    value="{{old('email')}}"
+                                    
+                                >
+
+                                @error('email')
+                                    <small id="emailHelp" class="mb-3 form-text text-danger">
+                                        {{ $message }}
+                                    </small>
+                                @enderror
+
                             </div>
                         </div>
 
                         <div class="form-group">
                             <label class="control-label col-sm-2" for="comment">Mensaje:</label>
                             <div class="col-sm-10">
-                                <textarea class="form-control __form-input" rows="5" id="comment" name="mensaje"></textarea>
+                                <textarea 
+                                    class="form-control __form-input  @error('message') is-invalid @enderror" 
+                                    rows="5" id="comment" 
+                                    name="message"
+                                    required>{{old('message')}}</textarea>
+                               
+                                @error('message')
+                                    <small id="nameHelp" class="mb-3 form-text text-danger">
+                                        {{ $message }}
+                                    </small>
+                                @enderror
+
                             </div>
                         </div>
 
@@ -76,8 +132,20 @@
                                 <button type="submit" class="__btn font-weight-bold btn text-uppercase">Enviar</button>
                             </div>
                         </div>
-                    </form>
 
+                        @if (Session::has('email'))
+                            @if (Session::get('email'))
+                                <div class="alert alert-success" role="alert">
+                                    El email ha sido enviado!
+                                </div>
+                            @else
+                                <div class="alert alert-danger" role="alert">
+                                    Ha ocurrido un error al enviar el email. Por favor reintentalo mas tarde.
+                                </div>
+                            @endif
+                        @endif
+
+                    </form>
 
                   </div>
                   <!-- Side info -->
@@ -96,9 +164,10 @@
           </div>
       </div>
 
-
   </section>
 </main>
+
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
- <script src="js/contactValidation.js" charset="utf-8"></script>
+<script src="js/contactValidation.js" charset="utf-8"></script>
+
 @endsection
