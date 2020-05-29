@@ -133,7 +133,7 @@
                                 <div class="col-6 col-md-4 text-center">
                                     <img class="w-75" src={{$relatedBook->cover}} alt="">
                                     <p class="pt-2 text-center ">
-                                    <a class="__product-rel-title" href="">{{$relatedBook->title}}</a>
+                                    <a class="__product-rel-title" href="/libros/{{$relatedBook->id}}">{{$relatedBook->title}}</a>
                                     </p>
                                 </div>
                             @empty

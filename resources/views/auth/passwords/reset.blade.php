@@ -24,7 +24,7 @@ Olvide mi contraseña
         <div class="__form-side">
 
             <div class="">
-                <a href=""><img class="w-100 mx-auto" src="bookStoreLogo.svg" alt="BookStore Logo"></a>
+                <a href=""><img class="w-100 mx-auto" src="/img/bookStoreLogo.svg" alt="BookStore Logo"></a>
             </div>
 
             <div class="container">

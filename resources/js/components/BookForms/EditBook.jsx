@@ -104,7 +104,8 @@ const EditBook = () => {
         fetch('/api/books/edit/' + id, data)
             .then(response => response.json())
             .then(book => {
-                setBookById(book)
+                setBookById(book);
+                console.log(book)
             })
             .catch(error => console.log(error))
     }
@@ -116,7 +117,7 @@ const EditBook = () => {
 
         for (const key in book) {
 
-            if (key != 'cover' && key != 'autor' && key != 'id') {
+            if (key != 'cover' && key != 'authors' && key != 'id') {
 
                 if (key == 'category') {
                     val = validating(key, book[key], categories);
@@ -142,7 +143,7 @@ const EditBook = () => {
             stock: book.stock,
             category: book.category,
             cover: book.cover,
-            authors: book.autor,
+            authors: book.authors,
             id: id
         });
 
@@ -163,7 +164,8 @@ const EditBook = () => {
             .then(response => response.json())
             .then(authors => {
                 setAuthorResult(authors)
-                setLoading(false);
+                setLoading(false); 
+                console.log(authors)
             })
             .catch(error => console.log(error))
 

@@ -8,7 +8,7 @@ import '../../BookForms/Animations.css';
 
 let FirstStep = props => {
 
-
+ 
 
     const {
         book,
@@ -21,6 +21,7 @@ let FirstStep = props => {
         valid
     } = props;
 
+  
     return (
         <Transition timeout={500}>
 

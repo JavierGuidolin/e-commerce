@@ -17,7 +17,10 @@ const MyReview = (props) => {
     const [serverErrors, setServerErrors] = useState({}); 
 
     useEffect(() => {
-        setValid(errors.review?.status && errors.rating?.status && review.review != '');
+        setValid(errors.review?.status &&
+            errors.rating?.status &&
+            review.review != '' &&
+            review.rating != 0);
     });
 
     useEffect(() => {

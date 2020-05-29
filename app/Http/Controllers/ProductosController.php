@@ -16,9 +16,22 @@ class ProductosController extends Controller
     {
 
         $search = $request->get('search');
+        $catId = $request->get('cat');
+
         $search = '%' . $search . '%';
 
-        $books = Book::where('title', 'like', $search)->orWhere('resume', 'like', $search)->paginate(8);
+        if ($catId) {
+            $books = Book::where('category_id', $catId)->where('title', 'like', $search)->paginate(8);
+        } else if ($search) {
+            $books = Book::where('title', 'like', $search)->orWhere('resume', 'like', $search)->paginate(8);
+        }
+
+        foreach ($books as $book) {
+            if (strlen($book) > 22) {
+                $book->title = substr($book->title, 0, 22) . '...';
+            }
+        }
+
         $libros = json_encode($books->items());
         $vac = compact('books', 'libros');
 
@@ -30,25 +43,30 @@ class ProductosController extends Controller
     {
 
         $book = Book::where('id', $id)->with('categoria')->with('authors')->first();
-        $book->date = date('d/m/Y', strtotime($book->date));
+        if ($book) {
+            $book->date = date('d/m/Y', strtotime($book->date));
 
-        $qtyAuthors = $book->authors->count();
-        $relatedBooks = $this->relatedBooks($qtyAuthors, $book);
+            $qtyAuthors = $book->authors->count();
+            $relatedBooks = $this->relatedBooks($qtyAuthors, $book);
+            
+            $rating = (int) Review::where('book_id', $id)->avg('stars');
 
-        $rating = (int) Review::where('book_id', $id)->avg('stars');
+            $vac = compact('book', 'relatedBooks', 'rating');
+            return view('singleProduct', $vac);
+        } else {
+            abort(404);
+        }
 
-        $vac = compact('book', 'relatedBooks', 'rating');
-        return view('singleProduct', $vac);
     }
 
     private function relatedBooks($qtyAuthors, $book)
     {
-       if ($qtyAuthors != 0) {
-        $id = $book->authors->random(1)->first()->id;
-        $author = Autor::where('id', $id)->with('books')->first();
-        return $author->books->count() > 3 ? $author->books->random(3) : $author->books->all(); 
-       }
-       return [];
+        if ($qtyAuthors != 0) {
+            $id = $book->authors->random(1)->first()->id;
+            $author = Autor::where('id', $id)->with('books')->first();
+            return $author->books->count() > 3 ? $author->books->random(3) : $author->books->all();
+        }
+        return [];
     }
 
     public function all()
@@ -61,7 +79,6 @@ class ProductosController extends Controller
 
     public function getBookById($id)
     {
-
         $book = Book::select('cover', 'category_id as category', 'resume', 'date', 'id', 'isbn', 'pages', 'price', 'title', 'stock')->where('id', $id)->with('authors')->first();
         return $book->toJson();
     }

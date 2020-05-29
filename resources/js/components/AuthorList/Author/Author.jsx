@@ -12,7 +12,7 @@ const Author = (props) => {
     return (
         <tr>
             <td>
-                <img className="__author-image" src={`/storage/authors/${author.cover}`} alt={fullName} />
+                <img className="__author-image" src={author.cover} alt={fullName} />
             </td>
             <td>{fullName}</td>
             <td className="text-center">

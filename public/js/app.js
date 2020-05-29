@@ -6649,7 +6649,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/c
 
 
 // module
-exports.push([module.i, ".fa-trash-alt, .fa-edit {\r\n    font-size: 1em;\r\n    color: #ef7853;\r\n    cursor: pointer;\r\n}\r\n.__author-image{\r\n    width: 25%;\r\n}", ""]);
+exports.push([module.i, ".fa-trash-alt, .fa-edit {\r\n    font-size: 1em;\r\n    color: #fff;\r\n    cursor: pointer;\r\n}\r\n.__author-image{\r\n    width: 25%;\r\n}", ""]);
 
 // exports
 
@@ -74875,7 +74875,7 @@ var Author = function Author(props) {
   var fullName = author.name + ' ' + author.surname;
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
     className: "__author-image",
-    src: "/storage/authors/".concat(author.cover),
+    src: author.cover,
     alt: fullName
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, fullName), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
     className: "text-center"
@@ -75546,6 +75546,7 @@ var EditBook = function EditBook() {
       return response.json();
     }).then(function (book) {
       setBookById(book);
+      console.log(book);
     })["catch"](function (error) {
       return console.log(error);
     });
@@ -75556,7 +75557,7 @@ var EditBook = function EditBook() {
     var errores = {};
 
     for (var key in book) {
-      if (key != 'cover' && key != 'autor' && key != 'id') {
+      if (key != 'cover' && key != 'authors' && key != 'id') {
         if (key == 'category') {
           val = Object(_validationRules__WEBPACK_IMPORTED_MODULE_6__["validating"])(key, book[key], categories);
         } else {
@@ -75583,7 +75584,7 @@ var EditBook = function EditBook() {
       stock: book.stock,
       category: book.category,
       cover: book.cover,
-      authors: book.autor,
+      authors: book.authors,
       id: id
     });
   };
@@ -75601,6 +75602,7 @@ var EditBook = function EditBook() {
     }).then(function (authors) {
       setAuthorResult(authors);
       setLoading(false);
+      console.log(authors);
     })["catch"](function (error) {
       return console.log(error);
     });
@@ -76116,7 +76118,7 @@ var SecondStep = function SecondStep(props) {
       className: "w-50 mx-auto"
     }, typeof book.cover === 'string' ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
       className: "w-100",
-      src: "/storage/covers/".concat(props.book.cover),
+      src: props.book.cover,
       alt: "cover"
     }) : book.cover != null && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
       className: "w-100",
@@ -76281,7 +76283,7 @@ var Book = function Book(_ref) {
     className: "card mt-2 bg-transparent"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
     className: "p-0 col-12",
-    src: "/storage/covers/".concat(data.cover),
+    src: data.cover,
     alt: "".concat(data.title)
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
     to: "/book/edit/".concat(data.id)
@@ -76300,9 +76302,6 @@ var Book = function Book(_ref) {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Book);
-/* src={`/storage/covers/${data.cover}`} alt={`${data.title}`} */
-//Si se insertan libros de forma manual utilizar la ruta anterior
-//Si se utilizan datos de prueba (factories) dejar la ruta como esta
 
 /***/ }),
 
@@ -76798,7 +76797,7 @@ var MyReview = function MyReview(props) {
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
     var _errors$review, _errors$rating;
 
-    setValid(((_errors$review = errors.review) === null || _errors$review === void 0 ? void 0 : _errors$review.status) && ((_errors$rating = errors.rating) === null || _errors$rating === void 0 ? void 0 : _errors$rating.status) && review.review != '');
+    setValid(((_errors$review = errors.review) === null || _errors$review === void 0 ? void 0 : _errors$review.status) && ((_errors$rating = errors.rating) === null || _errors$rating === void 0 ? void 0 : _errors$rating.status) && review.review != '' && review.rating != 0);
   });
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
     getReviewable();

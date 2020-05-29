@@ -32,7 +32,7 @@
                         <a href="#tab4" class="list-group-item list-group-item-action" id="list-messages-list" data-toggle="list" href="#list-messages" role="tab" aria-controls="reviews"> <i class="fas fa-feather-alt"></i> Mis reviews</a>
 
                         @if (Auth::user()->rol == 0)
-                            <a href="#" class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list" href="#list-settings" role="tab" aria-controls="ADMIN SITE"> <i class="fas fa-user-cog pr-1"></i> ADMIN SITE</a>
+                            <a href="/admin" class="list-group-item list-group-item-action"> <i class="fas fa-user-cog pr-1"></i> ADMIN SITE</a>
                         @endif
 
                     </div>
@@ -78,7 +78,7 @@
                                 <div class="row">
 
                                     <div class="col-4 col-lg-2">
-                                        <img class="w-100 rounded-circle" src="/img/profile.webp" alt="">
+                                        <img class="w-100 rounded-circle" src="/img/profile.webp" alt="Imagen de perfil">
                                     </div>
                                   
                                     <div class="col-8 col-lg-9">
@@ -95,18 +95,20 @@
                                     </div>
 
                                     @if (session('status'))
-                                    <div class="alert alert-success" role="alert">
-                                        {{ session('status') }}
-                                    </div>
+                                        <div class="alert alert-success w-100" role="alert">
+                                            {{ session('status') }}
+                                        </div>
                                     @endif
 
-                                    <div class="__validate-account text-center">
-                                        @if (session('resent'))
-                                        <div class="alert alert-success" role="alert">
-                                            {{ __('Un nuevo email ha sido enviado a tu correo.') }}
+                                    @if (!Auth::user()->email_verified_at)
+                                        <div class="__validate-account text-center">
+                                            @if (session('resent'))
+                                            <div class="alert alert-success" role="alert">
+                                                {{ __('Un nuevo email ha sido enviado a tu correo.') }}
+                                            </div>
+                                            @endif {{ __('Un link para validar tu cuenta ha sido enviado a tu email.') }} {{ __('Si no lo has recibido, puedes') }} <a class="__new-link" href="{{ route('verification.resend') }}">{{ __('pedir uno nuevo') }}</a>.
                                         </div>
-                                        @endif {{ __('Un link para validar tu cuenta ha sido enviado a tu email.') }} {{ __('Si no lo has recibido, puedes') }} <a class="__new-link" href="{{ route('verification.resend') }}">{{ __('pedir uno nuevo') }}</a>.
-                                    </div>
+                                    @endif
 
                                 </div>
 

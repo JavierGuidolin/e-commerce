@@ -108,7 +108,7 @@ let SecondStep = (props) => {
                                 typeof book.cover === 'string' ?
                                     <img
                                         className="w-100"
-                                        src={`/storage/covers/${props.book.cover}`}
+                                        src={props.book.cover}
                                         alt="cover"
                                     />
                                     

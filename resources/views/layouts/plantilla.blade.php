@@ -128,40 +128,16 @@
 
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav text-lg-center mx-auto text-uppercase">
-                <li class="nav-item __cool-link">
-                    <a class="nav-link " href="/libros">Arte & Fotografia</a>
-                </li>
-                <li class="nav-item __cool-link">
-                    <a class="nav-link pt-lg-3 pt-xl-2" href="/libros">Biografias</a>
-                </li>
-                <li class="nav-item __cool-link">
-                    <a class="nav-link pt-lg-3 pt-xl-2" href="/libros">Negocios</a>
-                </li>
-                <li class="nav-item __cool-link">
-                    <a class="nav-link pt-lg-3 pt-xl-2" href="/libros">Cocina</a>
-                </li>
-                <li class="nav-item __cool-link">
-                    <a class="nav-link pt-lg-3 pt-xl-2" href="/libros">Humor</a>
-                </li>
-                <li class="nav-item __cool-link">
-                    <a class="nav-link pt-lg-3 pt-xl-2" href="/libros">Historia</a>
-                </li>
-                <li class="nav-item __cool-link">
-                    <a class="nav-link pt-lg-3 pt-xl-2" href="/libros">Religión</a>
-                </li>
-                <li class="nav-item __cool-link">
-                    <a class="nav-link" href="/libros">Sci-Fi & Fantasia</a>
-                </li>
-                <li class="nav-item __cool-link">
-                    <a class="nav-link" href="/libros">Auto-Ayuda</a>
-                </li>
-                <li class="nav-item __cool-link">
-                    <a class="nav-link" href="/libros">Misterio & Crimen</a>
-                </li>
-                <li class="nav-item __cool-link">
-                    <a class="nav-link pt-lg-3 pt-xl-2" href="/libros">Deportes</a>
-                </li>
 
+                @foreach (Config::get('categories') as $categorie)
+                    <li class="nav-item __cool-link">
+                        <a class="nav-link"
+                            href="/libros?cat={{$categorie['id']}}">
+                            {{$categorie['name']}}
+                        </a>
+                    </li>
+                @endforeach
+                                
             </ul>
         </div>
     </nav>

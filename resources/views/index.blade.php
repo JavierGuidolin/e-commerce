@@ -97,101 +97,36 @@
 
       <div class="owl-carousel owl-theme">
 
-          <div class="item">
-              <div class="__cover-bestseller">
-                  <img class="w-75 mx-auto " src="/img/libros-portadas/the-arsonist.webp" alt="">
-                  <div class="__options pb-2">
+        @forelse ($bestsellers as $best)
 
-                      <a class="__options-add-to-cart mr-1 mb-1" href="#">
-                          <i class="fas fa-shopping-bag"></i>
-                          <span>BUY</span>
-                      </a>
-                      <a class="__options-add-to-fav mr-1" href="#">
-                          <i class="far fa-heart"></i>
-                      </a>
+            <div class="item">
+                <div class="__cover-bestseller">
+                    <img class="w-75 mx-auto " src="{{$best->cover}}" alt="{{$best->title}}">
+                    <div class="__options pb-2">
 
-                  </div>
-              </div>
-              <div class="pt-3">
-                  <h3 class="text-center font-weight-bold">
-                      <a href="">The girl in red</a>
-                  </h3>
-                  <h6 class="text-center">by Chloe Hooper</h6>
-                  <h3 class="text-center">$ 27.99</h3>
-              </div>
-          </div>
+                        <a class="__options-add-to-cart mr-1 mb-1" href="#">
+                            <i class="fas fa-shopping-bag"></i>
+                            <span>BUY</span>
+                        </a>
+                        <a class="__options-add-to-fav mr-1" href="#">
+                            <i class="far fa-heart"></i>
+                        </a>
 
-          <div class="item">
-              <div class="__cover-bestseller">
-                  <img class="w-75 mx-auto " src="/img/libros-portadas/the-girl-in-red.webp" alt="">
-                  <div class="__options pb-2">
-
-                      <a class="__options-add-to-cart mr-1 mb-1" href="#">
-                          <i class="fas fa-shopping-bag"></i>
-                          <span>BUY</span>
-                      </a>
-                      <a class="__options-add-to-fav mr-1" href="#">
-                          <i class="far fa-heart"></i>
-                      </a>
-
-                  </div>
-              </div>
-              <div class="pt-3">
-                  <h3 class="text-center font-weight-bold">
-                     <a href="">The Arsonist</a>
+                    </div>
+                </div>
+                <div class="pt-3">
+                    <h3 class="text-center font-weight-bold">
+                        <a href="/libros/{{$best->id}}"> {{$best->title}} </a>
                     </h3>
-                  <h6 class="text-center">by Create Media</h6>
-                  <h3 class="text-center">$ 12.99</h3>
-              </div>
-          </div>
+                    <h3 class="text-center">$ {{$best->price}}</h3>
+                </div>
+            </div>
+            
+        @empty
+            <p>No hay libros disponibles</p>
+        @endforelse
 
-          <div class="item">
-              <div class="__cover-bestseller">
-                  <img class="w-75 mx-auto " src="/img/libros-portadas/the-arsonist.webp" alt="">
-                  <div class="__options pb-2">
-
-                      <a class="__options-add-to-cart mr-1 mb-1" href="#">
-                          <i class="fas fa-shopping-bag"></i>
-                          <span>BUY</span>
-                      </a>
-                      <a class="__options-add-to-fav mr-1" href="#">
-                          <i class="far fa-heart"></i>
-                      </a>
-
-                  </div>
-              </div>
-              <div class="pt-3">
-                  <h3 class="text-center font-weight-bold">
-                      <a href="">There There</a>
-                    </h3>
-                  <h6 class="text-center">by Tommy Orange</h6>
-                  <h3 class="text-center">$ 12.99</h3>
-              </div>
-          </div>
-
-          <div class="item">
-              <div class="__cover-bestseller">
-                  <img class="w-75 mx-auto " src="/img/libros-portadas/very-nice.webp" alt="">
-                  <div class="__options pb-2">
-
-                      <a class="__options-add-to-cart mr-1 mb-1" href="#">
-                          <i class="fas fa-shopping-bag"></i>
-                          <span>BUY</span>
-                      </a>
-                      <a class="__options-add-to-fav mr-1" href="#">
-                          <i class="far fa-heart"></i>
-                      </a>
-
-                  </div>
-              </div>
-              <div class="pt-3">
-                  <h3 class="text-center font-weight-bold">
-                      <a href="">Very Nice</a>
-                  </h3>
-                  <h6 class="text-center">by Mary Watchwosky</h6>
-                  <h3 class="text-center">$ 12.99</h3>
-              </div>
-          </div>
+          
 
       </div>
 
@@ -202,107 +137,39 @@
   <section class="__betsellers">
 
       <div class="pt-4 pb-4">
-          <h2 class="text-center">Special Offer</h2>
+          <h2 class="text-center">Nuevos</h2>
       </div>
 
       <div class="owl-carousel owl-theme">
 
-          <div class="item">
-              <div class="__cover-bestseller">
-                  <img class="w-75 mx-auto " src="/img/libros-portadas/the-girl-in-red.webp" alt="">
-                  <div class="__options pb-2">
+        @forelse ($news as $new)
 
-                      <a class="__options-add-to-cart mr-1 mb-1" href="#">
-                          <i class="fas fa-shopping-bag"></i>
-                          <span>BUY</span>
-                      </a>
-                      <a class="__options-add-to-fav mr-1" href="#">
-                          <i class="far fa-heart"></i>
-                      </a>
+        <div class="item">
+            <div class="__cover-bestseller">
+                <img class="w-75 mx-auto " src="{{$new->cover}}" alt="{{$new->title}}">
+                <div class="__options pb-2">
 
-                  </div>
-              </div>
-              <div class="pt-3">
-                  <h3 class="text-center font-weight-bold">
-                      <a href="">The Ballada Of Songbirds and Snakes</a>
-                    </h3>
-                  <h6 class="text-center">by Suzanne Collins</h6>
-                  <h3 class="text-center">$ 27.99</h3>
-              </div>
-          </div>
+                    <a class="__options-add-to-cart mr-1 mb-1" href="#">
+                        <i class="fas fa-shopping-bag"></i>
+                        <span>BUY</span>
+                    </a>
+                    <a class="__options-add-to-fav mr-1" href="#">
+                        <i class="far fa-heart"></i>
+                    </a>
 
-          <div class="item">
-              <div class="__cover-bestseller">
-                  <img class="w-75 mx-auto " src="/img/libros-portadas/hp-cursed-child.webp" alt="">
-                  <div class="__options pb-2">
-
-                      <a class="__options-add-to-cart mr-1 mb-1" href="#">
-                          <i class="fas fa-shopping-bag"></i>
-                          <span>BUY</span>
-                      </a>
-                      <a class="__options-add-to-fav mr-1" href="#">
-                          <i class="far fa-heart"></i>
-                      </a>
-
-                  </div>
-              </div>
-              <div class="pt-3">
-                  <h3 class="text-center font-weight-bold">
-                      <a href="">Harry Potter</a>
-                    </h3>
-                  <h6 class="text-center">by J.K. Rowlings</h6>
-                  <h3 style="text-decoration: line-through;" class="text-center">$ 12.99</h3>
-                  <h3 style="font-size: 1.2em;" class="text-center">$ 12.99</h3>
-              </div>
-          </div>
-
-          <div class="item">
-              <div class="__cover-bestseller">
-                  <img class="w-75 mx-auto " src="/img/libros-portadas/a.webp" alt="">
-                  <div class="__options pb-2">
-
-                      <a class="__options-add-to-cart mr-1 mb-1" href="#">
-                          <i class="fas fa-shopping-bag"></i>
-                          <span>BUY</span>
-                      </a>
-                      <a class="__options-add-to-fav mr-1" href="#">
-                          <i class="far fa-heart"></i>
-                      </a>
-
-                  </div>
-              </div>
-              <div class="pt-3">
-                  <h3 class="text-center font-weight-bold">
-                     <a href="">The Happy Lemon</a>
-                    </h3>
-                  <h6 class="text-center">by Tommy Orange</h6>
-                  <h3 class="text-center">$ 12.99</h3>
-              </div>
-          </div>
-
-          <div class="item">
-              <div class="__cover-bestseller">
-                  <img class="w-75 mx-auto " src="/img/libros-portadas/very-nice.webp" alt="">
-                  <div class="__options pb-2">
-
-                      <a class="__options-add-to-cart mr-1 mb-1" href="#">
-                          <i class="fas fa-shopping-bag"></i>
-                          <span>BUY</span>
-                      </a>
-                      <a class="__options-add-to-fav mr-1" href="#">
-                          <i class="far fa-heart"></i>
-                      </a>
-
-                  </div>
-              </div>
-              <div class="pt-3">
-                  <h3 class="text-center font-weight-bold">
-                      <a href="">Very Nice</a>
-                    </h3>
-                  <h6 class="text-center">by Mary Watchwosky</h6>
-                  <h3 class="text-center">$ 12.99</h3>
-              </div>
-          </div>
+                </div>
+            </div>
+            <div class="pt-3">
+                <h3 class="text-center font-weight-bold">
+                    <a href="/libros/{{$best->id}}"> {{$new->title}} </a>
+                </h3>
+                <h3 class="text-center">$ {{$new->price}}</h3>
+            </div>
+        </div>
+        
+    @empty
+        <p>No hay libros disponibles</p>
+    @endforelse
 
       </div>
 

@@ -9,6 +9,8 @@ let SearchByAuthor = (props) => {
 
     const { book, handleChange, authorResult, selectSearchAuthor, quitAuthor, loading } = props;
 
+    
+
     return (
         <>
 

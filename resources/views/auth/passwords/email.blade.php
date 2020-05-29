@@ -58,6 +58,14 @@ Olvide mi contraseña
                             <div class="text-right mt-2">
                                 <input type="submit" class="btn font-weight-bold text-uppercase __btn" value="Enviar Link">
                             </div>
+
+                            @if (session('status'))
+                                <div class="alert alert-success mt-2" role="alert">
+                                    {{ session('status') }}
+                                </div>
+                             @endif
+
+
                         </form>
                     </div>
                 </div>

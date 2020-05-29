@@ -89,4 +89,17 @@ div.border-bottom {
 .pagination {
   justify-content: flex-end;
 }
+.__filter-side *{
+  color: rgb(209, 207, 207);
+}
+.__coming-soon{
+  position: absolute;
+  width: 50%;
+  top: 0;
+}
 
+.__coming-soon {
+  position: absolute;
+  width: 70%;
+  top: 0;
+}
