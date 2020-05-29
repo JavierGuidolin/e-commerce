@@ -31,7 +31,9 @@
 
                         <a href="#tab4" class="list-group-item list-group-item-action" id="list-messages-list" data-toggle="list" href="#list-messages" role="tab" aria-controls="reviews"> <i class="fas fa-feather-alt"></i> Mis reviews</a>
 
-                        <a href="#" class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list" href="#list-settings" role="tab" aria-controls="ADMIN SITE"> <i class="fas fa-user-cog pr-1"></i> ADMIN SITE</a>
+                        @if (Auth::user()->rol == 0)
+                            <a href="#" class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list" href="#list-settings" role="tab" aria-controls="ADMIN SITE"> <i class="fas fa-user-cog pr-1"></i> ADMIN SITE</a>
+                        @endif
 
                     </div>
                 </div>
@@ -150,20 +152,13 @@
 
                                 <div class="row col-12">
                                     <div class="my-2">
-                                        <h5> <i class="fas fa-map-marked-alt"></i> Añadir una nueva direccion</h5>
+                                        <h5> <i class="fas fa-map-marked-alt"></i> Añadir una nueva dirección</h5>
                                     </div>
                                 </div>
 
                                 <form>
                                     <div class="form-row">
 
-                                        <div class="form-group col-6">
-                                            <label for="country">Pais</label>
-                                            <select id="country" class="form-control" disabled>
-                                              <option selected>Argentina</option>
-                                              <option>...</option>
-                                            </select>
-                                        </div>
 
                                         <div class="form-group col-6">
                                           <label for="state">Provincia</label>
@@ -173,13 +168,7 @@
                                           </select>
                                         </div>
 
-                                        <div class="form-group col-6">
-                                          <label for="Departamento">Departamento</label>
-                                          <select id="inputState" class="form-control __form-input">
-                                            <option selected>Mendoza</option>
-                                            <option>Guaymallen</option>
-                                          </select>
-                                        </div>
+                                        
 
                                         <div class="form-group col-6">
                                             <label for="Departamento">Localidad</label>
@@ -277,18 +266,25 @@
                                     </div>
                                 </div>
 
+                               @forelse ($reviews as $review)
                                 <div class="row col-12 p-0 m-0">
 
-                                    <div class="border-bottom w-100 my-2">
-                                        <p class="mb-0 font-weight-bold">El libro magico de blancanieves</p>
-                                        <p class="mb-0 __review-cal">5 <i class="fas fa-star"></i></p>
-                                        <p class="mb-0 __review-desc pb-2">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Praesentium, delectus...</p>
-                                    </div>
+                                        <div class="border-bottom w-100 my-2">
+                                            <p class="mb-0 font-weight-bold"> {{$review->book->title}} </p>
+                                            <p class="mb-0 __review-cal"> {{$review->stars}} <i class="fas fa-star"></i></p>
+                                            <p class="mb-0 __review-desc pb-2"> {{$review->review}} </p>
+                                        </div>
 
-                                    <a class="position-absolute __edit-address" href="">
-                                        <i class="fas fa-eye"></i>
-                                    </a>
+                                        <a class="position-absolute __edit-address" href="">
+                                            <i class="fas fa-eye"></i>
+                                        </a>
+
                                 </div>
+                               @empty
+
+                                <p class="font-weight-bold"> No has realizado reviews aún.</p>
+                                   
+                               @endforelse
 
                             </div>
 

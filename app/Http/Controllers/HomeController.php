@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Review;
+use Auth;
 
 class HomeController extends Controller
 {
@@ -23,6 +24,11 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+
+        $userId = Auth::user()->id;
+        $reviews = Review::where('user_id', $userId)->with('book')->get();
+
+        return view('home', compact('reviews'));
+
     }
 }
